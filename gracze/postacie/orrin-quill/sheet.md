@@ -109,5 +109,5 @@ Dodatkowe miejsce ze szkoły musi zawierać czar poznania. Na 1. kręgu jest nim
 
 - Lekka kusza, 10 bełtów, sztylet
 - Amulet z kryształową soczewką (przedmiot więzi)
-- Kopia schematu bariery, kreda, lupa, czerwony atrament do poprawiania cudzych raportów
+- [Kopia schematu bariery](schemat-bariery.md), kreda, lupa, czerwony atrament do poprawiania cudzych raportów
 - Księga czarów, sakiewka na komponenty, 32 sz

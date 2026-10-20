@@ -107,6 +107,6 @@ Na 4. poziomie Zizzle dostanie pierwsze czary 2. kręgu. Naturalny wybór to Okr
 
 ## Ekwipunek
 
-- Zestaw do malowania piegów, list „legalny gnom” (własny wynalazek)
+- Zestaw do malowania piegów, [list „legalny gnom”](list-legalny-gnom.md) (własny wynalazek)
 - Różdżka Leczenia lekkich ran (5 ładunków; wygląda na pękniętą). Tego czaru nie ma na liście zaklinacza, więc potrzebny jest test Używania magicznych przedmiotów ST 20.
 - Zestaw do przebieranek, cukierki, 40 sz

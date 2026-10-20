@@ -111,4 +111,5 @@ Na 4. poziomie Nixa dostanie pierwszy czar 2. kręgu. Naturalny wybór to Paląc
 
 - Peleryna „niepalna w 60%” (pamiątka rodzinna, bez właściwości magicznych)
 - Amulet z zębem (Percepcja ST 15: to ząb psa)
+- [Nieotwarty list od kuzyna](list-od-kuzyna.md)
 - Sztylet, sakiewka na komponenty, 45 sz

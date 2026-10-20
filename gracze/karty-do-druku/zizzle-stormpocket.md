@@ -66,7 +66,7 @@ Dyplomacja **+11** · Blefowanie **+10** · Używanie magicznych przedmiotów **
 
 ## Ekwipunek
 
-Sztylet · zestaw do malowania piegów · list „legalny gnom” (własny wynalazek, z pieczątką) · zestaw do przebieranek · różdżka Leczenia lekkich ran · cukierki · 40 sz
+Sztylet · zestaw do malowania piegów · [list „legalny gnom”](../postacie/zizzle-stormpocket/list-legalny-gnom.md) (własny wynalazek, z pieczątką) · zestaw do przebieranek · różdżka Leczenia lekkich ran · cukierki · 40 sz
 
 ## Kim jestem
 

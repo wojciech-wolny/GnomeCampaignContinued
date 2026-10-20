@@ -15,4 +15,4 @@ Nixa woli najpierw rozmawiać, potem rozmawiać głośniej, a dopiero na końcu 
 - **Pip** — ofiara jej kichnięcia, który wziął winę na siebie. Nixa ma wobec niego dług honorowy.
 - **Luma** — szefowa kotłowni i krawcowa od peleryny. Płaci jej ogniem, Luma płaci herbatą.
 
-**Zaczepka na sesję:** W kieszeni Nixa ma nieotwarty list od kuzyna. Orrin obiecał go przetłumaczyć, jeśli dyżur będzie nudny. Nie będzie.
+**Zaczepka na sesję:** W kieszeni Nixa ma [nieotwarty list od kuzyna](list-od-kuzyna.md). Orrin obiecał go przetłumaczyć, jeśli dyżur będzie nudny. Nie będzie.
