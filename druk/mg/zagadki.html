@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zagadki i kartki</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Spis materiałów MG</a></p><p class="pieczatka">Tylko dla Mistrza Gry</p><nav class="spis"><p>Spis</p><ol><li><a href="#zagadki">Zagadki i procedury napraw</a></li>
+<li><a href="#ekwipunek-z-historii">Ekwipunek z historii</a></li></ol></nav><article class="sekcja"><h1 id="zagadki">Zagadki i procedury napraw</h1>
+<blockquote>
+<p><strong>Tylko dla MG — zawiera rozwiązania.</strong> Gracze widzą tylko rekwizyty R5–R7 z <code>../gracze/rekwizyty.md</code>.</p>
+</blockquote>
+<p>Ton: gnomia nadinżynieria. Kiedyś wszystko zepsuła żaba, więc od tamtej pory system obrasta kolejnymi zabezpieczeniami.</p>
+<hr />
+<h2 id="zagadki-zagadka-a--tablica-triady-wieża-pieczęci">Zagadka A — Tablica Triady (Wieża Pieczęci)</h2>
+<h3 id="zagadki-co-widzą-gracze">Co widzą gracze</h3>
+<p>Łupkowa tablica z trzema polami:</p>
+<table>
+<thead>
+<tr>
+<th>RURA</th>
+<th>UMYSŁ</th>
+<th>PIECZĘĆ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>Obok leżą cztery żetony, z których jeden jest zbędny:</p>
+<ul>
+<li><strong>Fala</strong> (symbol wody)</li>
+<li><strong>Gnom</strong> (symbol operatora)</li>
+<li><strong>Chochlik</strong> (symbol „nieoficjalnej pomocy”)</li>
+<li><strong>Żaba</strong> (w legendzie przekreślona)</li>
+</ul>
+<p>Mosiężna tabliczka pod tablicą:</p>
+<blockquote>
+<p>„Ułóż triadę w kolejności, w jakiej system myśli o ratunku.<br />
+To, co kiedyś wszystko zepsuło, nie jest częścią rozwiązania.”</p>
+</blockquote>
+<h3 id="zagadki-rozwiązanie">Rozwiązanie</h3>
+<ol>
+<li><strong>RURA = Fala</strong> — najpierw woda i ciśnienie.</li>
+<li><strong>UMYSŁ = Gnom</strong> — potem operator.</li>
+<li><strong>PIECZĘĆ = Chochlik</strong> — na końcu „nieoficjalny stabilizator”. Oficjalna historia przemilcza chochliki, ale system pamięta.</li>
+</ol>
+<p><strong>Żaba</strong> ląduje na tacce z napisem „NIGDY WIĘCEJ”.</p>
+<h3 id="zagadki-mechanika">Mechanika</h3>
+<ul>
+<li>Zagadkę rozwiązują gracze, nie kości. Jeśli utkną, pozwól na test Inteligencji albo Wiedzy (inżynieria lub magia) ST 12: sukces daje wskazówkę „żaba odpada”.</li>
+<li>Przy wyniku 17 lub więcej MG podaje dodatkowo, który żeton trafia w pole RURA.</li>
+<li>Po ułożeniu poprawnej triady system żąda <strong>klucza imbusowego</strong> i <strong>żywego mostka</strong> między prętami (zob. procedura B).</li>
+<li>Błędna kolejność: dodaj pole na zegarze <strong>albo</strong> z tablicy strzelają iskry (1k4 obrażeń od elektryczności, Refleks ST 13 na połowę). Tablica się resetuje.</li>
+</ul>
+<h3 id="zagadki-wariant-łatwiejszy">Wariant łatwiejszy</h3>
+<p>Na odwrocie żetonu z żabą ktoś napisał ołówkiem: „to nie ja (podpisano: Żaba)”.</p>
+<hr />
+<h2 id="zagadki-procedura-b--wielki-czerwony-przycisk-po-ułożeniu-triady">Procedura B — Wielki Czerwony Przycisk po ułożeniu triady</h2>
+<p>Gdy tablica jest ułożona poprawnie, zapalają się trzy kontrolki:</p>
+<ol>
+<li><code>KLUCZ</code> — klucz imbusowy z dyżurki (albo Unieszkodliwianie mechanizmów ST 18 na stacyjce).</li>
+<li><code>MOSTEK</code> — ktoś musi zamknąć obwód między dwoma miedzianymi prętami.</li>
+<li><code>PRZYCISK</code> — Wielki Czerwony Przycisk.</li>
+</ol>
+<h3 id="zagadki-mostek-w-wersji-odrobinę-bezpieczniejszej-niż-za-czasów-brina">Mostek (w wersji odrobinę bezpieczniejszej niż za czasów Brina)</h3>
+<p>Gracze wybierają jeden sposób:</p>
+<table>
+<thead>
+<tr>
+<th>Sposób</th>
+<th>Opis</th>
+<th>Koszt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rękawice izolacyjne</td>
+<td>leżą obok z napisem „UŻYWAĆ”</td>
+<td>brak obrażeń</td>
+</tr>
+<tr>
+<td>Ochotnik bez rękawic</td>
+<td>trzyma oba pręty gołymi rękami</td>
+<td>1k4 obrażeń nieśmiercionośnych od elektryczności, dużo dramatu</td>
+</tr>
+<tr>
+<td>Czar</td>
+<td>kontrolowany impuls czarem zadającym obrażenia (np. Magicznym pociskiem w pręt); test poziomu rzucającego ST 12</td>
+<td>zużyty czar</td>
+</tr>
+<tr>
+<td>Chochlik Splot</td>
+<td>zrobi to za kanapkę</td>
+<td>Dyplomacja ST 12 albo jedna z dwóch kanapek Lumy (należna albo następna odsetkowa z żabą z kredy; siedemnaście wcześniejszych już zjadł)</td>
+</tr>
+</tbody>
+</table>
+<p>Kolejność jest stała: przekręcić klucz, zamknąć mostek, nacisnąć przycisk.</p>
+<p>Napis na przycisku:</p>
+<blockquote>
+<p>„DUŻY, bo mały naciskała żaba.<br />
+Nadal nie dla żab.<br />
+Ani dla koboldów w brodach.”</p>
+</blockquote>
+<hr />
+<h2 id="zagadki-zagadka-c--kryształy-w-magazynie">Zagadka C — Kryształy w magazynie</h2>
+<p>Półka z gniazdami: <strong>niebieskie / bursztynowe / zielone / puste</strong>.<br />
+Kartka od magazyniera:</p>
+<blockquote>
+<p>„Rezonans bariery lubi bursztyn.<br />
+Niebieski grzeje wodę na herbatę.<br />
+Zielony — nie wiem, ale ładnie świeci.<br />
+Czerwonego nie ma, bo ktoś ostatnio pomylił go z przyciskiem.”</p>
+</blockquote>
+<h3 id="zagadki-rozwiązanie-1">Rozwiązanie</h3>
+<p>Do gniazda bariery pasuje <strong>bursztynowy</strong> kryształ: albo zapasowy nr 3 z pudełka awaryjnego, albo ten, który koboldy wyjęły z bariery.</p>
+<ul>
+<li>Czaroznawstwo albo Wiedza (magia) ST 14: postać od razu wie, który kryształ jest właściwy.</li>
+<li>Osadzenie złego kryształu:</li>
+<li>niebieski: dodaj pole na zegarze, a w całym skrzydle zagotuje się woda na herbatę;</li>
+<li>zielony: wszystkich w pomieszczeniu na 1 minutę obrysowuje poświata jak od czaru Ognie wróżek (żadnych korzyści z ukrycia ani niewidzialności).</li>
+</ul>
+<hr />
+<h2 id="zagadki-zagadka-d--który-kabel-kotłownia">Zagadka D — Który kabel? (kotłownia)</h2>
+<p>Trzy wiązki z etykietami:</p>
+<ul>
+<li><code>A — holownik posągu (NIE PODŁĄCZAĆ DO BARIERY)</code></li>
+<li><code>B — bariera i ciśnienie</code></li>
+<li><code>C — automat z kanapkami</code></li>
+</ul>
+<p>Koboldy spięły <strong>A z B</strong>. Trzeba je rozłączyć i załatać wiązkę <strong>B</strong>.</p>
+<h3 id="zagadki-wskazówki">Wskazówki</h3>
+<ul>
+<li>Percepcja ST 10: wiązka B jest cieplejsza i iskrzy.</li>
+<li>Wiedza (inżynieria) ST 12: na wiązce A są ślady farby z wózka.</li>
+<li>Chochlik Splot: „Ten w środku krzyczy po gnomiemu. Ten z lewej pachnie majonezem.”</li>
+</ul>
+<h3 id="zagadki-naprawa">Naprawa</h3>
+<p>Unieszkodliwianie mechanizmów, Rzemiosło (dowolne) albo Wiedza (inżynieria), ST 15:</p>
+<ul>
+<li>sukces: przewód załatany;</li>
+<li>sukces o 5 lub więcej: naprawa bez iskier, a do tego usuń jedno pole z zegara (jeśli jakieś jest zapełnione);</li>
+<li>porażka: dodaj pole na zegarze, a wszyscy w kotłowni są przemoczeni (bez obrażeń).</li>
+</ul>
+<p>Improwizacja jest mile widziana: łańcuch, czar Naprawa (pamiętaj, że rzuca się go 10 minut), taśma Gnomoklej albo mokry szalik i dużo nadziei (+2 do ST).</p>
+<hr />
+<h2 id="zagadki-zagadka-e--drzwi-magazynu-opcjonalna">Zagadka E — Drzwi magazynu (opcjonalna)</h2>
+<p>Zamek z trzema suwakami: <strong>MAŁE / BŁYSZCZY / NIE ŻABA</strong>.</p>
+<p>Gracze ustawiają suwaki tak, żeby opisywały zapasowy kryształ:</p>
+<ul>
+<li>MAŁE: tak,</li>
+<li>BŁYSZCZY: tak,</li>
+<li>NIE ŻABA: tak.</li>
+</ul>
+<p>To czysty gnomi żart. Test Inteligencji ST 10 albo pół minuty śmiechu przy stole.</p>
+<p>Trzy nieudane próby uruchamiają pułapkę: wszystkich w promieniu 10 stóp oblewa farba „Gnomia Żółć Wykrywcza”. Przez godzinę mają −2 do Percepcji (farba w oczach) i −10 do Skradania się (świecą jak cytryna).</p>
+<hr />
+<h2 id="zagadki-ściąga-z-odpowiedziami-tylko-mg">Ściąga z odpowiedziami (tylko MG)</h2>
+<table>
+<thead>
+<tr>
+<th>Zagadka</th>
+<th>Odpowiedź</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tablica Triady</td>
+<td>Fala → Gnom → Chochlik (żaba odpada)</td>
+</tr>
+<tr>
+<td>Kryształ</td>
+<td>bursztynowy</td>
+</tr>
+<tr>
+<td>Kabel</td>
+<td>rozłączyć A, załatać B</td>
+</tr>
+<tr>
+<td>Suwaki</td>
+<td>tak / tak / tak</td>
+</tr>
+<tr>
+<td>Wielki Czerwony Przycisk</td>
+<td>klucz → mostek → przycisk</td>
+</tr>
+</tbody>
+</table>
+<p>Odpis schematu w kieszeni Orrina przeczy tej ściądze. Różnice: <a href="#ekwipunek-z-historii">ekwipunek-z-historii.md</a>.</p></article><article class="sekcja nowa"><h1 id="ekwipunek-z-historii">Ekwipunek z historii</h1>
+<p>Trzy dokumenty, które postacie mają przy sobie od początku sesji. To nie są rekwizyty R1–R9.</p>
+<table>
+<thead>
+<tr>
+<th>Kto</th>
+<th>Plik</th>
+<th>Co z tego wynika przy stole</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orrin</td>
+<td><a href="../postacie/orrin-quill.html#schemat-bariery">kopia schematu</a></td>
+<td>myli drużynę</td>
+</tr>
+<tr>
+<td>Nixa</td>
+<td><a href="../postacie/nixa-embercoil.html#list-od-kuzyna">list od kuzyna</a></td>
+<td>tylko opis, bez treści</td>
+</tr>
+<tr>
+<td>Zizzle</td>
+<td><a href="../postacie/zizzle-stormpocket.html#list-legalny-gnom">list „legalny gnom”</a></td>
+<td>smaczek, bez wpływu na naprawy</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ekwipunek-z-historii-kopia-schematu-jest-błędna">Kopia schematu jest błędna</h2>
+<p>Orrin wyniósł z biblioteki <strong>rewizję 2</strong> i wierzy, że jest aktualna. Egzemplarz na pulpicie Vellum (S03) jest prawdziwy. Luma, gdy zobaczy odpis, i tak napisze na nim „schemat kłamie”.</p>
+<table>
+<thead>
+<tr>
+<th>Punkt</th>
+<th>Kopia Orrina</th>
+<th>Prawda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kable</td>
+<td>A zasila barierę, B można odłączyć, C nie ruszać</td>
+<td>rozłączyć A od B i załatać B; C to automat z kanapkami</td>
+</tr>
+<tr>
+<td>Kryształ</td>
+<td>niebieski</td>
+<td>bursztynowy</td>
+</tr>
+<tr>
+<td>Wieża Pieczęci</td>
+<td>przycisk, potem klucz, potem zwarcie prętów</td>
+<td>klucz, mostek, przycisk</td>
+</tr>
+</tbody>
+</table>
+<p>Skutki zaufania kopii, te same co przy złej naprawie:</p>
+<ul>
+<li>Zły kabel: pole na zegarze i przemoczenie, a wiązka B nadal iskrzy.</li>
+<li>Niebieski kryształ: pole na zegarze i wrzątek na herbatę w całym skrzydle.</li>
+<li>Zielony kryształ: poświata jak od Ogni wróżek na minutę.</li>
+<li>Zła kolejność w Wieży: pole na zegarze albo iskry (1k4 od elektryczności, Refleks ST 13 na połowę). Tablica się resetuje.</li>
+</ul>
+<hr />
+<h2 id="ekwipunek-z-historii-list-od-kuzyna">List od kuzyna</h2>
+<p>Kartka dla graczy mówi tylko, że list jest długi i zapisany po smoczemu. Nie otwieraj go za Nixę na starcie. Orrin ma go przetłumaczyć, jeśli dyżur będzie nudny.</p>
+<hr />
+<h2 id="ekwipunek-z-historii-czternaście-błędów-w-liście-legalny-gnom">Czternaście błędów w liście „legalny gnom”</h2>
+<p>Poprawki Orrina, gdyby ktoś chciał je odhaczyć. Sama treść nie zmienia niczego w naprawie bariery.</p>
+<table>
+<thead>
+<tr>
+<th>W liście</th>
+<th>Poprawnie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w obec</td>
+<td>wobec</td>
+</tr>
+<tr>
+<td>brode</td>
+<td>brodę</td>
+</tr>
+<tr>
+<td>tymczasówo</td>
+<td>tymczasowo</td>
+</tr>
+<tr>
+<td>studenkiej</td>
+<td>studenckiej</td>
+</tr>
+<tr>
+<td>gnomiosci</td>
+<td>gnomiości</td>
+</tr>
+<tr>
+<td>tradycyna</td>
+<td>tradycyjna</td>
+</tr>
+<tr>
+<td>oszóstwo</td>
+<td>oszustwo</td>
+</tr>
+<tr>
+<td>Kanabki</td>
+<td>Kanapki</td>
+</tr>
+<tr>
+<td>zwykczaj</td>
+<td>zwyczaj</td>
+</tr>
+<tr>
+<td>zarzód</td>
+<td>zarzut</td>
+</tr>
+<tr>
+<td>arhiwum</td>
+<td>archiwum</td>
+</tr>
+<tr>
+<td>goscinnosc</td>
+<td>gościnność</td>
+</tr>
+<tr>
+<td>wontpi</td>
+<td>wątpi</td>
+</tr>
+<tr>
+<td>spradzi</td>
+<td>sprawdzi</td>
+</tr>
+</tbody>
+</table></article>
+</body>
+</html>

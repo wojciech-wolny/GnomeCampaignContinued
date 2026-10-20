@@ -23,5 +23,5 @@ Ten folder możesz czytać przed sesją i w jej trakcie.
 1. Przeczytaj [brief.md](brief.md).
 2. Wybierz postać ze [skrótu](postacie-skrot.md) albo od razu z pełnych kart.
 3. Otwórz `postacie/{twoja-postać}/sheet.md`, a do śledzenia czarów i zasobów używaj `state.md`.
-4. Jeśli gracie na papierze, wydrukuj swoją kartę z folderu [karty-do-druku/](karty-do-druku/README.md).
+4. Jeśli gracie na papierze, wydrukuj plik swojej postaci z [`../druk/postacie/`](../druk/postacie/index.html).
 5. Mapę i rekwizyty dostaniecie przy stole.

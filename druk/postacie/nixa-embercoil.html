@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nixa Embercoil</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Wszystkie postacie</a></p><nav class="spis spis-ekran"><p>Spis</p><ol><li><a href="#karta">Nixa Embercoil</a></li>
+<li><a href="#historia">Nixa Embercoil — historia</a></li>
+<li><a href="#karta-pelna">Nixa Embercoil — gnomka, zaklinaczka 3. poziomu (smocza linia krwi, mosiądz)</a></li>
+<li><a href="#czary">Nixa Embercoil — opisy czarów</a></li>
+<li><a href="#atuty">Nixa Embercoil — opisy atutów</a></li>
+<li><a href="#zdolnosci">Nixa Embercoil — zdolności i cechy postaci</a></li>
+<li><a href="#stan">Nixa Embercoil — bieżący stan</a></li>
+<li><a href="#list-od-kuzyna">List od kuzyna</a></li></ol></nav><article class="karta"><h1 id="karta">Nixa Embercoil</h1>
+<p><strong>Gnomka, zaklinaczka 3. poziomu (smocza linia krwi: mosiężny smok, ogień)</strong> · neutralna dobra · Apsu · mała<br />
+<em>„Najpierw rozmawiamy. Potem rozmawiamy głośniej. Potem rozmawiamy ogniem”.</em><br />
+<strong>Wygląd:</strong> miedziane piegi, peleryna „niepalna w 60%”, amulet z zębem, który jest „na pewno smoczy”</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">SIŁ</th>
+<th style="text-align: center;">ZRĘ</th>
+<th style="text-align: center;">BUD</th>
+<th style="text-align: center;">INT</th>
+<th style="text-align: center;">MDR</th>
+<th style="text-align: center;">CHA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10 (+0)</td>
+<td style="text-align: center;">13 (+1)</td>
+<td style="text-align: center;">14 (+2)</td>
+<td style="text-align: center;">10 (+0)</td>
+<td style="text-align: center;">10 (+0)</td>
+<td style="text-align: center;"><strong>19 (+4)</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">KP</th>
+<th style="text-align: center;">PW</th>
+<th style="text-align: center;">Inicjatywa</th>
+<th style="text-align: center;">Prędkość</th>
+<th style="text-align: center;">Wytrwałość</th>
+<th style="text-align: center;">Refleks</th>
+<th style="text-align: center;">Wola</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>13</strong> (dotyk 12, nieprzyg. 12; ze Zbroją maga 17)</td>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;"><strong>+3</strong></td>
+<td style="text-align: center;">20 stóp</td>
+<td style="text-align: center;">+3</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BPA</strong> +1 · <strong>PMB</strong> +0 · <strong>OMB</strong> 11 · <strong>Koncentracja</strong> +7 (+4 przy rzucaniu defensywnym) · <strong>odporność na ogień 5</strong> · +2 do rzutów przeciw iluzjom · +4 do KP przeciw olbrzymom</p>
+<p><strong>PW:</strong> ☐☐☐☐☐ ☐☐☐☐☐ ☐☐☐☐☐ ☐☐☐☐☐</p>
+<h2 id="karta-ataki">Ataki</h2>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th style="text-align: center;">Premia</th>
+<th>Obrażenia</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 pazury</td>
+<td style="text-align: center;">+2</td>
+<td>1k3 każdy</td>
+<td>linia krwi, 7 rund dziennie</td>
+</tr>
+<tr>
+<td>Sztylet</td>
+<td style="text-align: center;">+2</td>
+<td>1k3+1</td>
+<td>kryt. 19–20</td>
+</tr>
+<tr>
+<td>Bryzg kwasu</td>
+<td style="text-align: center;">+3 dotyk</td>
+<td>1k3 od kwasu</td>
+<td>sztuczka, bez limitu</td>
+</tr>
+<tr>
+<td>Płonące dłonie</td>
+<td style="text-align: center;">—</td>
+<td>3k4+3 od ognia</td>
+<td>stożek 15 stóp, Ref ST 16 na połowę</td>
+</tr>
+<tr>
+<td>Magiczny pocisk</td>
+<td style="text-align: center;">automatycznie</td>
+<td>2 × (1k4+1) od mocy</td>
+<td>średni zasięg</td>
+</tr>
+</tbody>
+</table>
+<p>+1 do ataków przeciw gadzim humanoidom i goblinoidom.</p>
+<h2 id="karta-czary-poziom-rzucającego-3">Czary (poziom rzucającego 3)</h2>
+<p><strong>ST:</strong> 14 + krąg, wywoływanie +1 · <strong>Arkanum:</strong> +1 obrażeń na każdą kość przy czarach ognia · <strong>Pominięcie komponentów</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Krąg</th>
+<th>Czar</th>
+<th>Efekt</th>
+<th>Obrona</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Bryzg kwasu</td>
+<td>1k3 od kwasu</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Wykrycie magii</td>
+<td>aury magii w stożku 60 stóp</td>
+<td>—</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Rozbłysk</td>
+<td>oślepia cel na 1 rundę</td>
+<td>Wytr ST 15</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Dłoń maga</td>
+<td>przesuwa przedmiot do 5 funtów</td>
+<td>—</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Iskra</td>
+<td>podpala łatwopalny przedmiot</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Płonące dłonie</td>
+<td>3k4+3 od ognia w stożku 15 stóp</td>
+<td>Ref ST 16 (połowa)</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Magiczny pocisk</td>
+<td>2 pociski po 1k4+1, zawsze trafiają</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Tarcza</td>
+<td>+4 do KP, blokuje Magiczny pocisk</td>
+<td>—</td>
+<td>3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Zbroja maga</td>
+<td>+4 do KP z pancerza</td>
+<td>—</td>
+<td>3 godz.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Czary 1. kręgu dziennie:</strong> ☐☐☐☐☐☐</p>
+<h2 id="karta-zasoby-na-dzień">Zasoby na dzień</h2>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Użycia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pazury (rundy)</td>
+<td>☐☐☐☐☐☐☐</td>
+</tr>
+<tr>
+<td>Gnomia magia (po 1): Tańczące światła · Upiorny dźwięk · Prestidigitatorstwo · Rozmowa ze zwierzętami</td>
+<td>☐ ☐ ☐ ☐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-umiejętności">Umiejętności</h2>
+<p>Zastraszanie <strong>+10</strong> · Używanie magicznych przedmiotów <strong>+8</strong> · Percepcja <strong>+7</strong> · Pływanie <strong>+5</strong> · Wiedza (magia) <strong>+4</strong> · Czaroznawstwo <strong>+4</strong></p>
+<h2 id="karta-atuty-cechy-i-zdolności">Atuty, cechy i zdolności</h2>
+<p><strong>Atuty:</strong> Pominięcie komponentów · Skupienie na czarach (wywoływanie) · Rzucanie w walce<br />
+<strong>Cechy:</strong> Szybka reakcja (+2 do inicjatywy) · Szczur rzeczny (+1 obrażeń sztyletem, +1 do Pływania, Pływanie klasowe)<br />
+<strong>Linia krwi:</strong> pazury · odporność na ogień 5 · +1 naturalnego pancerza (wliczone)<br />
+<strong>Rasowe:</strong> widzenie w słabym świetle · broń „gnomia” jak żołnierska<br />
+<strong>Języki:</strong> wspólny, gnomi, sylwański</p>
+<h2 id="karta-ekwipunek">Ekwipunek</h2>
+<p>Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · <a href="#list-od-kuzyna">nieotwarty list od kuzyna</a> · sakiewka na komponenty · 45 sz</p>
+<h2 id="karta-kim-jestem">Kim jestem</h2>
+<p>W mojej rodzinie krąży legenda o prababci, która spędziła lato u mosiężnego smoka. Od tamtej pory raz w roku przychodzi list od „kuzyna” — trzydzieści stron o pogodzie, po smoczemu. Przy rodzinnych obiadach zawsze stoi wolne nakrycie dla smoka. Na wszelki wypadek.</p>
+<p><strong>Relacje:</strong> Orrin — zeszłoroczny list przetłumaczył i nie ustąpi w sprawie zęba; tegoroczny mam nieotwarty · Zizzle — skarbnik klubu; ciastko jest „w bezpiecznym miejscu” i go nie widziałam · Pip — kichnęłam iskrami, on wziął winę na siebie, mam wobec niego dług honorowy · Luma — płacę ogniem, ona płaci herbatą i łata mi pelerynę</p></article><article class="sekcja nowa"><h1 id="historia">Nixa Embercoil — historia</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>W rodzinie Embercoilów od pokoleń krąży opowieść o prababci, która spędziła jedno lato na pustyni u mosiężnego smoka i wróciła z oparzeniem słonecznym, talentem do ognia i nawykiem mówienia bardzo długo. Od tamtej pory raz w roku przychodzi list od „kuzyna”: trzydzieści stron o pogodzie, napisane po smoczemu, zawsze z tym samym dopiskiem „Pozdrów małą”. Przy każdym rodzinnym obiedzie stoi jedno wolne nakrycie dla smoka, na wszelki wypadek. Smok nigdy nie przyszedł, ale ciotka i tak zawsze pyta, czy nie zostawić mu deseru.</p>
+<p>Nixa nosi na szyi amulet z zębem, który nazywa „na pewno smoczym”. Kupiła go na jarmarku za całe kieszonkowe i napisała do kuzyna z pytaniem, czy to jego ząb. Nie zamierza słuchać nikogo, kto twierdzi inaczej. Listy tłumaczy jej <strong>Orrin</strong>. Smoczy znają też Luma i Pip, ale Luma nie tyka tych listów, bo list nie jest rurą, a do ostatniej strony i tak dochodzi tylko Orrin: czyta powoli, zdanie po zdaniu, razem z koszmarnym charakterem pisma kuzyna. Zeszłoroczny list już przetłumaczył. Jest w nim zdanie, że ząb nie należy do kuzyna, tylko do psa. Nixa zamówiła „ponowne, dokładniejsze tłumaczenie” i czeka cierpliwie. Na razie. Tegoroczny <a href="#list-od-kuzyna">list</a> nosi przy sobie. Jest nieotwarty.</p>
+<p>Nixa woli najpierw rozmawiać, potem rozmawiać głośniej, a dopiero na końcu sięgać po Płonące dłonie. Kiedy się stresuje, czasem kicha iskrami. Raz, tuż za plecami <strong>Pipa</strong>, iskra przypaliła mu końcówki indygo włosów. Pip opowiada wszystkim, że to jego eksperyment, i Nixa łaskawie mu na to pozwala. Oboje tak to zostawiają. Nixa jest mu za to dozgonnie wdzięczna i ma wobec niego dług honorowy. W kotłowni u <strong>Lumy</strong> pracuje jako rozpałka w zimne poranki: płaci ogniem, a Luma płaci herbatą i łata jej rodzinną pelerynę. Peleryna jest „niepalna w 60%”, a pozostałe 40% to taśma Gnomoklej.</p>
+<h2 id="historia-relacje">Relacje</h2>
+<ul>
+<li><strong>Orrin</strong> — tłumacz rodzinnej korespondencji. Zeszłoroczny list już oddał i nie chce zmienić zdania o zębie: nie skłamie, a jeszcze bardziej nie chce zostać podpalony. Nixa tej prawdy znać nie chce. Tegoroczny list jest nieotwarty.</li>
+<li><strong>Zizzle</strong> — skarbnik Klubu Urodzonych z Talentem, który założyli we dwoje. Nixa jest przewodniczącą. Klub ma dwoje członków i budżet w wysokości jednego ciastka, które Zizzle trzyma „w bezpiecznym miejscu”. Nixa tego ciastka nie widziała.</li>
+<li><strong>Pip</strong> — ofiara jej kichnięcia, który wziął winę na siebie. Oboje udają, że końcówki indygo przypalił jego eksperyment. Nixa ma wobec niego dług honorowy.</li>
+<li><strong>Luma</strong> — szefowa kotłowni i krawcowa od peleryny. Nixa płaci jej ogniem, Luma płaci herbatą.</li>
+</ul>
+<p><strong>Zaczepka na sesję:</strong> W kieszeni Nixa ma <a href="#list-od-kuzyna">nieotwarty list od kuzyna</a>. Orrin obiecał go przetłumaczyć, jeśli dyżur będzie nudny. Nie będzie.</p></article><article class="sekcja nowa"><h1 id="karta-pelna">Nixa Embercoil — gnomka, zaklinaczka 3. poziomu (smocza linia krwi, mosiądz)</h1><pre class="meta">name: Nixa Embercoil
+level: 3
+classes: Sorcerer (Draconic) 3
+race: Gnome
+alignment: &quot;neutral good&quot;
+deity: Apsu</pre>
+<p><strong>„Najpierw rozmawiamy. Potem rozmawiamy głośniej. Potem rozmawiamy ogniem”.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rasa</strong></td>
+<td>gnomka</td>
+</tr>
+<tr>
+<td><strong>Klasa</strong></td>
+<td>zaklinaczka 3 (smocza linia krwi: mosiężny smok, ogień)</td>
+</tr>
+<tr>
+<td><strong>Charakter</strong></td>
+<td>neutralna dobra</td>
+</tr>
+<tr>
+<td><strong>Bóstwo</strong></td>
+<td>Apsu</td>
+</tr>
+<tr>
+<td><strong>Rozmiar</strong></td>
+<td>mały</td>
+</tr>
+<tr>
+<td><strong>Wygląd</strong></td>
+<td>miedziane piegi, peleryna „niepalna w 60%”, amulet z psim zębem, który jest „na pewno smoczy”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-klasa">Klasa</h2>
+<table>
+<thead>
+<tr>
+<th>Klasa</th>
+<th>Linia krwi</th>
+<th>Kość wytrzymałości</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zaklinaczka 3</td>
+<td>smocza (mosiężny smok, ogień)</td>
+<td>k6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-atrybuty">Atrybuty</h2>
+<p>Zakup punktowy: 20 punktów. Modyfikatory rasowe: −2 SIŁ, +2 BUD, +2 CHA.</p>
+<table>
+<thead>
+<tr>
+<th>Atr.</th>
+<th>Baza</th>
+<th>Rasa</th>
+<th>Suma</th>
+<th>Mod.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIŁ</td>
+<td>12</td>
+<td>−2</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+</tr>
+<tr>
+<td>ZRĘ</td>
+<td>13</td>
+<td>—</td>
+<td><strong>13</strong></td>
+<td><strong>+1</strong></td>
+</tr>
+<tr>
+<td>BUD</td>
+<td>12</td>
+<td>+2</td>
+<td><strong>14</strong></td>
+<td><strong>+2</strong></td>
+</tr>
+<tr>
+<td>INT</td>
+<td>10</td>
+<td>—</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+</tr>
+<tr>
+<td>MDR</td>
+<td>10</td>
+<td>—</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+</tr>
+<tr>
+<td>CHA</td>
+<td>17</td>
+<td>+2</td>
+<td><strong>19</strong></td>
+<td><strong>+4</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-statystyki-bojowe">Statystyki bojowe</h2>
+<p><strong>KP</strong> 13 (+1 ZRĘ, +1 rozmiar, +1 naturalny pancerz; dotyk 12, nieprzygotowana 12) · <strong>17</strong> ze Zbroją maga<br />
+<strong>PW</strong> 20 (6 + 4 + 4 + 6 z Budowy; premia za klasę preferowaną idzie na umiejętności)<br />
+<strong>Wytrwałość</strong> +3 · <strong>Refleks</strong> +2 · <strong>Wola</strong> +3 · +2 przeciw iluzjom · <strong>odporność na ogień 5</strong><br />
+<strong>Bazowa premia do ataku</strong> +1 · <strong>Inicjatywa</strong> +3 · <strong>Prędkość</strong> 20 stóp · <strong>Premia manewrów</strong> +0 · <strong>Obrona przed manewrami</strong> 11 · <strong>Koncentracja</strong> +7</p>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th>Premia</th>
+<th>Obrażenia</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 pazury</td>
+<td>+2</td>
+<td>1k3 każdy</td>
+<td>linia krwi; 7 rund dziennie</td>
+</tr>
+<tr>
+<td>Sztylet</td>
+<td>+2</td>
+<td>1k3+1</td>
+<td>+1 z cechy Szczur rzeczny</td>
+</tr>
+<tr>
+<td>Bryzg kwasu</td>
+<td>+3 dotyk</td>
+<td>1k3 od kwasu</td>
+<td></td>
+</tr>
+<tr>
+<td>Płonące dłonie</td>
+<td>—</td>
+<td>3k4+3 od ognia</td>
+<td>+1 na kość z arkanum; Refleks ST 16 na połowę</td>
+</tr>
+<tr>
+<td>Magiczny pocisk</td>
+<td>trafia automatycznie</td>
+<td>2 × (1k4+1) od mocy</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-umiejętności">Umiejętności</h2>
+<p>Zaklinacz: 2 + INT = 2 rangi na poziom × 3 = 6, plus 3 rangi z klasy preferowanej = <strong>9</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Umiejętność</th>
+<th>Suma</th>
+<th>Rangi</th>
+<th>Atr.</th>
+<th>Klasowa</th>
+<th>Inne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zastraszanie</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Używanie magicznych przedmiotów</td>
+<td><strong>+8</strong></td>
+<td>1</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Percepcja</td>
+<td><strong>+7</strong></td>
+<td>2</td>
+<td>+0</td>
+<td>+3*</td>
+<td>+2 rasowa</td>
+</tr>
+<tr>
+<td>Pływanie</td>
+<td><strong>+5</strong></td>
+<td>1</td>
+<td>+0</td>
+<td>+3†</td>
+<td>+1 Szczur rzeczny</td>
+</tr>
+<tr>
+<td>Wiedza (magia)</td>
+<td><strong>+4</strong></td>
+<td>1</td>
+<td>+0</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Czaroznawstwo</td>
+<td><strong>+4</strong></td>
+<td>1</td>
+<td>+0</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>* Umiejętność klasowa ze smoczej linii krwi.<br />
+† Umiejętność klasowa dzięki cesze Szczur rzeczny.</p>
+<p><strong>Języki:</strong> wspólny, gnomi, sylwański</p>
+<h2 id="karta-pelna-atuty">Atuty</h2>
+<table>
+<thead>
+<tr>
+<th>Poziom</th>
+<th>Atut</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (klasa)</td>
+<td><a href="#atuty-pominięcie-komponentów">Pominięcie komponentów</a></td>
+<td>bez tanich komponentów materiałowych</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#atuty-skupienie-na-czarach-wywoływanie">Skupienie na czarach (wywoływanie)</a></td>
+<td>+1 do ST czarów wywoływania</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#atuty-rzucanie-w-walce">Rzucanie w walce</a></td>
+<td>+4 do koncentracji przy rzucaniu defensywnym i w zwarciu</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-cechy-postaci">Cechy postaci</h2>
+<table>
+<thead>
+<tr>
+<th>Cecha</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#zdolnosci-szybka-reakcja">Szybka reakcja</a></td>
+<td>+2 do inicjatywy</td>
+</tr>
+<tr>
+<td><a href="#zdolnosci-szczur-rzeczny">Szczur rzeczny</a></td>
+<td>+1 obrażeń sztyletem; +1 do Pływania; Pływanie jest klasowe</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-zdolności--skrót">Zdolności — skrót</h2>
+<table>
+<thead>
+<tr>
+<th>Zdolność</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arkanum linii krwi</td>
+<td>+1 obrażeń na każdą kość przy czarach z deskryptorem ognia</td>
+</tr>
+<tr>
+<td>Pazury</td>
+<td>2 ataki pazurami po 1k3; 3 + CHA rund dziennie (<strong>7</strong>)</td>
+</tr>
+<tr>
+<td>Smocze odporności</td>
+<td>odporność na ogień 5; +1 naturalnego pancerza do KP</td>
+</tr>
+<tr>
+<td>Zbroja maga</td>
+<td>czar linii krwi, dodany do znanych na 3. poziomie</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-rzucanie-czarów">Rzucanie czarów</h2>
+<p><strong>Poziom rzucającego</strong> 3 · <strong>ST</strong> 14 + krąg czaru (wywoływanie: +1)</p>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Dziennie</th>
+<th>Znane</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bez limitu</td>
+<td>Bryzg kwasu, Wykrycie magii, Rozbłysk (ST 15), Dłoń maga, Iskra</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6 (5 bazowych, +1 za CHA)</td>
+<td>Płonące dłonie (ST 16), Magiczny pocisk, Tarcza, Zbroja maga (linia krwi)</td>
+</tr>
+</tbody>
+</table>
+<p>Na 4. poziomie Nixa dostanie pierwszy czar 2. kręgu. Naturalny wybór to Palący promień (4k6+4 od ognia dzięki arkanum).</p>
+<h2 id="karta-pelna-ekwipunek">Ekwipunek</h2>
+<ul>
+<li>Peleryna „niepalna w 60%” (pamiątka rodzinna, bez właściwości magicznych; reszta to taśma Gnomoklej)</li>
+<li>Amulet z zębem (Percepcja ST 15: to ząb psa; Nixa nazywa go „na pewno smoczym”)</li>
+<li><a href="#list-od-kuzyna">Nieotwarty list od kuzyna</a></li>
+<li>Sztylet, sakiewka na komponenty, 45 sz</li>
+</ul></article><article class="sekcja nowa"><h1 id="czary">Nixa Embercoil — opisy czarów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia: W — komponent werbalny, S — somatyczny, M — materiałowy, O — skupienie. „(odw.)” przy czasie działania oznacza, że czar można odwołać.<br />
+Zasięg bliski: 25 stóp + 5 stóp na 2 poziomy (przy 3. poziomie: 30 stóp). Średni: 100 stóp + 10 stóp na poziom (130 stóp).<br />
+Dzięki atutowi Pominięcie komponentów Nixa nie potrzebuje tanich komponentów materiałowych.</p>
+<hr />
+<h2 id="czary-czary-zaklinaczki">Czary zaklinaczki</h2>
+<h3 id="czary-bryzg-kwasu">Bryzg kwasu</h3>
+<p><em>Nazwa w podręczniku: Acid Splash</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przywoływanie (tworzenie) [kwas]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Efekt</strong></td>
+<td>jedna kula kwasu</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Dystansowy atak dotykowy; 1k3 obrażeń od kwasu.</p>
+<p><em>Na konstrukty albo do rozpuszczania kleju do bród (decyzja MG).</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-wykrycie-magii">Wykrycie magii</h3>
+<p><em>Nazwa w podręczniku: Detect Magic</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>60 stóp</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>stożek</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja, do 1 minuty na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Wykrywasz magiczne aury. W 1. rundzie: czy są obecne. W 2. rundzie: ile ich jest i która jest najsilniejsza. W 3. rundzie: siła, położenie i szkoła każdej aury.</p>
+<p><em>Zawsze przed dotknięciem czegoś, co brzęczy, świeci albo ma tabliczkę „nie dotykać”.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-rozbłysk">Rozbłysk</h3>
+<p><em>Nazwa w podręczniku: Flare</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [światło]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Efekt</strong></td>
+<td>błysk światła</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wytrwałość neguje (ST 15)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>Cel jest olśniony przez minutę (−1 do ataków i testów Percepcji opartych na wzroku). Nie działa na ślepe istoty.</p>
+<p><em>Oślepia każdego, kto patrzył w złą stronę. Dobre otwarcie przed Płonącymi dłońmi.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-dłoń-maga">Dłoń maga</h3>
+<p><em>Nazwa w podręczniku: Mage Hand</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden niemagiczny, niepilnowany przedmiot ważący do 5 funtów</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Akcją ruchu przesuwasz przedmiot o 15 stóp w dowolnym kierunku.</p>
+<p><em>Podaje narzędzia albo zdejmuje klucz z haczyka w dyżurce.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-iskra">Iskra</h3>
+<p><em>Nazwa w podręczniku: Spark</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [ogień]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W albo S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden bardzo mały przedmiot</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wytrwałość neguje (przedmiot)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak (przedmiot)</td>
+</tr>
+</tbody>
+</table>
+<p>Podpalasz mały, łatwopalny przedmiot, na przykład knot, lont albo kartkę.</p>
+<p><em>Rozpala kocioł w zimny poranek. Luma płaci za to herbatą.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-płonące-dłonie">Płonące dłonie</h3>
+<p><em>Nazwa w podręczniku: Burning Hands</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [ogień]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>15 stóp</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>stożek</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Refleks na połowę (ST 16)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>1k4 obrażeń od ognia na poziom rzucającego (najwyżej 5k4). Przy 3. poziomie: 3k4, a u Nixy 3k4+3 dzięki arkanum linii krwi.</p>
+<p><em>Nie celuj w nic, co Luma właśnie skleiła.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-magiczny-pocisk">Magiczny pocisk</h3>
+<p><em>Nazwa w podręczniku: Magic Missile</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [moc]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>średni</td>
+</tr>
+<tr>
+<td><strong>Cele</strong></td>
+<td>do pięciu istot, z których żadne dwie nie stoją dalej niż 15 stóp od siebie</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>Każdy pocisk trafia automatycznie i zadaje 1k4+1 obrażeń od mocy. Na każde dwa poziomy rzucającego powyżej 1. dostajesz dodatkowy pocisk (przy 3. poziomie: 2 pociski).</p>
+<p><em>Nigdy nie chybia. Nawet gdy cel ucieka szybciej niż Zizzle przed rachunkiem.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-tarcza">Tarcza</h3>
+<p><em>Nazwa w podręczniku: Shield</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>odrzucanie [moc]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom (odw.)</td>
+</tr>
+</tbody>
+</table>
+<p>Niewidzialna tarcza mocy daje +4 premii z tarczy do KP i chroni przed Magicznymi pociskami. Sumuje się ze Zbroją maga (KP 21).</p>
+<p><em>Gdy ktoś zaczyna strzelać Magicznymi pociskami.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-zbroja-maga">Zbroja maga</h3>
+<p><em>Nazwa w podręczniku: Mage Armor</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przywoływanie (tworzenie) [moc]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1 (u Nixy czar linii krwi)</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, O (kawałek wyprawionej skóry)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>dotyk</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>dotknięta istota</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 godzina na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (nieszkodliwy)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>+4 premii z pancerza do KP. To efekt mocy, więc działa także przeciw istotom bezcielesnym.</p>
+<p><em>Rzuć na początku dyżuru. Wystarczy na trzy godziny.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="atuty">Nixa Embercoil — opisy atutów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<hr />
+<h3 id="atuty-pominięcie-komponentów">Pominięcie komponentów</h3>
+<p><em>Nazwa w podręczniku: Eschew Materials</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> rzucasz czary bez komponentów materiałowych wartych 1 sz lub mniej.</p>
+<p><strong>Uwagi:</strong> każdy zaklinacz dostaje ten atut za darmo na 1. poziomie.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-skupienie-na-czarach-wywoływanie">Skupienie na czarach (wywoływanie)</h3>
+<p><em>Nazwa w podręczniku: Spell Focus</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +1 do ST rzutów obronnych przeciw twoim czarom ze szkoły wywoływania.</p>
+<p><strong>Uwagi:</strong> Płonące dłonie mają ST 16, a Rozbłysk ST 15.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-rzucanie-w-walce">Rzucanie w walce</h3>
+<p><em>Nazwa w podręczniku: Combat Casting</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +4 do testów koncentracji przy rzucaniu czarów defensywnie albo w zwarciu.</p>
+<p><strong>Uwagi:</strong> Nixa lubi pierwszą linię i rzucanie czarów z pazurami na wierzchu.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="zdolnosci">Nixa Embercoil — zdolności i cechy postaci</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia rodzaju zdolności: (Nzw) — nadzwyczajna, (Nd) — nadnaturalna, (Czp) — czaropodobna.</p>
+<hr />
+<h2 id="zdolnosci-cechy-postaci">Cechy postaci</h2>
+<h3 id="zdolnosci-szybka-reakcja">Szybka reakcja</h3>
+<p><strong>Rodzaj:</strong> cecha bojowa <em>(Reactionary)</em></p>
+<p>+2 premii z cechy do inicjatywy.</p>
+<h3 id="zdolnosci-szczur-rzeczny">Szczur rzeczny</h3>
+<p><strong>Rodzaj:</strong> cecha regionalna <em>(River Rat)</em></p>
+<p>+1 premii z cechy do obrażeń zadawanych sztyletem i +1 do Pływania. Pływanie jest dla Nixy umiejętnością klasową.</p>
+<hr />
+<h2 id="zdolnosci-zdolności-rasowe">Zdolności rasowe</h2>
+<ul>
+<li><strong>Mały rozmiar:</strong> +1 do KP i ataków, −1 do manewrów bojowych, +4 do Skradania się.</li>
+<li><strong>Powolna:</strong> prędkość 20 stóp.</li>
+<li><strong>Widzenie w słabym świetle</strong>.</li>
+<li><strong>Trening obronny:</strong> +4 z uniku do KP przeciw olbrzymom.</li>
+<li><strong>Odporność na iluzje:</strong> +2 do rzutów obronnych przeciw iluzjom.</li>
+<li><strong>Czułe zmysły:</strong> +2 do Percepcji.</li>
+<li><strong>Obsesja:</strong> +2 do Rzemiosła (biżuteria).</li>
+<li><strong>Gnomia magia:</strong> raz dziennie każde: Tańczące światła, Upiorny dźwięk, Prestidigitatorstwo, Rozmowa ze zwierzętami.</li>
+<li><strong>Nienawiść:</strong> +1 do ataków przeciw gadzim humanoidom i goblinoidom.</li>
+</ul>
+<hr />
+<h2 id="zdolnosci-smocza-linia-krwi-mosiężny-smok-ogień">Smocza linia krwi (mosiężny smok, ogień)</h2>
+<p>Umiejętność klasowa z linii krwi: Percepcja.</p>
+<h3 id="zdolnosci-arkanum-linii-krwi">Arkanum linii krwi</h3>
+<p>Czary z deskryptorem ognia zadają +1 obrażeń na każdą rzuconą kość.</p>
+<h3 id="zdolnosci-pazury-nd">Pazury (Nd)</h3>
+<p>Akcją darmową wysuwasz pazury: to dwa podstawowe ataki naturalne po 1k3 obrażeń (dla małej postaci). Możesz ich używać przez 3 + mod. CHA rund dziennie (<strong>7</strong>); rundy nie muszą następować po sobie. Na 5. poziomie pazury staną się magiczne.</p>
+<h3 id="zdolnosci-smocze-odporności-nzw">Smocze odporności (Nzw)</h3>
+<p>Od 3. poziomu: odporność na ogień 5 i +1 naturalnego pancerza do KP.</p>
+<h3 id="zdolnosci-czary-linii-krwi">Czary linii krwi</h3>
+<p>Na 3. poziomie: <strong>Zbroja maga</strong> dodana do znanych czarów.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="stan">Nixa Embercoil — bieżący stan</h1>
+<p><em>Ostatnia aktualizacja: początek sesji (stan wyjściowy)</em></p>
+<h2 id="stan-przełączniki-bojowe">Przełączniki bojowe</h2>
+<table>
+<thead>
+<tr>
+<th>Przełącznik</th>
+<th>Działanie</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>domyślnie brak</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-wzmocnienia">Aktywne wzmocnienia</h2>
+<table>
+<thead>
+<tr>
+<th>Wzmocnienie</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+<th>Pozostało rund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-stany">Aktywne stany</h2>
+<table>
+<thead>
+<tr>
+<th>Stan</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zmiany-atrybutów">Zmiany atrybutów</h2>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Modyfikator</th>
+<th>Rodzaj</th>
+<th>Źródło</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zasoby">Zasoby</h2>
+<h3 id="stan-pozostałe-czary">Pozostałe czary</h3>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bez limitu</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>0</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stan-zasoby-klasowe">Zasoby klasowe</h3>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rundy pazurów</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Zbroja maga aktywna</td>
+<td>nie</td>
+<td>—</td>
+<td>rzuć na początku dyżuru</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-notatki-z-sesji">Notatki z sesji</h2>
+<ul>
+<li>Nocny dyżur w podwodnej akademii.</li>
+<li>Zegar powodzi: 0 z 6.</li>
+<li>Cel: dotrwać do rana i nie zamienić szkoły w akwarium.</li>
+</ul></article><article class="kartka"><h1 id="list-od-kuzyna">List od kuzyna</h1>
+<p>W kieszeni Nixy leży gruby, nieotwarty list. Kilkadziesiąt stron, zapisanych po smoczemu.</p>
+<p>Na tej kartce nie ma tłumaczenia.</p></article>
+</body>
+</html>

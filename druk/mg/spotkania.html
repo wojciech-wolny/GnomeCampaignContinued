@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotkania</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Spis materiałów MG</a></p><p class="pieczatka">Tylko dla Mistrza Gry</p><nav class="spis"><p>Spis</p><ol><li><a href="#spis">Spotkania — spis (tylko dla MG)</a></li>
+<li><a href="#S01-atrium-alarm">S01 — Alarm w atrium (początek)</a></li>
+<li><a href="#S02-studenci-brody">S02 — „Studenci” z brodami</a></li>
+<li><a href="#S03-biblioteka-schemat">S03 — Schemat w bibliotece</a></li>
+<li><a href="#S04-splot-kanapka">S04 — Splot i kanapka</a></li>
+<li><a href="#S05-magazyn-farba">S05 — Magazyn i żółta farba</a></li>
+<li><a href="#S06-tablica-triady">S06 — Tablica Triady</a></li>
+<li><a href="#S07-kapitan-klik">S07 — Kapitan Klik (komiczny herszt)</a></li>
+<li><a href="#S08-ozywione-narzedzia">S08 — Ożywione narzędzia</a></li>
+<li><a href="#S09-zywiolak-stazysta">S09 — Wodny żywiołak-stażysta</a></li>
+<li><a href="#S10-szept-brina">S10 — Szept Brina</a></li>
+<li><a href="#S11-list-smoka">S11 — List smoka i fabryka bród</a></li>
+<li><a href="#S12-zasadzka-brod">S12 — Zasadzka bród</a></li></ol></nav><article class="sekcja"><h1 id="spis">Spotkania — spis (tylko dla MG)</h1>
+<p>Spotkania <strong>niezależne</strong> (w dowolnej kolejności) i <strong>walki</strong>.<br />
+Uruchamiaj je, gdy gracze wejdą do danej lokacji albo gdy sesja potrzebuje zmiany rytmu.</p>
+<hr />
+<h2 id="spis-niezależne-rozmowa-eksploracja-zagadka">Niezależne (rozmowa, eksploracja, zagadka)</h2>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Plik</th>
+<th>Gdzie</th>
+<th>Rodzaj</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01</td>
+<td><a href="#S01-atrium-alarm">S01-atrium-alarm.md</a></td>
+<td>Atrium</td>
+<td>początek, rozmowa</td>
+</tr>
+<tr>
+<td>S02</td>
+<td><a href="#S02-studenci-brody">S02-studenci-brody.md</a></td>
+<td>Korytarz B</td>
+<td>rozmowa albo pościg</td>
+</tr>
+<tr>
+<td>S03</td>
+<td><a href="#S03-biblioteka-schemat">S03-biblioteka-schemat.md</a></td>
+<td>Biblioteka</td>
+<td>eksploracja</td>
+</tr>
+<tr>
+<td>S04</td>
+<td><a href="#S04-splot-kanapka">S04-splot-kanapka.md</a></td>
+<td>Kotłownia</td>
+<td>rozmowa i pomoc</td>
+</tr>
+<tr>
+<td>S05</td>
+<td><a href="#S05-magazyn-farba">S05-magazyn-farba.md</a></td>
+<td>Magazyn</td>
+<td>zagadka i pułapka</td>
+</tr>
+<tr>
+<td>S06</td>
+<td><a href="#S06-tablica-triady">S06-tablica-triady.md</a></td>
+<td>Wieża Pieczęci</td>
+<td>zagadka</td>
+</tr>
+<tr>
+<td>S10</td>
+<td><a href="#S10-szept-brina">S10-szept-brina.md</a></td>
+<td>Atrium (od 4. pola zegara)</td>
+<td>scena fabularna</td>
+</tr>
+<tr>
+<td>S11</td>
+<td><a href="#S11-list-smoka">S11-list-smoka.md</a></td>
+<td>Pokój gościnny</td>
+<td>eksploracja</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="spis-walki">Walki</h2>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Plik</th>
+<th>Gdzie</th>
+<th>Skala wyzwania</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S07</td>
+<td><a href="#S07-kapitan-klik">S07-kapitan-klik.md</a></td>
+<td>Szyb albo atrium</td>
+<td>SW 2 (komiczny herszt i pomocnik)</td>
+</tr>
+<tr>
+<td>S08</td>
+<td><a href="#S08-ozywione-narzedzia">S08-ozywione-narzedzia.md</a></td>
+<td>Kotłownia albo dyżurka</td>
+<td>SW 2 (łatwa)</td>
+</tr>
+<tr>
+<td>S09</td>
+<td><a href="#S09-zywiolak-stazysta">S09-zywiolak-stazysta.md</a></td>
+<td>Pod atrium</td>
+<td>SW 1 (walka albo rozmowa)</td>
+</tr>
+<tr>
+<td>S12</td>
+<td><a href="#S12-zasadzka-brod">S12-zasadzka-brod.md</a></td>
+<td>Korytarz B</td>
+<td>SW 2 (średnia)</td>
+</tr>
+</tbody>
+</table>
+<p>Dla drużyny czterech lub pięciu postaci 3. poziomu żadna z tych walk nie jest śmiertelna. Prawdziwym zagrożeniem jest zegar powodzi.</p>
+<hr />
+<h2 id="spis-proponowany-rytm">Proponowany rytm</h2>
+<ol>
+<li>S01 (obowiązkowy początek).</li>
+<li>Jedna rozmowa (S02 albo S04).</li>
+<li>Jedna naprawa (S05, S06 albo kotłownia z S08).</li>
+<li>Jedna lekka walka.</li>
+<li>Druga naprawa.</li>
+<li>S07 jako finałowy pościg.</li>
+<li>Trzecia naprawa i epilog.</li>
+</ol>
+<p>Nie musisz rozegrać wszystkich spotkań. Liczy się swoboda graczy, a nie odhaczanie listy.</p></article><article class="sekcja nowa"><h1 id="S01-atrium-alarm">S01 — Alarm w atrium (początek)</h1>
+<p><strong>Rodzaj:</strong> niezależne, rozmowa<br />
+<strong>Gdzie:</strong> atrium<br />
+<strong>Czas:</strong> 10–15 minut<br />
+<strong>Zegar powodzi:</strong> 0 pól na starcie</p>
+<h2 id="S01-atrium-alarm-sytuacja">Sytuacja</h2>
+<p>Posąg stoi na wózku, z sufitu kapie, na posadzce leży broda. Pod cokołem, przygnieciony kołem wózka, utknął kobold <strong>Brin Młodszy</strong>.</p>
+<p>Przeczytaj rekwizyt <strong>R1</strong> z <code>../../gracze/rekwizyty.md</code> (zob. też <a href="sesja.html#rekwizyty-kiedy"><code>../rekwizyty-kiedy.md</code></a>).</p>
+<h2 id="S01-atrium-alarm-cel-sceny">Cel sceny</h2>
+<ul>
+<li>Dać graczom zadanie: trzy usterki do naprawienia.</li>
+<li>Wskazać miejsca: kotłownię, magazyn i Wieżę Pieczęci.</li>
+<li>Ustawić ton: to komedia, a nie horror o tonięciu.</li>
+</ul>
+<h2 id="S01-atrium-alarm-przebieg">Przebieg</h2>
+<ol>
+<li>Alarm i opis atrium.</li>
+<li>Percepcja ST 10: broda jest sztuczna, a „student” ma ogon wepchnięty w nogawkę.</li>
+<li>Brin Młodszy błaga o litość i próbuje handlować informacjami.</li>
+</ol>
+<h3 id="S01-atrium-alarm-co-wyśpiewa-po-udanej-dyplomacji-lub-zastraszaniu-st-12-albo-w-zamian-za-kanapkę">Co wyśpiewa po udanej Dyplomacji lub Zastraszaniu ST 12 albo w zamian za kanapkę</h3>
+<ul>
+<li>kabel użyto jako liny, więc trzeba iść do kotłowni;</li>
+<li>kryształ z bariery ma w torbie Vex, czyli „Wibcio”;</li>
+<li>tablicę w Wieży Pieczęci rozregulował Tok, czyli „Tibusia”;</li>
+<li>szef ekipy, Kapitan Klik, czeka przy szybie albo w pokoju gościnnym.</li>
+</ul>
+<h2 id="S01-atrium-alarm-co-dalej">Co dalej</h2>
+<table>
+<thead>
+<tr>
+<th>Decyzja graczy</th>
+<th>Następne spotkanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idą tropem farby z wózka</td>
+<td>S02 albo S11</td>
+</tr>
+<tr>
+<td>Idą do dyżurki po klucz</td>
+<td>później S06</td>
+</tr>
+<tr>
+<td>Schodzą włazem za szafą na miotły</td>
+<td>S04 albo S08</td>
+</tr>
+<tr>
+<td>Zostawiają świadka samego</td>
+<td>wraca w S07 jako komiczny przerywnik</td>
+</tr>
+</tbody>
+</table>
+<h2 id="S01-atrium-alarm-nagroda">Nagroda</h2>
+<ul>
+<li>Wiedza o trzech usterkach.</li>
+<li>Opcjonalnie fałszywa broda (+2 do Przebierania się wobec naiwnych).</li>
+</ul></article><article class="sekcja nowa"><h1 id="S02-studenci-brody">S02 — „Studenci” z brodami</h1>
+<p><strong>Rodzaj:</strong> niezależne, rozmowa (walka opcjonalna)<br />
+<strong>Gdzie:</strong> Korytarz B<br />
+<strong>Przeciwnicy:</strong> Fizzek (Rek) i Wibcio (Vex), dwa koboldy</p>
+<h2 id="S02-studenci-brody-sytuacja">Sytuacja</h2>
+<p>Dwójka w studenckich szatach maszeruje równym krokiem. Nosy mają przedłużone korkiem. Jeden z nich niesie torbę z napisem „ŁUPY (to nie są łupy)”.</p>
+<h2 id="S02-studenci-brody-jak-ich-przejrzeć">Jak ich przejrzeć</h2>
+<ul>
+<li>Percepcja ST 10–12: przebranie się sypie.</li>
+<li>Lingwistyka ST 12: spod gnomiej wymowy przebija smoczy akcent.</li>
+<li>Dla komedii: klej do bród pachnie rybą.</li>
+</ul>
+<h2 id="S02-studenci-brody-rozwiązania-bez-walki-zalecane">Rozwiązania bez walki (zalecane)</h2>
+<table>
+<thead>
+<tr>
+<th>Podejście</th>
+<th>ST</th>
+<th>Skutek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dyplomacja („kanapki są lepsze niż smok”)</td>
+<td>14</td>
+<td>oddają kryształ i uciekają</td>
+</tr>
+<tr>
+<td>Zastraszanie</td>
+<td>14</td>
+<td>rzucają torbę i uciekają w popłochu</td>
+</tr>
+<tr>
+<td>Blefowanie („jestem inspektorem od smoka”)</td>
+<td>13</td>
+<td>prowadzą graczy do pokoju gościnnego</td>
+</tr>
+<tr>
+<td>Zauroczenie osoby albo podobny czar</td>
+<td>—</td>
+<td>do walki nie dochodzi</td>
+</tr>
+</tbody>
+</table>
+<p>W torbie: <strong>bursztynowy kryształ z bariery</strong>, 12 sz i zapasowa broda narysowana kredą.<br />
+Jeśli gracze ominą to spotkanie, Vex chowa kryształ w pokoju gościnnym (S11).</p>
+<h2 id="S02-studenci-brody-walka-jeśli-do-niej-dojdzie">Walka (jeśli do niej dojdzie)</h2>
+<p>Dwa koboldy wojownicy (SW 1/4, 100 PD każdy):</p>
+<ul>
+<li>KP 15, PW 5, Wytr +2 / Ref +1 / Wola −1</li>
+<li>Wręcz: włócznia +1 (1k6−1, ×3); dystansowo: proca +3 (1k3−1)</li>
+<li>Widzenie w ciemności 60 stóp; wrażliwość na światło (w jasnym świetle są olśnieni)</li>
+<li>Taktyka: w 2. rundzie błagają o litość, w 3. uciekają.</li>
+<li>Zegar: walka do 3 rund nie dodaje pola. Jeśli w korytarzu trwa 4 rundy lub dłużej, dodaj pole (hałas i strata czasu).</li>
+</ul>
+<h2 id="S02-studenci-brody-na-wesoło">Na wesoło</h2>
+<p>Fizzek: „Kocham książki. Zwłaszcza… złote”.<br />
+Wibcio: „To nie kradzież. To przeniesienie aktywów na rzecz Wielkiego Łuskowego”.</p></article><article class="sekcja nowa"><h1 id="S03-biblioteka-schemat">S03 — Schemat w bibliotece</h1>
+<p><strong>Rodzaj:</strong> niezależne, eksploracja<br />
+<strong>Gdzie:</strong> biblioteka, dział zastrzeżony<br />
+<strong>Bohaterka niezależna:</strong> Vellum</p>
+<h2 id="S03-biblioteka-schemat-sytuacja">Sytuacja</h2>
+<p>Dywan przemókł już na brzegach, nawet gdy zegar stoi na zerze („przesiąkanie zapobiegawcze”). Vellum szepcze bardzo głośno.</p>
+<h2 id="S03-biblioteka-schemat-co-można-tu-znaleźć">Co można tu znaleźć</h2>
+<ol>
+<li><strong>Schemat bariery.</strong> To egzemplarz z pulpitu, aktualny. Odpis w kieszeni Orrina jest błędny (zob. <a href="zagadki.html#ekwipunek-z-historii">ekwipunek-z-historii.md</a>). Z dokumentem z pulpitu w ręku wystarczy test Wiedzy (inżynieria albo magia) ST 10, żeby odczytać:
+   - że kabel B zasila barierę;
+   - że w gnieździe powinien siedzieć kryształ bursztynowy;
+   - kolejność w Wieży Pieczęci: KLUCZ → MOSTEK → PRZYCISK.</li>
+<li><strong>Przypis historyczny.</strong> Wiedza (historia) ST 12: „nieoficjalni pomocnicy” to chochliki.</li>
+<li><strong>Plan skrótów.</strong> Percepcja ST 14: właz do kotłowni oznaczono jako „szafa na miotły”.</li>
+</ol>
+<h2 id="S03-biblioteka-schemat-komplikacja-opcjonalna">Komplikacja (opcjonalna)</h2>
+<p>Od trzeciego pola zegara po dolnych półkach pływają książki.<br />
+Akrobatyka ST 12, żeby przejść suchą stopą. Kto obleje, ma przemoczone skarpetki i przez 10 minut −2 do Percepcji (każdy krok głośno chlupie).</p>
+<h2 id="S03-biblioteka-schemat-nagroda">Nagroda</h2>
+<ul>
+<li>+2 premii okolicznościowej do następnej naprawy (przewodów albo kryształu).</li>
+<li>Vellum obiecuje, że „nie zapisze was jako sprawców powodzi”, jeśli uratujecie dywan.</li>
+</ul></article><article class="sekcja nowa"><h1 id="S04-splot-kanapka">S04 — Splot i kanapka</h1>
+<p><strong>Rodzaj:</strong> niezależne, rozmowa i pomoc<br />
+<strong>Gdzie:</strong> kanały i kotłownia<br />
+<strong>Bohater niezależny:</strong> chochlik Splot</p>
+<h2 id="S04-splot-kanapka-sytuacja">Sytuacja</h2>
+<p>Splot huśta się na zaworze i przygląda się spiętym kablom A i B jak eksponatowi w galerii sztuki nowoczesnej.</p>
+<h2 id="S04-splot-kanapka-oferta">Oferta</h2>
+<blockquote>
+<p>„Pokażę wam właściwy kabel. Albo zrobię za mostek przy przycisku. Cena: jedna kanapka. Albo obietnica, że chochliki trafią na tabliczkę pod posągiem. Albo jedno i drugie, bo właśnie rozwijam karierę”.</p>
+</blockquote>
+<h2 id="S04-splot-kanapka-mechanika">Mechanika</h2>
+<ul>
+<li>Dyplomacja ST 12 <strong>albo</strong> jedna kanapka. Luma ma dwie, osobno: należną (zwykła opłata tej nocy) i następną odsetkową (Zizzle narysował na niej kredą żabę). Siedemnaście wcześniejszych odsetkowych Splot już zjadł. Ta w torbie jeszcze nie weszła na rachunek. Wystarczy któraś jedna. Odsetkowa jest zabawniejsza, a Splot i tak policzy ją jako zapłatę, nie jako spłatę całego długu.</li>
+<li>Porażka: Splot i tak pomaga, ale „przez pomyłkę” na jedną rundę podłącza automat z kanapkami do alarmu. Alarm odśpiewuje menu stołówki.</li>
+</ul>
+<h2 id="S04-splot-kanapka-korzyści-gracze-wybierają-jedną">Korzyści (gracze wybierają jedną)</h2>
+<ol>
+<li>Splot bezbłędnie wskazuje kabel B.</li>
+<li>Splot robi za mostek przy Wielkim Czerwonym Przycisku (nikt z drużyny nie obrywa).</li>
+<li>+2 premii do testu przy łataniu przewodów.</li>
+<li>Plotka o Kapitanie Kliku: za dwie sceny będzie w szybie.</li>
+</ol>
+<h2 id="S04-splot-kanapka-ton">Ton</h2>
+<p>Ze Splotem się nie walczy. Jeśli ktoś go zaatakuje, chochlik znika w rurze. Do końca pobytu w kotłowni wszyscy mają −1 do testów (nikt już nie podpowiada), a chochliki są obrażone aż do epilogu.</p></article><article class="sekcja nowa"><h1 id="S05-magazyn-farba">S05 — Magazyn i żółta farba</h1>
+<p><strong>Rodzaj:</strong> niezależne, zagadka i pułapka<br />
+<strong>Gdzie:</strong> magazyn kryształów<br />
+<strong>Powiązania:</strong> zagadki C i E w <a href="zagadki.html#zagadki"><code>../zagadki.md</code></a></p>
+<h2 id="S05-magazyn-farba-sytuacja">Sytuacja</h2>
+<p>Drzwi mają zamek z suwakami MAŁE / BŁYSZCZY / NIE ŻABA. W środku stoi półka z kolorowymi kryształami i puste gniazdo na bursztyn. Na półce leży pudełko awaryjne z <strong>zapasowym kryształem nr 3</strong> (rekwizyt R4).</p>
+<p>Jeśli chcesz utrudnić sesję, koboldy zabrały także zapas: pudełko jest puste, a w środku leży kartka „pożyczone na zawsze”. Wtedy jedyny bursztynowy kryształ jest w torbie Vexa (S02 albo S11).</p>
+<h2 id="S05-magazyn-farba-zamek">Zamek</h2>
+<p>Właściwe ustawienie: tak / tak / tak.<br />
+Test Inteligencji ST 10 albo pół minuty śmiechu przy stole. Zamiast tego można użyć klucza z dyżurki albo Unieszkodliwiania mechanizmów ST 13.</p>
+<p><strong>Trzy nieudane próby:</strong> farba „Gnomia Żółć Wykrywcza”.
+- Wszyscy w promieniu 10 stóp świecą.
+- Przez godzinę mają −2 do Percepcji i −10 do Skradania się.
+- Koboldy wpadły w tę samą pułapkę godzinę wcześniej i też świecą, więc w zabawie w chowanego jest remis.</p>
+<h2 id="S05-magazyn-farba-kryształ">Kryształ</h2>
+<ul>
+<li>Wybór bursztynu: Czaroznawstwo albo Wiedza (magia) ST 14 (albo kartka z rekwizytu R7).</li>
+<li>Zły kolor: skutki opisane w <a href="zagadki.html#zagadki"><code>../zagadki.md</code></a>.</li>
+<li>Puste pudełko: trop prowadzi do S02 albo S11.</li>
+</ul>
+<h2 id="S05-magazyn-farba-czas">Czas</h2>
+<ul>
+<li>Szybkie otwarcie i właściwy kryształ: zegar bez zmian.</li>
+<li>Farba i panika: dodaj jedno pole.</li>
+</ul></article><article class="sekcja nowa"><h1 id="S06-tablica-triady">S06 — Tablica Triady</h1>
+<p><strong>Rodzaj:</strong> niezależne, zagadka<br />
+<strong>Gdzie:</strong> Wieża Pieczęci<br />
+<strong>Powiązania:</strong> zagadki A i B w <a href="zagadki.html#zagadki"><code>../zagadki.md</code></a><br />
+<strong>Opcjonalny bohater niezależny:</strong> Fizz</p>
+<h2 id="S06-tablica-triady-sytuacja">Sytuacja</h2>
+<p>Tablica z żetonami, dwa miedziane pręty, Wielki Czerwony Przycisk i trzy kontrolki: KLUCZ, MOSTEK, PRZYCISK.<br />
+Jeśli gracze przynieśli klucz imbusowy z dyżurki, kontrolka KLUCZ mruga do nich przyjaźnie.</p>
+<h2 id="S06-tablica-triady-rozwiązanie-dla-mg">Rozwiązanie (dla MG)</h2>
+<p>Fala → Gnom → Chochlik. Żaba ląduje na tacce „NIGDY WIĘCEJ”.<br />
+Potem: klucz, mostek, przycisk.</p>
+<h2 id="S06-tablica-triady-fizz-jeśli-tu-jest">Fizz (jeśli tu jest)</h2>
+<ul>
+<li>Pomaga (+2) przy testach dotyczących tablicy i mostka.</li>
+<li>Cytat: „Brin robił mostek bez rękawic. Wy nie musicie. Bardzo proszę”.</li>
+</ul>
+<h2 id="S06-tablica-triady-porażka">Porażka</h2>
+<p>Błędna triada: iskry (1k4 obrażeń od elektryczności, Refleks ST 13 na połowę) <strong>albo</strong> dodatkowe pole na zegarze. Wybierz zależnie od tempa sesji.</p>
+<h2 id="S06-tablica-triady-sukces">Sukces</h2>
+<p>Jedna z trzech napraw zaliczona. Alarm ogłasza:</p>
+<blockquote>
+<p>„Ciśnienie: mniej katastrofalne. Dziękujemy za myślenie”.</p>
+</blockquote></article><article class="sekcja nowa"><h1 id="S07-kapitan-klik">S07 — Kapitan Klik (komiczny herszt)</h1>
+<p><strong>Rodzaj:</strong> walka i pościg<br />
+<strong>Gdzie:</strong> szyb transportowy albo atrium (na wózku)<br />
+<strong>Skala wyzwania spotkania:</strong> 2 (700 PD: Klik i Tibusia)</p>
+<h2 id="S07-kapitan-klik-sytuacja">Sytuacja</h2>
+<p>Klik stoi na wózku z posągiem (o ile gracze wcześniej go nie zabezpieczyli). Tibusia trzyma „ster”, czyli kij od mopa. Cel koboldów: wjechać do szybu.</p>
+<h2 id="S07-kapitan-klik-kapitan-klik">Kapitan Klik</h2>
+<p><strong>SW 2 · 600 PD</strong><br />
+Kobold, łotrzyk 3. poziomu<br />
+NZ, mały humanoid (gadzi)<br />
+<strong>Inicjatywa</strong> +7; <strong>Zmysły</strong> widzenie w ciemności 60 stóp; Percepcja +8</p>
+<p><strong>Obrona</strong><br />
+<strong>KP</strong> 17, dotyk 14, nieprzygotowany 14 (+2 skórzany pancerz, +3 Zręczność, +1 naturalny pancerz, +1 rozmiar)<br />
+<strong>PW</strong> 16 (3k8+3)<br />
+<strong>Wytr</strong> +2, <strong>Ref</strong> +6, <strong>Wola</strong> +1<br />
+<strong>Obrona specjalna</strong> unik, wyczucie pułapek +1<br />
+<strong>Słabość</strong> wrażliwość na światło</p>
+<p><strong>Atak</strong><br />
+<strong>Prędkość</strong> 30 stóp (na wózku 40 stóp, ale tylko po prostej)<br />
+<strong>Wręcz</strong> mistrzowski krótki miecz +7 (1k4−1, kryt. 19–20)<br />
+<strong>Dystans</strong> lekka kusza +6 (1k6, kryt. 19–20)<br />
+<strong>Ataki specjalne</strong> atak z zaskoczenia +2k6</p>
+<p><strong>Statystyki</strong><br />
+<strong>SIŁ</strong> 9, <strong>ZRĘ</strong> 17, <strong>BUD</strong> 12, <strong>INT</strong> 12, <strong>MDR</strong> 10, <strong>CHA</strong> 12<br />
+<strong>BPA</strong> +2; <strong>PMB</strong> +0; <strong>OMB</strong> 13<br />
+<strong>Atuty</strong> Finezja w broni, Ulepszona inicjatywa<br />
+<strong>Umiejętności</strong> Akrobatyka +9, Percepcja +8, Przebieranie się +7, Skradanie się +13, Unieszkodliwianie mechanizmów +9, Zastraszanie +7<br />
+<strong>Cechy specjalne</strong> sprytny (+2 do Percepcji i Rzemiosła (pułapki); Skradanie się zawsze klasowe), znajdowanie pułapek, talent łotrzyka: szybkie skradanie się<br />
+<strong>Języki</strong> smoczy, wspólny, łamany gnomi</p>
+<h3 id="S07-kapitan-klik-zdolności-specjalne-komedia-ujęta-w-zasady">Zdolności specjalne (komedia ujęta w zasady)</h3>
+<ul>
+<li><strong>Rydwan Posągu:</strong> dopóki Klik stoi na wózku, ma częściową osłonę (+2 do KP i +1 do Refleksu) i porusza się z prędkością 40 stóp po prostej. Każdy zakręt wymaga testu Akrobatyki ST 12. Porażka: wózek staje, a Klik spada z gracją worka ziemniaków (1k3 obrażeń nieśmiercionośnych, jest powalony).</li>
+<li><strong>Awaryjna sztuczna broda:</strong> raz na spotkanie, jako akcja szybka, Klik przykleja brodę. Wykonuje test Przebierania się przeciw Percepcji wybranej postaci. Jeśli wygra, przez rundę ta postać bierze go za studenta i go nie atakuje, chyba że Klik zaatakuje pierwszy.</li>
+<li><strong>Honorowa kapitulacja:</strong> gdy spadnie do 5 PW lub mniej, proponuje oddanie posągu w zamian za wolną drogę.</li>
+</ul>
+<h2 id="S07-kapitan-klik-tibusia-wsparcie">Tibusia (wsparcie)</h2>
+<p>Zwykły kobold wojownik (statystyki w <a href="#S02-studenci-brody">S02</a>). W pierwszej rundzie naciska losowy przycisk na ścianie szybu (rzuć k3):</p>
+<ol>
+<li>Syrena dyskotekowa: wszyscy w promieniu 30 stóp są olśnieni przez rundę (Wytrwałość ST 11 neguje).</li>
+<li>Zraszacze: cały szyb staje się trudnym terenem.</li>
+<li>Nic się nie dzieje, ale wygląda to bardzo dramatycznie.</li>
+</ol>
+<h2 id="S07-kapitan-klik-cele-walki-nie-tylko-punkty-wytrzymałości">Cele walki (nie tylko punkty wytrzymałości)</h2>
+<table>
+<thead>
+<tr>
+<th>Cel graczy</th>
+<th>Jak to osiągnąć</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zatrzymać wózek</td>
+<td>test Siły ST 15, czar Ożywienie liny albo Smar rzucony na tor</td>
+</tr>
+<tr>
+<td>Odzyskać posąg</td>
+<td>zrzucić Klika z wózka albo zniszczyć koło (KP 10, twardość 5, PW 8)</td>
+</tr>
+<tr>
+<td>Negocjować</td>
+<td>Zastraszanie albo Dyplomacja ST 15, gdy Klik ma połowę PW lub mniej</td>
+</tr>
+<tr>
+<td>Podmienić posąg na atrapę</td>
+<td>Zwinne palce ST 16 albo Blefowanie ST 16, jeśli ktoś odwróci uwagę koboldów (wymaga gotowej atrapy z S11)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="S07-kapitan-klik-zegar">Zegar</h2>
+<ul>
+<li>Walka do 3 rund: bez zmian.</li>
+<li>Walka trwająca 4–6 rund: dodaj jedno pole.</li>
+<li>Posąg wjeżdża do szybu: dodaj jedno pole i rozegraj w epilogu scenę „pościgu windą”.</li>
+</ul>
+<h2 id="S07-kapitan-klik-łup">Łup</h2>
+<ul>
+<li>List Skarrzatha (jeśli gracze jeszcze go nie znaleźli).</li>
+<li>Garść „złotopodobnych” śrubek wartych razem 45 sz.</li>
+<li>Odznaka „Kapitan” wycięta z kapsla.</li>
+</ul></article><article class="sekcja nowa"><h1 id="S08-ozywione-narzedzia">S08 — Ożywione narzędzia</h1>
+<p><strong>Rodzaj:</strong> łatwa walka<br />
+<strong>Gdzie:</strong> kotłownia albo dyżurka<br />
+<strong>Wyzwalacz:</strong> koboldy włączyły tryb „automatycznej konserwacji” <strong>albo</strong> naprawa kabla nie powiodła się o 5 lub więcej<br />
+<strong>Skala wyzwania:</strong> 2 (trzy narzędzia) albo 3 (cztery)</p>
+<h2 id="S08-ozywione-narzedzia-przeciwnicy">Przeciwnicy</h2>
+<p>Malutkie ożywione przedmioty (SW 1/2, 200 PD każdy). Przy czterech graczach wystaw trzy, przy pięciu — cztery.</p>
+<table>
+<thead>
+<tr>
+<th>Narzędzie</th>
+<th>Atak</th>
+<th>Na wesoło</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Klucz francuski</td>
+<td>uderzenie 1k3+1</td>
+<td>chce „dokręcić” bohaterów</td>
+</tr>
+<tr>
+<td>Miotła</td>
+<td>uderzenie 1k3</td>
+<td>zamiata nogi (próba podcięcia +0)</td>
+</tr>
+<tr>
+<td>Linijka</td>
+<td>uderzenie 1k2</td>
+<td>na głos mierzy KP każdego celu</td>
+</tr>
+<tr>
+<td>Taśma Gnomoklej</td>
+<td>dotyk, który unieruchamia (Refleks ST 11)</td>
+<td>„naprawia”, przyklejając do podłogi</td>
+</tr>
+</tbody>
+</table>
+<p>Uproszczone statystyki (każde narzędzie):</p>
+<ul>
+<li>KP 14, PW 5, atak +2, obrażenia 1k3</li>
+<li>Konstrukt: odporny na efekty wpływające na umysł (Zauroczenie osoby i Barwny strumień nie działają).</li>
+<li>Bez twardości (to uproszczenie, żeby walka szła szybko).</li>
+<li>Prędkość 20 stóp (miotła skacze na 30 stóp).</li>
+</ul>
+<h2 id="S08-ozywione-narzedzia-taktyka">Taktyka</h2>
+<p>Narzędzia atakują tego, kto jest „najbardziej zepsuty”, czyli postać z najmniejszą liczbą PW, albo tego, kto trzyma w rękach inne narzędzia.</p>
+<h2 id="S08-ozywione-narzedzia-rozwiązanie-bez-rzezi">Rozwiązanie bez rzezi</h2>
+<ul>
+<li>Unieszkodliwianie mechanizmów albo Wiedza (inżynieria) ST 15 na panelu „KONSERWACJA” wyłącza wszystkie narzędzia naraz.</li>
+<li>Czar Scalenie rzucony na panel daje ten sam efekt, ale trwa 10 minut — trzeba je wytrzymać albo wyprowadzić narzędzia z pomieszczenia.</li>
+<li>Kanapka rzucona na podłogę: miotła przez rundę zamiata jedzenie, a Splot głośno kibicuje.</li>
+</ul>
+<h2 id="S08-ozywione-narzedzia-zegar">Zegar</h2>
+<p>Walka dłuższa niż 4 rundy w kotłowni, gdy kabel B jest jeszcze rozpięty: dodaj jedno pole.</p></article><article class="sekcja nowa"><h1 id="S09-zywiolak-stazysta">S09 — Wodny żywiołak-stażysta</h1>
+<p><strong>Rodzaj:</strong> walka <strong>albo</strong> rozmowa<br />
+<strong>Gdzie:</strong> pod atrium<br />
+<strong>Wyzwalacz:</strong> zegar ma co najmniej 2 pola albo gracze otwierają właz, „żeby sprawdzić, skąd kapie”</p>
+<h2 id="S09-zywiolak-stazysta-przeciwnik">Przeciwnik</h2>
+<p>Mały wodny żywiołak (SW 1, 400 PD), statystyki z Bestiariusza.</p>
+<p>Najważniejsze wartości:</p>
+<ul>
+<li>KP 17, PW 13 (2k10+2), Wytr +4 / Ref +3 / Wola +0</li>
+<li>Wręcz: uderzenie +5 (1k6+3)</li>
+<li>Prędkość 20 stóp, pływanie 90 stóp</li>
+<li>Zdolności: gaszenie ognia, panowanie nad wodą, wir (Refleks ST 13; używaj go tylko wtedy, gdy gracze naprawdę go sprowokują)</li>
+<li>Cechy żywiołaka: odporny na krwawienie, paraliż, truciznę, sen, ogłuszenie, trafienia krytyczne i ataki z zaskoczenia; nie można go flankować</li>
+</ul>
+<h2 id="S09-zywiolak-stazysta-charakter">Charakter</h2>
+<p>Nie jest zły. To <strong>zagubiony stażysta działu BHP</strong>.</p>
+<blockquote>
+<p>„Dzień dobry. Jestem Woda, rocznik awaryjny. Czy mogę prosić o formularz zalania strefy A? Mam tylko trzy dni praktyk”.</p>
+</blockquote>
+<h2 id="S09-zywiolak-stazysta-rozmowa-zalecana">Rozmowa (zalecana)</h2>
+<table>
+<thead>
+<tr>
+<th>Działanie</th>
+<th>ST</th>
+<th>Skutek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dyplomacja i formularz (kartka z dyżurki)</td>
+<td>12</td>
+<td>żywiołak wraca do rury; usuń jedno pole z zegara (lokalny przeciek znika)</td>
+</tr>
+<tr>
+<td>Blefowanie („praktyki przeniesiono na czwartek”)</td>
+<td>13</td>
+<td>znika aż do epilogu</td>
+</tr>
+<tr>
+<td>Atak</td>
+<td>—</td>
+<td>walka; po zwycięstwie przeciek zostaje (zegar bez zmian), a jeśli walka trwa 5 rund lub dłużej, dodaj jedno pole</td>
+</tr>
+</tbody>
+</table>
+<h2 id="S09-zywiolak-stazysta-skutki">Skutki</h2>
+<ul>
+<li>Udana rozmowa: przestrzeń pod atrium wysycha.</li>
+<li>Jeśli gracze przegrywają walkę: żywiołak nikogo nie zabija. Gasi wszystkie źródła ognia, oblewa drużynę wodą i odpływa z dopiskiem „przyjdę na poprawkę”.</li>
+</ul></article><article class="sekcja nowa"><h1 id="S10-szept-brina">S10 — Szept Brina</h1>
+<p><strong>Rodzaj:</strong> niezależne, scena fabularna<br />
+<strong>Gdzie:</strong> atrium<br />
+<strong>Wyzwalacz:</strong> zegar ma co najmniej 4 pola <strong>albo</strong> ktoś dotyka posągu i wypowiada imię „Brin”</p>
+<h2 id="S10-szept-brina-sytuacja">Sytuacja</h2>
+<p>Złoto posągu robi się ciepłe. Rozlega się głos, jakby dobiegał z rury pod posadzką:</p>
+<blockquote>
+<p>„Nie holujcie mnie kablem. Znowu.<br />
+I powiedzcie Fizzowi, że mostek robi się w rękawicach.<br />
+I… jeśli będziecie musieli wybierać między mną a szkołą — wybierzcie szkołę. Ja już jestem pomnikiem. Oni jeszcze nie”.</p>
+</blockquote>
+<h2 id="S10-szept-brina-efekty-wybierz-jeden">Efekty (wybierz jeden)</h2>
+<ol>
+<li><strong>Wskazówka:</strong> +2 do następnego testu przy tablicy Triady albo przy mostku.</li>
+<li><strong>Otucha:</strong> wszyscy bohaterowie graczy mają +1 do rzutów obronnych na Wolę przez 10 minut.</li>
+<li><strong>Komedia:</strong> przez jedną rundę posąg przewraca oczami (Percepcja ST 5, żeby to zauważyć).</li>
+</ol>
+<h2 id="S10-szept-brina-ograniczenie">Ograniczenie</h2>
+<p>Raz na sesję. Jeśli gracze spróbują użyć czarów Rozmowa z umarłymi lub Mowa kamieni (np. ze zwoju), echo Brina odpowiada wyłącznie kalamburami o przewodnictwie elektrycznym. Brin żyje, więc w posągu nie ma żadnej duszy, z którą dałoby się porozmawiać na poważnie.</p></article><article class="sekcja nowa"><h1 id="S11-list-smoka">S11 — List smoka i fabryka bród</h1>
+<p><strong>Rodzaj:</strong> niezależne, eksploracja<br />
+<strong>Gdzie:</strong> pokój gościnny „wymiany studenckiej”</p>
+<h2 id="S11-list-smoka-sytuacja">Sytuacja</h2>
+<p>Kredki, klej, lista obecności i torby. Okno wychodzi na szyb. W powietrzu unosi się zapach rybiego kleju do bród.</p>
+<h2 id="S11-list-smoka-znaleziska">Znaleziska</h2>
+<ol>
+<li><strong>List Skarrzatha</strong> — pełny tekst w <a href="swiat.html#smok-i-koboldy"><code>../opisy/smok-i-koboldy.md</code></a>.</li>
+<li><strong>Plan ucieczki</strong> — rysunek wózka ze strzałką do szybu (zapowiedź S07).</li>
+<li><strong>Niedokończona atrapa posągu</strong> z tektury i złotej farby. Rzemiosło (dowolne) ST 12 i 10 minut pracy wystarczą, żeby mieć gotową podmianę na epilog.</li>
+<li><strong>Kryształ</strong> — jeśli gracze nie odebrali go w S02, Vex schował go tutaj, w skarpecie podpisanej „dla pana”.</li>
+</ol>
+<h2 id="S11-list-smoka-komplikacja">Komplikacja</h2>
+<p>Percepcja ST 15: pod łóżkiem Tibusia zamontowała alarm z puszek.<br />
+Kto wejdzie nieostrożnie, narobi hałasu, a po jednej scenie pojawi się S02 albo S12.</p>
+<h2 id="S11-list-smoka-nagroda">Nagroda</h2>
+<ul>
+<li>Materiał na zakończenie z tekturową atrapą.</li>
+<li>Potwierdzenie motywu smoka (dla Nixy: konflikt ze smoczą linią krwi).</li>
+</ul></article><article class="sekcja nowa"><h1 id="S12-zasadzka-brod">S12 — Zasadzka bród</h1>
+<p><strong>Rodzaj:</strong> walka średniej trudności<br />
+<strong>Gdzie:</strong> Korytarz B (w drodze powrotnej) albo przed szybem<br />
+<strong>Wyzwalacz:</strong> gracze mają już co najmniej dwie naprawy <strong>albo</strong> narobili hałasu w S11<br />
+<strong>Skala wyzwania:</strong> 2 (700 PD)</p>
+<h2 id="S12-zasadzka-brod-sytuacja">Sytuacja</h2>
+<p>Trzy koboldy (Rek, Vex i Tok) zrywają brody i tym razem podchodzą do sprawy poważnie: „Pan smok nie lubi spóźnień”.<br />
+Ustawienie: jeden stoi na wprost drużyny, dwa przycupnęły na rurach pod sufitem (wyższa pozycja: +1 do ataków wręcz).</p>
+<h2 id="S12-zasadzka-brod-skład">Skład</h2>
+<ul>
+<li>3 koboldy wojownicy (SW 1/4; statystyki w <a href="#S02-studenci-brody">S02</a>),</li>
+<li>1 kobold zaklinacz 2. poziomu, zwany Szczypem (SW 1).</li>
+</ul>
+<h3 id="S12-zasadzka-brod-szczyp--kobold-zaklinacz-2-poziomu-uproszczone-statystyki">Szczyp — kobold zaklinacz 2. poziomu (uproszczone statystyki)</h3>
+<ul>
+<li>KP 14 (+2 Zręczność, +1 naturalny pancerz, +1 rozmiar), PW 12, Wytr +0 / Ref +2 / Wola +3</li>
+<li>Dystans: lekka kusza +4 (1k6)</li>
+<li>Czary znane: sztuczki (m.in. Promień mrozu), 1. krąg: Barwny strumień (ST 13), Magiczny pocisk; 5 czarów 1. kręgu dziennie</li>
+<li>Wrażliwość na światło</li>
+<li>Priorytet: najpierw unieszkodliwić czarujących z drużyny, potem uciec z kryształem, jeśli koboldy wciąż go mają.</li>
+</ul>
+<h2 id="S12-zasadzka-brod-taktyka">Taktyka</h2>
+<ul>
+<li>Runda 1: Szczyp rzuca Barwny strumień.</li>
+<li>Runda 2: dwaj wojownicy wiążą walką pierwszą linię, Szczyp strzela albo rzuca Magiczny pocisk.</li>
+<li>Runda 3: jeśli koboldy straciły połowę sił, proponują kapitulację („Kanapki?”).</li>
+</ul>
+<h2 id="S12-zasadzka-brod-teren">Teren</h2>
+<ul>
+<li>Wejście na rury (wyższa pozycja): Wspinaczka ST 10.</li>
+<li>Od trzeciego pola zegara: przez kałuże nie da się szarżować bez testu Akrobatyki ST 12.</li>
+</ul>
+<h2 id="S12-zasadzka-brod-zegar">Zegar</h2>
+<ul>
+<li>Szybkie zakończenie (do 3 rund albo kapitulacja): bez zmian.</li>
+<li>Długa wymiana ciosów w głównym korytarzu: dodaj jedno pole.</li>
+<li>Płonące dłonie przy rozpiętych kablach (jeśli walka toczy się blisko kotłowni): dodaj jedno pole i iskry.</li>
+</ul>
+<h2 id="S12-zasadzka-brod-łup">Łup</h2>
+<ul>
+<li>Dwie fałszywe brody.</li>
+<li>Rozpuszczalnik do kleju (Prestidigitatorstwo działa równie dobrze).</li>
+<li>Kartka: „Spotkanie z Kapitanem przy szybie — NIE SPÓŹNIĆ SIĘ”.</li>
+</ul></article>
+</body>
+</html>

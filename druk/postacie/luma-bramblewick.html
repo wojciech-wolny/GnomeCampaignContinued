@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luma Bramblewick</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Wszystkie postacie</a></p><nav class="spis spis-ekran"><p>Spis</p><ol><li><a href="#karta">Luma Bramblewick</a></li>
+<li><a href="#historia">Luma Bramblewick — historia</a></li>
+<li><a href="#karta-pelna">Luma Bramblewick — gnomka, czarodziejka 3. poziomu (szkoła przemian)</a></li>
+<li><a href="#czary">Luma Bramblewick — opisy czarów</a></li>
+<li><a href="#atuty">Luma Bramblewick — opisy atutów</a></li>
+<li><a href="#zdolnosci">Luma Bramblewick — zdolności i cechy postaci</a></li>
+<li><a href="#stan">Luma Bramblewick — bieżący stan</a></li></ol></nav><article class="karta"><h1 id="karta">Luma Bramblewick</h1>
+<p><strong>Gnomka, czarodziejka 3. poziomu (przemiany)</strong> · neutralna dobra · Brigh · mała · 48 lat<br />
+<em>„Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.</em><br />
+<strong>Wygląd:</strong> rękawy upaprane smarem, pas z narzędziami, dwie kanapki dla Splotu (należna i odsetki), korona z taśmy Gnomoklej</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">SIŁ</th>
+<th style="text-align: center;">ZRĘ</th>
+<th style="text-align: center;">BUD</th>
+<th style="text-align: center;">INT</th>
+<th style="text-align: center;">MDR</th>
+<th style="text-align: center;">CHA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10 (+0)</td>
+<td style="text-align: center;">13 (+1)</td>
+<td style="text-align: center;">12 (+1)</td>
+<td style="text-align: center;"><strong>18 (+4)</strong></td>
+<td style="text-align: center;">10 (+0)</td>
+<td style="text-align: center;">11 (+0)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">KP</th>
+<th style="text-align: center;">PW</th>
+<th style="text-align: center;">Inicjatywa</th>
+<th style="text-align: center;">Prędkość</th>
+<th style="text-align: center;">Wytrwałość</th>
+<th style="text-align: center;">Refleks</th>
+<th style="text-align: center;">Wola</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>12</strong> (dotyk 12, nieprzyg. 11)</td>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: center;"><strong>+1</strong></td>
+<td style="text-align: center;">20 stóp</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BPA</strong> +1 · <strong>PMB</strong> +0 · <strong>OMB</strong> 11 · <strong>Koncentracja</strong> +9 (+4 przy rzucaniu defensywnym) · +2 do rzutów przeciw iluzjom · +4 do KP przeciw olbrzymom</p>
+<p><strong>PW:</strong> ☐☐☐☐☐ ☐☐☐☐☐ ☐☐☐☐☐ ☐☐</p>
+<h2 id="karta-ataki">Ataki</h2>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th style="text-align: center;">Premia</th>
+<th>Obrażenia</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mistrzowski klucz francuski</td>
+<td style="text-align: center;">+3</td>
+<td>1k4 obuchowe</td>
+<td>walczy się nim jak pałką</td>
+</tr>
+<tr>
+<td>Telekinetyczna pięść</td>
+<td style="text-align: center;">+3 dotyk</td>
+<td>1k4+1 obuchowe</td>
+<td>dystansowy, 30 stóp</td>
+</tr>
+</tbody>
+</table>
+<p>+1 do ataków przeciw gadzim humanoidom i goblinoidom.</p>
+<h2 id="karta-czary-poziom-rzucającego-3">Czary (poziom rzucającego 3)</h2>
+<p><strong>ST:</strong> 14 + krąg · <strong>Szkoły przeciwne:</strong> zauroczanie, iluzja<br />
+<strong>Zasada domowa:</strong> Naprawę i Scalenie na instalacjach akademii rzucasz w 1 rundę zamiast w 10 minut.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Krąg</th>
+<th>Czar</th>
+<th>Efekt</th>
+<th>Obrona</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Naprawa</td>
+<td>łata drobne uszkodzenie (1k4 PW przedmiotu)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Dłoń maga</td>
+<td>przesuwa przedmiot do 5 funtów</td>
+<td>—</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Otwarcie/zamknięcie</td>
+<td>otwiera lub zamyka drzwi, szafkę, zawór</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Światło</td>
+<td>przedmiot świeci jak pochodnia</td>
+<td>—</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Ożywienie liny</td>
+<td>lina (do 65 stóp) oplata i krępuje na rozkaz</td>
+<td>—</td>
+<td>3 rundy</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Szybki odwrót</td>
+<td>+30 stóp prędkości</td>
+<td>—</td>
+<td>3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Piórkospad</td>
+<td><strong>akcja natychmiastowa</strong>, łagodne opadanie</td>
+<td>—</td>
+<td>3 rundy</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Niewidzialny sługa</td>
+<td>niewidzialny pomocnik nosi i podaje</td>
+<td>—</td>
+<td>3 godz.</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Lewitacja</td>
+<td>unosi siebie lub do 300 funtów, 20 stóp na rundę</td>
+<td>—</td>
+<td>3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Scalenie</td>
+<td>naprawia poważnie uszkodzony przedmiot</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Byczy wigor</td>
+<td>+4 do SIŁ celu</td>
+<td>—</td>
+<td>3 min</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Miejsca 1. kręgu:</strong> ☐☐☐☐ · <strong>Miejsca 2. kręgu:</strong> ☐☐☐</p>
+<h2 id="karta-zasoby-na-dzień">Zasoby na dzień</h2>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Użycia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Telekinetyczna pięść</td>
+<td>☐☐☐☐☐☐☐</td>
+</tr>
+<tr>
+<td>Czar z więzi (klucz francuski) — dowolny czar z księgi</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Gnomia magia (po 1): Tańczące światła · Upiorny dźwięk · Prestidigitatorstwo · Rozmowa ze zwierzętami</td>
+<td>☐ ☐ ☐ ☐</td>
+</tr>
+<tr>
+<td>Kanapka należna dla Splotu</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Kanapka odsetkowa (żaba narysowana kredą)</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-umiejętności">Umiejętności</h2>
+<p>Rzemiosło (mechanizmy) <strong>+14</strong> · Unieszkodliwianie mechanizmów <strong>+12</strong> · Wiedza (inżynieria) <strong>+11</strong> · Czaroznawstwo <strong>+10</strong> · Wiedza (magia) <strong>+9</strong> · Percepcja <strong>+5</strong> · Dyplomacja <strong>+3</strong> · Pływanie <strong>+1</strong></p>
+<h2 id="karta-atuty-cechy-i-zdolności">Atuty, cechy i zdolności</h2>
+<p><strong>Atuty:</strong> Spisanie zwoju · Skupienie na umiejętności (Unieszkodliwianie mechanizmów) · Rzucanie w walce<br />
+<strong>Cechy:</strong> Skupiony umysł (+2 do koncentracji) · Uczennica kotłowni (Unieszkodliwianie mechanizmów klasowe, +1 do Wiedzy (inżynieria))<br />
+<strong>Szkoła:</strong> Wzmocnienie fizyczne (+1 do ZRĘ, już wliczone)<br />
+<strong>Rasowe:</strong> widzenie w słabym świetle · Obsesja (+2 do Rzemiosła (mechanizmy)) · broń „gnomia” jak żołnierska<br />
+<strong>Języki:</strong> wspólny, gnomi, sylwański, smoczy, krasnoludzki, goblinski, elfi</p>
+<h2 id="karta-ekwipunek">Ekwipunek</h2>
+<p>Mistrzowski klucz francuski (przedmiot więzi) · mistrzowskie narzędzia rzemieślnicze (+2) · mistrzowskie narzędzia złodziejskie (+2) · taśma Gnomoklej · śrubki · kanapka należna dla Splotu · kanapka odsetkowa (żaba narysowana kredą) · księga czarów · sakiewka na komponenty · 28 sz</p>
+<h2 id="karta-kim-jestem">Kim jestem</h2>
+<p>Stypendystka kotłowni i „konsultantka do spraw ergonomii” u chochlików serwisowych. Chochlikowi Splotowi płacę kanapkami. Zizzle zabrał jedną z mojego pudełka, dołożył żabę i dał ją Pipowi. Splot zjadł już siedemnaście kanapek odsetkowych. Ta w torbie jest następna.</p>
+<p><strong>Relacje:</strong> Zizzle — winien mi siedemnaście zjedzonych kanapek i chwali je bez ironii · Pip — przepala bezpieczniki, ja je wymieniam, remis · Nixa — ogień za herbatę, łatam jej pelerynę · Orrin — kłócimy się, czy rację ma schemat, czy rura; listów kuzyna Nixy nie tłumaczę</p></article><article class="sekcja nowa"><h1 id="historia">Luma Bramblewick — historia</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Luma dostała się do akademii na stypendium kotłowni, co oznacza, że uczy się magii przemian w dzień, a w nocy pilnuje, żeby rury nie robiły tego, co lubią najbardziej, czyli przeciekać. Twierdzi, że instalacje mają charakter: jedne marudzą, inne kłamią, a jeszcze inne „po prostu chcą uwagi”. W papierach figuruje jako „konsultantka do spraw ergonomii” u chochlików serwisowych, bo tylko ona potrafi z nimi rozmawiać bez utraty sznurowadeł. Jej najbliższym kontaktem jest chochlik <strong>Splot</strong>, który za każdą przysługę bierze zapłatę w kanapkach.</p>
+<p>Kanapki Luma robi sama i trzyma je w blaszanym pudełku z napisem „DLA SPLOTU. NIE RUSZAĆ”. Napis nie powstrzymał <strong>Zizzle'a</strong>. Pierwszego dnia wymiany studenckiej Zizzle „pożyczył” z pudełka kanapkę, dołożył do niej żywą żabę — leśny zwyczaj, według którego żabę wypuszcza się potem nad wodą, a gość ma rok szczęścia — i podarował ją <strong>Pipowi</strong>. Żaba wyskoczyła z chleba prosto na pulpit alarmowy. Pip krzyknął, włączył się fałszywy alarm powodziowy, a pół akademii w piżamach ewakuowało się na wyższe piętra. Luma musiała tłumaczyć Splotowi, dlaczego jego kolacja odjechała w nieznanym kierunku. Splot nalicza od tamtej pory odsetki. Siedemnaście kanapek odsetkowych już zjadł i tyle wynosi rachunek, który Luma wsuwa Zizzle'owi pod drzwi. Tej nocy w torbie i tak są dwie kanapki: należna oraz następna odsetkowa, jeszcze spoza rachunku. Na tej następnej Zizzle narysował kredą żabę.</p>
+<p>W kotłowni Luma ma dwie stałe współpracowniczki, choć tylko jedna o tym wie. Pierwsza to <strong>Nixa</strong>, która w zimne poranki rozpala kocioł jednym zaklęciem i dostaje za to herbatę. Druga to taśma Gnomoklej. Obie spotkały się na pelerynie Nixy: Luma łatała ją tyle razy, że dziś peleryna jest „niepalna w 60%”, a pozostałe 40% to taśma.</p>
+<h2 id="historia-relacje">Relacje</h2>
+<ul>
+<li><strong>Zizzle</strong> — dłużnik. Splot zjadł już siedemnaście kanapek odsetkowych i tyle widnieje na rachunku. Ta w torbie jest następna. Mimo to lubi go, bo jako jedyny chwali jej kanapki bez ironii.</li>
+<li><strong>Pip</strong> — rywal przy tablicy wyników w kotłowni. On przepala bezpieczniki, ona je wymienia, a oboje udają, że to przypadek. Na razie jest remis.</li>
+<li><strong>Nixa</strong> — rozpałka do kotła i właścicielka najczęściej łatanej peleryny w akademii. Nixa płaci ogniem, Luma płaci herbatą.</li>
+<li><strong>Orrin</strong> — przynosi z biblioteki kopię schematu bariery i uważa ją za aktualną. Luma jeszcze jej nie widziała. Gdy zobaczy, dopisze markerem „schemat kłamie”. Kłócą się o to, kto ma rację: papier czy rura. Luma czyta po smoczemu, ale listów kuzyna Nixy nie tłumaczy. Mówi, że list nie jest rurą.</li>
+</ul>
+<p><strong>Zaczepka na sesję:</strong> W torbie Luma ma dwie kanapki dla Splotu: należną i następną odsetkową, jeszcze spoza rachunku siedemnastu. Na odsetkowej Zizzle narysował kredą żabę.</p></article><article class="sekcja nowa"><h1 id="karta-pelna">Luma Bramblewick — gnomka, czarodziejka 3. poziomu (szkoła przemian)</h1><pre class="meta">name: Luma Bramblewick
+level: 3
+classes: Wizard (Transmuter) 3
+race: Gnome
+alignment: &quot;neutral good&quot;
+deity: Brigh</pre>
+<p><strong>„Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rasa</strong></td>
+<td>gnomka</td>
+</tr>
+<tr>
+<td><strong>Klasa</strong></td>
+<td>czarodziejka 3 (specjalistka przemian)</td>
+</tr>
+<tr>
+<td><strong>Charakter</strong></td>
+<td>neutralna dobra</td>
+</tr>
+<tr>
+<td><strong>Bóstwo</strong></td>
+<td>Brigh</td>
+</tr>
+<tr>
+<td><strong>Rozmiar</strong></td>
+<td>mały</td>
+</tr>
+<tr>
+<td><strong>Wiek</strong></td>
+<td>48 lat</td>
+</tr>
+<tr>
+<td><strong>Wygląd</strong></td>
+<td>rękawy upaprane smarem, zwinięty pas z narzędziami, dwie kanapki dla Splotu (należna i odsetki), korona z taśmy Gnomoklej</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-klasa">Klasa</h2>
+<table>
+<thead>
+<tr>
+<th>Klasa</th>
+<th>Szkoła</th>
+<th>Kość wytrzymałości</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>czarodziejka 3</td>
+<td>przemiany (Wzmocnienie fizyczne); szkoły przeciwne: zauroczanie, iluzja</td>
+<td>k6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-nawigacja">Nawigacja</h2>
+<table>
+<thead>
+<tr>
+<th>Sekcje</th>
+<th>Pliki</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#karta-pelna-atrybuty">Atrybuty</a></td>
+<td><a href="#czary">Czary</a> · <a href="#zdolnosci">Zdolności</a> · <a href="#atuty">Atuty</a></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-statystyki-bojowe">Statystyki bojowe</a></td>
+<td><a href="#historia">Historia</a> · <a href="#stan">Stan</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-atrybuty">Atrybuty</h2>
+<p>Zakup punktowy: 20 punktów. Modyfikatory rasowe: −2 SIŁ, +2 BUD, +2 CHA.</p>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Baza</th>
+<th>Rasa</th>
+<th>Szkoła</th>
+<th>Suma</th>
+<th>Mod.</th>
+<th>Do czego</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIŁ</td>
+<td>12</td>
+<td>−2</td>
+<td>—</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+<td>noszenie narzędzi</td>
+</tr>
+<tr>
+<td>ZRĘ</td>
+<td>12</td>
+<td>—</td>
+<td>+1</td>
+<td><strong>13</strong></td>
+<td><strong>+1</strong></td>
+<td>Wzmocnienie fizyczne</td>
+</tr>
+<tr>
+<td>BUD</td>
+<td>10</td>
+<td>+2</td>
+<td>—</td>
+<td><strong>12</strong></td>
+<td><strong>+1</strong></td>
+<td>PW</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>18</td>
+<td>—</td>
+<td>—</td>
+<td><strong>18</strong></td>
+<td><strong>+4</strong></td>
+<td>czary i rzemiosło</td>
+</tr>
+<tr>
+<td>MDR</td>
+<td>10</td>
+<td>—</td>
+<td>—</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>CHA</td>
+<td>9</td>
+<td>+2</td>
+<td>—</td>
+<td><strong>11</strong></td>
+<td><strong>+0</strong></td>
+<td>gnomia magia</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-statystyki-bojowe">Statystyki bojowe</h2>
+<h3 id="karta-pelna-klasa-pancerza">Klasa pancerza</h3>
+<p>10 +1 ZRĘ +1 rozmiar = <strong>12</strong> (dotyk 12, nieprzygotowana 11)</p>
+<h3 id="karta-pelna-punkty-wytrzymałości">Punkty wytrzymałości</h3>
+<p>6 + 4 + 4 + 3 (Budowa) = <strong>17</strong>. Premię za klasę preferowaną Luma przeznacza na umiejętności.</p>
+<h3 id="karta-pelna-rzuty-obronne">Rzuty obronne</h3>
+<p>Wytrwałość +2 · Refleks +2 · Wola +3 · +2 przeciw iluzjom</p>
+<h3 id="karta-pelna-walka">Walka</h3>
+<p>Bazowa premia do ataku +1 · Inicjatywa +1 · Prędkość 20 stóp · Premia manewrów +0 · Obrona przed manewrami 11 · Koncentracja +9</p>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th>Premia</th>
+<th>Obrażenia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mistrzowski klucz francuski (jak pałka)</td>
+<td>+3</td>
+<td>1k4</td>
+</tr>
+<tr>
+<td>Telekinetyczna pięść</td>
+<td>+3 dotyk</td>
+<td>1k4+1 obuchowe</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-umiejętności">Umiejętności</h2>
+<p>Czarodziej: 2 + INT = 6 rang na poziom × 3 = 18, plus 3 rangi z klasy preferowanej = <strong>21</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Umiejętność</th>
+<th>Suma</th>
+<th>Rangi</th>
+<th>Atr.</th>
+<th>Klasowa</th>
+<th>Inne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rzemiosło (mechanizmy)</td>
+<td><strong>+14</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>+2 Obsesja, +2 mistrzowskie narzędzia</td>
+</tr>
+<tr>
+<td>Unieszkodliwianie mechanizmów</td>
+<td><strong>+12</strong></td>
+<td>3</td>
+<td>+1</td>
+<td>+3*</td>
+<td>+3 Skupienie na umiejętności, +2 mistrzowskie narzędzia złodziejskie</td>
+</tr>
+<tr>
+<td>Wiedza (inżynieria)</td>
+<td><strong>+11</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>+1 z cechy</td>
+</tr>
+<tr>
+<td>Czaroznawstwo</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Wiedza (magia)</td>
+<td><strong>+9</strong></td>
+<td>2</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Percepcja</td>
+<td><strong>+5</strong></td>
+<td>3</td>
+<td>+0</td>
+<td>—</td>
+<td>+2 rasowa</td>
+</tr>
+<tr>
+<td>Dyplomacja</td>
+<td><strong>+3</strong></td>
+<td>3</td>
+<td>+0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Pływanie</td>
+<td><strong>+1</strong></td>
+<td>1</td>
+<td>+0</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>* Umiejętność klasowa dzięki cesze <a href="#zdolnosci-uczennica-kotłowni">Uczennica kotłowni</a>.</p>
+<p><strong>Wydane rangi:</strong> 21/21 · <strong>Języki:</strong> wspólny, gnomi, sylwański, smoczy, krasnoludzki, goblinski, elfi</p>
+<hr />
+<h2 id="karta-pelna-atuty">Atuty</h2>
+<table>
+<thead>
+<tr>
+<th>Poziom</th>
+<th>Atut</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (klasa)</td>
+<td><a href="#atuty-spisanie-zwoju">Spisanie zwoju</a></td>
+<td>tworzenie zwojów</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#atuty-skupienie-na-umiejętności-unieszkodliwianie-mechanizmów">Skupienie na umiejętności (Unieszkodliwianie mechanizmów)</a></td>
+<td>+3 do Unieszkodliwiania mechanizmów</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#atuty-rzucanie-w-walce">Rzucanie w walce</a></td>
+<td>+4 do koncentracji przy rzucaniu defensywnym i w zwarciu</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-cechy-postaci">Cechy postaci</h2>
+<table>
+<thead>
+<tr>
+<th>Cecha</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skupiony umysł</td>
+<td>+2 do koncentracji</td>
+</tr>
+<tr>
+<td>Uczennica kotłowni <em>(kampanijna)</em></td>
+<td>Unieszkodliwianie mechanizmów jest klasowe; +1 do Wiedzy (inżynieria)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-zdolności-klasowe--skrót">Zdolności klasowe — skrót</h2>
+<table>
+<thead>
+<tr>
+<th>Zdolność</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wzmocnienie fizyczne</td>
+<td>+1 z ulepszenia do Zręczności (już wliczone)</td>
+</tr>
+<tr>
+<td>Telekinetyczna pięść</td>
+<td>dystansowy atak dotykowy, 1k4+1 obuchowe, 7 razy dziennie</td>
+</tr>
+<tr>
+<td>Więź arkaniczna</td>
+<td>mistrzowski klucz francuski (traktowany jak pałka)</td>
+</tr>
+<tr>
+<td>Szkoły przeciwne</td>
+<td>zauroczanie, iluzja (dwa miejsca na czar)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-rzucanie-czarów">Rzucanie czarów</h2>
+<p><strong>Poziom rzucającego</strong> 3 · <strong>ST</strong> 14 + krąg czaru</p>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Miejsc dziennie</th>
+<th>Skąd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>sztuczki bez limitu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>2 bazowe, +1 za INT, +1 ze szkoły</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>1 bazowe, +1 za INT, +1 ze szkoły</td>
+</tr>
+</tbody>
+</table>
+<h3 id="karta-pelna-przygotowane-czary">Przygotowane czary</h3>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Czary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Naprawa, Dłoń maga, Otwarcie/zamknięcie, Światło</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ożywienie liny (szkoła), Szybki odwrót, Piórkospad, Niewidzialny sługa</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lewitacja (szkoła), Scalenie, Byczy wigor</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zasada domowa tej przygody:</strong> Luma zna instalacje akademii na pamięć. Naprawę i Scalenie rzucane na przewody, rury i panele szkoły rzuca w 1 rundę zamiast w 10 minut.</p>
+<hr />
+<h2 id="karta-pelna-ekwipunek">Ekwipunek</h2>
+<ul>
+<li>Mistrzowski klucz francuski (przedmiot więzi; w walce traktowany jak pałka)</li>
+<li>Mistrzowskie narzędzia rzemieślnicze (+2 do Rzemiosła)</li>
+<li>Mistrzowskie narzędzia złodziejskie (+2 do Unieszkodliwiania mechanizmów)</li>
+<li>Taśma Gnomoklej, śrubki</li>
+<li>Kanapka należna dla Splotu</li>
+<li>Kanapka odsetkowa dla Splotu (Zizzle narysował na niej kredą żabę)</li>
+<li>Księga czarów, sakiewka na komponenty, 28 sz</li>
+</ul></article><article class="sekcja nowa"><h1 id="czary">Luma Bramblewick — opisy czarów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia: W — komponent werbalny, S — somatyczny, M — materiałowy, O — skupienie, BS — boski symbol. „(odw.)” przy czasie działania oznacza, że czar można odwołać.<br />
+Zasięg bliski: 25 stóp + 5 stóp na 2 poziomy (przy 3. poziomie: 30 stóp). Średni: 100 stóp + 10 stóp na poziom (130 stóp).</p>
+<hr />
+<h2 id="czary-czary-czarodziejki">Czary czarodziejki</h2>
+<h3 id="czary-naprawa">Naprawa</h3>
+<p><em>Nazwa w podręczniku: Mending</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>10 minut (zob. zasada domowa na karcie)</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>10 stóp</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden przedmiot ważący do 1 funta na poziom</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (nieszkodliwy, przedmiot)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak (nieszkodliwy, przedmiot)</td>
+</tr>
+</tbody>
+</table>
+<p>Naprawia pęknięcia i rozdarcia w przedmiocie i przywraca mu 1k4 punktów wytrzymałości. Nie odnawia ładunków przedmiotów magicznych.</p>
+<p><em>Awaryjne owinięcie kabla, zanim zabierze się do niego porządnie.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-dłoń-maga">Dłoń maga</h3>
+<p><em>Nazwa w podręczniku: Mage Hand</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden niemagiczny, niepilnowany przedmiot ważący do 5 funtów</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Akcją ruchu przesuwasz przedmiot o 15 stóp w dowolnym kierunku.</p>
+<p><em>Podaje narzędzia albo zdejmuje klucz z haczyka w dyżurce.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-otwarciezamknięcie">Otwarcie/zamknięcie</h3>
+<p><em>Nazwa w podręczniku: Open/Close</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, O (mosiężny klucz)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>przedmiot ważący do 30 funtów albo drzwi, które da się otworzyć lub zamknąć</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (przedmiot)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak (przedmiot)</td>
+</tr>
+</tbody>
+</table>
+<p>Otwiera albo zamyka drzwi, skrzynię, butelkę i tym podobne. Nie otwiera zamków.</p>
+<p><em>Otwiera zaklinowane szafki bez wkładania rąk w coś podejrzanego.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-światło">Światło</h3>
+<p><em>Nazwa w podręczniku: Light</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [światło]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, M/BS (świetlik)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>dotyk</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>dotknięty przedmiot</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>10 minut na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Przedmiot świeci jak pochodnia.</p>
+<p><em>Wolne ręce w ciemnej kotłowni.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-ożywienie-liny">Ożywienie liny</h3>
+<p><em>Nazwa w podręczniku: Animate Rope</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>średni</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden przedmiot podobny do liny, o długości do 50 stóp + 5 stóp na poziom</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 runda na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Ożywiona lina zwija się, wiąże i oplata na twój rozkaz. Może unieruchomić istotę, która nie zda rzutu na Refleks.</p>
+<p><em>Krępuje uciekinierów albo przytrzymuje drabinę.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-szybki-odwrót">Szybki odwrót</h3>
+<p><em>Nazwa w podręczniku: Expeditious Retreat</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom (odw.)</td>
+</tr>
+</tbody>
+</table>
+<p>+30 stóp premii z ulepszenia do prędkości lądowej.</p>
+<p><em>Gnomie 20 stóp zmienia się w 50. Idealne do pościgu i do ucieczki przed Splotem, gdy brakuje kanapek.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-piórkospad">Piórkospad</h3>
+<p><em>Nazwa w podręczniku: Feather Fall</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja natychmiastowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cele</strong></td>
+<td>jeden spadający przedmiot lub istota średniego lub mniejszego rozmiaru na poziom; żadne dwa cele nie mogą być dalej niż 20 stóp od siebie</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>do lądowania albo 1 runda na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (nieszkodliwy) albo Wola neguje (przedmiot)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak (przedmiot)</td>
+</tr>
+</tbody>
+</table>
+<p>Cele opadają z prędkością 60 stóp na rundę i nie odnoszą obrażeń od upadku. Czar rzuca się błyskawicznie, nawet poza własną turą.</p>
+<p><em>Siatka bezpieczeństwa przy pracy na wysokości.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-niewidzialny-sługa">Niewidzialny sługa</h3>
+<p><em>Nazwa w podręczniku: Unseen Servant</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przywoływanie (tworzenie)</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M (kawałek sznurka i drewna)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Efekt</strong></td>
+<td>jeden niewidzialny, bezmyślny, bezkształtny sługa</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 godzina na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Niewidzialna siła o Sile 2 wykonuje proste polecenia: nosi, sprząta, podaje. Porusza się z prędkością 15 stóp. Nie walczy.</p>
+<p><em>Trzyma latarkę i podaje narzędzia przy łataniu przewodów.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-lewitacja">Lewitacja</h3>
+<p><em>Nazwa w podręczniku: Levitate</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, O (skórzana pętelka albo złoty drucik wygięty w kształt kielicha)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty albo bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty, jedna chętna istota albo jeden przedmiot (łącznie do 100 funtów na poziom)</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Akcją ruchu przesuwasz cel o 20 stóp w górę lub w dół. Czar nie pozwala poruszać się w poziomie.</p>
+<p><em>Unosi do 300 funtów albo pozwala dosięgnąć przecieku pod sufitem.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-scalenie">Scalenie</h3>
+<p><em>Nazwa w podręczniku: Make Whole</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>10 minut (zob. zasada domowa na karcie)</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden przedmiot o objętości do 10 stóp sześciennych na poziom albo jeden konstrukt</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (nieszkodliwy, przedmiot)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak (nieszkodliwy, przedmiot)</td>
+</tr>
+</tbody>
+</table>
+<p>Działa jak Naprawa, ale na znacznie większe przedmioty. Może naprawić nawet zniszczony przedmiot magiczny, jeśli twój poziom rzucającego jest co najmniej dwa razy wyższy niż poziom przedmiotu, ale nie odnawia ładunków. Rzucony na konstrukt przywraca mu 1k6 punktów wytrzymałości na poziom (maksymalnie 5k6).</p>
+<p><em>Główny czar na poważne awarie.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-byczy-wigor">Byczy wigor</h3>
+<p><em>Nazwa w podręczniku: Bull's Strength</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M/BS (kilka włosów z byczej sierści)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>dotyk</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>dotknięta istota</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (nieszkodliwy)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak (nieszkodliwy)</td>
+</tr>
+</tbody>
+</table>
+<p>Cel dostaje +4 premii z ulepszenia do Siły.</p>
+<p><em>Gdy trzeba odkręcić zapieczony zawór albo coś zatrzymać siłą.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="atuty">Luma Bramblewick — opisy atutów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<hr />
+<h3 id="atuty-spisanie-zwoju">Spisanie zwoju</h3>
+<p><em>Nazwa w podręczniku: Scribe Scroll</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>tworzenie przedmiotów</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>1. poziom rzucającego</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> możesz tworzyć zwoje z każdego znanego ci czaru.</p>
+<p><strong>Uwagi:</strong> dodatkowy atut czarodzieja na 1. poziomie.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-skupienie-na-umiejętności-unieszkodliwianie-mechanizmów">Skupienie na umiejętności (Unieszkodliwianie mechanizmów)</h3>
+<p><em>Nazwa w podręczniku: Skill Focus</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +3 do testów Unieszkodliwiania mechanizmów. Gdy masz w tej umiejętności 10 lub więcej rang, premia rośnie do +6.</p>
+<p><strong>Uwagi:</strong> podstawa wszystkich napraw.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-rzucanie-w-walce">Rzucanie w walce</h3>
+<p><em>Nazwa w podręczniku: Combat Casting</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +4 do testów koncentracji przy rzucaniu czarów defensywnie albo w zwarciu.</p>
+<p><strong>Uwagi:</strong> przydaje się, gdy przy rzucaniu Lewitacji gryzą cię ożywione narzędzia.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="zdolnosci">Luma Bramblewick — zdolności i cechy postaci</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia rodzaju zdolności: (Nzw) — nadzwyczajna, (Nd) — nadnaturalna, (Czp) — czaropodobna.</p>
+<hr />
+<h2 id="zdolnosci-cechy-postaci">Cechy postaci</h2>
+<h3 id="zdolnosci-skupiony-umysł">Skupiony umysł</h3>
+<p><strong>Rodzaj:</strong> cecha magiczna <em>(Focused Mind)</em></p>
+<p>+2 premii z cechy do testów koncentracji.</p>
+<h3 id="zdolnosci-uczennica-kotłowni">Uczennica kotłowni</h3>
+<p><strong>Rodzaj:</strong> cecha kampanijna (wymyślona do tej przygody)</p>
+<p>Unieszkodliwianie mechanizmów jest dla Lumy umiejętnością klasową. Dostaje też +1 premii z cechy do Wiedzy (inżynieria).</p>
+<hr />
+<h2 id="zdolnosci-zdolności-rasowe">Zdolności rasowe</h2>
+<ul>
+<li><strong>Mały rozmiar:</strong> +1 do KP i ataków, −1 do manewrów bojowych, +4 do Skradania się.</li>
+<li><strong>Powolna:</strong> prędkość 20 stóp.</li>
+<li><strong>Widzenie w słabym świetle</strong>.</li>
+<li><strong>Trening obronny:</strong> +4 z uniku do KP przeciw olbrzymom.</li>
+<li><strong>Odporność na iluzje:</strong> +2 do rzutów obronnych przeciw iluzjom.</li>
+<li><strong>Czułe zmysły:</strong> +2 do Percepcji.</li>
+<li><strong>Obsesja:</strong> +2 do <strong>Rzemiosła (mechanizmy)</strong>.</li>
+<li><strong>Gnomia magia:</strong> raz dziennie każde: Tańczące światła, Upiorny dźwięk, Prestidigitatorstwo, Rozmowa ze zwierzętami.</li>
+<li><strong>Nienawiść:</strong> +1 do ataków przeciw gadzim humanoidom i goblinoidom.</li>
+</ul>
+<hr />
+<h2 id="zdolnosci-szkoła-przemian">Szkoła przemian</h2>
+<h3 id="zdolnosci-wzmocnienie-fizyczne-nd">Wzmocnienie fizyczne (Nd)</h3>
+<p>+1 premii z ulepszenia do Siły, Zręczności albo Budowy (u Lumy: <strong>Zręczność</strong>). Premia rośnie o 1 co 5 poziomów czarodzieja.</p>
+<h3 id="zdolnosci-telekinetyczna-pięść-czp">Telekinetyczna pięść (Czp)</h3>
+<p>Akcja standardowa: dystansowy atak dotykowy na cel w promieniu 30 stóp, 1k4 + połowa poziomu czarodzieja obrażeń obuchowych (na 3. poziomie: 1k4+1). Możesz jej użyć 3 + mod. INT razy dziennie (<strong>7</strong>).</p>
+<h3 id="zdolnosci-więź-arkaniczna">Więź arkaniczna</h3>
+<p>Przedmiot więzi: <strong>mistrzowski klucz francuski</strong> (w walce traktowany jak pałka). Raz dziennie możesz rzucić dowolny czar z księgi, nawet jeśli go nie przygotowałaś.</p>
+<h3 id="zdolnosci-szkoły-przeciwne">Szkoły przeciwne</h3>
+<p>Zauroczanie i iluzja. Przygotowanie czaru z tych szkół zajmuje dwa miejsca.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="stan">Luma Bramblewick — bieżący stan</h1>
+<p><em>Ostatnia aktualizacja: początek sesji (stan wyjściowy)</em></p>
+<h2 id="stan-przełączniki-bojowe">Przełączniki bojowe</h2>
+<table>
+<thead>
+<tr>
+<th>Przełącznik</th>
+<th>Działanie</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>domyślnie brak</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-wzmocnienia">Aktywne wzmocnienia</h2>
+<table>
+<thead>
+<tr>
+<th>Wzmocnienie</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+<th>Pozostało rund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-stany">Aktywne stany</h2>
+<table>
+<thead>
+<tr>
+<th>Stan</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zmiany-atrybutów">Zmiany atrybutów</h2>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Modyfikator</th>
+<th>Rodzaj</th>
+<th>Źródło</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zasoby">Zasoby</h2>
+<h3 id="stan-pozostałe-czary">Pozostałe czary</h3>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4 przygotowane</td>
+<td>—</td>
+<td>bez limitu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stan-zasoby-klasowe">Zasoby klasowe</h3>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Telekinetyczna pięść</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Czar z więzi (klucz francuski)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Kanapka należna dla Splotu</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Kanapka odsetkowa (żaba narysowana kredą)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-notatki-z-sesji">Notatki z sesji</h2>
+<ul>
+<li>Nocny dyżur w podwodnej akademii.</li>
+<li>Zegar powodzi: 0 z 6.</li>
+<li>Cel: dotrwać do rana i nie zamienić szkoły w akwarium.</li>
+</ul></article>
+</body>
+</html>

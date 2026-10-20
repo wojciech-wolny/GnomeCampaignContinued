@@ -24,3 +24,4 @@ Ton: komedia technicznej katastrofy. Wszystkie materiały są po polsku. Przy op
 2. MG czyta `MG/plan-sesji.md` i przygotowuje zegar powodzi (6 pól).
 3. Rekwizyty z `gracze/rekwizyty.md` wręczasz wtedy, gdy wskazuje na to scenariusz (`MG/rekwizyty-kiedy.md`).
 4. Spotkania znajdziesz w `MG/spotkania/`.
+5. Do druku otwórz [`druk/index.html`](druk/index.html).

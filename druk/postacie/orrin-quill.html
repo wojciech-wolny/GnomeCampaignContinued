@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orrin Quill</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Wszystkie postacie</a></p><nav class="spis spis-ekran"><p>Spis</p><ol><li><a href="#karta">Orrin Quill</a></li>
+<li><a href="#historia">Orrin Quill — historia</a></li>
+<li><a href="#karta-pelna">Orrin Quill — gnom, czarodziej 3. poziomu (szkoła poznania)</a></li>
+<li><a href="#czary">Orrin Quill — opisy czarów</a></li>
+<li><a href="#atuty">Orrin Quill — opisy atutów</a></li>
+<li><a href="#zdolnosci">Orrin Quill — zdolności i cechy postaci</a></li>
+<li><a href="#stan">Orrin Quill — bieżący stan</a></li>
+<li><a href="#schemat-bariery">Kopia schematu bariery</a></li></ol></nav><article class="karta"><h1 id="karta">Orrin Quill</h1>
+<p><strong>Gnom, czarodziej 3. poziomu (poznanie)</strong> · praworządny neutralny · Irori · mały<br />
+<em>„Według trzech źródeł to dobry pomysł. Według czwartego zginiemy. Czwarte jest przypisem”.</em><br />
+<strong>Wygląd:</strong> palce w atramencie, schemat bariery w kieszeni, kreda za uchem, za dużo zakładek w każdej książce</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">SIŁ</th>
+<th style="text-align: center;">ZRĘ</th>
+<th style="text-align: center;">BUD</th>
+<th style="text-align: center;">INT</th>
+<th style="text-align: center;">MDR</th>
+<th style="text-align: center;">CHA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">8 (−1)</td>
+<td style="text-align: center;">12 (+1)</td>
+<td style="text-align: center;">12 (+1)</td>
+<td style="text-align: center;"><strong>18 (+4)</strong></td>
+<td style="text-align: center;">13 (+1)</td>
+<td style="text-align: center;">10 (+0)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">KP</th>
+<th style="text-align: center;">PW</th>
+<th style="text-align: center;">Inicjatywa</th>
+<th style="text-align: center;">Prędkość</th>
+<th style="text-align: center;">Wytrwałość</th>
+<th style="text-align: center;">Refleks</th>
+<th style="text-align: center;">Wola</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>12</strong> (dotyk 12, nieprzyg. 11; z Tarczą 16)</td>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: center;"><strong>+6</strong></td>
+<td style="text-align: center;">20 stóp</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BPA</strong> +1 · <strong>PMB</strong> −1 · <strong>OMB</strong> 10 · <strong>Koncentracja</strong> +9 · zawsze działa w rundzie zaskoczenia · +2 do rzutów przeciw iluzjom · +4 do KP przeciw olbrzymom</p>
+<p><strong>PW:</strong> ☐☐☐☐☐ ☐☐☐☐☐ ☐☐☐☐☐ ☐☐</p>
+<h2 id="karta-ataki">Ataki</h2>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th style="text-align: center;">Premia</th>
+<th>Obrażenia</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lekka kusza</td>
+<td style="text-align: center;">+3</td>
+<td>1k6</td>
+<td>kryt. 19–20, zasięg 80 stóp, 10 bełtów</td>
+</tr>
+<tr>
+<td>Sztylet</td>
+<td style="text-align: center;">+1</td>
+<td>1k3−1</td>
+<td>kryt. 19–20</td>
+</tr>
+</tbody>
+</table>
+<p>+1 do ataków przeciw gadzim humanoidom i goblinoidom.</p>
+<h2 id="karta-czary-poziom-rzucającego-3">Czary (poziom rzucającego 3)</h2>
+<p><strong>ST:</strong> 14 + krąg, poznanie +1 · <strong>Szkoły przeciwne:</strong> wywoływanie, nekromancja</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Krąg</th>
+<th>Czar</th>
+<th>Efekt</th>
+<th>Obrona</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Wykrycie magii</td>
+<td>aury magii w stożku 60 stóp</td>
+<td>—</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Odczytanie magii</td>
+<td>czytasz zwoje i magiczne napisy</td>
+<td>—</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Wykrycie trucizny</td>
+<td>czy coś jest zatrute</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Dłoń maga</td>
+<td>przesuwa przedmiot do 5 funtów</td>
+<td>—</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Zrozumienie języków</td>
+<td>rozumiesz mowę i pismo</td>
+<td>—</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Identyfikacja</td>
+<td>+10 do Czaroznawstwa przy rozpoznawaniu przedmiotów</td>
+<td>—</td>
+<td>9 rund</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Tarcza</td>
+<td>+4 do KP, blokuje Magiczny pocisk</td>
+<td>—</td>
+<td>3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Pewny cios</td>
+<td>+20 do następnego ataku</td>
+<td>—</td>
+<td>1 runda</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Wykrycie myśli</td>
+<td>słyszysz powierzchowne myśli</td>
+<td>Wola ST 17</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Widzenie niewidzialnego</td>
+<td>widzisz niewidzialne istoty i przedmioty</td>
+<td>—</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Zlokalizowanie przedmiotu</td>
+<td>kierunek do szukanego przedmiotu (daleki zasięg)</td>
+<td>—</td>
+<td>3 min</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Miejsca 1. kręgu:</strong> ☐☐☐☐ · <strong>Miejsca 2. kręgu:</strong> ☐☐☐</p>
+<h2 id="karta-zasoby-na-dzień">Zasoby na dzień</h2>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Użycia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Szczęście wieszcza (dotyk: +1 do ataków, testów i rzutów przez rundę)</td>
+<td>☐☐☐☐☐☐☐</td>
+</tr>
+<tr>
+<td>Czar z więzi (amulet z soczewką) — dowolny czar z księgi</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<p>Orrin ma CHA 10, więc nie korzysta ze zdolności czaropodobnych gnomiej magii.</p>
+<h2 id="karta-umiejętności">Umiejętności</h2>
+<p>Wiedza (historia) <strong>+12</strong> · Wiedza (magia) <strong>+10</strong> · Wiedza (inżynieria) <strong>+10</strong> · Wiedza (plany) <strong>+10</strong> · Czaroznawstwo <strong>+10</strong> · Lingwistyka <strong>+10</strong> · Percepcja <strong>+10</strong></p>
+<h2 id="karta-atuty-cechy-i-zdolności">Atuty, cechy i zdolności</h2>
+<p><strong>Atuty:</strong> Spisanie zwoju · Ulepszona inicjatywa · Skupienie na czarach (poznanie)<br />
+<strong>Cechy:</strong> Poszukiwacz (+1 do Percepcji, Percepcja klasowa) · Skupiony umysł (+2 do koncentracji)<br />
+<strong>Szkoła:</strong> Przezorność (+1 do inicjatywy, zawsze działa w rundzie zaskoczenia)<br />
+<strong>Rasowe:</strong> widzenie w słabym świetle · Akademik (+2 do Wiedzy (historia)) · broń „gnomia” jak żołnierska<br />
+<strong>Języki:</strong> wspólny, gnomi, sylwański, smoczy, krasnoludzki, elfi, olbrzymi, akwan, niebiański, piekielny</p>
+<h2 id="karta-ekwipunek">Ekwipunek</h2>
+<p>Lekka kusza i 10 bełtów · sztylet · amulet z kryształową soczewką (przedmiot więzi) · <a href="#schemat-bariery">kopia schematu bariery</a> · kreda · lupa · czerwony atrament · księga czarów · sakiewka na komponenty · 32 sz</p>
+<h2 id="karta-kim-jestem">Kim jestem</h2>
+<p>Asystent bibliotekarki Vellum i opiekun archiwum raportów. Piszę pracę dyplomową o złotym posągu, ale źródła kłócą się nawet o to, czy Fizz miał wtedy wąsy. Znam smoczy, więc tłumaczę listy od smoczego kuzyna Nixy.</p>
+<p><strong>Relacje:</strong> Pip — autor moich ulubionych raportów; czytam je na głos i nigdy mu tego nie powiem · Zizzle — jego kartka ma czternaście błędów; poprawki i dopisek są tylko na kopii w teczce z żabą · Nixa — zeszłoroczny list oddany, w sprawie zęba nie ustąpię; tegoroczny jest u niej nieotwarty · Luma — w tajemnicy przyznaję jej rację co do rur; odpis w kieszeni uważam za aktualny i jeszcze go nie poprawiała</p></article><article class="sekcja nowa"><h1 id="historia">Orrin Quill — historia</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Orrin jest asystentem bibliotekarki Vellum i opiekunem archiwum raportów, czyli miejsca, do którego trafia każdy protokół, skarga i wniosek o zwrot kosztów za zalane skarpety. Czyta wszystko. Zapamiętuje wszystko. Poprawia wszystko, łącznie z napisami na drzwiach. Pisze pracę dyplomową o złotym posągu i utknął na rozdziale drugim, bo każde źródło podaje inną wersję szczegółów, a trzy z nich kłócą się nawet o to, czy Fizz miał wtedy wąsy. Wnioski o skarpety mają datę tego samego dnia. Fizz wciąż opowiada tę anegdotę na nocnym dyżurze <strong>Pipa</strong>, zawsze z termosem herbaty i nigdy z wąsami. Pip słyszał ją czterdzieści razy i odmawia zeznań. Orrin i tak nie wpisze do pracy świadka, którego nie ma w teczce.</p>
+<p>W archiwum leżą dwa odrzucone raporty <strong>Pipa</strong> o Incydencie z Żabą. Orrin odrzucił je „ze względów stylistycznych”, choć prawda jest taka, że czyta je na głos w bibliotece i czeka na wersję trzecią, bo to najlepsza lektura w całym zbiorze. Pipowi nigdy tego nie powie. Pip i tak słusznie to podejrzewa. Notes, nad którym Pip siedzi teraz, nosi tytuł „Incydent z Żabą, wersja 3”. Profesor Plink twierdzi, że taka numeracja jest zarezerwowana dla prawdziwej historii szkoły. Pip uważa, że jego historia jest prawdziwa, i pisze dalej. W tej samej teczce leży kopia <a href="zizzle-stormpocket.html#list-legalny-gnom">listu „legalny gnom”</a>. Oryginał nosi <strong>Zizzle</strong> i nie ma na nim ani kresek, ani dopisku. Orrin poprawił kopię: czternaście błędów ortograficznych czerwonym atramentem i osobny dopisek na marginesie, „Formalnie bez zarzutu. Broda do weryfikacji”.</p>
+<p>Orrin zna smoczy, podobnie jak Luma i Pip, ale to on tłumaczy rodzinne listy <strong>Nixy</strong>. List od kuzyna — mosiężnego smoka z opowieści o prababci — przychodzi raz w roku: trzydzieści stron, głównie pogoda na pustyni, koszmarny charakter pisma i ten sam dopisek na końcu, „Pozdrów małą”. Nixa zapytała w zeszłorocznym liście, czy ząb kupiony na jarmarku jest zębem kuzyna. W odpowiedzi kuzyn napisał, że nie jest jego, tylko psa. Orrin już to przetłumaczył, zdanie po zdaniu. Nixa poprosiła o „ponowne, dokładniejsze tłumaczenie”. Orrin go nie skończył i nie nosi brudnopisu przy sobie: nie chce kłamać, a jeszcze bardziej nie chce zostać podpalony. Tegoroczny list jest nieotwarty i leży u Nixy.</p>
+<h2 id="historia-relacje">Relacje</h2>
+<ul>
+<li><strong>Pip</strong> — autor jego ulubionych raportów. Orrin czyta je na głos w bibliotece i nigdy mu tego nie powie. Przy okazji nie wydobędzie z niego zeznań o wąsach Fizza.</li>
+<li><strong>Zizzle</strong> — klient, którego sprawę formalnie prowadzi, choć nikt go o to nie prosił. Kartka, którą Zizzle nosi, ma czternaście błędów i nie ma dopisku. Poprawki oraz margines „Formalnie bez zarzutu. Broda do weryfikacji” są tylko na kopii w teczce.</li>
+<li><strong>Nixa</strong> — zleceniodawczyni tłumaczeń i jedyna osoba w akademii, która słucha jego wykładów o smoczej gramatyce do końca. Zeszłoroczne tłumaczenie dostała. Drugiego wciąż nie ma, a tegoroczny list jest u niej nieotwarty.</li>
+<li><strong>Luma</strong> — kłócą się, czy rację ma papier, czy rura. Odpis w kieszeni Orrin uważa za aktualny. Luma jeszcze go nie widziała; gdy zobaczy, dopisze markerem „schemat kłamie”. Orrin w tajemnicy zgadza się z nią co do rur, ale nie może tego przyznać na piśmie. Smoczych listów Nixy Luma nie rusza: list, jak mówi, nie jest rurą.</li>
+</ul>
+<p><strong>Zaczepka na sesję:</strong> Orrin wyniósł z biblioteki <a href="#schemat-bariery">kopię schematu bariery</a>, czego pani Vellum surowo zabrania. Jeśli ktoś zapyta — on tylko „konsultuje źródło w terenie”. Uważa odpis za aktualny. Luma jeszcze go nie poprawiała.</p></article><article class="sekcja nowa"><h1 id="karta-pelna">Orrin Quill — gnom, czarodziej 3. poziomu (szkoła poznania)</h1><pre class="meta">name: Orrin Quill
+level: 3
+classes: Wizard (Diviner) 3
+race: Gnome
+alignment: &quot;lawful neutral&quot;
+deity: Irori</pre>
+<p><strong>„Według trzech źródeł to dobry pomysł. Według czwartego zginiemy. Czwarte jest przypisem”.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rasa</strong></td>
+<td>gnom</td>
+</tr>
+<tr>
+<td><strong>Klasa</strong></td>
+<td>czarodziej 3 (specjalista poznania)</td>
+</tr>
+<tr>
+<td><strong>Charakter</strong></td>
+<td>praworządny neutralny</td>
+</tr>
+<tr>
+<td><strong>Bóstwo</strong></td>
+<td>Irori</td>
+</tr>
+<tr>
+<td><strong>Rozmiar</strong></td>
+<td>mały</td>
+</tr>
+<tr>
+<td><strong>Wygląd</strong></td>
+<td>palce w atramencie, schemat bariery w kieszeni, kreda za uchem, za dużo zakładek w każdej książce</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-klasa">Klasa</h2>
+<table>
+<thead>
+<tr>
+<th>Klasa</th>
+<th>Szkoła</th>
+<th>Kość wytrzymałości</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>czarodziej 3</td>
+<td>poznanie (Przezorność, Szczęście wieszcza); szkoły przeciwne: wywoływanie, nekromancja</td>
+<td>k6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-atrybuty">Atrybuty</h2>
+<p>Zakup punktowy: 20 punktów. Modyfikatory rasowe: −2 SIŁ, +2 BUD, +2 CHA.</p>
+<table>
+<thead>
+<tr>
+<th>Atr.</th>
+<th>Baza</th>
+<th>Rasa</th>
+<th>Suma</th>
+<th>Mod.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIŁ</td>
+<td>10</td>
+<td>−2</td>
+<td><strong>8</strong></td>
+<td><strong>−1</strong></td>
+</tr>
+<tr>
+<td>ZRĘ</td>
+<td>12</td>
+<td>—</td>
+<td><strong>12</strong></td>
+<td><strong>+1</strong></td>
+</tr>
+<tr>
+<td>BUD</td>
+<td>10</td>
+<td>+2</td>
+<td><strong>12</strong></td>
+<td><strong>+1</strong></td>
+</tr>
+<tr>
+<td>INT</td>
+<td>18</td>
+<td>—</td>
+<td><strong>18</strong></td>
+<td><strong>+4</strong></td>
+</tr>
+<tr>
+<td>MDR</td>
+<td>13</td>
+<td>—</td>
+<td><strong>13</strong></td>
+<td><strong>+1</strong></td>
+</tr>
+<tr>
+<td>CHA</td>
+<td>8</td>
+<td>+2</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-statystyki-bojowe">Statystyki bojowe</h2>
+<p><strong>KP</strong> 12 (dotyk 12, nieprzygotowany 11; z Tarczą 16) · <strong>PW</strong> 17 (6 + 4 + 4 + 3 z Budowy; premia za klasę preferowaną idzie na umiejętności)<br />
+<strong>Wytrwałość</strong> +2 · <strong>Refleks</strong> +2 · <strong>Wola</strong> +4 · +2 przeciw iluzjom<br />
+<strong>Inicjatywa</strong> +6 (+1 ZRĘ, +4 Ulepszona inicjatywa, +1 Przezorność); zawsze działa w rundzie zaskoczenia<br />
+<strong>Bazowa premia do ataku</strong> +1 · <strong>Premia manewrów</strong> −1 · <strong>Obrona przed manewrami</strong> 10 · <strong>Koncentracja</strong> +9 · <strong>Prędkość</strong> 20 stóp</p>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th>Premia</th>
+<th>Obrażenia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lekka kusza</td>
+<td>+3</td>
+<td>1k6, kryt. 19–20</td>
+</tr>
+<tr>
+<td>Sztylet</td>
+<td>+1</td>
+<td>1k3−1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-umiejętności">Umiejętności</h2>
+<p>Czarodziej: 2 + INT = 6 rang na poziom × 3 = 18, plus 3 rangi z klasy preferowanej = <strong>21</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Umiejętność</th>
+<th>Suma</th>
+<th>Rangi</th>
+<th>Atr.</th>
+<th>Klasowa</th>
+<th>Inne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wiedza (historia)</td>
+<td><strong>+12</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>+2 Akademik</td>
+</tr>
+<tr>
+<td>Wiedza (magia)</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Wiedza (inżynieria)</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Wiedza (plany)</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Czaroznawstwo</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Lingwistyka</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+4</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Percepcja</td>
+<td><strong>+10</strong></td>
+<td>3</td>
+<td>+1</td>
+<td>+3*</td>
+<td>+2 rasowa, +1 Poszukiwacz</td>
+</tr>
+</tbody>
+</table>
+<p>* Umiejętność klasowa dzięki cesze Poszukiwacz.</p>
+<p><strong>Języki:</strong> wspólny, gnomi, sylwański, smoczy, krasnoludzki, elfi, olbrzymi (premia za Inteligencję) oraz akwan, niebiański, piekielny (rangi w Lingwistyce)</p>
+<h2 id="karta-pelna-atuty">Atuty</h2>
+<table>
+<thead>
+<tr>
+<th>Poziom</th>
+<th>Atut</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (klasa)</td>
+<td><a href="#atuty-spisanie-zwoju">Spisanie zwoju</a></td>
+<td>tworzenie zwojów</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#atuty-ulepszona-inicjatywa">Ulepszona inicjatywa</a></td>
+<td>+4 do inicjatywy</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#atuty-skupienie-na-czarach-poznanie">Skupienie na czarach (poznanie)</a></td>
+<td>+1 do ST czarów poznania</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-cechy-postaci">Cechy postaci</h2>
+<table>
+<thead>
+<tr>
+<th>Cecha</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#zdolnosci-poszukiwacz">Poszukiwacz</a></td>
+<td>+1 do Percepcji; Percepcja jest klasowa</td>
+</tr>
+<tr>
+<td><a href="#zdolnosci-skupiony-umysł">Skupiony umysł</a></td>
+<td>+2 do koncentracji</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-zdolności--skrót">Zdolności — skrót</h2>
+<table>
+<thead>
+<tr>
+<th>Zdolność</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Przezorność</td>
+<td>+1 do inicjatywy; zawsze działa w rundzie zaskoczenia</td>
+</tr>
+<tr>
+<td>Szczęście wieszcza</td>
+<td>dotyk: +1 z wnikliwości do ataków, testów umiejętności i atrybutów oraz rzutów obronnych przez rundę; 7 razy dziennie</td>
+</tr>
+<tr>
+<td>Więź arkaniczna</td>
+<td>amulet z kryształową soczewką</td>
+</tr>
+<tr>
+<td>Akademik</td>
+<td>+2 do Wiedzy (historia), zamiast Obsesji</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-rzucanie-czarów">Rzucanie czarów</h2>
+<p><strong>Poziom rzucającego</strong> 3 · <strong>ST</strong> 14 + krąg czaru (poznanie: +1)</p>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Miejsc</th>
+<th>Przygotowane</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>Wykrycie magii, Odczytanie magii, Wykrycie trucizny, Dłoń maga</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4 (2 bazowe, +1 za INT, +1 ze szkoły)</td>
+<td>Zrozumienie języków, Identyfikacja, Tarcza, Pewny cios</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3 (1 bazowe, +1 za INT, +1 ze szkoły)</td>
+<td>Wykrycie myśli (ST 17), Widzenie niewidzialnego, Zlokalizowanie przedmiotu</td>
+</tr>
+</tbody>
+</table>
+<p>Dodatkowe miejsce ze szkoły musi zawierać czar poznania. Na 1. kręgu jest nim Identyfikacja, na 2. — Zlokalizowanie przedmiotu.</p>
+<h2 id="karta-pelna-ekwipunek">Ekwipunek</h2>
+<ul>
+<li>Lekka kusza, 10 bełtów, sztylet</li>
+<li>Amulet z kryształową soczewką (przedmiot więzi)</li>
+<li><a href="#schemat-bariery">Kopia schematu bariery</a>, kreda, lupa, czerwony atrament do poprawiania cudzych raportów</li>
+<li>Księga czarów, sakiewka na komponenty, 32 sz</li>
+</ul></article><article class="sekcja nowa"><h1 id="czary">Orrin Quill — opisy czarów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia: W — komponent werbalny, S — somatyczny, M — materiałowy, O — skupienie, BS — boski symbol. „(odw.)” przy czasie działania oznacza, że czar można odwołać.<br />
+Zasięg bliski: 25 stóp + 5 stóp na 2 poziomy (przy 3. poziomie: 30 stóp). Daleki: 400 stóp + 40 stóp na poziom (520 stóp).</p>
+<hr />
+<h2 id="czary-czary-czarodzieja">Czary czarodzieja</h2>
+<h3 id="czary-wykrycie-magii">Wykrycie magii</h3>
+<p><em>Nazwa w podręczniku: Detect Magic</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>60 stóp</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>stożek</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja, do 1 minuty na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Wykrywasz magiczne aury. W 1. rundzie: czy są obecne. W 2. rundzie: ile ich jest i która jest najsilniejsza. W 3. rundzie: siła, położenie i szkoła każdej aury (test Wiedzy (magia)).</p>
+<p><em>Zawsze przed dotknięciem czegoś, co brzęczy, świeci albo ma tabliczkę „nie dotykać”.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-odczytanie-magii">Odczytanie magii</h3>
+<p><em>Nazwa w podręczniku: Read Magic</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, O (przezroczysty kryształ albo pryzmat)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>10 minut na poziom</td>
+</tr>
+</tbody>
+</table>
+<p>Odczytujesz magiczne napisy, zwoje i cudze księgi czarów.</p>
+<p><em>Dopiski na marginesach schematów. Pani Vellum udaje, że tego nie widzi.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-wykrycie-trucizny">Wykrycie trucizny</h3>
+<p><em>Nazwa w podręczniku: Detect Poison</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel lub obszar</strong></td>
+<td>jedna istota, jeden przedmiot albo sześcian o boku 5 stóp</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Sprawdzasz, czy cel jest zatruty albo czy zawiera truciznę.</p>
+<p><em>Kontrola każdej kanapki od Zizzle'a. Na wszelki wypadek.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-dłoń-maga">Dłoń maga</h3>
+<p><em>Nazwa w podręczniku: Mage Hand</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden niemagiczny, niepilnowany przedmiot ważący do 5 funtów</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Akcją ruchu przesuwasz przedmiot o 15 stóp w dowolnym kierunku.</p>
+<p><em>Przesuwa drobiazgi bez dotykania tego, co iskrzy.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-zrozumienie-języków">Zrozumienie języków</h3>
+<p><em>Nazwa w podręczniku: Comprehend Languages</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M/BS (szczypta sadzy i soli)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>10 minut na poziom</td>
+</tr>
+</tbody>
+</table>
+<p>Rozumiesz każdy język mówiony i pisany, ale nie potrafisz się nim posługiwać.</p>
+<p><em>Orrin zna smoczy, więc to raczej zapas na nieznane gwary. Albo na charakter pisma kuzyna Nixy.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-identyfikacja">Identyfikacja</h3>
+<p><em>Nazwa w podręczniku: Identify</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M (wino zamieszane sowim piórem)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>60 stóp</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>stożek</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>3 rundy na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Działa jak Wykrycie magii, ale daje +10 premii z ulepszenia do Czaroznawstwa przy rozpoznawaniu właściwości przedmiotów magicznych.</p>
+<p><em>Co to jest i czy wybuchnie? Rozstrzygnięte w jedną rundę.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-tarcza">Tarcza</h3>
+<p><em>Nazwa w podręczniku: Shield</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>odrzucanie [moc]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom (odw.)</td>
+</tr>
+</tbody>
+</table>
+<p>Niewidzialna tarcza mocy daje +4 premii z tarczy do KP i chroni przed Magicznymi pociskami.</p>
+<p><em>Rzuć, zanim zrobi się gorąco.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-pewny-cios">Pewny cios</h3>
+<p><em>Nazwa w podręczniku: True Strike</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, O (drewniana miniatura tarczy łuczniczej)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>zob. opis</td>
+</tr>
+</tbody>
+</table>
+<p>Twój następny atak (o ile wykonasz go przed końcem następnej rundy) dostaje +20 premii z wnikliwości i ignoruje szansę chybienia z powodu ukrycia.</p>
+<p><em>Jeden bełt z kuszy, który naprawdę musi trafić.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-wykrycie-myśli">Wykrycie myśli</h3>
+<p><em>Nazwa w podręczniku: Detect Thoughts</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie [wpływający na umysł]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, O/BS (miedziana moneta)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>60 stóp</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>stożek</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja, do 1 minuty na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (ST 17); zob. opis</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>W 1. rundzie wiesz, czy w stożku są myślące istoty. W 2. — ile ich jest i jaka jest ich Inteligencja. W 3. odczytujesz powierzchowne myśli jednej istoty, jeśli nie zda rzutu na Wolę.</p>
+<p><em>Kto tu kłamie? Zwykle wszyscy, ale ktoś najbardziej.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-widzenie-niewidzialnego">Widzenie niewidzialnego</h3>
+<p><em>Nazwa w podręczniku: See Invisibility</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M (szczypta talku i sproszkowanego srebra)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>osobisty</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>ty</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>10 minut na poziom (odw.)</td>
+</tr>
+</tbody>
+</table>
+<p>Widzisz niewidzialne i eteryczne istoty oraz przedmioty.</p>
+<p><em>Na Splota albo na znikających zaklinaczy.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-zlokalizowanie-przedmiotu">Zlokalizowanie przedmiotu</h3>
+<p><em>Nazwa w podręczniku: Locate Object</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, O/BS (rozwidlona gałązka)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>daleki</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>okrąg o promieniu 520 stóp wokół ciebie</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Wyczuwasz kierunek do znanego ci przedmiotu albo do najbliższego przedmiotu danego rodzaju (np. „klucz do dyżurki”). Czar blokuje nawet cienka warstwa ołowiu.</p>
+<p><em>Gdzie Pip zostawił notes z raportem? Teraz już wiadomo.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="atuty">Orrin Quill — opisy atutów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<hr />
+<h3 id="atuty-spisanie-zwoju">Spisanie zwoju</h3>
+<p><em>Nazwa w podręczniku: Scribe Scroll</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>tworzenie przedmiotów</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>1. poziom rzucającego</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> możesz tworzyć zwoje z każdego znanego ci czaru.</p>
+<p><strong>Uwagi:</strong> dodatkowy atut czarodzieja na 1. poziomie.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-ulepszona-inicjatywa">Ulepszona inicjatywa</h3>
+<p><em>Nazwa w podręczniku: Improved Initiative</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>bojowy</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +4 do testów inicjatywy.</p>
+<p><strong>Uwagi:</strong> sumuje się z Przezornością.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-skupienie-na-czarach-poznanie">Skupienie na czarach (poznanie)</h3>
+<p><em>Nazwa w podręczniku: Spell Focus</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +1 do ST rzutów obronnych przeciw twoim czarom ze szkoły poznania.</p>
+<p><strong>Uwagi:</strong> Wykrycie myśli ma ST 17.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="zdolnosci">Orrin Quill — zdolności i cechy postaci</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia rodzaju zdolności: (Nzw) — nadzwyczajna, (Nd) — nadnaturalna, (Czp) — czaropodobna.</p>
+<hr />
+<h2 id="zdolnosci-cechy-postaci">Cechy postaci</h2>
+<h3 id="zdolnosci-poszukiwacz">Poszukiwacz</h3>
+<p><strong>Rodzaj:</strong> cecha społeczna <em>(Seeker)</em></p>
+<p>+1 premii z cechy do Percepcji. Percepcja jest dla Orrina umiejętnością klasową.</p>
+<h3 id="zdolnosci-skupiony-umysł">Skupiony umysł</h3>
+<p><strong>Rodzaj:</strong> cecha magiczna <em>(Focused Mind)</em></p>
+<p>+2 premii z cechy do testów koncentracji.</p>
+<hr />
+<h2 id="zdolnosci-zdolności-rasowe">Zdolności rasowe</h2>
+<ul>
+<li><strong>Mały rozmiar:</strong> +1 do KP i ataków, −1 do manewrów bojowych, +4 do Skradania się.</li>
+<li><strong>Powolny:</strong> prędkość 20 stóp.</li>
+<li><strong>Widzenie w słabym świetle</strong>.</li>
+<li><strong>Trening obronny:</strong> +4 z uniku do KP przeciw olbrzymom.</li>
+<li><strong>Odporność na iluzje:</strong> +2 do rzutów obronnych przeciw iluzjom.</li>
+<li><strong>Czułe zmysły:</strong> +2 do Percepcji.</li>
+<li><strong>Akademik</strong> (zamiast Obsesji): +2 do Wiedzy (historia).</li>
+<li><strong>Nienawiść:</strong> +1 do ataków przeciw gadzim humanoidom i goblinoidom.</li>
+</ul>
+<p>Orrin ma Charyzmę 10, więc nie korzysta ze zdolności czaropodobnych gnomiej magii (wymagają Charyzmy co najmniej 11). Nadal ma jednak +1 do ST swoich iluzji.</p>
+<hr />
+<h2 id="zdolnosci-szkoła-poznania">Szkoła poznania</h2>
+<h3 id="zdolnosci-przezorność-nd">Przezorność (Nd)</h3>
+<p>Zawsze możesz działać w rundzie zaskoczenia, nawet jeśli nie zauważyłeś wroga, choć do swojej pierwszej akcji jesteś nieprzygotowany. Dostajesz też premię z wnikliwości do inicjatywy równą połowie poziomu czarodzieja (minimum +1; na 3. poziomie: <strong>+1</strong>).</p>
+<h3 id="zdolnosci-szczęście-wieszcza-czp">Szczęście wieszcza (Czp)</h3>
+<p>Akcją standardową dotykasz istotę (także siebie). Przez rundę dostaje ona premię z wnikliwości równą połowie poziomu czarodzieja (minimum +1) do ataków, testów umiejętności, testów atrybutów i rzutów obronnych. Możesz tego użyć 3 + mod. INT razy dziennie (<strong>7</strong>).</p>
+<h3 id="zdolnosci-więź-arkaniczna">Więź arkaniczna</h3>
+<p>Przedmiot więzi: <strong>amulet z kryształową soczewką</strong>. Raz dziennie możesz rzucić dowolny czar z księgi, nawet jeśli go nie przygotowałeś.</p>
+<h3 id="zdolnosci-szkoły-przeciwne">Szkoły przeciwne</h3>
+<p>Wywoływanie i nekromancja. Przygotowanie czaru z tych szkół zajmuje dwa miejsca.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="stan">Orrin Quill — bieżący stan</h1>
+<p><em>Ostatnia aktualizacja: początek sesji (stan wyjściowy)</em></p>
+<h2 id="stan-przełączniki-bojowe">Przełączniki bojowe</h2>
+<table>
+<thead>
+<tr>
+<th>Przełącznik</th>
+<th>Działanie</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>domyślnie brak</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-wzmocnienia">Aktywne wzmocnienia</h2>
+<table>
+<thead>
+<tr>
+<th>Wzmocnienie</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+<th>Pozostało rund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-stany">Aktywne stany</h2>
+<table>
+<thead>
+<tr>
+<th>Stan</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zmiany-atrybutów">Zmiany atrybutów</h2>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Modyfikator</th>
+<th>Rodzaj</th>
+<th>Źródło</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zasoby">Zasoby</h2>
+<h3 id="stan-pozostałe-czary">Pozostałe czary</h3>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4 przygotowane</td>
+<td>—</td>
+<td>bez limitu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stan-zasoby-klasowe">Zasoby klasowe</h3>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Szczęście wieszcza</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Czar z więzi (amulet)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-notatki-z-sesji">Notatki z sesji</h2>
+<ul>
+<li>Nocny dyżur w podwodnej akademii.</li>
+<li>Zegar powodzi: 0 z 6.</li>
+<li>Cel: dotrwać do rana i nie zamienić szkoły w akwarium.</li>
+</ul></article><article class="kartka"><h1 id="schemat-bariery">Kopia schematu bariery</h1>
+<p>Odpis, który Orrin wyniósł z biblioteki. Leży w kieszeni. Uważa go za aktualny.</p>
+<hr />
+<p><strong>Akademia — Wydział Instalacji</strong><br />
+<strong>Schemat bariery wodnej, skrzydło nocne</strong><br />
+Rewizja 2. Status: aktualna.<br />
+Odpis do użytku na dyżurze.</p>
+<h3 id="schemat-bariery-wiązki">Wiązki</h3>
+<table>
+<thead>
+<tr>
+<th>Oznaczenie</th>
+<th>Funkcja</th>
+<th>Polecenie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>bariera i ciśnienie</td>
+<td>tego pilnować</td>
+</tr>
+<tr>
+<td>B</td>
+<td>obwód gospodarczy</td>
+<td>można odłączyć</td>
+</tr>
+<tr>
+<td>C</td>
+<td>rezerwa ciśnienia</td>
+<td>nie rozłączać</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schemat-bariery-kryształ-w-gnieździe">Kryształ w gnieździe</h3>
+<p>Do rezonansu bariery wkładać kryształ <strong>niebieski</strong>.<br />
+Bursztynowy zostawić przy czajniku.<br />
+Zielony jest ozdobą. Nie poprawia bariery i nie psuje jej.</p>
+<h3 id="schemat-bariery-wieża-pieczęci">Wieża Pieczęci</h3>
+<p>Kolejność uruchomienia:</p>
+<ol>
+<li>Duży czerwony przycisk.</li>
+<li>Klucz.</li>
+<li>Zwarcie prętów.</li>
+</ol>
+<p>Innej kolejności regulamin nie przewiduje.</p>
+<hr />
+<p>Na dole, ołówkiem, charakterem Orrina: „Konsultuję źródło w terenie.”</p></article>
+</body>
+</html>

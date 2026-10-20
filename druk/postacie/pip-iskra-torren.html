@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pip „Iskra” Torren</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Wszystkie postacie</a></p><nav class="spis spis-ekran"><p>Spis</p><ol><li><a href="#karta">Pip „Iskra” Torren</a></li>
+<li><a href="#historia">Pip „Iskra” Torren — historia</a></li>
+<li><a href="#karta-pelna">Pip „Iskra” Torren — gnom, czarodziej 3. poziomu (szkoła wywoływania)</a></li>
+<li><a href="#czary">Pip „Iskra” Torren — opisy czarów</a></li>
+<li><a href="#atuty">Pip „Iskra” Torren — opisy atutów</a></li>
+<li><a href="#zdolnosci">Pip „Iskra” Torren — zdolności i cechy postaci</a></li>
+<li><a href="#stan">Pip „Iskra” Torren — bieżący stan</a></li></ol></nav><article class="karta"><h1 id="karta">Pip „Iskra” Torren</h1>
+<p><strong>Gnom, czarodziej 3. poziomu (wywoływanie)</strong> · chaotyczny dobry · Nethys · mały · 52 lata<br />
+<em>„Nie jem niczego, co może samo zeskoczyć z talerza”.</em><br />
+<strong>Wygląd:</strong> krótkie włosy w kolorze indygo, przypalone na końcówkach; gogle na czole; amulet w kształcie klucza imbusowego</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">SIŁ</th>
+<th style="text-align: center;">ZRĘ</th>
+<th style="text-align: center;">BUD</th>
+<th style="text-align: center;">INT</th>
+<th style="text-align: center;">MDR</th>
+<th style="text-align: center;">CHA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">8 (−1)</td>
+<td style="text-align: center;">14 (+2)</td>
+<td style="text-align: center;">13 (+1)</td>
+<td style="text-align: center;"><strong>17 (+3)</strong></td>
+<td style="text-align: center;">10 (+0)</td>
+<td style="text-align: center;">13 (+1)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">KP</th>
+<th style="text-align: center;">PW</th>
+<th style="text-align: center;">Inicjatywa</th>
+<th style="text-align: center;">Prędkość</th>
+<th style="text-align: center;">Wytrwałość</th>
+<th style="text-align: center;">Refleks</th>
+<th style="text-align: center;">Wola</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>13</strong> (dotyk 13, nieprzyg. 11)</td>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: center;"><strong>+6</strong></td>
+<td style="text-align: center;">20 stóp</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+3</td>
+<td style="text-align: center;">+3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BPA</strong> +1 · <strong>PMB</strong> −1 · <strong>OMB</strong> 11 · <strong>Koncentracja</strong> +8 · +2 do rzutów przeciw iluzjom · +4 do KP przeciw olbrzymom</p>
+<p><strong>PW:</strong> ☐☐☐☐☐ ☐☐☐☐☐ ☐☐☐☐☐ ☐☐</p>
+<h2 id="karta-ataki">Ataki</h2>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th style="text-align: center;">Premia</th>
+<th>Obrażenia</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sztylet</td>
+<td style="text-align: center;">+1 / +4 rzut</td>
+<td>1k3−1</td>
+<td>kryt. 19–20, rzut 10 stóp</td>
+</tr>
+<tr>
+<td>Promień mrozu</td>
+<td style="text-align: center;">+4 dotyk</td>
+<td>1k3+1 od zimna</td>
+<td>sztuczka, bez limitu</td>
+</tr>
+<tr>
+<td>Pocisk mocy</td>
+<td style="text-align: center;">automatycznie</td>
+<td>1k4+1 od mocy</td>
+<td>średni zasięg</td>
+</tr>
+<tr>
+<td>Palący promień</td>
+<td style="text-align: center;">+4 dotyk</td>
+<td>4k6+1 od ognia</td>
+<td>czar 2. kręgu</td>
+</tr>
+</tbody>
+</table>
+<p>+1 do ataków przeciw gadzim humanoidom i goblinoidom.</p>
+<h2 id="karta-czary-poziom-rzucającego-3">Czary (poziom rzucającego 3)</h2>
+<p><strong>ST:</strong> 13 + krąg, wywoływanie 14 + krąg · <strong>Szkoły przeciwne:</strong> zauroczanie, nekromancja · <strong>Wzmożone czary:</strong> +1 obrażeń raz na czar wywoływania</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Krąg</th>
+<th>Czar</th>
+<th>Efekt</th>
+<th>Obrona</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Tańczące światła</td>
+<td>do 4 świateł, przesuwasz je</td>
+<td>—</td>
+<td>1 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Wykrycie magii</td>
+<td>aury magii w stożku 60 stóp</td>
+<td>—</td>
+<td>koncentracja</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Promień mrozu</td>
+<td>1k3+1 od zimna</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Prestidigitatorstwo</td>
+<td>drobne sztuczki: czyszczenie, barwienie</td>
+<td>—</td>
+<td>1 godz.</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Magiczny pocisk</td>
+<td>2 pociski po 1k4+1, zawsze trafiają</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Magiczny pocisk</td>
+<td>jak wyżej</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Smar</td>
+<td>śliska powierzchnia 10×10 stóp albo przedmiot</td>
+<td>Ref ST 14</td>
+<td>3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Powiększenie osoby</td>
+<td>cel rośnie: +2 SIŁ, −2 ZRĘ (1 runda rzucania)</td>
+<td>Wytr ST 14</td>
+<td>3 min</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Palący promień</td>
+<td>4k6+1 od ognia</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Lśniący pył</td>
+<td>oślepia, ujawnia niewidzialnych</td>
+<td>Wola ST 15</td>
+<td>3 rundy</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><em>(wolne miejsce)</em></td>
+<td>15 minut nauki z księgi</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Miejsca 1. kręgu:</strong> ☐☐☐☐ · <strong>Miejsca 2. kręgu:</strong> ☐☐☐</p>
+<h2 id="karta-zasoby-na-dzień">Zasoby na dzień</h2>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Użycia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pocisk mocy</td>
+<td>☐☐☐☐☐☐</td>
+</tr>
+<tr>
+<td>Czar z więzi (amulet) — dowolny czar z księgi</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Różdżka Magicznego pocisku</td>
+<td>☐☐☐☐☐ ☐☐☐☐☐</td>
+</tr>
+<tr>
+<td>Gnomia magia (po 1): Tańczące światła · Upiorny dźwięk · Prestidigitatorstwo · Rozmowa ze zwierzętami</td>
+<td>☐ ☐ ☐ ☐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-umiejętności">Umiejętności</h2>
+<p>Wiedza (inżynieria) <strong>+11</strong> · Unieszkodliwianie mechanizmów <strong>+9</strong> · Wiedza (magia) <strong>+9</strong> · Czaroznawstwo <strong>+9</strong> · Wiedza (lokalna) <strong>+7</strong> · Rzemiosło (alchemia) <strong>+7</strong> · Percepcja <strong>+5</strong> · Pływanie <strong>+0</strong></p>
+<h2 id="karta-atuty-cechy-i-zdolności">Atuty, cechy i zdolności</h2>
+<p><strong>Atuty:</strong> Spisanie zwoju · Skupienie na czarach (wywoływanie) · Ulepszona inicjatywa<br />
+<strong>Cechy:</strong> Skupiony umysł (+2 do koncentracji) · Dyżurny techniczny (Unieszkodliwianie mechanizmów klasowe, +1)<br />
+<strong>Rasowe:</strong> widzenie w słabym świetle · Akademik (+2 do Wiedzy (inżynieria)) · broń „gnomia” jak żołnierska<br />
+<strong>Języki:</strong> wspólny, gnomi, sylwański, smoczy, krasnoludzki, goblinski</p>
+<h2 id="karta-ekwipunek">Ekwipunek</h2>
+<p>Sztylet · strój uczonego · gogle · amulet-klucz (przedmiot więzi) · różdżka Magicznego pocisku · rękawice izolacyjne · notes „Incydent z Żabą, wersja 3” · księga czarów · sakiewka na komponenty · 35 sz</p>
+<h2 id="karta-kim-jestem">Kim jestem</h2>
+<p>Technik od alarmów na nocnych dyżurach, uczeń weterana Fizza. Pierwszego dnia wymiany Zizzle dał mi na powitanie kanapkę z żywą żabą — żaba wskoczyła na pulpit i ewakuowała pół akademii. Od tamtej pory nienawidzę żab, a raport z tej nocy piszę trzeci raz.</p>
+<p><strong>Relacje:</strong> Zizzle — winny Incydentu z Żabą, przeprosin nie było · Orrin — dwa razy odrzucił raport i czyta go na głos, choć mi tego nie powie · Luma — remis przy tablicy; kanapka była z jej pudełka · Nixa — przypaliła mi włosy (mówię, że to mój eksperyment) i ma wobec mnie dług honorowy</p></article><article class="sekcja nowa"><h1 id="historia">Pip „Iskra” Torren — historia</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Pip jest technikiem od alarmów i od trzech lat bierze nocne dyżury, bo w nocy nikt nie przeszkadza mu w testowaniu syren. Zna każdy dzwonek, gong i brzęczyk w akademii po samym dźwięku, a na pytanie „co to było?” odpowiada numerem katalogowym. Uczył się u Fizza, weterana od złotego posągu, który do dziś przynosi na dyżur termos herbaty i tę samą anegdotę o mokrych skarpetach. Pip słyszał ją czterdzieści razy i za każdym razem udaje, że się śmieje — z szacunku. <strong>Orrin</strong> pisze o tym samym dniu pracę dyplomową i co jakiś czas pyta, czy Fizz miał wtedy wąsy. Pip wzrusza ramionami. W anegdocie wąsów nie ma, a Orrin i tak nie wpisze do pracy świadka, którego nie ma w teczce. Wnioski o zwrot za zalane skarpety leżą w archiwum z datą tamtego dnia.</p>
+<p>Ma na koncie dwa fałszywe alarmy powodziowe. Pierwszy był jego winą: test syreny, o którym zapomniał uprzedzić. Drugi był winą <strong>Zizzle'a</strong>, choć Zizzle do dziś tego nie rozumie. Pierwszego dnia wymiany studenckiej Zizzle wręczył mu na powitanie „leśny przysmak przynoszący szczęście”: kanapkę z żywą żabą w środku. Kanapka była z pudełka <strong>Lumy</strong>, tego z napisem „DLA SPLOTU. NIE RUSZAĆ”. Żabę Zizzle dołożył sam i miał ją potem wypuścić nad wodą. Żaba wyskoczyła z chleba prosto na pulpit alarmowy, Pip krzyknął, a pół akademii w piżamach ewakuowało się na wyższe piętra. Od tamtej pory Pip nienawidzi żab zawodowo i prywatnie, a raport z tej nocy pisze już trzeci raz, bo Orrin w archiwum dwa razy odrzucił go „ze względów stylistycznych”. Notes nosi tytuł „Incydent z Żabą, wersja 3”. Profesor Plink twierdzi, że ta numeracja jest zarezerwowana dla prawdziwej historii szkoły. Pip uważa, że jego historia jest prawdziwa.</p>
+<p>Końcówki indygo włosów przypaliła mu <strong>Nixa</strong>, kiedy ze stresu kichnęła iskrami tuż za jego plecami. Pip oficjalnie twierdzi, że to efekt jego własnego eksperymentu, i Nixa łaskawie mu na to pozwala. Oboje zostawiają to w tej wersji. Nixa ma wobec niego dług honorowy i nie mówi o nim głośno. Z <strong>Lumą</strong> prowadzi w kotłowni tablicę wyników: on przepala bezpieczniki, ona je wymienia. Oboje udają, że to przypadek. Na razie jest remis.</p>
+<h2 id="historia-relacje">Relacje</h2>
+<ul>
+<li><strong>Zizzle</strong> — winny drugiego fałszywego alarmu powodziowego, czyli Incydentu z Żabą. Pip nie przyjmuje przeprosin, bo Zizzle nigdy ich nie złożył; uważa, że to Pip powinien podziękować za szczęście.</li>
+<li><strong>Orrin</strong> — redaktor jego raportów, z którym toczy wojnę o przecinki. Pip podejrzewa, że Orrin czyta odrzucone wersje na głos w bibliotece. Ma rację. Orrin nigdy mu nie powie, że to jego ulubiona lektura.</li>
+<li><strong>Luma</strong> — rywalka przy tablicy wyników w kotłowni i jedyna osoba, której pozwala dotykać swoich alarmów. Remis. To z jej pudełka zniknęła kanapka, którą Zizzle podał Pipowi.</li>
+<li><strong>Nixa</strong> — ta, która przypaliła mu końcówki indygo. Oboje udają, że to był jego eksperyment. Nixa ma wobec niego dług honorowy i nie mówi o nim głośno.</li>
+</ul>
+<p><strong>Zaczepka na sesję:</strong> Pip jest pierwszy na miejscu, gdy głośniki w atrium ogłaszają „nieautoryzowane przeniesienie dziedzictwa kulturowego” i spadek ciśnienia o 12%. Pierwsza myśl: żaba. Druga myśl: Zizzle.</p></article><article class="sekcja nowa"><h1 id="karta-pelna">Pip „Iskra” Torren — gnom, czarodziej 3. poziomu (szkoła wywoływania)</h1><pre class="meta">name: Pip &quot;Iskra&quot; Torren
+level: 3
+classes: Wizard (Evoker) 3
+race: Gnome
+alignment: &quot;chaotic good&quot;
+deity: Nethys</pre>
+<p><strong>„Nie jem niczego, co może samo zeskoczyć z talerza”.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rasa</strong></td>
+<td>gnom</td>
+</tr>
+<tr>
+<td><strong>Klasa</strong></td>
+<td>czarodziej 3 (specjalista wywoływania)</td>
+</tr>
+<tr>
+<td><strong>Charakter</strong></td>
+<td>chaotyczny dobry</td>
+</tr>
+<tr>
+<td><strong>Bóstwo</strong></td>
+<td>Nethys (bez przesadnej pobożności)</td>
+</tr>
+<tr>
+<td><strong>Rozmiar</strong></td>
+<td>mały</td>
+</tr>
+<tr>
+<td><strong>Wiek</strong></td>
+<td>52 lata</td>
+</tr>
+<tr>
+<td><strong>Wygląd</strong></td>
+<td>krótkie włosy w kolorze indygo, przypalone na końcówkach; gogle na czole; amulet w kształcie klucza imbusowego (przedmiot więzi); notes „Incydent z Żabą, wersja 3”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-klasa">Klasa</h2>
+<table>
+<thead>
+<tr>
+<th>Klasa</th>
+<th>Szkoła</th>
+<th>Kość wytrzymałości</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>czarodziej 3</td>
+<td>wywoływanie (Wzmożone czary); szkoły przeciwne: zauroczanie, nekromancja</td>
+<td>k6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="karta-pelna-nawigacja">Nawigacja</h2>
+<table>
+<thead>
+<tr>
+<th>Sekcje karty</th>
+<th>Pliki</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#karta-pelna-atrybuty">Atrybuty</a></td>
+<td><a href="#czary">Czary</a></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-statystyki-bojowe">Statystyki bojowe</a></td>
+<td><a href="#zdolnosci">Zdolności</a></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-umiejętności">Umiejętności</a></td>
+<td><a href="#atuty">Atuty</a></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-atuty">Atuty</a></td>
+<td><a href="#historia">Historia</a></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-cechy-postaci">Cechy postaci</a></td>
+<td><a href="#stan">Stan</a></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-zdolności-klasowe--skrót">Zdolności klasowe</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-zdolności-rasowe">Zdolności rasowe</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-rzucanie-czarów">Rzucanie czarów</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#karta-pelna-ekwipunek">Ekwipunek</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-atrybuty">Atrybuty</h2>
+<p>Zakup punktowy: 20 punktów. Modyfikatory rasowe: −2 SIŁ, +2 BUD, +2 CHA.</p>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Baza</th>
+<th>Rasa</th>
+<th>Suma</th>
+<th>Mod.</th>
+<th>Do czego</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIŁ</td>
+<td>10</td>
+<td>−2</td>
+<td><strong>8</strong></td>
+<td><strong>−1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>ZRĘ</td>
+<td>14</td>
+<td>—</td>
+<td><strong>14</strong></td>
+<td><strong>+2</strong></td>
+<td>KP, Refleks, inicjatywa</td>
+</tr>
+<tr>
+<td>BUD</td>
+<td>11</td>
+<td>+2</td>
+<td><strong>13</strong></td>
+<td><strong>+1</strong></td>
+<td>PW, Wytrwałość</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>17</td>
+<td>—</td>
+<td><strong>17</strong></td>
+<td><strong>+3</strong></td>
+<td>czary</td>
+</tr>
+<tr>
+<td>MDR</td>
+<td>10</td>
+<td>—</td>
+<td><strong>10</strong></td>
+<td><strong>+0</strong></td>
+<td>Wola</td>
+</tr>
+<tr>
+<td>CHA</td>
+<td>11</td>
+<td>+2</td>
+<td><strong>13</strong></td>
+<td><strong>+1</strong></td>
+<td>gnomia magia</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-statystyki-bojowe">Statystyki bojowe</h2>
+<h3 id="karta-pelna-klasa-pancerza">Klasa pancerza</h3>
+<table>
+<thead>
+<tr>
+<th>Składnik</th>
+<th>Premia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Podstawa</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Zręczność</td>
+<td>+2</td>
+</tr>
+<tr>
+<td>Rozmiar</td>
+<td>+1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Suma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KP</strong></td>
+<td><strong>13</strong></td>
+</tr>
+<tr>
+<td><strong>Dotyk</strong></td>
+<td><strong>13</strong></td>
+</tr>
+<tr>
+<td><strong>Nieprzygotowany</strong></td>
+<td><strong>11</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pamiętaj:</strong> +4 premii z uniku do KP przeciw olbrzymom (<a href="#zdolnosci-trening-obronny">Trening obronny</a>).</p>
+<h3 id="karta-pelna-punkty-wytrzymałości">Punkty wytrzymałości</h3>
+<table>
+<thead>
+<tr>
+<th>Źródło</th>
+<th>PW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. poziom (maksimum k6)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2.–3. poziom (2 × 4)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Budowa (3 × +1)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Suma</strong></td>
+<td><strong>17</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Premię za klasę preferowaną Pip przeznacza na umiejętności.</p>
+<h3 id="karta-pelna-rzuty-obronne">Rzuty obronne</h3>
+<table>
+<thead>
+<tr>
+<th>Rzut</th>
+<th>Bazowy</th>
+<th>Atrybut</th>
+<th>Suma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wytrwałość</strong></td>
+<td>+1</td>
+<td>+1 BUD</td>
+<td><strong>+2</strong></td>
+</tr>
+<tr>
+<td><strong>Refleks</strong></td>
+<td>+1</td>
+<td>+2 ZRĘ</td>
+<td><strong>+3</strong></td>
+</tr>
+<tr>
+<td><strong>Wola</strong></td>
+<td>+3</td>
+<td>+0 MDR</td>
+<td><strong>+3</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dodatkowo:</strong> +2 do rzutów przeciw iluzjom (<a href="#zdolnosci-odporność-na-iluzje">Odporność na iluzje</a>).</p>
+<h3 id="karta-pelna-walka">Walka</h3>
+<table>
+<thead>
+<tr>
+<th>Wartość</th>
+<th>Suma</th>
+<th>Skąd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bazowa premia do ataku</strong></td>
+<td>+1</td>
+<td>czarodziej 3</td>
+</tr>
+<tr>
+<td><strong>Inicjatywa</strong></td>
+<td><strong>+6</strong></td>
+<td>+2 ZRĘ, +4 <a href="#atuty-ulepszona-inicjatywa">Ulepszona inicjatywa</a></td>
+</tr>
+<tr>
+<td><strong>Prędkość</strong></td>
+<td>20 stóp</td>
+<td>gnom</td>
+</tr>
+<tr>
+<td><strong>Premia manewrów bojowych</strong></td>
+<td>−1</td>
+<td>+1 BPA, −1 SIŁ, −1 rozmiar</td>
+</tr>
+<tr>
+<td><strong>Obrona przed manewrami</strong></td>
+<td><strong>11</strong></td>
+<td>10 +1 BPA −1 SIŁ +2 ZRĘ −1 rozmiar</td>
+</tr>
+<tr>
+<td><strong>Koncentracja</strong></td>
+<td><strong>+8</strong></td>
+<td>poziom rzucającego 3, +3 INT, +2 <a href="#zdolnosci-skupiony-umysł">Skupiony umysł</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="karta-pelna-ataki">Ataki</h3>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th>Premia</th>
+<th>Obrażenia</th>
+<th>Trafienie krytyczne</th>
+<th>Zasięg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sztylet (wręcz)</td>
+<td>+1</td>
+<td>1k3−1</td>
+<td>19–20/×2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Sztylet (rzucony)</td>
+<td>+4</td>
+<td>1k3−1</td>
+<td>19–20/×2</td>
+<td>10 stóp</td>
+</tr>
+<tr>
+<td>Promień mrozu</td>
+<td>+4 dotyk</td>
+<td>1k3+1 od zimna</td>
+<td>—</td>
+<td>bliski</td>
+</tr>
+<tr>
+<td>Palący promień</td>
+<td>+4 dotyk</td>
+<td>4k6+1 od ognia</td>
+<td>—</td>
+<td>bliski</td>
+</tr>
+<tr>
+<td>Pocisk mocy</td>
+<td>trafia automatycznie</td>
+<td>1k4+1 od mocy</td>
+<td>—</td>
+<td>średni</td>
+</tr>
+</tbody>
+</table>
+<p>Ataki dystansowe i dotykowe: +1 BPA, +2 ZRĘ, +1 rozmiar.<br />
+<strong>Nienawiść:</strong> +1 do ataków przeciw humanoidom z podtypem gadzim i goblinoidom.</p>
+<hr />
+<h2 id="karta-pelna-umiejętności">Umiejętności</h2>
+<p>Czarodziej: 2 + INT = 5 rang na poziom × 3 = 15, plus 3 rangi z klasy preferowanej = <strong>18</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Umiejętność</th>
+<th>Suma</th>
+<th>Rangi</th>
+<th>Atrybut</th>
+<th>Klasowa</th>
+<th>Inne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wiedza (inżynieria)</td>
+<td><strong>+11</strong></td>
+<td>3</td>
+<td>+3 INT</td>
+<td>+3</td>
+<td>+2 <a href="#zdolnosci-akademik">Akademik</a></td>
+</tr>
+<tr>
+<td>Wiedza (magia)</td>
+<td><strong>+9</strong></td>
+<td>3</td>
+<td>+3 INT</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Czaroznawstwo</td>
+<td><strong>+9</strong></td>
+<td>3</td>
+<td>+3 INT</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Unieszkodliwianie mechanizmów</td>
+<td><strong>+9</strong></td>
+<td>3</td>
+<td>+2 ZRĘ</td>
+<td>+3*</td>
+<td>+1 <a href="#zdolnosci-dyżurny-techniczny">Dyżurny techniczny</a></td>
+</tr>
+<tr>
+<td>Percepcja</td>
+<td><strong>+5</strong></td>
+<td>3</td>
+<td>+0 MDR</td>
+<td>—</td>
+<td>+2 <a href="#zdolnosci-czułe-zmysły">Czułe zmysły</a></td>
+</tr>
+<tr>
+<td>Wiedza (lokalna)</td>
+<td><strong>+7</strong></td>
+<td>1</td>
+<td>+3 INT</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Rzemiosło (alchemia)</td>
+<td><strong>+7</strong></td>
+<td>1</td>
+<td>+3 INT</td>
+<td>+3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Pływanie</td>
+<td><strong>+0</strong></td>
+<td>1</td>
+<td>−1 SIŁ</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>* Umiejętność klasowa dzięki cesze <a href="#zdolnosci-dyżurny-techniczny">Dyżurny techniczny</a>.</p>
+<p><strong>Wydane rangi:</strong> 18/18 · <strong>Języki:</strong> wspólny, gnomi, sylwański, smoczy, krasnoludzki, goblinski</p>
+<hr />
+<h2 id="karta-pelna-atuty">Atuty</h2>
+<table>
+<thead>
+<tr>
+<th>Poziom</th>
+<th>Atut</th>
+<th>Rodzaj</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (klasa)</td>
+<td><a href="#atuty-spisanie-zwoju">Spisanie zwoju</a></td>
+<td>tworzenie przedmiotów</td>
+<td>tworzenie zwojów</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#atuty-skupienie-na-czarach-wywoływanie">Skupienie na czarach (wywoływanie)</a></td>
+<td>ogólny</td>
+<td>+1 do ST czarów wywoływania</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#atuty-ulepszona-inicjatywa">Ulepszona inicjatywa</a></td>
+<td>bojowy</td>
+<td>+4 do inicjatywy</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-cechy-postaci">Cechy postaci</h2>
+<table>
+<thead>
+<tr>
+<th>Cecha</th>
+<th>Rodzaj</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#zdolnosci-skupiony-umysł">Skupiony umysł</a></td>
+<td>magiczna</td>
+<td>+2 do testów koncentracji</td>
+</tr>
+<tr>
+<td><a href="#zdolnosci-dyżurny-techniczny">Dyżurny techniczny</a></td>
+<td>kampanijna</td>
+<td>Unieszkodliwianie mechanizmów jest klasowe, +1 do tych testów</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-zdolności-klasowe--skrót">Zdolności klasowe — skrót</h2>
+<table>
+<thead>
+<tr>
+<th>Poziom</th>
+<th>Zdolność</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="#zdolnosci-więź-arkaniczna">Więź arkaniczna</a></td>
+<td>raz dziennie dowolny czar z księgi bez przygotowania</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#zdolnosci-szkoła-wywoływania">Szkoła wywoływania</a></td>
+<td>Wzmożone czary (+1 obrażeń), Pocisk mocy 6 razy dziennie</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#zdolnosci-sztuczki">Sztuczki</a></td>
+<td>4 przygotowane, rzucane bez limitu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Spisanie zwoju</td>
+<td>atut dodatkowy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="karta-pelna-zasoby">Zasoby</h3>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Na dzień</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pocisk mocy</td>
+<td>6</td>
+<td>akcja standardowa, trafia automatycznie, 1k4+1 obrażeń od mocy</td>
+</tr>
+<tr>
+<td>Czar z więzi</td>
+<td>1</td>
+<td>dowolny czar z księgi</td>
+</tr>
+<tr>
+<td>Gnomia magia</td>
+<td>po 1</td>
+<td>Tańczące światła, Upiorny dźwięk, Prestidigitatorstwo, Rozmowa ze zwierzętami</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-zdolności-rasowe">Zdolności rasowe</h2>
+<table>
+<thead>
+<tr>
+<th>Zdolność</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mały rozmiar</td>
+<td>+1 do KP i ataków, −1 do manewrów bojowych, +4 do Skradania się</td>
+</tr>
+<tr>
+<td>Powolny</td>
+<td>prędkość 20 stóp</td>
+</tr>
+<tr>
+<td>Widzenie w słabym świetle</td>
+<td>w półmroku widzi dwa razy dalej niż człowiek</td>
+</tr>
+<tr>
+<td>Trening obronny</td>
+<td>+4 z uniku do KP przeciw olbrzymom</td>
+</tr>
+<tr>
+<td>Odporność na iluzje</td>
+<td>+2 do rzutów obronnych przeciw iluzjom</td>
+</tr>
+<tr>
+<td>Czułe zmysły</td>
+<td>+2 do Percepcji</td>
+</tr>
+<tr>
+<td>Akademik (zamiast Obsesji)</td>
+<td>+2 do Wiedzy (inżynieria)</td>
+</tr>
+<tr>
+<td>Gnomia magia</td>
+<td>zdolności czaropodobne, +1 do ST własnych iluzji</td>
+</tr>
+<tr>
+<td>Nienawiść</td>
+<td>+1 do ataków przeciw gadzim humanoidom i goblinoidom</td>
+</tr>
+<tr>
+<td>Znajomość broni</td>
+<td>broń z „gnomią” w nazwie traktuje jak broń żołnierską</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-rzucanie-czarów">Rzucanie czarów</h2>
+<p><strong>Poziom rzucającego</strong> 3 · <strong>ST</strong> 13 + krąg czaru (wywoływanie: 14 + krąg; iluzje z gnomiej magii: +1)</p>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Miejsc dziennie</th>
+<th>Skąd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>przygotowane sztuczki rzuca się bez limitu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>2 bazowe, +1 za INT, +1 ze szkoły</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>1 bazowe, +1 za INT, +1 ze szkoły</td>
+</tr>
+</tbody>
+</table>
+<h3 id="karta-pelna-przygotowane-czary-zestaw-dyżurny">Przygotowane czary (zestaw dyżurny)</h3>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Czar</th>
+<th>Czas rzucania</th>
+<th>Zasięg</th>
+<th>Czas działania</th>
+<th>Efekt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><a href="#czary-tańczące-światła">Tańczące światła</a></td>
+<td>standardowa</td>
+<td>średni</td>
+<td>1 minuta</td>
+<td>światła</td>
+</tr>
+<tr>
+<td>0</td>
+<td><a href="#czary-wykrycie-magii">Wykrycie magii</a></td>
+<td>standardowa</td>
+<td>60 stóp</td>
+<td>koncentracja</td>
+<td>aury magiczne</td>
+</tr>
+<tr>
+<td>0</td>
+<td><a href="#czary-promień-mrozu">Promień mrozu</a></td>
+<td>standardowa</td>
+<td>bliski</td>
+<td>natychmiastowy</td>
+<td>1k3+1 od zimna</td>
+</tr>
+<tr>
+<td>0</td>
+<td><a href="#czary-prestidigitatorstwo">Prestidigitatorstwo</a></td>
+<td>standardowa</td>
+<td>10 stóp</td>
+<td>1 godzina</td>
+<td>drobne sztuczki</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#czary-magiczny-pocisk">Magiczny pocisk</a> ×2</td>
+<td>standardowa</td>
+<td>średni</td>
+<td>natychmiastowy</td>
+<td>2 × (1k4+1) od mocy, +1 raz na czar</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#czary-smar">Smar</a></td>
+<td>standardowa</td>
+<td>bliski</td>
+<td>1 min./poziom</td>
+<td>śliska powierzchnia</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="#czary-powiększenie-osoby">Powiększenie osoby</a></td>
+<td>1 runda</td>
+<td>bliski</td>
+<td>1 min./poziom</td>
+<td>cel rośnie</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="#czary-palący-promień">Palący promień</a></td>
+<td>standardowa</td>
+<td>bliski</td>
+<td>natychmiastowy</td>
+<td>4k6+1 od ognia</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="#czary-lśniący-pył">Lśniący pył</a></td>
+<td>standardowa</td>
+<td>średni</td>
+<td>1 runda/poziom</td>
+<td>oślepienie, ujawnienie niewidzialnych</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>(wolne miejsce)</em></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>można je wypełnić w ciągu dnia (15 minut nauki z księgi)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="karta-pelna-przedmioty-magiczne">Przedmioty magiczne</h3>
+<table>
+<thead>
+<tr>
+<th>Przedmiot</th>
+<th>Działanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Różdżka Magicznego pocisku (poziom rzucającego 1, 10 ładunków)</td>
+<td>jeden pocisk, 1k4+1 od mocy</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="karta-pelna-ekwipunek">Ekwipunek</h2>
+<h3 id="karta-pelna-broń">Broń</h3>
+<ul>
+<li>sztylet</li>
+</ul>
+<h3 id="karta-pelna-noszone">Noszone</h3>
+<ul>
+<li>strój uczonego, gogle</li>
+<li>amulet w kształcie klucza imbusowego (przedmiot więzi)</li>
+<li>różdżka Magicznego pocisku (10 ładunków)</li>
+</ul>
+<h3 id="karta-pelna-inne">Inne</h3>
+<ul>
+<li>rękawice izolacyjne: chronią przed porażeniem przy pracy z instalacją pod napięciem</li>
+<li>notes „Incydent z Żabą, wersja 3”</li>
+<li>sakiewka na komponenty, księga czarów, 35 sz</li>
+</ul></article><article class="sekcja nowa"><h1 id="czary">Pip „Iskra” Torren — opisy czarów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia: W — komponent werbalny, S — somatyczny, M — materiałowy, O — skupienie. „(odw.)” przy czasie działania oznacza, że czar można odwołać.<br />
+Zasięg bliski: 25 stóp + 5 stóp na 2 poziomy (przy 3. poziomie: 30 stóp). Średni: 100 stóp + 10 stóp na poziom (130 stóp).</p>
+<hr />
+<h2 id="czary-czary-czarodzieja">Czary czarodzieja</h2>
+<h3 id="czary-tańczące-światła">Tańczące światła</h3>
+<p><em>Nazwa w podręczniku: Dancing Lights</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [światło]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>średni</td>
+</tr>
+<tr>
+<td><strong>Efekt</strong></td>
+<td>do czterech świateł w promieniu 10 stóp</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Tworzysz do czterech świateł, które poruszają się zgodnie z twoją wolą w zasięgu czaru.</p>
+<p><em>Oświetlają kanały; można nimi udawać latarnie patrolu.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-wykrycie-magii">Wykrycie magii</h3>
+<p><em>Nazwa w podręczniku: Detect Magic</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>poznanie</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>60 stóp</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>stożek</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>koncentracja, do 1 minuty na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Wykrywasz magiczne aury. W 1. rundzie: czy są obecne. W 2. rundzie: ile ich jest i która jest najsilniejsza. W 3. rundzie: siła, położenie i szkoła każdej aury (test Wiedzy (magia)).</p>
+<p><em>Zawsze przed dotknięciem czegoś, co brzęczy, świeci albo ma tabliczkę „nie dotykać”.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-promień-mrozu">Promień mrozu</h3>
+<p><em>Nazwa w podręczniku: Ray of Frost</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [zimno]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Efekt</strong></td>
+<td>promień</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>Dystansowy atak dotykowy; 1k3 obrażeń od zimna (u Pipa +1 ze Wzmożonych czarów).</p>
+<p><em>Drobne obrażenia albo komiczne zamrożenie mokrego kabla.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-prestidigitatorstwo">Prestidigitatorstwo</h3>
+<p><em>Nazwa w podręczniku: Prestidigitation</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>uniwersalna</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 0</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>10 stóp</td>
+</tr>
+<tr>
+<td><strong>Cel, efekt, obszar</strong></td>
+<td>zob. opis</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 godzina</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>zob. opis</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Drobne sztuczki: czyszczenie, brudzenie, chłodzenie, ogrzewanie i przyprawianie, powolne unoszenie przedmiotu ważącego do 1 funta, tworzenie prostych, nietrwałych przedmiotów.</p>
+<p><em>Czyści gogle z sadzy. Oznacza kable kolorami.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-magiczny-pocisk">Magiczny pocisk</h3>
+<p><em>Nazwa w podręczniku: Magic Missile</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [moc]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>średni</td>
+</tr>
+<tr>
+<td><strong>Cele</strong></td>
+<td>do pięciu istot, z których żadne dwie nie stoją dalej niż 15 stóp od siebie</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>Każdy pocisk trafia automatycznie i zadaje 1k4+1 obrażeń od mocy. Na każde dwa poziomy rzucającego powyżej 1. dostajesz dodatkowy pocisk (przy 3. poziomie: 2 pociski). U Pipa jeden z pocisków zadaje +1 ze Wzmożonych czarów (premia nie mnoży się na każdy pocisk).</p>
+<p><em>Nigdy nie chybia. Nawet gdy cel ucieka szybciej niż Zizzle przed rachunkiem.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-smar">Smar</h3>
+<p><em>Nazwa w podręczniku: Grease</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przywoływanie (tworzenie)</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M (masło)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel lub obszar</strong></td>
+<td>jeden przedmiot albo kwadrat 10 × 10 stóp</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>zob. opis</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Śliska warstwa smaru. Kto się po niej porusza, musi zdać rzut na Refleks albo test Akrobatyki, inaczej upada. Pokryty smarem przedmiot łatwo wypuścić z rąk.</p>
+<p><em>Ktoś ucieka korytarzem? Już nie. Klasyka.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-powiększenie-osoby">Powiększenie osoby</h3>
+<p><em>Nazwa w podręczniku: Enlarge Person</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przemiany</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 1</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 runda</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M (sproszkowane żelazo)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Cel</strong></td>
+<td>jeden humanoid</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 minuta na poziom (odw.)</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wytrwałość neguje</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>Cel rośnie o jedną kategorię rozmiaru: +2 do Siły, −2 do Zręczności, −1 do ataków i KP.</p>
+<p><em>Ktoś musi dosięgnąć górnej półki albo zastraszyć kogoś samym wzrostem.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-palący-promień">Palący promień</h3>
+<p><em>Nazwa w podręczniku: Scorching Ray</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>wywoływanie [ogień]</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>bliski</td>
+</tr>
+<tr>
+<td><strong>Efekt</strong></td>
+<td>jeden lub więcej promieni</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>natychmiastowy</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>brak</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>tak</td>
+</tr>
+</tbody>
+</table>
+<p>Dystansowy atak dotykowy; 4k6 obrażeń od ognia (u Pipa +1). Drugi promień pojawia się dopiero na 7. poziomie rzucającego.</p>
+<p><em>Główne źródło obrażeń. Uważaj na mokre kable.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="czary-lśniący-pył">Lśniący pył</h3>
+<p><em>Nazwa w podręczniku: Glitterdust</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Szkoła</strong></td>
+<td>przywoływanie (tworzenie)</td>
+</tr>
+<tr>
+<td><strong>Krąg</strong></td>
+<td>czarodziej/zaklinacz 2</td>
+</tr>
+<tr>
+<td><strong>Czas rzucania</strong></td>
+<td>1 akcja standardowa</td>
+</tr>
+<tr>
+<td><strong>Komponenty</strong></td>
+<td>W, S, M (sproszkowana mika)</td>
+</tr>
+<tr>
+<td><strong>Zasięg</strong></td>
+<td>średni</td>
+</tr>
+<tr>
+<td><strong>Obszar</strong></td>
+<td>istoty i przedmioty w promieniu 10 stóp</td>
+</tr>
+<tr>
+<td><strong>Czas działania</strong></td>
+<td>1 runda na poziom</td>
+</tr>
+<tr>
+<td><strong>Rzut obronny</strong></td>
+<td>Wola neguje (tylko oślepienie)</td>
+</tr>
+<tr>
+<td><strong>Odporność na czary</strong></td>
+<td>nie</td>
+</tr>
+</tbody>
+</table>
+<p>Chmura złotego pyłu. Obrysowuje niewidzialne istoty i oślepia każdego, kto nie zda rzutu na Wolę (nowy rzut co rundę). Oblepieni pyłem mają −40 do Skradania się.</p>
+<p><em>Oblepia niewidzialnych i przekreśla wszelkie próby skradania się.</em></p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="atuty">Pip „Iskra” Torren — opisy atutów</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<hr />
+<h3 id="atuty-spisanie-zwoju">Spisanie zwoju</h3>
+<p><em>Nazwa w podręczniku: Scribe Scroll</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>tworzenie przedmiotów</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>1. poziom rzucającego</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> możesz tworzyć zwoje z każdego znanego ci czaru, zgodnie z zasadami tworzenia przedmiotów magicznych.</p>
+<p><strong>Uwagi:</strong> dodatkowy atut czarodzieja na 1. poziomie.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-skupienie-na-czarach-wywoływanie">Skupienie na czarach (wywoływanie)</h3>
+<p><em>Nazwa w podręczniku: Spell Focus</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>ogólny</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +1 do ST rzutów obronnych przeciw twoim czarom ze szkoły wywoływania.</p>
+<p><strong>Uwagi:</strong> dobrze łączy się ze Wzmożonymi czarami, które podnoszą obrażenia.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="atuty-ulepszona-inicjatywa">Ulepszona inicjatywa</h3>
+<p><em>Nazwa w podręczniku: Improved Initiative</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rodzaj</strong></td>
+<td>bojowy</td>
+</tr>
+<tr>
+<td><strong>Wymagania</strong></td>
+<td>brak</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Korzyść:</strong> +4 do testów inicjatywy.</p>
+<p><strong>Uwagi:</strong> pozwala rzucić Smar na podłogę, zanim ktokolwiek zdąży ruszyć.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="zdolnosci">Pip „Iskra” Torren — zdolności i cechy postaci</h1>
+<p><a href="#karta-pelna">← Wróć do karty</a></p>
+<p>Oznaczenia rodzaju zdolności: (Nzw) — nadzwyczajna, (Nd) — nadnaturalna, (Czp) — czaropodobna.</p>
+<hr />
+<h2 id="zdolnosci-cechy-postaci">Cechy postaci</h2>
+<h3 id="zdolnosci-skupiony-umysł">Skupiony umysł</h3>
+<p><strong>Rodzaj:</strong> cecha magiczna <em>(Focused Mind)</em></p>
+<p>+2 premii z cechy do testów koncentracji.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h3 id="zdolnosci-dyżurny-techniczny">Dyżurny techniczny</h3>
+<p><strong>Rodzaj:</strong> cecha kampanijna (wymyślona do tej przygody)</p>
+<p>Lata nocnych dyżurów przy alarmach nauczyły Pipa grzebać w mechanizmach. Unieszkodliwianie mechanizmów jest dla niego umiejętnością klasową i dostaje do niego +1 premii z cechy.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h2 id="zdolnosci-zdolności-rasowe">Zdolności rasowe</h2>
+<h3 id="zdolnosci-trening-obronny">Trening obronny</h3>
+<p>+4 premii z uniku do KP przeciw olbrzymom.</p>
+<h3 id="zdolnosci-odporność-na-iluzje">Odporność na iluzje</h3>
+<p>+2 premii rasowej do rzutów obronnych przeciw iluzjom.</p>
+<h3 id="zdolnosci-czułe-zmysły">Czułe zmysły</h3>
+<p>+2 premii rasowej do Percepcji.</p>
+<h3 id="zdolnosci-akademik">Akademik</h3>
+<p>Alternatywna zdolność rasowa, która zastępuje Obsesję: +2 premii rasowej do jednej Wiedzy. U Pipa to <strong>Wiedza (inżynieria)</strong>.</p>
+<h3 id="zdolnosci-gnomia-magia">Gnomia magia</h3>
+<p>Raz dziennie każde: Tańczące światła, Upiorny dźwięk, Prestidigitatorstwo, Rozmowa ze zwierzętami. Poziom rzucającego równy poziomowi postaci, ST zależy od Charyzmy. Iluzje rzucane przez Pipa mają +1 do ST.</p>
+<h3 id="zdolnosci-nienawiść">Nienawiść</h3>
+<p>+1 do ataków przeciw humanoidom z podtypem gadzim i goblinoidom.</p>
+<p><a href="#karta-pelna">← Karta</a></p>
+<hr />
+<h2 id="zdolnosci-zdolności-czarodzieja">Zdolności czarodzieja</h2>
+<h3 id="zdolnosci-więź-arkaniczna">Więź arkaniczna</h3>
+<p><strong>Skąd:</strong> czarodziej 1</p>
+<p>Przedmiot więzi: <strong>amulet w kształcie klucza imbusowego</strong>. Raz dziennie możesz rzucić dowolny czar z księgi, nawet jeśli go nie przygotowałeś. Bez amuletu rzucanie czarów wymaga testu koncentracji.</p>
+<h3 id="zdolnosci-szkoła-wywoływania">Szkoła wywoływania</h3>
+<p><strong>Wzmożone czary (Nd):</strong> czary wywoływania zadające obrażenia punktom wytrzymałości zadają dodatkowo połowę poziomu czarodzieja (minimum +1). Na 3. poziomie: <strong>+1</strong>. Premia działa raz na czar, a nie na każdy pocisk czy promień.</p>
+<p><strong>Pocisk mocy (Czp):</strong> jako akcję standardową wystrzeliwujesz pocisk mocy, który trafia automatycznie, jak Magiczny pocisk. Zadaje 1k4 obrażeń plus premię ze Wzmożonych czarów (razem 1k4+1). Możesz go użyć 3 + mod. INT razy dziennie (<strong>6</strong>).</p>
+<p><strong>Szkoły przeciwne:</strong> zauroczanie i nekromancja. Przygotowanie czaru z takiej szkoły zajmuje dwa miejsca.</p>
+<h3 id="zdolnosci-sztuczki">Sztuczki</h3>
+<p>Przygotowujesz sztuczki (czary 0. kręgu) z księgi, a przygotowane możesz rzucać bez limitu.</p>
+<p><a href="#karta-pelna">← Karta</a></p></article><article class="sekcja nowa"><h1 id="stan">Pip „Iskra” Torren — bieżący stan</h1>
+<p><em>Ostatnia aktualizacja: początek sesji (stan wyjściowy)</em></p>
+<h2 id="stan-przełączniki-bojowe">Przełączniki bojowe</h2>
+<table>
+<thead>
+<tr>
+<th>Przełącznik</th>
+<th>Działanie</th>
+<th>Uwagi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>domyślnie brak</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-wzmocnienia">Aktywne wzmocnienia</h2>
+<table>
+<thead>
+<tr>
+<th>Wzmocnienie</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+<th>Pozostało rund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-aktywne-stany">Aktywne stany</h2>
+<table>
+<thead>
+<tr>
+<th>Stan</th>
+<th>Źródło</th>
+<th>Działanie</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zmiany-atrybutów">Zmiany atrybutów</h2>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Modyfikator</th>
+<th>Rodzaj</th>
+<th>Źródło</th>
+<th>Czas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-zasoby">Zasoby</h2>
+<h3 id="stan-pozostałe-czary">Pozostałe czary</h3>
+<table>
+<thead>
+<tr>
+<th>Krąg</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4 przygotowane</td>
+<td>—</td>
+<td>bez limitu</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stan-zasoby-klasowe">Zasoby klasowe</h3>
+<table>
+<thead>
+<tr>
+<th>Zasób</th>
+<th>Razem</th>
+<th>Użyte</th>
+<th>Zostało</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pocisk mocy</td>
+<td>6</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Czar z więzi (amulet)</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Różdżka Magicznego pocisku</td>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stan-notatki-z-sesji">Notatki z sesji</h2>
+<ul>
+<li>Nocny dyżur w podwodnej akademii.</li>
+<li>Zegar powodzi: 0 z 6.</li>
+<li>Cel: dotrwać do rana i nie zamienić szkoły w akwarium.</li>
+</ul></article>
+</body>
+</html>

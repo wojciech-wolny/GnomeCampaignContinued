@@ -4,6 +4,8 @@ Tutaj są wszystkie tajemnice: rozwiązania zagadek, statystyki przeciwników, p
 
 Materiały dla graczy leżą w [`../gracze/`](../gracze/README.md).
 
+Wydruk: [`../druk/mg/index.html`](../druk/mg/index.html) (przy stole, spotkania, zagadki, świat, prompty).
+
 ---
 
 ## Spis treści

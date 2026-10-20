@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompty</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Spis materiałów MG</a></p><p class="pieczatka">Tylko dla Mistrza Gry</p><nav class="spis"><p>Spis</p><ol><li><a href="#spis">Prompty do generowania grafik i tekstów</a></li>
+<li><a href="#postacie">Bohaterowie — wygląd i portrety</a></li>
+<li><a href="#sceny">Sceny i lokacje</a></li>
+<li><a href="#przedstawienie">Przedstawienie bohaterów</a></li></ol></nav><article class="sekcja"><h1 id="spis">Prompty do generowania grafik i tekstów</h1>
+<p>Gotowe polecenia dla generatorów obrazów (Midjourney, DALL·E, Stable Diffusion, Gemini itp.) i dla modeli językowych (ChatGPT, Claude). Grafiki możesz pokazywać graczom na ekranie albo wydrukować jako karty scen.</p>
+<table>
+<thead>
+<tr>
+<th>Plik</th>
+<th>Zawartość</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#postacie">postacie.md</a></td>
+<td>Wspólny styl, opisy wyglądu bohaterów i ich pojedyncze portrety</td>
+</tr>
+<tr>
+<td><a href="#sceny">sceny.md</a></td>
+<td>Lokacje i sceny z sesji, z informacją, kiedy można je pokazać</td>
+</tr>
+<tr>
+<td><a href="#przedstawienie">przedstawienie.md</a></td>
+<td>Plakat drużyny, sceny z przeszłości bohaterów i prompt do tekstowego przedstawienia drużyny</td>
+</tr>
+</tbody>
+</table>
+<h2 id="spis-jak-korzystać">Jak korzystać</h2>
+<ol>
+<li>Treść promptów obrazowych jest <strong>po angielsku</strong>, bo generatory obrazów najlepiej rozumieją ten język. Opisy i wskazówki dookoła są po polsku.</li>
+<li>Każdy prompt składa się z trzech klocków: <strong>styl</strong> (zawsze ten sam), <strong>wygląd postaci</strong> (z <a href="#postacie">postacie.md</a>) i <strong>scena</strong>. Wklejaj je w tej kolejności, żeby bohaterowie wyglądali tak samo na każdym obrazku.</li>
+<li>Generatory źle radzą sobie z napisami. Jeśli na obrazku ma być tabliczka albo etykieta, dopisz tekst później w edytorze grafiki.</li>
+<li>Gdy generator gubi szczegóły, skróć opis postaci do trzech najważniejszych cech (oznaczonych w <a href="#postacie">postacie.md</a> jako „rdzeń”).</li>
+</ol>
+<h2 id="spis-uwaga-na-spoilery">Uwaga na spoilery</h2>
+<p>Część scen pokazuje koboldy, smoka albo rozwiązania zagadek. Przy każdej scenie w <a href="#sceny">sceny.md</a> jest informacja, od którego momentu sesji można ją pokazać graczom.</p></article><article class="sekcja nowa"><h1 id="postacie">Bohaterowie — wygląd i portrety</h1>
+<p><a href="#spis">← Spis promptów</a></p>
+<p>Opisy powstały na podstawie pola „Wygląd” z kart postaci i historii bohaterów. Cechy, których karty nie podają (kolor włosów Lumy, Zizzle'a, Orrina i Nixy, ubrania), dopisałem tak, żeby postacie łatwo było od siebie odróżnić. Jeśli gracz ma własną wizję, podmień je przed generowaniem.</p>
+<hr />
+<h2 id="postacie-styl-wspólny-wklejaj-na-początku-każdego-promptu">Styl wspólny (wklejaj na początku każdego promptu)</h2>
+<pre><code class="language-text">Whimsical storybook fantasy illustration in the style of Pathfinder RPG art, painterly, rich detail, warm lantern light contrasting with deep teal underwater glow, humorous and cozy tone, expressive faces, gnomes are small humanoids about 3 feet tall with large bright eyes, big noses and vividly colored hair. No text, no letters, no watermark.
+</code></pre>
+<p>Wersja do portretów: dopisz na końcu <code>Half-body portrait, simple blurred background of an underwater magic academy.</code></p>
+<hr />
+<h2 id="postacie-pip-iskra-torren">Pip „Iskra” Torren</h2>
+<p><strong>Rdzeń:</strong> włosy indygo przypalone na końcówkach, gogle na czole, amulet w kształcie klucza imbusowego.</p>
+<pre><code class="language-text">Pip, a young male gnome alarm technician and evocation wizard. Short spiky indigo hair singed and smoking at the tips, brass goggles pushed up on his forehead, an amulet shaped like a hex key on a chain, thick rubber insulating gloves, a utility vest covered with little alarm bells and buzzers, a battered notebook under his arm, a wand tucked behind his belt. Suspicious, slightly grumpy expression, eyebrows raised as if he just heard a false alarm.
+</code></pre>
+<p><strong>Portret z charakterem:</strong> dopisz <code>He is holding a sandwich at arm's length with tongs, inspecting it for frogs.</code></p>
+<hr />
+<h2 id="postacie-luma-bramblewick">Luma Bramblewick</h2>
+<p><strong>Rdzeń:</strong> korona z srebrnej taśmy, rękawy w smarze, pas z narzędziami i klucz francuski.</p>
+<pre><code class="language-text">Luma, a young female gnome boiler-room scholar and transmutation wizard. Messy moss-green hair in a thick braid, a crown made of wrapped silver duct tape, rolled-up sleeves stained with grease, a heavy tool belt full of screwdrivers and bolts, a large masterwork adjustable wrench in one hand, a tin lunchbox with two sandwiches under her arm. Calm, confident half-smile, a smudge of soot on her cheek.
+</code></pre>
+<p><strong>Portret z charakterem:</strong> dopisz <code>A tiny mischievous sprite in maintenance overalls peeks out of her lunchbox.</code></p>
+<hr />
+<h2 id="postacie-zizzle-stormpocket">Zizzle Stormpocket</h2>
+<p><strong>Rdzeń:</strong> broda narysowana kredą, malowane piegi, szarfa studenta z wymiany.</p>
+<pre><code class="language-text">Zizzle, a young male forest gnome exchange student and fey-blooded sorcerer. Wild sunflower-yellow hair with a few leaves and a tiny flower stuck in it, a clearly fake beard drawn on his chin with white chalk, painted freckles in uneven dots, a colorful exchange student sash across a forest-green tunic, pockets bulging with wrapped candies, faint shimmering fey sparkles around his fingers. Enormous, overly confident grin.
+</code></pre>
+<p><strong>Portret z charakterem:</strong> dopisz <code>He proudly holds up a hand-written letter with a big official-looking stamp.</code></p>
+<hr />
+<h2 id="postacie-orrin-quill">Orrin Quill</h2>
+<p><strong>Rdzeń:</strong> palce w atramencie, kreda za uchem, książki pełne zakładek.</p>
+<pre><code class="language-text">Orrin, a young male gnome library assistant and divination wizard. Neat pale silver-blue hair tied in a short tail, a piece of chalk tucked behind one ear, ink-stained fingertips, an amulet with a clear crystal lens on his chest, a rolled blueprint sticking out of his coat pocket, a stack of books overflowing with paper bookmarks, a light crossbow slung on his back. Serious, slightly judgmental expression, one eyebrow raised over a red quill.
+</code></pre>
+<p><strong>Portret z charakterem:</strong> dopisz <code>He is correcting someone's report with red ink, looking quietly delighted.</code></p>
+<hr />
+<h2 id="postacie-nixa-embercoil">Nixa Embercoil</h2>
+<p><strong>Rdzeń:</strong> miedziane piegi, połatana peleryna, amulet z zębem.</p>
+<pre><code class="language-text">Nixa, a young female gnome sorcerer of brass dragon blood. Flame-orange hair in a high messy bun, copper freckles across her nose and cheeks, a faint brass metallic sheen on her temples and knuckles, a long family cloak covered with silver duct tape patches and scorch marks, an amulet with a large yellowish tooth that is obviously a dog's tooth, small sparks drifting from her nostrils. Friendly but determined expression, one hand glowing with warm fire.
+</code></pre>
+<p><strong>Portret z charakterem:</strong> dopisz <code>She clutches a thick sealed letter written in draconic script.</code></p>
+<hr />
+<h2 id="postacie-wskazówki">Wskazówki</h2>
+<ul>
+<li>Generator myli postacie, gdy na obrazku jest ich więcej niż trzy. Przy plakacie drużyny (<a href="#przedstawienie">przedstawienie.md</a>) skróć opisy do rdzeni.</li>
+<li>Wszyscy bohaterowie są <strong>gnomami</strong>. Jeśli generator robi z nich ludzi albo krasnoludy, dopisz <code>tiny gnome, child-sized adult, no dwarf, no human</code>.</li>
+<li>Taśma Gnomoklej to po prostu <code>silver duct tape</code>.</li>
+</ul></article><article class="sekcja nowa"><h1 id="sceny">Sceny i lokacje</h1>
+<p><a href="#spis">← Spis promptów</a></p>
+<p>Każdy prompt zacznij od <strong>stylu wspólnego</strong> z <a href="#postacie-styl-wspólny-wklejaj-na-początku-każdego-promptu">postacie.md</a>. Jeśli chcesz, żeby na scenie byli bohaterowie, dopisz na końcu ich opisy (pełne albo same rdzenie) w miejsce znacznika <code>[BOHATEROWIE]</code>. Bez bohaterów obrazek sprawdzi się jako tło lokacji.</p>
+<p>Kolumna <strong>Kiedy pokazać</strong> mówi, od którego momentu grafika nie zdradza niczego, czego gracze jeszcze nie wiedzą.</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Scena</th>
+<th>Kiedy pokazać</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Akademia z zewnątrz</td>
+<td>przed sesją albo na start</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Atrium po alarmie</td>
+<td>S01, po wejściu do atrium</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dyżurka profesora Plinka</td>
+<td>po wejściu do dyżurki</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Biblioteka i Vellum</td>
+<td>S03</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Korytarz B i „studenci”</td>
+<td>S02 albo S12</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Kotłownia i Splot</td>
+<td>S04</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Magazyn kryształów</td>
+<td>S05</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Wieża Pieczęci</td>
+<td>S06, po wejściu do wieży</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Ożywione narzędzia</td>
+<td>S08</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Wodny żywiołak-stażysta</td>
+<td>S09</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Szept posągu</td>
+<td>S10</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Pokój gościnny</td>
+<td>S11</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Kapitan Klik na wózku</td>
+<td>S07</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Epilog u smoka</td>
+<td>epilog</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sceny-1-akademia-z-zewnątrz">1. Akademia z zewnątrz</h2>
+<pre><code class="language-text">A gnomish academy of magic built on the ocean floor, a cluster of brass towers, round portholes and copper pipes under a huge glowing glass dome that holds back the dark sea. Schools of fish, kelp forests, bioluminescent jellyfish, warm golden light leaking from every window. Night, deep blue water, a sense of wonder and slight fragility, tiny cracks of light flickering on the barrier.
+</code></pre>
+<h2 id="sceny-2-atrium-po-alarmie">2. Atrium po alarmie</h2>
+<pre><code class="language-text">A grand circular atrium under a glass dome, the dark ocean outside with a school of fish pressed against the glass. In the center a golden statue of four heroic gnome students stands crooked on a wheeled dolly. Water drips from the ceiling into puddles, red alarm lights flash, a fake glued-on beard lies abandoned on the polished floor. [BOHATEROWIE] arrive in a hurry, looking alarmed.
+</code></pre>
+<h2 id="sceny-3-dyżurka-profesora-plinka">3. Dyżurka profesora Plinka</h2>
+<pre><code class="language-text">A tiny cramped night-watch office the size of a closet, smelling of tea and ozone. A wall of blinking indicator lights in green and yellow with one red light pulsing ominously. A hex key hangs on a hook with a keychain shaped like a crossed-out frog. An elderly gnome professor with huge spectacles and a nervous smile frantically fills out paperwork, surrounded by towers of forms and rubber stamps.
+</code></pre>
+<h2 id="sceny-4-biblioteka-i-vellum">4. Biblioteka i Vellum</h2>
+<pre><code class="language-text">A towering restricted section of a gnomish library, shelves up to a vaulted ceiling, ladders on rails, a fine old carpet soaked with sea water. A stern elderly gnome librarian with a tall grey bun and a finger to her lips is whisper-shouting, holding up a rolled blueprint. Floating candles, dripping water, books lifted onto high shelves to keep them dry. [BOHATEROWIE] stand guiltily in the puddle.
+</code></pre>
+<h2 id="sceny-5-korytarz-b-i-studenci">5. Korytarz B i „studenci”</h2>
+<pre><code class="language-text">A narrow corridor of an underwater school lined with copper pipes and cheerful safety posters featuring a smiling gnome woman. Puddles on the floor. A group of four small reptilian creatures with dog-like snouts and scaly tails poorly disguised as gnome students: crooked glued-on beards, oversized student robes with sleeves far too long, noses extended with corks, marching in perfect lockstep with nervous grins. Comedic tension. [BOHATEROWIE] watch them with deep suspicion.
+</code></pre>
+<h2 id="sceny-6-kotłownia-i-splot">6. Kotłownia i Splot</h2>
+<pre><code class="language-text">A steamy boiler room beneath the academy, huge brass boilers, valves and gauges, three thick bundles of cables wrapped in tape, warm orange light and drifting steam. A small mischievous blue-grey sprite in tiny maintenance overalls swings on a valve wheel, holding a scorecard and looking unimpressed. Pipes leak little jets of water. [BOHATEROWIE] work on the cables with tape and wrenches.
+</code></pre>
+<h2 id="sceny-7-magazyn-kryształów">7. Magazyn kryształów</h2>
+<pre><code class="language-text">A storage room full of metal crates and labelled shelves of glowing resonance crystals in amber and blue, each in its own padded socket. One socket on the central shelf is conspicuously empty. A suspicious paint trap rigged above the door with a bucket of bright yellow paint. Cold blue light, dust motes, a sense of something missing.
+</code></pre>
+<h2 id="sceny-8-wieża-pieczęci">8. Wieża Pieczęci</h2>
+<pre><code class="language-text">A narrow tower at the heart of the academy, a large control board with sliding tokens arranged in a triangle, two massive copper rods crackling with blue electricity, and an enormous red button on a pedestal like a monument to bad decisions. The air shimmers with ozone. An old gnome with a mug of tea stands nearby with the knowing face of someone who has been through this before. [BOHATEROWIE] study the board.
+</code></pre>
+<h2 id="sceny-9-ożywione-narzędzia">9. Ożywione narzędzia</h2>
+<pre><code class="language-text">A chaotic fight in a boiler room: wrenches, hammers, pliers and a mop have come to life and attack with comic fury, hopping and snapping like angry animals. Sparks, flying bolts, steam. [BOHATEROWIE] defend themselves with spells and a big adjustable wrench. Dynamic action composition, slapstick energy.
+</code></pre>
+<h2 id="sceny-10-wodny-żywiołak-stażysta">10. Wodny żywiołak-stażysta</h2>
+<pre><code class="language-text">A low flooded crawlspace beneath the atrium floor, a leak spraying like a badly designed fountain. A small water elemental made of swirling sea water rises from the flood, wearing a tiny intern badge and holding a soggy safety form, looking eager and confused rather than hostile. Teal and silver light reflecting on the low ceiling. [BOHATEROWIE] crouch at the edge, unsure whether to fight or fill in the form.
+</code></pre>
+<h2 id="sceny-11-szept-posągu">11. Szept posągu</h2>
+<pre><code class="language-text">Close-up of the golden statue of four gnome heroes in the dim atrium, one figure in the statue glowing faintly from within, its eyes softly lit, as if whispering. Water ripples on the floor reflect golden light. Quiet, emotional, slightly eerie mood in an otherwise funny story.
+</code></pre>
+<h2 id="sceny-12-pokój-gościnny">12. Pokój gościnny</h2>
+<pre><code class="language-text">A guest room for exchange students turned into a disguise workshop: piles of fake beards, glue pots, face paint for freckles, cork noses, an attendance list pinned to the wall, a sack marked with a big coin symbol. A motivational poster with a cartoon dragon hangs crookedly. A round window looks out onto a metal transport shaft. Messy, funny, incriminating.
+</code></pre>
+<h2 id="sceny-13-kapitan-klik-na-wózku">13. Kapitan Klik na wózku</h2>
+<pre><code class="language-text">A small cunning reptilian creature with a dog-like snout and a bottle-cap captain badge stands heroically on a wheeled dolly carrying a golden gnome statue, steering it like a war chariot toward a metal transport shaft. Another small reptilian creature in a lopsided fake beard steers with a mop handle. Sirens, flashing lights, water spraying. [BOHATEROWIE] give chase. Dynamic comedic chase scene, motion blur.
+</code></pre>
+<h2 id="sceny-14-epilog-u-smoka">14. Epilog u smoka</h2>
+<pre><code class="language-text">A young dragon with gleaming scales sits in a modest cave lair on top of a disappointingly small pile of coins, proudly hugging a life-size cardboard statue of four gnomes painted gold, completely convinced it is real. A letter lies at its feet. Warm torchlight, comedic satisfied expression, motivational posters on the cave walls.
+</code></pre>
+<p>Kolor smoka dobierz do wersji z <a href="swiat.html#smok-i-koboldy">../opisy/smok-i-koboldy.md</a>: dopisz <code>green</code> albo <code>brass</code> przed słowem <code>dragon</code>.</p></article><article class="sekcja nowa"><h1 id="przedstawienie">Przedstawienie bohaterów</h1>
+<p><a href="#spis">← Spis promptów</a></p>
+<p>Materiały na początek sesji: wspólny plakat drużyny, sceny z przeszłości bohaterów (wątki z ich historii) i prompt dla modelu językowego, który napisze tekst do odczytania na głos. Żaden z nich nie zdradza fabuły sesji.</p>
+<hr />
+<h2 id="przedstawienie-plakat-drużyny">Plakat drużyny</h2>
+<p>Wklej styl wspólny z <a href="#postacie-styl-wspólny-wklejaj-na-początku-każdego-promptu">postacie.md</a>, a potem:</p>
+<pre><code class="language-text">A group portrait of five young gnome wizards and sorcerers posing heroically, like a movie poster, in front of a giant glowing glass dome with the dark ocean behind it. From left to right:
+Pip, spiky indigo hair singed at the tips, brass goggles on forehead, hex-key amulet, rubber gloves;
+Luma, moss-green braid, crown of silver duct tape, greasy sleeves, holding a big adjustable wrench;
+Zizzle, wild sunflower-yellow hair, beard drawn with chalk, painted freckles, colorful exchange student sash, huge grin;
+Orrin, neat silver-blue hair, chalk behind ear, ink-stained fingers, armful of books full of bookmarks;
+Nixa, flame-orange bun, copper freckles, patched scorched cloak, dog-tooth amulet, fire in her palm.
+Everyone is slightly mismatched and funny, but clearly ready for trouble. Wide composition, dramatic lighting.
+</code></pre>
+<p>Jeśli przy czterech graczach odkładasz Nixę albo Orrina, usuń jego linijkę i zmień <code>five</code> na <code>four</code>.</p>
+<hr />
+<h2 id="przedstawienie-sceny-z-przeszłości-bohaterów">Sceny z przeszłości bohaterów</h2>
+<p>Te obrazki ilustrują wspólne wątki z plików <code>backstory.md</code>. Możesz pokazać je przy przedstawianiu postaci albo rozdać graczom jako pamiątki.</p>
+<h3 id="przedstawienie-incydent-z-żabą-pip-zizzle-luma">Incydent z Żabą (Pip, Zizzle, Luma)</h3>
+<pre><code class="language-text">Night in a gnomish academy alarm room. Zizzle, a forest gnome with sunflower-yellow hair and a chalk-drawn beard, proudly offers a sandwich as a welcome gift. A green frog leaps out of the sandwich straight onto a big alarm console full of buttons. Pip, a gnome with spiky indigo hair and goggles, recoils in horror. In the doorway Luma, with a moss-green braid and a duct tape crown, stares at her open, empty lunchbox. Red alarm lights begin to flash. Slapstick comedy, frozen moment of disaster.
+</code></pre>
+<h3 id="przedstawienie-ewakuacja-w-piżamach">Ewakuacja w piżamach</h3>
+<pre><code class="language-text">Dozens of sleepy gnome students and professors in pajamas, nightcaps and bunny slippers climbing a spiral staircase in an underwater academy, carrying pillows, books and a cat, while alarm lights flash red. In the corner Pip, a gnome with indigo hair and goggles, angrily writes in a notebook. Cozy chaos, humorous details everywhere.
+</code></pre>
+<h3 id="przedstawienie-kichnięcie-nixy-nixa-pip">Kichnięcie Nixy (Nixa, Pip)</h3>
+<pre><code class="language-text">Nixa, a gnome girl with a flame-orange bun and copper freckles, sneezes a burst of sparks. Right in front of her Pip, a gnome with spiky indigo hair, freezes as the tips of his hair start to smoke. Both look at each other in shock. Warm sparks in the air, comic timing.
+</code></pre>
+<h3 id="przedstawienie-kotłownia-o-świcie-nixa-luma">Kotłownia o świcie (Nixa, Luma)</h3>
+<pre><code class="language-text">Early morning in a steamy boiler room. Nixa, a gnome with a flame-orange bun and a cloak covered in duct tape patches, lights a huge brass boiler with fire from her palm. Luma, a gnome with a moss-green braid and a duct tape crown, hands her a steaming mug of tea while holding a fresh roll of silver tape. Warm, friendly, peaceful mood.
+</code></pre>
+<h3 id="przedstawienie-archiwum-raportów-orrin-pip-zizzle">Archiwum raportów (Orrin, Pip, Zizzle)</h3>
+<pre><code class="language-text">A quiet library archive at night. Orrin, a gnome with neat silver-blue hair and chalk behind his ear, secretly reads a handwritten report by candlelight, trying not to laugh, a red quill in hand. On the desk beside him lies a crumpled letter with a huge official stamp and many red corrections. Shelves of labelled folders, cozy candlelight.
+</code></pre>
+<h3 id="przedstawienie-list-od-smoczego-kuzyna-nixa-orrin">List od smoczego kuzyna (Nixa, Orrin)</h3>
+<pre><code class="language-text">A family dinner table in a gnome home with one extra empty chair and a place setting sized for a dragon, a giant spoon and a giant plate. Nixa, a gnome with a flame-orange bun, holds a thirty-page letter written in draconic script. Next to her Orrin, a gnome with silver-blue hair, translates it with a magnifying glass, looking very uncomfortable. Warm, homely, humorous.
+</code></pre>
+<h3 id="przedstawienie-klub-urodzonych-z-talentem-zizzle-nixa">Klub Urodzonych z Talentem (Zizzle, Nixa)</h3>
+<pre><code class="language-text">A tiny secret club room in a broom closet, with a hand-painted banner and two chairs. Zizzle, a forest gnome with sunflower-yellow hair and a chalk-drawn beard, solemnly guards a single cookie on a velvet cushion as treasurer. Nixa, a gnome with a flame-orange bun, presides with a small gavel. Faint fey sparkles and fire sparks mix in the air. Mock-serious, charming.
+</code></pre>
+<hr />
+<h2 id="przedstawienie-prompt-tekstowy-przedstawienie-drużyny">Prompt tekstowy: przedstawienie drużyny</h2>
+<p>Wklej ten prompt do ChatGPT, Claude albo innego modelu językowego. Pod nim wklej pełne treści pięciu plików <code>backstory.md</code> (z folderu <code>gracze/postacie/</code>). Model napisze tekst do odczytania na głos na początku sesji.</p>
+<pre><code class="language-text">Jesteś narratorem humorystycznej sesji RPG w systemie Pathfinder 1. edycji. Akcja dzieje się nocą w podwodnej gnomiej akademii magii, chronionej zaklętą kopułą. W atrium stoi złoty posąg czwórki dawnych bohaterów (Brin, Fizz, Wib i Tib), którzy przed laty uratowali szkołę przed powodzią.
+
+Napisz po polsku tekst do odczytania na głos (około 2–3 minut), który przedstawi pięcioro bohaterów graczy pełniących nocny dyżur. Wymagania:
+- Każda postać dostaje krótki akapit: jak wygląda, czym się zajmuje i jedno zdanie, które dobrze ją oddaje.
+- Pokaż relacje między bohaterami: Incydent z Żabą (kanapka od Zizzle'a dla Pipa, zabrana z pudełka Lumy), przypalone włosy Pipa, peleryna Nixy łatana przez Lumę, listy od smoczego kuzyna tłumaczone przez Orrina, Klub Urodzonych z Talentem.
+- Ton: ciepły, zabawny, z odrobiną patosu na końcu. Krótkie zdania, naturalny polski, bez angielskich wtrąceń.
+- Zakończ chwilą, w której dyżur przestaje być nudny: w atrium rozlega się komunikat o „nieautoryzowanym przeniesieniu dziedzictwa kulturowego”, a z sufitu zaczyna kapać.
+- Nie wymyślaj złoczyńców, przyczyny alarmu ani niczego, co wydarzy się później. Nie wspominaj o koboldach ani o kradzieży.
+
+Historie postaci:
+[WKLEJ TUTAJ TREŚĆ PIĘCIU PLIKÓW backstory.md]
+</code></pre>
+<h3 id="przedstawienie-wariant-potencjalne-sceny">Wariant: potencjalne sceny</h3>
+<p>Jeśli chcesz przygotować się na różne kierunki sesji, wklej w tej samej rozmowie drugi prompt. Model zaproponuje sceny, w których relacje bohaterów mogą wyjść na wierzch.</p>
+<pre><code class="language-text">Na podstawie tych samych historii zaproponuj 8 krótkich scen (po 3–4 zdania), które mogą wydarzyć się podczas nocnego dyżuru i w których relacje między bohaterami odegrają rolę. Przykłady kierunków: Zizzle próbuje zaprzyjaźnić się z Pipem jedzeniem, bez przeprosin; Splot domaga się następnej kanapki odsetkowej w najgorszym możliwym momencie; Nixa kicha iskrami przy czymś łatwopalnym; Orrin musi przyznać na głos, że Luma miała rację co do schematu; Nixa domaga się drugiego tłumaczenia zdania o zębie.
+
+Do każdej sceny dopisz:
+- które postacie biorą w niej udział,
+- jaki test umiejętności z Pathfindera 1e może się pojawić i z jakim ST (10–15),
+- jedno zdanie do odczytania na głos na otwarcie sceny.
+
+Pisz po polsku, w humorystycznym tonie. Nie wymyślaj przyczyny alarmu ani złoczyńców — te sceny mają działać niezależnie od fabuły głównej.
+</code></pre></article>
+</body>
+</html>

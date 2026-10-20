@@ -2,7 +2,7 @@
 
 Jednostrzałowa, humorystyczna przygoda do Pathfindera 1e dla 4–5 gnomów na 3. poziomie. Nocny dyżur w podwodnej gnomiej akademii magii: koboldy przebrane za studentów próbują ukraść złoty posąg dla smoka, psują przy tym barierę wodną, a bohaterowie muszą ją naprawić, zanim szkoła zatonie.
 
-Cała kampania to pliki Markdown. Nie ma tu kodu ani testów.
+Treść kampanii to pliki Markdown. Wydruki HTML powstają skryptem `druk/buduj.py`. Nie edytuj ich ręcznie.
 
 ---
 
@@ -21,11 +21,14 @@ GnomeCampaign/
 │   ├── opisy/                # lokacje, historia posągu, smok i koboldy
 │   ├── spotkania/            # S01–S12 (README.md = spis)
 │   └── prompty/              # prompty do grafik i tekstowego przedstawienia drużyny
-└── gracze/                   # materiały dla graczy — BEZ spoilerów
-    ├── brief.md, mapa.md, rekwizyty.md, postacie-skrot.md
-    ├── postacie/<postać>/    # sheet, spells, feats, features, backstory, state
-    │                         # oraz kartki z ekwipunku (list, schemat), jeśli postać je nosi
-    └── karty-do-druku/       # jednostronicowe karty A4 (skrót sheet.md)
+├── gracze/                   # materiały dla graczy — BEZ spoilerów
+│   ├── brief.md, mapa.md, rekwizyty.md, postacie-skrot.md
+│   ├── postacie/<postać>/    # sheet, spells, feats, features, backstory, state
+│   │                         # oraz kartki z ekwipunku (list, schemat), jeśli postać je nosi
+│   └── karty-do-druku/       # jednostronicowe karty A4 (skrót sheet.md)
+└── druk/                     # HTML do druku, generowany przez buduj.py
+    ├── postacie/             # paczka gracza: karta, historia, pełna karta, czary, atuty, stan, kartki
+    └── mg/                   # MG pogrupowane: sesja, spotkania, zagadki, świat, prompty
 ```
 
 Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`, `orrin-quill`, `nixa-embercoil`.
@@ -106,6 +109,7 @@ Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`
 | spotkanie S01–S12 | `MG/spotkania/README.md`, `MG/plan-sesji.md`, `MG/rekwizyty-kiedy.md` |
 | nazwę lokacji | `MG/mapa.md`, `gracze/mapa.md`, `MG/opisy/lokacje.md`, `MG/prompty/sceny.md` |
 | kartkę z ekwipunku (list, schemat) | plik kartki, link w `sheet.md`, `backstory.md`, `karty-do-druku/<p>.md` i `postacie-skrot.md`, oraz `MG/ekwipunek-z-historii.md` |
+| cokolwiek, co wchodzi do wydruku | uruchom ponownie `druk/buduj.py` (nie poprawiaj HTML ręcznie) |
 
 ---
 
@@ -118,7 +122,7 @@ Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`
 
 ## Kontrola przed zakończeniem pracy
 
-1. Szukaj spoilerów w plikach graczy, np. `rg -n -i "kobold|Klik|wózk|Skarrzath|\bVex\b|\bSzczyp\b|Brin Młodsz|mostek" GnomeCampaign/gracze` — jedyne dozwolone trafienia są w `rekwizyty.md`.
+1. Szukaj spoilerów w plikach graczy, np. `rg -n -i "kobold|Klik|wózk|Skarrzath|\bVex\b|\bSzczyp\b|Brin Młodsz|mostek" GnomeCampaign/gracze GnomeCampaign/druk/postacie` — jedyne dozwolone trafienia są w `gracze/rekwizyty.md`.
 2. Szukaj angielskiej notacji kości: `rg -n "\b\d+d\d+" GnomeCampaign -g "!AGENTS.md"`.
 3. Sprawdź, czy wartości w `sheet.md`, `karty-do-druku/` i `postacie-skrot.md` są zgodne.
 4. Po zmianie listu „legalny gnom” przelicz błędy w tekście. Tabela w `MG/ekwipunek-z-historii.md` ma mieć te same czternaście form. Klucza poprawek nie wklejaj do pliku gracza.

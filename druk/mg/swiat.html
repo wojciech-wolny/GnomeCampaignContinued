@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bohaterowie i akademia</title>
+<style>
+@page {
+  size: A4;
+  margin: 11mm 11mm 13mm 11mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+* { box-sizing: border-box; }
+html { font-family: "Segoe UI", Calibri, sans-serif; color: #241c16; }
+body {
+  font-size: 10.5pt;
+  line-height: 1.38;
+  margin: 0 auto;
+  max-width: 190mm;
+  background: #fffdf8;
+}
+h1 { font-size: 16.5pt; line-height: 1.2; margin: 0 0 0.35em; break-after: avoid; }
+h2 {
+  font-size: 13pt;
+  line-height: 1.25;
+  margin: 0.9em 0 0.3em;
+  break-after: avoid;
+  border-bottom: 0.4pt solid #e4d3b5;
+}
+h3 { font-size: 11.5pt; margin: 0.8em 0 0.25em; break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 0.7em 0 0.2em; break-after: avoid; }
+p { margin: 0.35em 0; }
+ul, ol { margin: 0.3em 0 0.5em; padding-left: 1.2em; }
+li { margin: 0.12em 0; }
+a { color: #6b3a1f; }
+strong { font-weight: 650; }
+hr { border: none; border-top: 0.4pt solid #e4d3b5; margin: 0.7em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0 0.7em;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+th, td {
+  border: 0.4pt solid #d9cbb3;
+  padding: 2px 5px;
+  vertical-align: top;
+  text-align: left;
+}
+th { background: #f4efe4; font-weight: 650; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+blockquote {
+  margin: 0.45em 0;
+  padding: 0.35em 0.7em;
+  border-left: 2.5pt solid #b8893a;
+  background: #faf6ee;
+}
+pre {
+  white-space: pre-wrap;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.25;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.45em 0.55em;
+  break-inside: avoid;
+}
+code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
+.meta {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #5c5348;
+  background: #f7f4ee;
+  border: 0.4pt solid #e4d3b5;
+  padding: 0.4em 0.55em;
+  white-space: pre-wrap;
+}
+.pieczatka {
+  display: inline-block;
+  margin: 0 0 0.55em;
+  padding: 0.12em 0.45em;
+  border: 1.4pt solid #8c2f2f;
+  color: #8c2f2f;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.spis { margin: 0 0 0.8em; }
+.spis p { margin: 0 0 0.15em; font-weight: 650; }
+.spis ol { margin: 0; }
+.uwaga { color: #8c2f2f; font-weight: 650; }
+.sekcja.nowa, .kartka { break-before: page; }
+.karta { font-size: 8.6pt; line-height: 1.16; }
+.karta h1 { font-size: 14pt; margin-bottom: 0.08em; }
+.karta h2 {
+  font-size: 10pt;
+  margin: 0.28em 0 0.06em;
+  border: none;
+  color: #6b3a1f;
+}
+.karta p { margin: 0.08em 0; }
+.karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
+.karta th, .karta td { padding: 0 3px; }
+.kartka {
+  border: 0.8pt solid #c4a574;
+  padding: 8mm 9mm;
+}
+th, .pieczatka, blockquote, pre, .meta {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media screen {
+  html { background: #e4ddd2; }
+  body { margin: 8mm auto; padding: 8mm; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+}
+@media print {
+  html, body { background: white; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+  .powrot, .spis-ekran { display: none !important; }
+  .kartka { border-color: #bbb; }
+}
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Spis materiałów MG</a></p><p class="pieczatka">Tylko dla Mistrza Gry</p><nav class="spis"><p>Spis</p><ol><li><a href="#bn">Bohaterowie niezależni — sojusznicy, świadek, złodzieje</a></li>
+<li><a href="#lokacje">Opisy lokacji</a></li>
+<li><a href="#historia-posagu">Historia złotego posągu i pierwszej powodzi</a></li>
+<li><a href="#smok-i-koboldy">Smok i koboldy</a></li></ol></nav><article class="sekcja"><h1 id="bn">Bohaterowie niezależni — sojusznicy, świadek, złodzieje</h1>
+<hr />
+<h2 id="bn-sojusznicy-i-personel-szkoły">Sojusznicy i personel szkoły</h2>
+<h3 id="bn-profesor-plink--nocny-dyżurny">Profesor Plink — nocny dyżurny</h3>
+<ul>
+<li><strong>Kim jest:</strong> gnom, czarodziej 5. poziomu. Nie walczy; na stres reaguje wypełnianiem formularzy.</li>
+<li><strong>Cytat:</strong> „To nie powódź. To <em>nieplanowane wzbogacenie hydrologiczne</em>.”</li>
+<li><strong>Jak pomaga:</strong> oddaje klucz imbusowy i plan instalacji, a wszystko, co mu podsuną, opieczętowuje stemplem „NIE MOJA WINA”.</li>
+</ul>
+<h3 id="bn-fizz--opiekun-klucza-weteran-z-posągu">Fizz — opiekun klucza, weteran z posągu</h3>
+<ul>
+<li><strong>Kim jest:</strong> jeden z czwórki uwiecznionej na posągu. Żyje, uczy zaawansowanej obsługi zaworów i nosi ze sobą termos herbaty.</li>
+<li><strong>Cytat:</strong> „Znowu ktoś użył kabla jako liny. Brin przewraca się w… posągu.”</li>
+<li><strong>Jak pomaga:</strong> jeśli gracze znajdą go w Wieży Pieczęci, udziela pomocy (+2) przy testach naprawy przewodów i tablicy.</li>
+</ul>
+<h3 id="bn-bibliotekarka-vellum">Bibliotekarka Vellum</h3>
+<ul>
+<li><strong>Cytat:</strong> <em>(szeptem, ale bardzo głośno)</em> „Schemat jest na półce C. Woda jest na moim dywanie. Ustalmy priorytety!”</li>
+<li><strong>Jak pomaga:</strong> wydaje schemat bariery z pulpitu, który ułatwia wybór kryształu i ułożenie tablicy. To egzemplarz prawdziwy. Odpis w kieszeni Orrina jest starszy i myli (zob. <a href="zagadki.html#ekwipunek-z-historii">ekwipunek-z-historii.md</a>).</li>
+</ul>
+<h3 id="bn-splot--chochlik-serwisowy">Splot — chochlik serwisowy</h3>
+<ul>
+<li><strong>Kim jest:</strong> psotny duszek z kanałów, daleki kuzyn diablików. Nie jest zły, tylko złośliwy.</li>
+<li><strong>Cytat:</strong> „Za trzecim razem wykupicie u nas abonament na awarie.”</li>
+<li><strong>Cena pomocy:</strong> jedna kanapka albo obietnica, że chochliki trafią wreszcie na tabliczkę pod posągiem. Luma nosi dwie: należną i następną odsetkową z żabą narysowaną kredą. Siedemnaście wcześniejszych odsetkowych już zjadł. Ta w torbie nie spłaca całego długu.</li>
+<li><strong>Co oferuje:</strong> wskazuje właściwy kabel albo robi za mostek przy przycisku, oczywiście za jedzenie.</li>
+</ul>
+<hr />
+<h2 id="bn-świadek-na-start">Świadek na start</h2>
+<h3 id="bn-kobold-brin-młodszy-utknął-pod-posągiem">Kobold „Brin Młodszy” (utknął pod posągiem)</h3>
+<ul>
+<li><strong>Przebranie:</strong> broda przyklejona do podbródka, tyle że krzywo i nie tam, gdzie trzeba.</li>
+<li><strong>Nastawienie:</strong> panika. Wszystko wyśpiewa po udanym teście Dyplomacji lub Zastraszania ST 12 albo w zamian za kanapkę.</li>
+<li><strong>Co wie:</strong></li>
+<li>są <strong>trzy usterki</strong> (kabel, kryształ, tablica);</li>
+<li>ekipą dowodzi <strong>Kapitan Klik</strong>;</li>
+<li>smok chce posągu do swojego skarbca, bo sąsiad ma większą górę monet;</li>
+<li>kryjówka mieści się w pokoju gościnnym „wymiany studenckiej”.</li>
+</ul>
+<hr />
+<h2 id="bn-ekipa-złodziei">Ekipa złodziei</h2>
+<h3 id="bn-kapitan-klik--komiczny-herszt">Kapitan Klik — komiczny herszt</h3>
+<ul>
+<li><strong>Rola:</strong> „specjalista od ciężkiego sprzętu”.</li>
+<li><strong>Styl:</strong> jeździ wózkiem z posągiem jak rydwanem.</li>
+<li><strong>Cytat:</strong> „Pan smok mówił, że gnomy są małe. Nie mówił, że złoto jest przykręcone!”</li>
+<li><strong>Statystyki:</strong> <a href="spotkania.html#S07-kapitan-klik">spotkania/S07-kapitan-klik.md</a>.</li>
+</ul>
+<h3 id="bn-fizzek-wibcio-i-tibusia">Fizzek, Wibcio i Tibusia</h3>
+<ul>
+<li><strong>Rola:</strong> przebrani „studenci” i „studentka” (Tibusia to kobold Tok, który uznał, że skoro Tib była kobietą, on też musi nią być).</li>
+<li><strong>Kłamią fatalnie:</strong> test Percepcji ST 10–12 wystarczy, żeby przejrzeć przebranie.</li>
+<li><strong>Typowe kwestie:</strong></li>
+<li>„Tak, jestem… ehm… Fizz. Kocham książki. I nie kocham smoków.”</li>
+<li>„Którędy jest wyjście dla legalnych gnomów z ciężkim złotem?”</li>
+</ul>
+<h3 id="bn-skarrzath-zwany-łuskową-skarbonką-poza-sceną">Skarrzath, zwany Łuskową Skarbonką (poza sceną)</h3>
+<ul>
+<li>Młody smok. Nie musi pojawiać się na sesji.</li>
+<li>W epilogu: list, tekturowy posąg, ewentualnie ryk dobiegający z szybu.</li>
+<li>Szczegóły: <a href="#smok-i-koboldy">opisy/smok-i-koboldy.md</a>.</li>
+</ul>
+<hr />
+<h2 id="bn-bohaterowie-z-posągu-nie-muszą-pojawić-się-na-scenie">Bohaterowie z posągu (nie muszą pojawić się na scenie)</h2>
+<table>
+<thead>
+<tr>
+<th>Imię</th>
+<th>Rola podczas pierwszej powodzi</th>
+<th>Dziś</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brin</td>
+<td>żywy mostek, przez który popłynął prąd</td>
+<td>sam żyje na emeryturze na powierzchni; w posągu zostało echo jego świadomości (opcjonalny szept)</td>
+</tr>
+<tr>
+<td>Fizz</td>
+<td>klucz i procedury</td>
+<td>żyje i uczy w akademii</td>
+</tr>
+<tr>
+<td>Wib</td>
+<td>negocjacje z chochlikami</td>
+<td>wspomniany w przypisie, którego nikt nie czyta</td>
+</tr>
+<tr>
+<td><strong>Tib</strong></td>
+<td>zawory i pierwszy czerwony przycisk</td>
+<td>na emeryturze; jej twarz zdobi plakaty BHP</td>
+</tr>
+</tbody>
+</table>
+<p><em>Tib jest kobietą. Na plakatach BHP i na tabliczce pod posągiem używaj form żeńskich. Jej imię się nie odmienia: „posąg Brina, Fizza, Wiba i Tib”.</em></p>
+<p>Jeśli Brin odezwie się z posągu (opcjonalnie, od czwartego pola zegara):</p>
+<blockquote>
+<p>„Nie holujcie mnie kablem. Znowu.”</p>
+</blockquote></article><article class="sekcja nowa"><h1 id="lokacje">Opisy lokacji</h1>
+<p>Krótkie fragmenty do odczytania, gdy gracze po raz pierwszy wchodzą do danego miejsca.</p>
+<hr />
+<h2 id="lokacje-atrium">Atrium</h2>
+<p>Kopuła ze szkła zaklętego prośbą „nie pękaj, proszę”. Za nią rozciąga się czarna woda oceanu, a ławica ryb przywarła do szyby jak studenci do okna dziekanatu. Pośrodku stoi <strong>złoty posąg</strong> czwórki bohaterów. Dziś stoi krzywo, na wózku z napisem „NAPRAWA, NIE KRADZIEŻ”. Z sufitu kapie coś, czego według regulaminu nie ma prawa być. Na posadzce leżą odklejona sztuczna broda i resztki dumy akademii.</p>
+<hr />
+<h2 id="lokacje-dyżurka">Dyżurka</h2>
+<p>Pokój wielkości szafy, w którym pachnie herbatą i ozonem. Na ścianie świecą kontrolki: zielone, żółte i jedna czerwona, mrugająca jak wyrzut sumienia. Na haczyku wisi <strong>klucz imbusowy</strong> z brelokiem w kształcie żaby przekreślonej na czerwono. Profesor Plink wypełnia formularz zatytułowany „Zdarzenie, które z całą pewnością nie jest powodzią”.</p>
+<hr />
+<h2 id="lokacje-biblioteka-dział-zastrzeżony">Biblioteka (dział zastrzeżony)</h2>
+<p>Regały aż pod sufit i dywan, który pamięta lepsze czasy. Bibliotekarka Vellum szepcze tak głośno, że jej echo miesza się z szumem fal. Na pulpicie leży <strong>schemat bariery</strong> z dopiskiem ołówkiem: „Nie wypożyczać koboldom. Ani żabom. Ani koboldom przebranym za żaby”. To egzemplarz aktualny. Odpis, który Orrin nosi w kieszeni, jest starszy i podaje złe wiązki, zły kryształ i złą kolejność.</p>
+<hr />
+<h2 id="lokacje-magazyn-kryształów">Magazyn kryształów</h2>
+<p>Metalowe skrzynki, etykiety i jedna pułapka z farbą „Gnomia Żółć Wykrywcza”. Ktoś uznał ją za żart, ktoś inny za politykę kadrową. Na półce rezonansowej zieje puste gniazdo, jak brakujący ząb w uśmiechu szkoły.</p>
+<hr />
+<h2 id="lokacje-korytarz-b">Korytarz B</h2>
+<p>Rury, plakaty BHP z twarzą Tib („Pomyśl, zanim naciśniesz”) i kałuże, które pojawiają się od drugiego pola zegara. Idealne miejsce, żeby wpaść na „studentów” maszerujących równym krokiem, jakby byli jednym bardzo długim koboldem.</p>
+<hr />
+<h2 id="lokacje-pokój-gościnny-wymiany-studenckiej">Pokój gościnny „wymiany studenckiej”</h2>
+<p>Oficjalnie kwatera dla gości. Nieoficjalnie fabryka bród. Na stole leżą kredki do malowania piegów, lista obecności z imionami Brin Młodszy, Fizzek, Wibcio i Tibusia oraz torba z napisem „ŁUPY (to nie są łupy)”. Okno wychodzi na szyb transportowy, którym Kapitan Klik zamierza uciec.</p>
+<hr />
+<h2 id="lokacje-wieża-pieczęci">Wieża Pieczęci</h2>
+<p>Wąska wieża w samym sercu szkoły. Tablica Triady, dwa miedziane pręty i Wielki Czerwony Przycisk, stojący tu jak pomnik złych decyzji. Powietrze pachnie ozonem i historią. Jeśli jest tu Fizz, stoi z kubkiem herbaty i miną kogoś, kto już raz przez to przechodził.</p>
+<hr />
+<h2 id="lokacje-kanały-i-kotłownia">Kanały i kotłownia</h2>
+<p>Wilgoć, chochliki i trzy wiązki kabli opisane literami A, B i C. Splot huśta się na zaworze i ocenia technikę łatania: „Sześć na dziesięć. Punkty odjęte za brak kanapki”. To tutaj koboldy podpięły holownik do bariery. I to tutaj trzeba go odpiąć, zanim atrium zamówi rybę na wynos.</p>
+<hr />
+<h2 id="lokacje-pod-atrium">Pod atrium</h2>
+<p>Niska przestrzeń pod posadzką atrium. Przeciek wygląda jak fontanna zaprojektowana przez kogoś bez uprawnień. Czasem wyłania się stąd <strong>wodny żywiołak-stażysta</strong> z formularzem BHP w dłoni.</p>
+<hr />
+<h2 id="lokacje-szyb-transportowy">Szyb transportowy</h2>
+<p>Metalowa rura, winda towarowa i zapach soli. Na ścianie ktoś namalował: „SKARRZATH WAS KOCHA (warunkowo)”. Jeśli wózek z posągiem tu dojedzie, czeka was scena pościgu i bardzo drogi plusk.</p></article><article class="sekcja nowa"><h1 id="historia-posagu">Historia złotego posągu i pierwszej powodzi</h1>
+<h2 id="historia-posagu-wersja-oficjalna-tabliczka-pod-posągiem">Wersja oficjalna (tabliczka pod posągiem)</h2>
+<blockquote>
+<p>W roku Wielkiego Egzaminu bariera wodna akademii zaczęła słabnąć.<br />
+Studenci <strong>Brin, Fizz i Wib</strong> oraz studentka <strong>Tib</strong> uratowali szkołę.<br />
+Ten posąg stoi tu po to, byśmy pamiętali, że gnomy myślą szybko, a złoto błyszczy wiecznie.</p>
+</blockquote>
+<h2 id="historia-posagu-wersja-prawdziwa-dla-mg">Wersja prawdziwa (dla MG)</h2>
+<ol>
+<li>Bariera zaczęła padać w trakcie egzaminu.</li>
+<li>Gnomy <strong>namówiły miejscowe chochliki</strong> do pomocy — choćby na chwilę.</li>
+<li><strong>Brin</strong> zamknął obwód własnym ciałem, stając się żywym mostkiem dla prądu. Przeżył, ale przez kilka uderzeń serca był częścią bariery. Kiedy potem odlewano posąg i odprawiano rytuał stabilizacji, ten odcisk jego świadomości wtopił się w złoto. Dlatego w kryzysach posąg potrafi szeptać głosem Brina, choć sam Brin od lat hoduje grzyby na powierzchni i nie lubi o tym rozmawiać.</li>
+<li><strong>Fizz</strong> pilnował klucza i trzymał się procedur.</li>
+<li><strong>Wib</strong> negocjował z chochlikami: kanapki, uznanie i trochę kontrolowanego chaosu.</li>
+<li><strong>Tib</strong> obsługiwała zawory i pierwowzór Wielkiego Czerwonego Przycisku.</li>
+<li>Oficjalna historia <strong>pominęła chochliki</strong>. Chochliki pamiętają. Kanapki też.</li>
+</ol>
+<h2 id="historia-posagu-incydent-z-żabą-kolejne-wersje-panelu">Incydent z Żabą (kolejne wersje panelu)</h2>
+<ul>
+<li><strong>Wersja 0:</strong> mały czerwony przycisk. Nacisnęła go zielona żaba i szkoła prawie zatonęła.</li>
+<li><strong>Wersja 1:</strong> Wielki Czerwony Przycisk, za duży dla żaby.</li>
+<li><strong>Wersja 2:</strong> klucz i żywy mostek, dodane po tym, jak stażysta Boddle „tylko sprawdzał, co się stanie”.</li>
+<li><strong>Wersja 3:</strong> logiczna tablica Triady, której nie rozwiąże zwierzę ani istota o niskiej Inteligencji.</li>
+</ul>
+<h2 id="historia-posagu-jak-ta-historia-łączy-się-z-sesją">Jak ta historia łączy się z sesją</h2>
+<ul>
+<li>Koboldy holują posąg <strong>kablem bariery</strong>, czyli powtarzają techniczne świętokradztwo sprzed lat.</li>
+<li>System „pamięta” triadę z chochlikiem, stąd rozwiązanie tablicy.</li>
+<li>Brin może odezwać się jednym zdaniem, gdy posąg jest w niebezpieczeństwie.</li>
+<li>Fizz, jako żyjący weteran, domyka emocjonalny wątek pierwszej powodzi.</li>
+</ul>
+<h2 id="historia-posagu-co-gracze-mogą-odkryć">Co gracze mogą odkryć</h2>
+<table>
+<thead>
+<tr>
+<th>Źródło</th>
+<th>Informacja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tabliczka pod posągiem</td>
+<td>czwórka bohaterów, wersja oficjalna</td>
+</tr>
+<tr>
+<td>Biblioteka, Wiedza (historia) ST 12</td>
+<td>wzmianka o „nieoficjalnych pomocnikach”</td>
+</tr>
+<tr>
+<td>Splot</td>
+<td>cała prawda w zamian za kanapkę</td>
+</tr>
+<tr>
+<td>Fizz</td>
+<td>Brin był mostkiem; posągu nie wolno holować przewodami</td>
+</tr>
+<tr>
+<td>Szept posągu</td>
+<td>ostrzeżenie od czwartego pola zegara</td>
+</tr>
+</tbody>
+</table></article><article class="sekcja nowa"><h1 id="smok-i-koboldy">Smok i koboldy</h1>
+<h2 id="smok-i-koboldy-skarrzath-zwany-łuskową-skarbonką">Skarrzath, zwany Łuskową Skarbonką</h2>
+<ul>
+<li><strong>Kim jest:</strong> młody smok. Kolor (zielony albo mosiężny) dobierz do upodobań stołu.</li>
+<li><strong>Wiek:</strong> młody. Nie pojawia się na mapie, chyba że wybierzesz trudny wariant epilogu.</li>
+<li><strong>Motywacja:</strong> jego skarbiec wygląda biednie, a sąsiad ma większą górę monet. Posąg to dla niego „jedna moneta, za to bardzo duża”.</li>
+<li><strong>Styl zarządzania:</strong> motywacyjne plakaty dla koboldów („BŁYSZCZ ALBO ZOSTAŃ PRZEKĄSKĄ”).</li>
+<li><strong>Słabość:</strong> łatwo go zadowolić <strong>błyszczącą atrapą</strong>, jeśli w epilogu uda się test Blefowania lub Lingwistyki.</li>
+</ul>
+<h3 id="smok-i-koboldy-list-skarrzatha-do-ekipy-leży-w-pokoju-gościnnym">List Skarrzatha do ekipy (leży w pokoju gościnnym)</h3>
+<blockquote>
+<p>Moje Łuskowate Dzieci,<br />
+przynieście mi złotego gnomka. W całości.<br />
+Nie gryźć. Nie topić. Nie negocjować z chochlikami.<br />
+Jeśli gnomy będą gadać — gadajcie szybciej.<br />
+Nagroda: trzy monety i miejsce bliżej skarbca.<br />
+— S.</p>
+</blockquote>
+<hr />
+<h2 id="smok-i-koboldy-ekipa-złodziei">Ekipa złodziei</h2>
+<table>
+<thead>
+<tr>
+<th>„Gnomie” imię</th>
+<th>Prawdziwe imię</th>
+<th>Rola</th>
+<th>Kompetencje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brin Młodszy</td>
+<td>Sskit</td>
+<td>świadek i pechowiec</td>
+<td>ma talent do utykania pod posągami</td>
+</tr>
+<tr>
+<td>Fizzek</td>
+<td>Rek</td>
+<td>zwiadowca</td>
+<td>kłamie jeszcze gorzej, gdy się denerwuje</td>
+</tr>
+<tr>
+<td>Wibcio</td>
+<td>Vex</td>
+<td>nosi torbę z łupami (w niej kryształ z bariery)</td>
+<td>kradnie wszystko, co błyszczy</td>
+</tr>
+<tr>
+<td>Tibusia</td>
+<td>Tok</td>
+<td>od przycisków</td>
+<td>„fachowo” nacisnął pół panelu</td>
+</tr>
+<tr>
+<td>Kapitan Klik</td>
+<td>Klik</td>
+<td>szef ekipy, kierowca wózka</td>
+<td>chaotyczny geniusz logistyki</td>
+</tr>
+</tbody>
+</table>
+<h3 id="smok-i-koboldy-przebrania">Przebrania</h3>
+<ul>
+<li>Broda: klej i pędzel do czyszczenia rur.</li>
+<li>Nos: przedłużony korkiem (Percepcja ST 10).</li>
+<li>Strój: szaty studenckie skradzione z pralni, z rękawami o wiele za długimi.</li>
+<li>Akcent: „Kocham… książki. I nie kocham smoków”.</li>
+</ul>
+<h3 id="smok-i-koboldy-plan-kradzieży-jak-miał-wyglądać">Plan kradzieży (jak miał wyglądać)</h3>
+<ol>
+<li>Wejść do szkoły jako studenci z wymiany.</li>
+<li>W nocy odkręcić posąg.</li>
+<li>Wywieźć go wózkiem do szybu.</li>
+<li>Dostarczyć smokowi.</li>
+</ol>
+<h3 id="smok-i-koboldy-plan-kradzieży-jak-wyszedł">Plan kradzieży (jak wyszedł)</h3>
+<ol>
+<li>Wejść do szkoły (cudem).</li>
+<li>Użyć kabla bariery jako liny.</li>
+<li>Wyjąć z bariery kryształ i schować go do torby „na później, dla pana”.</li>
+<li>Ponaciskać przyciski w Wieży Pieczęci.</li>
+<li>Zgubić Brina Młodszego pod posągiem.</li>
+<li>Uruchomić alarm, a tym samym całą przygodę.</li>
+</ol>
+<hr />
+<h2 id="smok-i-koboldy-jak-zakończyć-wątek-smoka">Jak zakończyć wątek smoka</h2>
+<ol>
+<li><strong>Tektura i list</strong> — najlepsze komediowe zakończenie.</li>
+<li><strong>Negocjacje</strong> — obiecać smokowi pomnik z mydła (błyszczy, kiedy jest mokry).</li>
+<li><strong>Zgłoszenie do straży przybrzeżnej</strong> — sprawa kończy się poza sceną.</li>
+<li><strong>Wariant trudny (opcjonalny):</strong> w ostatnich 10 minutach młody smok zagląda do szybu. Gracze oddają mu atrapę albo walczą o ucieczkę. Nie polecam tego na pierwszą sesję z nową drużyną.</li>
+</ol></article>
+</body>
+</html>

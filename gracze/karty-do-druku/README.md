@@ -14,9 +14,11 @@ Pełne opisy czarów, atutów i zdolności zostają w folderze [../postacie/](..
 
 ## Jak wydrukować
 
-1. Otwórz kartę w podglądzie Markdown (VS Code, PyCharm, Typora, Obsidian) i wydrukuj albo wyeksportuj do PDF.
-2. Ustaw marginesy na około 1 cm i skalę 80–90%, jeśli karta wychodzi na drugą stronę.
+1. Otwórz [`../../druk/postacie/index.html`](../../druk/postacie/index.html). Każda postać jest w jednym pliku: karta po polsku na pierwszej stronie, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.
+2. W przeglądarce ustaw papier A4, skalę 100% i wyłącz nagłówki oraz stopki.
 3. Pola ☐ odhaczaj ołówkiem: punkty wytrzymałości, miejsca na czary, zdolności dzienne i ładunki różdżek.
+
+Tekst karty bierze się z plików w tym folderze. Po zmianie Markdown uruchom `druk/buduj.py`, żeby HTML był aktualny.
 
 ## Zasięgi czarów przy poziomie rzucającego 3
 
