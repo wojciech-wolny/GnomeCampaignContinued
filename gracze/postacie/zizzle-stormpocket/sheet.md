@@ -109,6 +109,6 @@ Na 4. poziomie Zizzle dostanie pierwsze czary 2. kręgu. Naturalny wybór to Okr
 
 - Sztylet
 - Zestaw do malowania piegów, kreda do brody
-- List „legalny gnom”, który sam napisał. Pieczątka profesora Plinka mówi „NIE MOJA WINA”. Orrin poprawił czerwonym atramentem czternaście błędów i na marginesie dopisał: „Formalnie bez zarzutu. Broda do weryfikacji”. Kopię tego listu Orrin trzyma w archiwum, nie przy sobie
-- Różdżka Leczenia lekkich ran (5 ładunków; wygląda na pękniętą). Tego czaru nie ma na liście zaklinacza, więc potrzebny jest test Używania magicznych przedmiotów ST 20
+- [List „legalny gnom”](list-legalny-gnom.md), który sam napisał. Pieczątka profesora Plinka mówi „NIE MOJA WINA”. Na kartce nie ma poprawek ani dopisku. Orrin trzyma w archiwum kopię z czternastoma poprawkami i marginesem „Formalnie bez zarzutu. Broda do weryfikacji”
+- Różdżka Leczenia lekkich ran (5 ładunków; wygląda na pękniętą). Tego czaru nie ma na liście zaklinacza, więc potrzebny jest test Używania magicznych przedmiotów ST 20.
 - Zestaw do przebieranek, cukierki, 40 sz

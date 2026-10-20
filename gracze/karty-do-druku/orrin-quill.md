@@ -68,10 +68,10 @@ Wiedza (historia) **+12** · Wiedza (magia) **+10** · Wiedza (inżynieria) **+1
 
 ## Ekwipunek
 
-Lekka kusza i 10 bełtów · sztylet · amulet z kryształową soczewką (przedmiot więzi) · kopia schematu bariery (dopisek Lumy: „schemat kłamie”; oryginał zostaje w bibliotece) · kreda · lupa · czerwony atrament · niedokończone drugie tłumaczenie listu Nixy (brakuje zdania, że ząb jest psi; oryginał listu ma Nixa) · księga czarów · sakiewka na komponenty · 32 sz
+Lekka kusza i 10 bełtów · sztylet · amulet z kryształową soczewką (przedmiot więzi) · [kopia schematu bariery](../postacie/orrin-quill/schemat-bariery.md) · kreda · lupa · czerwony atrament · księga czarów · sakiewka na komponenty · 32 sz
 
 ## Kim jestem
 
 Asystent bibliotekarki Vellum i opiekun archiwum raportów. Piszę pracę dyplomową o złotym posągu, ale źródła kłócą się nawet o to, czy Fizz miał wtedy wąsy. Znam smoczy, więc tłumaczę listy od smoczego kuzyna Nixy.
 
-**Relacje:** Pip — autor moich ulubionych raportów; czytam je na głos i nigdy mu tego nie powiem · Zizzle — oryginał listu „legalny gnom” poprawiłem ja, kopię trzymam w teczce z żabą · Nixa — pierwsze tłumaczenie oddane; drugie, bez zdania o psim zębie, leży u mnie · Luma — w tajemnicy przyznaję jej rację co do schematu; smoczych listów nie rusza
+**Relacje:** Pip — autor moich ulubionych raportów; czytam je na głos i nigdy mu tego nie powiem · Zizzle — jego kartka ma czternaście błędów; poprawki i dopisek są tylko na kopii w teczce z żabą · Nixa — zeszłoroczny list oddany, w sprawie zęba nie ustąpię; tegoroczny jest u niej nieotwarty · Luma — w tajemnicy przyznaję jej rację co do rur; odpis w kieszeni uważam za aktualny i jeszcze go nie poprawiała

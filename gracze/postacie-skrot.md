@@ -91,7 +91,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 0: Wykrycie magii, Upiorny dźwięk, Wiadomość, Prestidigitatorstwo, Promień mrozu
 - 1: Zauroczenie osoby, Barwny strumień, Zniknięcie, Splątanie (linia krwi)
 
-**Ekwipunek:** zestaw do malowania piegów, kreda do brody, list „legalny gnom” (pieczątka Plinka, 14 poprawek Orrina), różdżka Leczenia lekkich ran (5 ładunków), sztylet
+**Ekwipunek:** zestaw do malowania piegów, kreda do brody, [list „legalny gnom”](postacie/zizzle-stormpocket/list-legalny-gnom.md) (bez poprawek), różdżka Leczenia lekkich ran (5 ładunków), sztylet
 
 **Zaczepka:** „Mam plan. Mam też kanapkę. Kanapka jest lepiej przemyślana”.
 
@@ -120,7 +120,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Zrozumienie języków, Identyfikacja, Tarcza, Pewny cios
 - 2: Wykrycie myśli, Widzenie niewidzialnego, Zlokalizowanie przedmiotu
 
-**Ekwipunek:** kopia schematu bariery (dopisek Lumy: „schemat kłamie”; oryginał w bibliotece), kreda, lupa, czerwony atrament, lekka kusza, niedokończone drugie tłumaczenie listu Nixy (oryginał ma Nixa)
+**Ekwipunek:** [kopia schematu bariery](postacie/orrin-quill/schemat-bariery.md), kreda, lupa, czerwony atrament, lekka kusza
 
 **Zaczepka:** „Według trzech źródeł to dobry pomysł. Według czwartego zginiemy. Czwarte jest przypisem”.
 
@@ -148,7 +148,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 0: Bryzg kwasu, Wykrycie magii, Rozbłysk, Dłoń maga, Iskra
 - 1: Płonące dłonie, Magiczny pocisk, Tarcza, Zbroja maga (linia krwi)
 
-**Ekwipunek:** peleryna „niepalna w 60%”, amulet ze „smoczym” zębem (to ząb psa), oryginał listu od kuzyna (otwarty; drugie tłumaczenie jest u Orrina)
+**Ekwipunek:** peleryna „niepalna w 60%”, amulet ze „smoczym” zębem (to ząb psa), [nieotwarty list od kuzyna](postacie/nixa-embercoil/list-od-kuzyna.md)
 
 **Zaczepka:** „Najpierw rozmawiamy. Potem rozmawiamy głośniej. Potem rozmawiamy ogniem”.
 
@@ -176,8 +176,8 @@ Czytaj wierszami: jak postać z wiersza widzi postać z kolumny.
 |---|---|---|---|---|---|
 | **Pip** | — | rywalka przy tablicy, remis; kanapka była z jej pudełka | winny Incydentu z Żabą, bez przeprosin | odrzuca raporty i czyta je na głos | przypaliła włosy; ma wobec niego dług honorowy |
 | **Luma** | przepala bezpieczniki, ona je wymienia | — | winien siedemnaście kanapek, które Splot już zjadł | kłócą się: schemat czy rura; listów Nixy nie tłumaczy | ogień za herbatę, łatana peleryna |
-| **Zizzle** | ofiara gościnności, bez przeprosin | wierzycielka; następna kanapka odsetkowa jest spoza rachunku | — | „adwokat”; oryginał listu nosi Zizzle, kopię ma archiwum | przewodnicząca klubu; ciastko schowane, ona go nie widziała |
-| **Orrin** | autor ulubionych raportów; nie wydobędzie zeznań o wąsach | w tajemnicy przyznaje jej rację | kopia poprawionego listu leży w teczce z żabą | — | pierwsze tłumaczenie oddane, drugie leży u niego niedokończone |
-| **Nixa** | wziął winę na siebie; dług honorowy | ogień za herbatę, ona łata pelerynę | skarbnik; ciastka nie widziała | tłumacz; prawdy o psim zębie nie przyjmuje | — |
+| **Zizzle** | ofiara gościnności, bez przeprosin | wierzycielka; następna kanapka odsetkowa jest spoza rachunku | — | „adwokat”; na kartce błędy, dopisek tylko w archiwum | przewodnicząca klubu; ciastko schowane, ona go nie widziała |
+| **Orrin** | autor ulubionych raportów; nie wydobędzie zeznań o wąsach | w tajemnicy przyznaje jej rację; odpis uważa za aktualny | kopia z poprawkami leży w teczce z żabą | — | zeszłoroczny list oddany; tegoroczny jest u Nixy, nieotwarty |
+| **Nixa** | wziął winę na siebie; dług honorowy | ogień za herbatę, ona łata pelerynę | skarbnik; ciastka nie widziała | tłumacz zeszłorocznego listu; prawdy o zębie nie przyjmuje | — |
 
 Pełne historie z tymi wątkami są w plikach `backstory.md` poszczególnych postaci.

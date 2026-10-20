@@ -66,10 +66,10 @@ Dyplomacja **+11** · Blefowanie **+10** · Używanie magicznych przedmiotów **
 
 ## Ekwipunek
 
-Sztylet · zestaw do malowania piegów · kreda do brody · list „legalny gnom” (pieczątka „NIE MOJA WINA”, 14 poprawek Orrina, margines: „Formalnie bez zarzutu. Broda do weryfikacji”; kopię trzyma archiwum) · zestaw do przebieranek · różdżka Leczenia lekkich ran · cukierki · 40 sz
+Sztylet · zestaw do malowania piegów · kreda do brody · [list „legalny gnom”](../postacie/zizzle-stormpocket/list-legalny-gnom.md) (własny wynalazek, z pieczątką, bez poprawek) · zestaw do przebieranek · różdżka Leczenia lekkich ran · cukierki · 40 sz
 
 ## Kim jestem
 
 Leśny gnom na wymianie studenckiej. Leśne gnomy rzadko noszą brody, więc rysuję sobie brodę kredą, żeby nikt nie pytał. Na powitanie dałem Pipowi kanapkę z żywą żabą — u nas to wróży szczęście. Tu wywołało ewakuację.
 
-**Relacje:** Pip — wciąż próbuję się z nim zaprzyjaźnić, bez przeprosin · Luma — jestem jej winien siedemnaście kanapek, które Splot już zjadł; żaba z kredy jest na następnej · Orrin — mój „adwokat”; oryginał listu „legalny gnom” mam ja, kopię trzyma archiwum · Nixa — przewodnicząca klubu, ja jestem skarbnikiem (budżet: jedno ciastko, którego nie widziała)
+**Relacje:** Pip — wciąż próbuję się z nim zaprzyjaźnić, bez przeprosin · Luma — jestem jej winien siedemnaście kanapek, które Splot już zjadł; żaba z kredy jest na następnej · Orrin — mój „adwokat”; na mojej kartce są błędy, dopisek „Formalnie bez zarzutu” jest tylko na kopii w archiwum · Nixa — przewodnicząca klubu, ja jestem skarbnikiem (budżet: jedno ciastko, którego nie widziała)

@@ -67,10 +67,10 @@ Zastraszanie **+10** · Używanie magicznych przedmiotów **+8** · Percepcja **
 
 ## Ekwipunek
 
-Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · ostatni list od kuzyna (oryginał, otwarty, raz przetłumaczony; drugie tłumaczenie jest u Orrina i nie jest skończone) · sakiewka na komponenty · 45 sz
+Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · [nieotwarty list od kuzyna](../postacie/nixa-embercoil/list-od-kuzyna.md) · sakiewka na komponenty · 45 sz
 
 ## Kim jestem
 
 W mojej rodzinie krąży legenda o prababci, która spędziła lato u mosiężnego smoka. Od tamtej pory raz w roku przychodzi list od „kuzyna” — trzydzieści stron o pogodzie, po smoczemu. Przy rodzinnych obiadach zawsze stoi wolne nakrycie dla smoka. Na wszelki wypadek.
 
-**Relacje:** Orrin — pierwsze tłumaczenie już oddał; zdania o zębie nie przyjmuję i czekam na drugie · Zizzle — skarbnik klubu; ciastko jest „w bezpiecznym miejscu” i go nie widziałam · Pip — kichnęłam iskrami, on wziął winę na siebie, mam wobec niego dług honorowy · Luma — płacę ogniem, ona płaci herbatą i łata mi pelerynę
+**Relacje:** Orrin — zeszłoroczny list przetłumaczył i nie ustąpi w sprawie zęba; tegoroczny mam nieotwarty · Zizzle — skarbnik klubu; ciastko jest „w bezpiecznym miejscu” i go nie widziałam · Pip — kichnęłam iskrami, on wziął winę na siebie, mam wobec niego dług honorowy · Luma — płacę ogniem, ona płaci herbatą i łata mi pelerynę

@@ -13,6 +13,6 @@ W kotłowni Luma ma dwie stałe współpracowniczki, choć tylko jedna o tym wie
 - **Zizzle** — dłużnik. Splot zjadł już siedemnaście kanapek odsetkowych i tyle widnieje na rachunku. Ta w torbie jest następna. Mimo to lubi go, bo jako jedyny chwali jej kanapki bez ironii.
 - **Pip** — rywal przy tablicy wyników w kotłowni. On przepala bezpieczniki, ona je wymienia, a oboje udają, że to przypadek. Na razie jest remis.
 - **Nixa** — rozpałka do kotła i właścicielka najczęściej łatanej peleryny w akademii. Nixa płaci ogniem, Luma płaci herbatą.
-- **Orrin** — przynosi z biblioteki kopię schematu bariery, którą Luma poprawia markerem z dopiskiem „schemat kłamie”. Kłócą się o to, kto ma rację: papier czy rura. Luma czyta po smoczemu, ale listów kuzyna Nixy nie tłumaczy. Mówi, że list nie jest rurą.
+- **Orrin** — przynosi z biblioteki kopię schematu bariery i uważa ją za aktualną. Luma jeszcze jej nie widziała. Gdy zobaczy, dopisze markerem „schemat kłamie”. Kłócą się o to, kto ma rację: papier czy rura. Luma czyta po smoczemu, ale listów kuzyna Nixy nie tłumaczy. Mówi, że list nie jest rurą.
 
 **Zaczepka na sesję:** W torbie Luma ma dwie kanapki dla Splotu: należną i następną odsetkową, jeszcze spoza rachunku siedemnastu. Na odsetkowej Zizzle narysował kredą żabę.
