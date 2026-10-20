@@ -74,6 +74,6 @@ Mistrzowski klucz francuski (przedmiot więzi) · mistrzowskie narzędzia rzemie
 
 ## Kim jestem
 
-Stypendystka kotłowni i „konsultantka do spraw ergonomii” u chochlików serwisowych. Chochlikowi Splotowi płacę kanapkami. Zizzle zabrał jedną z mojego pudełka, dołożył żabę i dał ją Pipowi — od tamtej pory Splot nalicza mi odsetki.
+Stypendystka kotłowni i „konsultantka do spraw ergonomii” u chochlików serwisowych. Chochlikowi Splotowi płacę kanapkami. Zizzle zabrał jedną z mojego pudełka, dołożył żabę i dał ją Pipowi. Splot zjadł już siedemnaście kanapek odsetkowych. Ta w torbie jest następna.
 
-**Relacje:** Zizzle — winien mi siedemnaście kanapek · Pip — on psuje, ja naprawiam · Nixa — rozpala mi kocioł, ja łatam jej pelerynę · Orrin — kłócimy się, kto ma rację: schemat czy rura
+**Relacje:** Zizzle — winien mi siedemnaście zjedzonych kanapek i chwali je bez ironii · Pip — przepala bezpieczniki, ja je wymieniam, remis · Nixa — ogień za herbatę, łatam jej pelerynę · Orrin — kłócimy się, czy rację ma schemat, czy rura; listów kuzyna Nixy nie tłumaczę

@@ -72,4 +72,4 @@ Sztylet · zestaw do malowania piegów · kreda do brody · list „legalny gnom
 
 Leśny gnom na wymianie studenckiej. Leśne gnomy rzadko noszą brody, więc rysuję sobie brodę kredą, żeby nikt nie pytał. Na powitanie dałem Pipowi kanapkę z żywą żabą — u nas to wróży szczęście. Tu wywołało ewakuację.
 
-**Relacje:** Pip — wciąż próbuję się z nim zaprzyjaźnić · Luma — jestem jej winien siedemnaście kanapek · Orrin — mój „adwokat” od listu „legalny gnom” · Nixa — przewodnicząca naszego Klubu Urodzonych z Talentem (ja jestem skarbnikiem, budżet: jedno ciastko)
+**Relacje:** Pip — wciąż próbuję się z nim zaprzyjaźnić, bez przeprosin · Luma — jestem jej winien siedemnaście kanapek, które Splot już zjadł; żaba z kredy jest na następnej · Orrin — mój „adwokat”; oryginał listu „legalny gnom” mam ja, kopię trzyma archiwum · Nixa — przewodnicząca klubu, ja jestem skarbnikiem (budżet: jedno ciastko, którego nie widziała)

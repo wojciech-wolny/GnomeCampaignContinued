@@ -174,10 +174,10 @@ Czytaj wierszami: jak postać z wiersza widzi postać z kolumny.
 
 | | Pip | Luma | Zizzle | Orrin | Nixa |
 |---|---|---|---|---|---|
-| **Pip** | — | rywalka przy tablicy wyników w kotłowni | winny Incydentu z Żabą | odrzuca jego raporty | przypaliła mu włosy |
-| **Luma** | psuje to, co ona naprawia | — | winien jej siedemnaście kanapek | kłócą się: schemat czy rura | rozpala jej kocioł |
-| **Zizzle** | ofiara jego gościnności | wierzycielka | — | „adwokat” od listu „legalny gnom” | przewodnicząca Klubu Urodzonych z Talentem |
-| **Orrin** | autor ulubionych raportów | poprawia jego schematy | prowadzi jego teczkę | — | zleca mu tłumaczenia listów od kuzyna |
-| **Nixa** | wziął na siebie winę za jej kichnięcie | łata jej pelerynę | skarbnik klubu | tłumacz i strażnik prawdy o zębie | — |
+| **Pip** | — | rywalka przy tablicy, remis; kanapka była z jej pudełka | winny Incydentu z Żabą, bez przeprosin | odrzuca raporty i czyta je na głos | przypaliła włosy; ma wobec niego dług honorowy |
+| **Luma** | przepala bezpieczniki, ona je wymienia | — | winien siedemnaście kanapek, które Splot już zjadł | kłócą się: schemat czy rura; listów Nixy nie tłumaczy | ogień za herbatę, łatana peleryna |
+| **Zizzle** | ofiara gościnności, bez przeprosin | wierzycielka; następna kanapka odsetkowa jest spoza rachunku | — | „adwokat”; oryginał listu nosi Zizzle, kopię ma archiwum | przewodnicząca klubu; ciastko schowane, ona go nie widziała |
+| **Orrin** | autor ulubionych raportów; nie wydobędzie zeznań o wąsach | w tajemnicy przyznaje jej rację | kopia poprawionego listu leży w teczce z żabą | — | pierwsze tłumaczenie oddane, drugie leży u niego niedokończone |
+| **Nixa** | wziął winę na siebie; dług honorowy | ogień za herbatę, ona łata pelerynę | skarbnik; ciastka nie widziała | tłumacz; prawdy o psim zębie nie przyjmuje | — |
 
 Pełne historie z tymi wątkami są w plikach `backstory.md` poszczególnych postaci.

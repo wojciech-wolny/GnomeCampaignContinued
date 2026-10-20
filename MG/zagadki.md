@@ -66,7 +66,7 @@ Gracze wybierają jeden sposób:
 | Rękawice izolacyjne | leżą obok z napisem „UŻYWAĆ” | brak obrażeń |
 | Ochotnik bez rękawic | trzyma oba pręty gołymi rękami | 1k4 obrażeń nieśmiercionośnych od elektryczności, dużo dramatu |
 | Czar | kontrolowany impuls czarem zadającym obrażenia (np. Magicznym pociskiem w pręt); test poziomu rzucającego ST 12 | zużyty czar |
-| Chochlik Splot | zrobi to za kanapkę | Dyplomacja ST 12 albo jedna z dwóch kanapek Lumy (należna albo odsetkowa z żabą z kredy) |
+| Chochlik Splot | zrobi to za kanapkę | Dyplomacja ST 12 albo jedna z dwóch kanapek Lumy (należna albo następna odsetkowa z żabą z kredy; siedemnaście wcześniejszych już zjadł) |
 
 Kolejność jest stała: przekręcić klucz, zamknąć mostek, nacisnąć przycisk.
 

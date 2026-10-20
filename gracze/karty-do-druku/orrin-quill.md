@@ -74,4 +74,4 @@ Lekka kusza i 10 bełtów · sztylet · amulet z kryształową soczewką (przedm
 
 Asystent bibliotekarki Vellum i opiekun archiwum raportów. Piszę pracę dyplomową o złotym posągu, ale źródła kłócą się nawet o to, czy Fizz miał wtedy wąsy. Znam smoczy, więc tłumaczę listy od smoczego kuzyna Nixy.
 
-**Relacje:** Pip — autor moich ulubionych raportów (nigdy mu tego nie powiem) · Zizzle — prowadzę jego teczkę · Nixa — czeka na „dokładniejsze tłumaczenie” zdania o psim zębie · Luma — w tajemnicy przyznaję jej rację co do schematów
+**Relacje:** Pip — autor moich ulubionych raportów; czytam je na głos i nigdy mu tego nie powiem · Zizzle — oryginał listu „legalny gnom” poprawiłem ja, kopię trzymam w teczce z żabą · Nixa — pierwsze tłumaczenie oddane; drugie, bez zdania o psim zębie, leży u mnie · Luma — w tajemnicy przyznaję jej rację co do schematu; smoczych listów nie rusza

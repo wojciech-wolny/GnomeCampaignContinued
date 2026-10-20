@@ -75,4 +75,4 @@ Sztylet · strój uczonego · gogle · amulet-klucz (przedmiot więzi) · różd
 
 Technik od alarmów na nocnych dyżurach, uczeń weterana Fizza. Pierwszego dnia wymiany Zizzle dał mi na powitanie kanapkę z żywą żabą — żaba wskoczyła na pulpit i ewakuowała pół akademii. Od tamtej pory nienawidzę żab, a raport z tej nocy piszę trzeci raz.
 
-**Relacje:** Zizzle — winny Incydentu z Żabą · Orrin — odrzuca moje raporty · Luma — rywalka przy tablicy wyników w kotłowni · Nixa — przypaliła mi włosy (mówię, że to mój eksperyment)
+**Relacje:** Zizzle — winny Incydentu z Żabą, przeprosin nie było · Orrin — dwa razy odrzucił raport i czyta go na głos, choć mi tego nie powie · Luma — remis przy tablicy; kanapka była z jej pudełka · Nixa — przypaliła mi włosy (mówię, że to mój eksperyment) i ma wobec mnie dług honorowy

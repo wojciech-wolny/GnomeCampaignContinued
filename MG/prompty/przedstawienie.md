@@ -95,7 +95,7 @@ Historie postaci:
 Jeśli chcesz przygotować się na różne kierunki sesji, wklej w tej samej rozmowie drugi prompt. Model zaproponuje sceny, w których relacje bohaterów mogą wyjść na wierzch.
 
 ```text
-Na podstawie tych samych historii zaproponuj 8 krótkich scen (po 3–4 zdania), które mogą wydarzyć się podczas nocnego dyżuru i w których relacje między bohaterami odegrają rolę. Przykłady kierunków: Zizzle próbuje przeprosić Pipa jedzeniem, Splot domaga się odsetek od Lumy w najgorszym możliwym momencie, Nixa kicha iskrami przy czymś łatwopalnym, Orrin musi przyznać na głos, że Luma miała rację co do schematu.
+Na podstawie tych samych historii zaproponuj 8 krótkich scen (po 3–4 zdania), które mogą wydarzyć się podczas nocnego dyżuru i w których relacje między bohaterami odegrają rolę. Przykłady kierunków: Zizzle próbuje zaprzyjaźnić się z Pipem jedzeniem, bez przeprosin; Splot domaga się następnej kanapki odsetkowej w najgorszym możliwym momencie; Nixa kicha iskrami przy czymś łatwopalnym; Orrin musi przyznać na głos, że Luma miała rację co do schematu; Nixa domaga się drugiego tłumaczenia zdania o zębie.
 
 Do każdej sceny dopisz:
 - które postacie biorą w niej udział,

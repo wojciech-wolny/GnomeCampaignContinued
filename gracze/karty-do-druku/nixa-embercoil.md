@@ -73,4 +73,4 @@ Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z
 
 W mojej rodzinie krąży legenda o prababci, która spędziła lato u mosiężnego smoka. Od tamtej pory raz w roku przychodzi list od „kuzyna” — trzydzieści stron o pogodzie, po smoczemu. Przy rodzinnych obiadach zawsze stoi wolne nakrycie dla smoka. Na wszelki wypadek.
 
-**Relacje:** Orrin — tłumaczy mi listy od kuzyna (i coś kręci w sprawie zęba) · Zizzle — skarbnik naszego klubu · Pip — kichnęłam iskrami i przypaliłam mu włosy, a on wziął winę na siebie · Luma — rozpalam jej kocioł, ona łata mi pelerynę
+**Relacje:** Orrin — pierwsze tłumaczenie już oddał; zdania o zębie nie przyjmuję i czekam na drugie · Zizzle — skarbnik klubu; ciastko jest „w bezpiecznym miejscu” i go nie widziałam · Pip — kichnęłam iskrami, on wziął winę na siebie, mam wobec niego dług honorowy · Luma — płacę ogniem, ona płaci herbatą i łata mi pelerynę
