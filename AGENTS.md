@@ -16,6 +16,7 @@ GnomeCampaign/
 │   ├── mapa.md               # mapa z oznaczeniami MG
 │   ├── zagadki.md            # zagadki z rozwiązaniami, procedury napraw
 │   ├── bn.md                 # bohaterowie niezależni (BN)
+│   ├── ekwipunek-z-historii.md  # błędny schemat Orrina, klucz do listu „legalny gnom”
 │   ├── rekwizyty-kiedy.md    # kiedy wręczyć który rekwizyt R1–R9
 │   ├── opisy/                # lokacje, historia posągu, smok i koboldy
 │   ├── spotkania/            # S01–S12 (README.md = spis)
@@ -23,10 +24,13 @@ GnomeCampaign/
 └── gracze/                   # materiały dla graczy — BEZ spoilerów
     ├── brief.md, mapa.md, rekwizyty.md, postacie-skrot.md
     ├── postacie/<postać>/    # sheet, spells, feats, features, backstory, state
+    │                         # oraz kartki z ekwipunku (list, schemat), jeśli postać je nosi
     └── karty-do-druku/       # jednostronicowe karty A4 (skrót sheet.md)
 ```
 
 Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`, `orrin-quill`, `nixa-embercoil`.
+
+Źródłem kart jest `gracze/postacie/<postać>/`. Folder `gracze/postacie/postacie/` to starsza kopia. Nie aktualizuj jej, chyba że użytkownik o to poprosi.
 
 ---
 
@@ -36,6 +40,7 @@ Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`
 
 - Wszystko w `gracze/` gracze mogą przeczytać przed sesją. Nie wolno tam zdradzać: koboldów, kradzieży posągu, Kapitana Klika i jego ekipy (Fizzek, Wibcio, Tibusia, Brin Młodszy, Vex, Szczyp itd.), smoka Skarrzatha, kradzionego kryształu, wózka z posągiem, rozwiązania tablicy Triady, żywego mostka, liczby usterek („trzy naprawy”), konkretnych kabli (A/B/C).
 - Wyjątek: `gracze/rekwizyty.md` — kartki wręczane w trakcie gry; mogą zawierać wskazówki.
+- Wyjątek: `gracze/postacie/orrin-quill/schemat-bariery.md` wymienia kable A/B/C. Podaje je **źle** i tak ma zostać. Nie poprawiaj tego pliku na rozwiązania z `MG/zagadki.md`. Nie dopisuj w nim słowa „mostek” ani informacji, że odpis jest błędny. Prawdziwy układ (wiązka B, kryształ bursztynowy, klucz → mostek → przycisk) zostaje w `MG/`.
 - Dozwolone w `gracze/`: legenda o posągu (Brin, Fizz, Wib, Tib), Incydent z Żabą, Wielki Czerwony Przycisk, chochliki i Splot, smoczy kuzyn Nixy (mosiężny, dobry, bez związku z fabułą).
 - Wszystko, co zdradza fabułę, idzie do `MG/`. W `MG/prompty/sceny.md` każda scena ma kolumnę „Kiedy pokazać”.
 
@@ -71,6 +76,10 @@ Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`
   - Orrin tłumaczy Nixie listy od mosiężnego smoczego kuzyna; kuzyn twierdzi, że ząb w jej amulecie jest psi.
   - Zizzle i Nixa: Klub Urodzonych z Talentem (dwoje zaklinaczy, budżet: jedno ciastko).
   - Orrin trzyma w aktach list „legalny gnom” Zizzle'a.
+- **Kartki w ekwipunku** (to nie są rekwizyty R1–R9; różnice i klucz poprawek: `MG/ekwipunek-z-historii.md`):
+  - Orrin nosi `schemat-bariery.md`, rewizję 2. W treści wygląda na aktualny regulamin, a jest błędna: wiązka A zamiast B, kryształ niebieski zamiast bursztynowego, najpierw przycisk zamiast klucza. Egzemplarz na pulpicie Vellum (S03) jest prawdziwy. Luma, gdy zobaczy odpis, napisze „schemat kłamie”.
+  - Nixa nosi `list-od-kuzyna.md`. Kartka ma tylko opis: gruby, nieotwarty list po smoczemu. Bez treści, bez tłumaczenia i bez zdania o psim zębie.
+  - Zizzle nosi `list-legalny-gnom.md`. Żart bez wpływu na naprawę bariery: własne oświadczenie i pieczątka „NIE MOJA WINA”. W tekście jest dokładnie czternaście błędów ortograficznych. Na kartce nie ma klucza poprawek ani dopisku Orrina. Dopisek „Formalnie bez zarzutu. Broda do weryfikacji” zostaje w historiach.
 - Historie postaci **nie nawiązują do koboldów**.
 
 ### 4. Mechanika
@@ -96,6 +105,7 @@ Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`
 | nazwę pliku lub nagłówek `###` | wszystkie linki i kotwice, które na niego wskazują |
 | spotkanie S01–S12 | `MG/spotkania/README.md`, `MG/plan-sesji.md`, `MG/rekwizyty-kiedy.md` |
 | nazwę lokacji | `MG/mapa.md`, `gracze/mapa.md`, `MG/opisy/lokacje.md`, `MG/prompty/sceny.md` |
+| kartkę z ekwipunku (list, schemat) | plik kartki, link w `sheet.md`, `backstory.md`, `karty-do-druku/<p>.md` i `postacie-skrot.md`, oraz `MG/ekwipunek-z-historii.md` |
 
 ---
 
@@ -111,3 +121,4 @@ Postacie (foldery): `pip-iskra-torren`, `luma-bramblewick`, `zizzle-stormpocket`
 1. Szukaj spoilerów w plikach graczy, np. `rg -n -i "kobold|Klik|wózk|Skarrzath|\bVex\b|\bSzczyp\b|Brin Młodsz|mostek" GnomeCampaign/gracze` — jedyne dozwolone trafienia są w `rekwizyty.md`.
 2. Szukaj angielskiej notacji kości: `rg -n "\b\d+d\d+" GnomeCampaign -g "!AGENTS.md"`.
 3. Sprawdź, czy wartości w `sheet.md`, `karty-do-druku/` i `postacie-skrot.md` są zgodne.
+4. Po zmianie listu „legalny gnom” przelicz błędy w tekście. Tabela w `MG/ekwipunek-z-historii.md` ma mieć te same czternaście form. Klucza poprawek nie wklejaj do pliku gracza.

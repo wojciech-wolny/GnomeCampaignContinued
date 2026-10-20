@@ -2,8 +2,6 @@
 
 Zizzle napisał to sam i nosi przy sobie. Na dole jest pieczątka profesora Plinka. Profesor nie pamięta, żeby ją przybijał.
 
-Orrin trzyma w archiwum kopię. Znalazł w tekście czternaście błędów ortograficznych i na marginesie dopisał: „Formalnie bez zarzutu. Broda do weryfikacji”.
-
 ---
 
 > Ja, niżej podpisany Zizzle Stormpocket, oświadczam wszem i w obec, że jestem gnomem w pełni legalnym.
