@@ -19,7 +19,7 @@ deity: Brigh
 | **Bóstwo** | Brigh |
 | **Rozmiar** | mały |
 | **Wiek** | 48 lat |
-| **Wygląd** | rękawy upaprane smarem, zwinięty pas z narzędziami, kanapka „dla Splotu”, korona z taśmy Gnomoklej |
+| **Wygląd** | rękawy upaprane smarem, zwinięty pas z narzędziami, dwie kanapki dla Splotu (należna i odsetki), korona z taśmy Gnomoklej |
 
 ## Klasa
 
@@ -150,5 +150,5 @@ Czarodziej: 2 + INT = 6 rang na poziom × 3 = 18, plus 3 rangi z klasy preferowa
 - Mistrzowski klucz francuski (przedmiot więzi; w walce traktowany jak pałka)
 - Mistrzowskie narzędzia rzemieślnicze (+2 do Rzemiosła)
 - Mistrzowskie narzędzia złodziejskie (+2 do Unieszkodliwiania mechanizmów)
-- Taśma Gnomoklej, śrubki, zapasowa kanapka dla Splotu
+- Taśma Gnomoklej, śrubki, dwie kanapki dla Splotu (należna i odsetki; na odsetkowej żaba narysowana kredą)
 - Księga czarów, sakiewka na komponenty, 28 sz

@@ -68,7 +68,7 @@ Wiedza (historia) **+12** · Wiedza (magia) **+10** · Wiedza (inżynieria) **+1
 
 ## Ekwipunek
 
-Lekka kusza i 10 bełtów · sztylet · amulet z kryształową soczewką (przedmiot więzi) · kopia schematu bariery · kreda · lupa · czerwony atrament · księga czarów · sakiewka na komponenty · 32 sz
+Lekka kusza i 10 bełtów · sztylet · amulet z kryształową soczewką (przedmiot więzi) · kopia schematu bariery (dopisek Lumy: „schemat kłamie”) · kreda · lupa · czerwony atrament · niedokończone drugie tłumaczenie listu Nixy · księga czarów · sakiewka na komponenty · 32 sz
 
 ## Kim jestem
 

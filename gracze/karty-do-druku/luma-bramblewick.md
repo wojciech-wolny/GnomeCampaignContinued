@@ -2,7 +2,7 @@
 
 **Gnomka, czarodziejka 3. poziomu (przemiany)** · neutralna dobra · Brigh · mała · 48 lat  
 *„Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.*  
-**Wygląd:** rękawy upaprane smarem, pas z narzędziami, kanapka „dla Splotu”, korona z taśmy Gnomoklej
+**Wygląd:** rękawy upaprane smarem, pas z narzędziami, dwie kanapki dla Splotu (należna i odsetki), korona z taśmy Gnomoklej
 
 | SIŁ | ZRĘ | BUD | INT | MDR | CHA |
 |:---:|:---:|:---:|:---:|:---:|:---:|

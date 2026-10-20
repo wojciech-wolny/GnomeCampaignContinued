@@ -63,7 +63,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Ożywienie liny, Szybki odwrót, Piórkospad, Niewidzialny sługa
 - 2: Lewitacja, Scalenie, Byczy wigor
 
-**Ekwipunek:** taśma Gnomoklej, śrubki, kanapka „dla Splotu”, mistrzowskie narzędzia
+**Ekwipunek:** taśma Gnomoklej, śrubki, dwie kanapki dla Splotu (należna i odsetki), mistrzowskie narzędzia
 
 **Zaczepka:** „Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.
 
@@ -120,7 +120,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Zrozumienie języków, Identyfikacja, Tarcza, Pewny cios
 - 2: Wykrycie myśli, Widzenie niewidzialnego, Zlokalizowanie przedmiotu
 
-**Ekwipunek:** schemat bariery, kreda, lupa, czerwony atrament, lekka kusza
+**Ekwipunek:** schemat bariery (dopisek Lumy: „schemat kłamie”), kreda, lupa, czerwony atrament, lekka kusza, niedokończone tłumaczenie listu Nixy
 
 **Zaczepka:** „Według trzech źródeł to dobry pomysł. Według czwartego zginiemy. Czwarte jest przypisem”.
 
@@ -148,7 +148,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 0: Bryzg kwasu, Wykrycie magii, Rozbłysk, Dłoń maga, Iskra
 - 1: Płonące dłonie, Magiczny pocisk, Tarcza, Zbroja maga (linia krwi)
 
-**Ekwipunek:** peleryna „niepalna w 60%”, amulet ze „smoczym” zębem (to ząb psa)
+**Ekwipunek:** peleryna „niepalna w 60%”, amulet ze „smoczym” zębem (to ząb psa), otwarty list od kuzyna
 
 **Zaczepka:** „Najpierw rozmawiamy. Potem rozmawiamy głośniej. Potem rozmawiamy ogniem”.
 

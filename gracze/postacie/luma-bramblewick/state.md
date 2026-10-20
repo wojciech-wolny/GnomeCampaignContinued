@@ -42,7 +42,7 @@
 |-------|-------|-------|---------|
 | Telekinetyczna pięść | 7 | 0 | 7 |
 | Czar z więzi (klucz francuski) | 1 | 0 | 1 |
-| Kanapka dla Splotu | 1 | 0 | 1 |
+| Kanapki dla Splotu (należna i odsetki) | 2 | 0 | 2 |
 
 ## Notatki z sesji
 
