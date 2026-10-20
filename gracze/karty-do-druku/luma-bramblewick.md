@@ -53,7 +53,8 @@
 | Telekinetyczna pięść | ☐☐☐☐☐☐☐ |
 | Czar z więzi (klucz francuski) — dowolny czar z księgi | ☐ |
 | Gnomia magia (po 1): Tańczące światła · Upiorny dźwięk · Prestidigitatorstwo · Rozmowa ze zwierzętami | ☐ ☐ ☐ ☐ |
-| Kanapki dla Splotu | ☐ ☐ |
+| Kanapka należna dla Splotu | ☐ |
+| Kanapka odsetkowa (żaba narysowana kredą) | ☐ |
 
 ## Umiejętności
 
@@ -69,7 +70,7 @@ Rzemiosło (mechanizmy) **+14** · Unieszkodliwianie mechanizmów **+12** · Wie
 
 ## Ekwipunek
 
-Mistrzowski klucz francuski (przedmiot więzi) · mistrzowskie narzędzia rzemieślnicze (+2) · mistrzowskie narzędzia złodziejskie (+2) · taśma Gnomoklej · śrubki · dwie kanapki dla Splotu · księga czarów · sakiewka na komponenty · 28 sz
+Mistrzowski klucz francuski (przedmiot więzi) · mistrzowskie narzędzia rzemieślnicze (+2) · mistrzowskie narzędzia złodziejskie (+2) · taśma Gnomoklej · śrubki · kanapka należna dla Splotu · kanapka odsetkowa (żaba narysowana kredą) · księga czarów · sakiewka na komponenty · 28 sz
 
 ## Kim jestem
 

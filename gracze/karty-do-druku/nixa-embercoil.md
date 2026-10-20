@@ -67,7 +67,7 @@ Zastraszanie **+10** · Używanie magicznych przedmiotów **+8** · Percepcja **
 
 ## Ekwipunek
 
-Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · ostatni list od kuzyna (otwarty, raz przetłumaczony) · sakiewka na komponenty · 45 sz
+Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · ostatni list od kuzyna (oryginał, otwarty, raz przetłumaczony; drugie tłumaczenie jest u Orrina i nie jest skończone) · sakiewka na komponenty · 45 sz
 
 ## Kim jestem
 

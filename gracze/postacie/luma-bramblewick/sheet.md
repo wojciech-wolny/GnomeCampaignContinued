@@ -150,5 +150,7 @@ Czarodziej: 2 + INT = 6 rang na poziom × 3 = 18, plus 3 rangi z klasy preferowa
 - Mistrzowski klucz francuski (przedmiot więzi; w walce traktowany jak pałka)
 - Mistrzowskie narzędzia rzemieślnicze (+2 do Rzemiosła)
 - Mistrzowskie narzędzia złodziejskie (+2 do Unieszkodliwiania mechanizmów)
-- Taśma Gnomoklej, śrubki, dwie kanapki dla Splotu (należna i odsetki; na odsetkowej żaba narysowana kredą)
+- Taśma Gnomoklej, śrubki
+- Kanapka należna dla Splotu
+- Kanapka odsetkowa dla Splotu (Zizzle narysował na niej kredą żabę)
 - Księga czarów, sakiewka na komponenty, 28 sz

@@ -21,7 +21,7 @@
 ### Splot — chochlik serwisowy
 - **Kim jest:** psotny duszek z kanałów, daleki kuzyn diablików. Nie jest zły, tylko złośliwy.
 - **Cytat:** „Za trzecim razem wykupicie u nas abonament na awarie.”
-- **Cena pomocy:** jedna kanapka albo obietnica, że chochliki trafią wreszcie na tabliczkę pod posągiem.
+- **Cena pomocy:** jedna kanapka albo obietnica, że chochliki trafią wreszcie na tabliczkę pod posągiem. Luma nosi dwie: należną i odsetkową z żabą narysowaną kredą.
 - **Co oferuje:** wskazuje właściwy kabel albo robi za mostek przy przycisku, oczywiście za jedzenie.
 
 ---

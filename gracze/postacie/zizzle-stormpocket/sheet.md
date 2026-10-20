@@ -107,6 +107,8 @@ Na 4. poziomie Zizzle dostanie pierwsze czary 2. kręgu. Naturalny wybór to Okr
 
 ## Ekwipunek
 
-- Zestaw do malowania piegów, list „legalny gnom” (własny wynalazek)
-- Różdżka Leczenia lekkich ran (5 ładunków; wygląda na pękniętą). Tego czaru nie ma na liście zaklinacza, więc potrzebny jest test Używania magicznych przedmiotów ST 20.
+- Sztylet
+- Zestaw do malowania piegów, kreda do brody
+- List „legalny gnom”, który sam napisał. Pieczątka profesora Plinka mówi „NIE MOJA WINA”. Orrin poprawił czerwonym atramentem czternaście błędów i na marginesie dopisał: „Formalnie bez zarzutu. Broda do weryfikacji”. Kopię tego listu Orrin trzyma w archiwum, nie przy sobie
+- Różdżka Leczenia lekkich ran (5 ładunków; wygląda na pękniętą). Tego czaru nie ma na liście zaklinacza, więc potrzebny jest test Używania magicznych przedmiotów ST 20
 - Zestaw do przebieranek, cukierki, 40 sz

@@ -14,7 +14,7 @@ Splot huśta się na zaworze i przygląda się spiętym kablom A i B jak ekspona
 
 ## Mechanika
 
-- Dyplomacja ST 12 **albo** kanapka (Luma ma zapasową).
+- Dyplomacja ST 12 **albo** jedna kanapka. Luma ma dwie, osobno: należną (zwykła opłata tej nocy) i odsetkową (Zizzle narysował na niej kredą żabę). Wystarczy któraś jedna. Odsetkowa jest zabawniejsza, a Splot i tak policzy ją jako zapłatę.
 - Porażka: Splot i tak pomaga, ale „przez pomyłkę” na jedną rundę podłącza automat z kanapkami do alarmu. Alarm odśpiewuje menu stołówki.
 
 ## Korzyści (gracze wybierają jedną)

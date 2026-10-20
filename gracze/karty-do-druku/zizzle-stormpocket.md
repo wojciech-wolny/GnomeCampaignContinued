@@ -66,7 +66,7 @@ Dyplomacja **+11** · Blefowanie **+10** · Używanie magicznych przedmiotów **
 
 ## Ekwipunek
 
-Sztylet · zestaw do malowania piegów · list „legalny gnom” (własny wynalazek, z pieczątką) · zestaw do przebieranek · różdżka Leczenia lekkich ran · cukierki · 40 sz
+Sztylet · zestaw do malowania piegów · kreda do brody · list „legalny gnom” (pieczątka „NIE MOJA WINA”, 14 poprawek Orrina, margines: „Formalnie bez zarzutu. Broda do weryfikacji”; kopię trzyma archiwum) · zestaw do przebieranek · różdżka Leczenia lekkich ran · cukierki · 40 sz
 
 ## Kim jestem
 

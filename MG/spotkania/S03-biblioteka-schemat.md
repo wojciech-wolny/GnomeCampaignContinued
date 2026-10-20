@@ -10,7 +10,7 @@ Dywan przemókł już na brzegach, nawet gdy zegar stoi na zerze („przesiąkan
 
 ## Co można tu znaleźć
 
-1. **Schemat bariery.** Z dokumentem w ręku wystarczy test Wiedzy (inżynieria albo magia) ST 10, żeby odczytać:
+1. **Schemat bariery.** Oryginał leży na pulpicie (dopisek ołówkiem jest w [lokacje.md](../opisy/lokacje.md)). Orrin ma już przy sobie kopię z dopiskiem Lumy „schemat kłamie”. Do testu wystarczy kopia albo oryginał. Z dokumentem w ręku wystarczy test Wiedzy (inżynieria albo magia) ST 10, żeby odczytać:
    - że kabel B zasila barierę;
    - że w gnieździe powinien siedzieć kryształ bursztynowy;
    - kolejność w Wieży Pieczęci: KLUCZ → MOSTEK → PRZYCISK.

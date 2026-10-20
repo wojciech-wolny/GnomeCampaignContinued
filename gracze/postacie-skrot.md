@@ -63,7 +63,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Ożywienie liny, Szybki odwrót, Piórkospad, Niewidzialny sługa
 - 2: Lewitacja, Scalenie, Byczy wigor
 
-**Ekwipunek:** taśma Gnomoklej, śrubki, dwie kanapki dla Splotu (należna i odsetki), mistrzowskie narzędzia
+**Ekwipunek:** taśma Gnomoklej, śrubki, kanapka należna dla Splotu, kanapka odsetkowa (żaba z kredy), mistrzowskie narzędzia
 
 **Zaczepka:** „Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.
 
@@ -91,7 +91,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 0: Wykrycie magii, Upiorny dźwięk, Wiadomość, Prestidigitatorstwo, Promień mrozu
 - 1: Zauroczenie osoby, Barwny strumień, Zniknięcie, Splątanie (linia krwi)
 
-**Ekwipunek:** zestaw do malowania piegów, list „legalny gnom”, różdżka Leczenia lekkich ran (5 ładunków)
+**Ekwipunek:** zestaw do malowania piegów, kreda do brody, list „legalny gnom” (pieczątka Plinka, 14 poprawek Orrina), różdżka Leczenia lekkich ran (5 ładunków), sztylet
 
 **Zaczepka:** „Mam plan. Mam też kanapkę. Kanapka jest lepiej przemyślana”.
 
@@ -120,7 +120,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Zrozumienie języków, Identyfikacja, Tarcza, Pewny cios
 - 2: Wykrycie myśli, Widzenie niewidzialnego, Zlokalizowanie przedmiotu
 
-**Ekwipunek:** schemat bariery (dopisek Lumy: „schemat kłamie”), kreda, lupa, czerwony atrament, lekka kusza, niedokończone tłumaczenie listu Nixy
+**Ekwipunek:** kopia schematu bariery (dopisek Lumy: „schemat kłamie”; oryginał w bibliotece), kreda, lupa, czerwony atrament, lekka kusza, niedokończone drugie tłumaczenie listu Nixy (oryginał ma Nixa)
 
 **Zaczepka:** „Według trzech źródeł to dobry pomysł. Według czwartego zginiemy. Czwarte jest przypisem”.
 
@@ -148,7 +148,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 0: Bryzg kwasu, Wykrycie magii, Rozbłysk, Dłoń maga, Iskra
 - 1: Płonące dłonie, Magiczny pocisk, Tarcza, Zbroja maga (linia krwi)
 
-**Ekwipunek:** peleryna „niepalna w 60%”, amulet ze „smoczym” zębem (to ząb psa), otwarty list od kuzyna
+**Ekwipunek:** peleryna „niepalna w 60%”, amulet ze „smoczym” zębem (to ząb psa), oryginał listu od kuzyna (otwarty; drugie tłumaczenie jest u Orrina)
 
 **Zaczepka:** „Najpierw rozmawiamy. Potem rozmawiamy głośniej. Potem rozmawiamy ogniem”.
 

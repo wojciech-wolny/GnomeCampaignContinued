@@ -109,6 +109,6 @@ Dodatkowe miejsce ze szkoły musi zawierać czar poznania. Na 1. kręgu jest nim
 
 - Lekka kusza, 10 bełtów, sztylet
 - Amulet z kryształową soczewką (przedmiot więzi)
-- Kopia schematu bariery (z dopiskiem Luma: „schemat kłamie”), kreda, lupa, czerwony atrament do poprawiania cudzych raportów
-- Niedokończone drugie tłumaczenie listu Nixy; brakuje w nim zdania, że ząb z amuletu jest zębem psa
+- Kopia schematu bariery (dopisek Lumy markerem: „schemat kłamie”). Oryginał zostaje w bibliotece. Kreda, lupa, czerwony atrament do poprawiania cudzych raportów
+- Niedokończone drugie tłumaczenie listu Nixy. Brakuje w nim zdania, że ząb z amuletu jest zębem psa. Oryginał listu nosi Nixa
 - Księga czarów, sakiewka na komponenty, 32 sz
