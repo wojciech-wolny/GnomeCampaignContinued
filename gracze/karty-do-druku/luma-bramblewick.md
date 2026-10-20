@@ -2,7 +2,7 @@
 
 **Gnomka, czarodziejka 3. poziomu (przemiany)** · neutralna dobra · Brigh · mała · 48 lat  
 *„Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.*  
-**Wygląd:** rękawy upaprane smarem, pas z narzędziami, kanapka „dla Splotu”, korona z taśmy Gnomoklej
+**Wygląd:** rękawy upaprane smarem, pas z narzędziami, dwie kanapki dla Splotu (należna i odsetki), korona z taśmy Gnomoklej
 
 | SIŁ | ZRĘ | BUD | INT | MDR | CHA |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -53,7 +53,8 @@
 | Telekinetyczna pięść | ☐☐☐☐☐☐☐ |
 | Czar z więzi (klucz francuski) — dowolny czar z księgi | ☐ |
 | Gnomia magia (po 1): Tańczące światła · Upiorny dźwięk · Prestidigitatorstwo · Rozmowa ze zwierzętami | ☐ ☐ ☐ ☐ |
-| Kanapki dla Splotu | ☐ ☐ |
+| Kanapka należna dla Splotu | ☐ |
+| Kanapka odsetkowa (żaba narysowana kredą) | ☐ |
 
 ## Umiejętności
 
@@ -69,10 +70,10 @@ Rzemiosło (mechanizmy) **+14** · Unieszkodliwianie mechanizmów **+12** · Wie
 
 ## Ekwipunek
 
-Mistrzowski klucz francuski (przedmiot więzi) · mistrzowskie narzędzia rzemieślnicze (+2) · mistrzowskie narzędzia złodziejskie (+2) · taśma Gnomoklej · śrubki · dwie kanapki dla Splotu · księga czarów · sakiewka na komponenty · 28 sz
+Mistrzowski klucz francuski (przedmiot więzi) · mistrzowskie narzędzia rzemieślnicze (+2) · mistrzowskie narzędzia złodziejskie (+2) · taśma Gnomoklej · śrubki · kanapka należna dla Splotu · kanapka odsetkowa (żaba narysowana kredą) · księga czarów · sakiewka na komponenty · 28 sz
 
 ## Kim jestem
 
-Stypendystka kotłowni i „konsultantka do spraw ergonomii” u chochlików serwisowych. Chochlikowi Splotowi płacę kanapkami. Zizzle zabrał jedną z mojego pudełka, dołożył żabę i dał ją Pipowi — od tamtej pory Splot nalicza mi odsetki.
+Stypendystka kotłowni i „konsultantka do spraw ergonomii” u chochlików serwisowych. Chochlikowi Splotowi płacę kanapkami. Zizzle zabrał jedną z mojego pudełka, dołożył żabę i dał ją Pipowi. Splot zjadł już siedemnaście kanapek odsetkowych. Ta w torbie jest następna.
 
-**Relacje:** Zizzle — winien mi siedemnaście kanapek · Pip — on psuje, ja naprawiam · Nixa — rozpala mi kocioł, ja łatam jej pelerynę · Orrin — kłócimy się, kto ma rację: schemat czy rura
+**Relacje:** Zizzle — winien mi siedemnaście zjedzonych kanapek i chwali je bez ironii · Pip — przepala bezpieczniki, ja je wymieniam, remis · Nixa — ogień za herbatę, łatam jej pelerynę · Orrin — kłócimy się, czy rację ma schemat, czy rura; listów kuzyna Nixy nie tłumaczę

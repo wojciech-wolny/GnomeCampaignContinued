@@ -63,7 +63,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Ożywienie liny, Szybki odwrót, Piórkospad, Niewidzialny sługa
 - 2: Lewitacja, Scalenie, Byczy wigor
 
-**Ekwipunek:** taśma Gnomoklej, śrubki, kanapka „dla Splotu”, mistrzowskie narzędzia
+**Ekwipunek:** taśma Gnomoklej, śrubki, kanapka należna dla Splotu, kanapka odsetkowa (żaba z kredy), mistrzowskie narzędzia
 
 **Zaczepka:** „Nie ma awarii, której nie skleję. Są tylko takie, które jeszcze o tym nie wiedzą”.
 
@@ -91,7 +91,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 0: Wykrycie magii, Upiorny dźwięk, Wiadomość, Prestidigitatorstwo, Promień mrozu
 - 1: Zauroczenie osoby, Barwny strumień, Zniknięcie, Splątanie (linia krwi)
 
-**Ekwipunek:** zestaw do malowania piegów, [list „legalny gnom”](postacie/zizzle-stormpocket/list-legalny-gnom.md), różdżka Leczenia lekkich ran (5 ładunków)
+**Ekwipunek:** zestaw do malowania piegów, kreda do brody, [list „legalny gnom”](postacie/zizzle-stormpocket/list-legalny-gnom.md) (bez poprawek), różdżka Leczenia lekkich ran (5 ładunków), sztylet
 
 **Zaczepka:** „Mam plan. Mam też kanapkę. Kanapka jest lepiej przemyślana”.
 
@@ -120,7 +120,7 @@ Przy **czterech graczach** odłóż **Nixę** albo **Orrina**.
 - 1: Zrozumienie języków, Identyfikacja, Tarcza, Pewny cios
 - 2: Wykrycie myśli, Widzenie niewidzialnego, Zlokalizowanie przedmiotu
 
-**Ekwipunek:** [schemat bariery](postacie/orrin-quill/schemat-bariery.md), kreda, lupa, czerwony atrament, lekka kusza
+**Ekwipunek:** [kopia schematu bariery](postacie/orrin-quill/schemat-bariery.md), kreda, lupa, czerwony atrament, lekka kusza
 
 **Zaczepka:** „Według trzech źródeł to dobry pomysł. Według czwartego zginiemy. Czwarte jest przypisem”.
 
@@ -174,10 +174,10 @@ Czytaj wierszami: jak postać z wiersza widzi postać z kolumny.
 
 | | Pip | Luma | Zizzle | Orrin | Nixa |
 |---|---|---|---|---|---|
-| **Pip** | — | rywalka przy tablicy wyników w kotłowni | winny Incydentu z Żabą | odrzuca jego raporty | przypaliła mu włosy |
-| **Luma** | psuje to, co ona naprawia | — | winien jej siedemnaście kanapek | kłócą się: schemat czy rura | rozpala jej kocioł |
-| **Zizzle** | ofiara jego gościnności | wierzycielka | — | „adwokat” od listu „legalny gnom” | przewodnicząca Klubu Urodzonych z Talentem |
-| **Orrin** | autor ulubionych raportów | poprawia jego schematy | prowadzi jego teczkę | — | zleca mu tłumaczenia listów od kuzyna |
-| **Nixa** | wziął na siebie winę za jej kichnięcie | łata jej pelerynę | skarbnik klubu | tłumacz i strażnik prawdy o zębie | — |
+| **Pip** | — | rywalka przy tablicy, remis; kanapka była z jej pudełka | winny Incydentu z Żabą, bez przeprosin | odrzuca raporty i czyta je na głos | przypaliła włosy; ma wobec niego dług honorowy |
+| **Luma** | przepala bezpieczniki, ona je wymienia | — | winien siedemnaście kanapek, które Splot już zjadł | kłócą się: schemat czy rura; listów Nixy nie tłumaczy | ogień za herbatę, łatana peleryna |
+| **Zizzle** | ofiara gościnności, bez przeprosin | wierzycielka; następna kanapka odsetkowa jest spoza rachunku | — | „adwokat”; na kartce błędy, dopisek tylko w archiwum | przewodnicząca klubu; ciastko schowane, ona go nie widziała |
+| **Orrin** | autor ulubionych raportów; nie wydobędzie zeznań o wąsach | w tajemnicy przyznaje jej rację; odpis uważa za aktualny | kopia z poprawkami leży w teczce z żabą | — | zeszłoroczny list oddany; tegoroczny jest u Nixy, nieotwarty |
+| **Nixa** | wziął winę na siebie; dług honorowy | ogień za herbatę, ona łata pelerynę | skarbnik; ciastka nie widziała | tłumacz zeszłorocznego listu; prawdy o zębie nie przyjmuje | — |
 
 Pełne historie z tymi wątkami są w plikach `backstory.md` poszczególnych postaci.
