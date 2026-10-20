@@ -18,7 +18,7 @@ Pokój wielkości szafy, w którym pachnie herbatą i ozonem. Na ścianie świec
 
 ## Biblioteka (dział zastrzeżony)
 
-Regały aż pod sufit i dywan, który pamięta lepsze czasy. Bibliotekarka Vellum szepcze tak głośno, że jej echo miesza się z szumem fal. Na pulpicie leży **schemat bariery** z dopiskiem ołówkiem: „Nie wypożyczać koboldom. Ani żabom. Ani koboldom przebranym za żaby”.
+Regały aż pod sufit i dywan, który pamięta lepsze czasy. Bibliotekarka Vellum szepcze tak głośno, że jej echo miesza się z szumem fal. Na pulpicie leży **schemat bariery** z dopiskiem ołówkiem: „Nie wypożyczać koboldom. Ani żabom. Ani koboldom przebranym za żaby”. To egzemplarz aktualny. Odpis, który Orrin nosi w kieszeni, jest starszy i podaje złe wiązki, zły kryształ i złą kolejność.
 
 ---
 

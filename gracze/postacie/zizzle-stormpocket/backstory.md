@@ -2,7 +2,7 @@
 
 [← Wróć do karty](sheet.md)
 
-Zizzle przyjechał na wymianę studencką z leśnej osady gnomów, gdzie nikt nie mieszka pod wodą, za to wszyscy mieszkają pod grzybami. Leśne gnomy rzadko noszą brody, więc w akademii od pierwszego dnia pytano go, czy na pewno jest gnomem. Zizzle rozwiązał problem po swojemu: rysuje sobie brodę kredą, maluje piegi i nosi przy sobie list „legalny gnom”, który sam napisał. Ma na nim pieczątkę profesora Plinka. Profesor nie pamięta, żeby ją przybijał, ale pieczątka mówi „NIE MOJA WINA”, więc wszystko się zgadza.
+Zizzle przyjechał na wymianę studencką z leśnej osady gnomów, gdzie nikt nie mieszka pod wodą, za to wszyscy mieszkają pod grzybami. Leśne gnomy rzadko noszą brody, więc w akademii od pierwszego dnia pytano go, czy na pewno jest gnomem. Zizzle rozwiązał problem po swojemu: rysuje sobie brodę kredą, maluje piegi i nosi przy sobie [list „legalny gnom”](list-legalny-gnom.md), który sam napisał. Ma na nim pieczątkę profesora Plinka. Profesor nie pamięta, żeby ją przybijał, ale pieczątka mówi „NIE MOJA WINA”, więc wszystko się zgadza.
 
 W lesie panuje zwyczaj, że gościa wita się kanapką z żywą żabą: żabę wypuszcza się potem nad wodą, a gość ma rok szczęścia. Zizzle chciał zrobić dobre wrażenie na **Pipie**, więc „pożyczył” kanapkę z pudełka **Lumy** i dołożył żabę. Żaba wylądowała na pulpicie alarmowym, akademia ewakuowała się w piżamach, a Zizzle w ciągu jednego wieczoru zyskał wroga, dłużniczkę i raport w archiwum. Do dziś uważa, że Pip powinien mu podziękować, bo przecież przeżył, a to dowodzi, że szczęście zadziałało.
 

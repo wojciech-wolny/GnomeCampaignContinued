@@ -16,7 +16,7 @@
 
 ### Bibliotekarka Vellum
 - **Cytat:** *(szeptem, ale bardzo głośno)* „Schemat jest na półce C. Woda jest na moim dywanie. Ustalmy priorytety!”
-- **Jak pomaga:** wydaje schemat bariery, który ułatwia wybór kryształu i ułożenie tablicy.
+- **Jak pomaga:** wydaje schemat bariery z pulpitu, który ułatwia wybór kryształu i ułożenie tablicy. To egzemplarz prawdziwy. Odpis w kieszeni Orrina jest starszy i myli (zob. [ekwipunek-z-historii.md](ekwipunek-z-historii.md)).
 
 ### Splot — chochlik serwisowy
 - **Kim jest:** psotny duszek z kanałów, daleki kuzyn diablików. Nie jest zły, tylko złośliwy.

@@ -152,3 +152,5 @@ Trzy nieudane próby uruchamiają pułapkę: wszystkich w promieniu 10 stóp obl
 | Kabel | rozłączyć A, załatać B |
 | Suwaki | tak / tak / tak |
 | Wielki Czerwony Przycisk | klucz → mostek → przycisk |
+
+Odpis schematu w kieszeni Orrina przeczy tej ściądze. Różnice: [ekwipunek-z-historii.md](ekwipunek-z-historii.md).

@@ -67,7 +67,7 @@ Zastraszanie **+10** · Używanie magicznych przedmiotów **+8** · Percepcja **
 
 ## Ekwipunek
 
-Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · nieotwarty list od kuzyna · sakiewka na komponenty · 45 sz
+Sztylet · peleryna „niepalna w 60%” (pamiątka rodzinna, bez magii, w 40% z taśmy) · amulet z zębem · [nieotwarty list od kuzyna](../postacie/nixa-embercoil/list-od-kuzyna.md) · sakiewka na komponenty · 45 sz
 
 ## Kim jestem
 

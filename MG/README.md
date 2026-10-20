@@ -19,6 +19,7 @@ Materiały dla graczy leżą w [`../gracze/`](../gracze/README.md).
 | [opisy/smok-i-koboldy.md](opisy/smok-i-koboldy.md) | Skarrzath i jego ekipa |
 | [spotkania/README.md](spotkania/README.md) | Spis spotkań S01–S12 |
 | [rekwizyty-kiedy.md](rekwizyty-kiedy.md) | Kiedy wręczyć który rekwizyt z folderu graczy |
+| [ekwipunek-z-historii.md](ekwipunek-z-historii.md) | Listy i schemat, które postacie mają od startu |
 | [prompty/README.md](prompty/README.md) | Prompty do grafik scen i portretów oraz do tekstowego przedstawienia drużyny |
 
 ---
