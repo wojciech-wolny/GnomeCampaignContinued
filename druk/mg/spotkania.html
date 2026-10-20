@@ -110,9 +110,34 @@ code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
 .karta p { margin: 0.08em 0; }
 .karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
 .karta th, .karta td { padding: 0 3px; }
+.mapa pre, .mapa pre code {
+  white-space: pre;
+  font-size: 7.5pt;
+  line-height: 1.15;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 .kartka {
   border: 0.8pt solid #c4a574;
   padding: 8mm 9mm;
+}
+.arkusz .kartka { break-before: auto; break-inside: avoid; }
+.ciecie {
+  margin: 5mm 0 6mm;
+  border-top: 0.8pt dashed #444;
+  text-align: center;
+  color: #555;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ciecie span {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  padding: 0 0.6em;
+  background: #fffdf8;
 }
 th, .pieczatka, blockquote, pre, .meta {
   -webkit-print-color-adjust: exact;
@@ -127,6 +152,7 @@ th, .pieczatka, blockquote, pre, .meta {
   a { color: inherit; text-decoration: none; }
   .powrot, .spis-ekran { display: none !important; }
   .kartka { border-color: #bbb; }
+  .ciecie span { background: white; }
 }
 </style>
 </head>
@@ -265,7 +291,7 @@ Uruchamiaj je, gdy gracze wejdą do danej lokacji albo gdy sesja potrzebuje zmia
 <strong>Zegar powodzi:</strong> 0 pól na starcie</p>
 <h2 id="S01-atrium-alarm-sytuacja">Sytuacja</h2>
 <p>Posąg stoi na wózku, z sufitu kapie, na posadzce leży broda. Pod cokołem, przygnieciony kołem wózka, utknął kobold <strong>Brin Młodszy</strong>.</p>
-<p>Przeczytaj rekwizyt <strong>R1</strong> z <code>../../gracze/rekwizyty.md</code> (zob. też <a href="sesja.html#rekwizyty-kiedy"><code>../rekwizyty-kiedy.md</code></a>).</p>
+<p>Przeczytaj rekwizyt <strong>R1</strong> z <a href="rekwizyty/index.html#spis"><code>../../gracze/rekwizyty.md</code></a> (zob. też <a href="sesja.html#rekwizyty-kiedy"><code>../rekwizyty-kiedy.md</code></a>).</p>
 <h2 id="S01-atrium-alarm-cel-sceny">Cel sceny</h2>
 <ul>
 <li>Dać graczom zadanie: trzy usterki do naprawienia.</li>

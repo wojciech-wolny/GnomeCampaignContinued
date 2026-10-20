@@ -11,7 +11,7 @@ from typing import Literal
 
 import markdown
 
-type Kind = Literal["karta", "sekcja", "kartka"]
+type Kind = Literal["karta", "sekcja", "kartka", "mapa"]
 
 MARKDOWN_EXTENSIONS = ["tables", "fenced_code", "sane_lists"]
 LINK_PATTERN = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\s]+)\)")
@@ -127,9 +127,34 @@ code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
 .karta p { margin: 0.08em 0; }
 .karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
 .karta th, .karta td { padding: 0 3px; }
+.mapa pre, .mapa pre code {
+  white-space: pre;
+  font-size: 7.5pt;
+  line-height: 1.15;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 .kartka {
   border: 0.8pt solid #c4a574;
   padding: 8mm 9mm;
+}
+.arkusz .kartka { break-before: auto; break-inside: avoid; }
+.ciecie {
+  margin: 5mm 0 6mm;
+  border-top: 0.8pt dashed #444;
+  text-align: center;
+  color: #555;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ciecie span {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  padding: 0 0.6em;
+  background: #fffdf8;
 }
 th, .pieczatka, blockquote, pre, .meta {
   -webkit-print-color-adjust: exact;
@@ -144,6 +169,7 @@ th, .pieczatka, blockquote, pre, .meta {
   a { color: inherit; text-decoration: none; }
   .powrot, .spis-ekran { display: none !important; }
   .kartka { border-color: #bbb; }
+  .ciecie span { background: white; }
 }
 """
 
@@ -168,6 +194,13 @@ class Book:
 class Target:
     output: Path
     anchor: str
+
+
+@dataclass(frozen=True)
+class Handout:
+    slug: str
+    title: str
+    markdown: str
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -216,13 +249,23 @@ def build_pages(argv: list[str] | None) -> int:
     books = collect_books(root)
     if books is None:
         return 1
+    handouts = read_handouts(root)
+    if handouts is None:
+        return 1
     catalog = catalog_of(books)
     if catalog is None:
         return 1
+    handout_index = root / "druk" / "mg" / "rekwizyty" / "index.html"
+    source = (root / "gracze" / "rekwizyty.md").resolve()
+    if source in catalog:
+        print(f"buduj.py failed: {source} is listed twice", file=sys.stderr)
+        return 1
+    catalog[source] = Target(handout_index, "spis")
     pages = render_books(books, catalog)
     if pages is None:
         return 1
-    pages.update(render_indexes(root, books))
+    pages.update(render_handouts(root, handouts))
+    pages.update(render_indexes(root, books, handouts))
     problems = missing_targets(pages)
     if problems:
         print("buduj.py failed: broken links", file=sys.stderr)
@@ -279,6 +322,19 @@ def character_books(root: Path) -> list[Book] | None:
             return None
         output = root / "druk" / "postacie" / f"{slug}.html"
         books.append(Book(output, title, tuple(pieces), False, True))
+    player_map = root / "gracze" / "mapa.md"
+    if not player_map.is_file():
+        print(f"buduj.py failed: missing {player_map}", file=sys.stderr)
+        return None
+    books.append(
+        Book(
+            root / "druk" / "postacie" / "mapa.html",
+            "Mapa dla graczy",
+            (Piece(player_map, "mapa", "mapa"),),
+            False,
+            True,
+        )
+    )
     return books
 
 
@@ -343,8 +399,12 @@ def master_books(root: Path) -> list[Book] | None:
                 (master / "README.md", "wstep"),
                 (master / "plan-sesji.md", "plan-sesji"),
                 (master / "rekwizyty-kiedy.md", "rekwizyty-kiedy"),
-                (master / "mapa.md", "mapa"),
             ),
+        ),
+        (
+            "mapa.html",
+            "Mapa MG",
+            ((master / "mapa.md", "mapa"),),
         ),
         (
             "spotkania.html",
@@ -388,9 +448,11 @@ def master_books(root: Path) -> list[Book] | None:
             if not path.is_file():
                 print(f"buduj.py failed: missing {path}", file=sys.stderr)
                 return None
-            pieces.append(Piece(path, anchor, "sekcja"))
+            kind: Kind = "mapa" if filename == "mapa.html" else "sekcja"
+            pieces.append(Piece(path, anchor, kind))
         output = root / "druk" / "mg" / filename
-        books.append(Book(output, title, tuple(pieces), True, False))
+        show_contents = filename != "mapa.html"
+        books.append(Book(output, title, tuple(pieces), show_contents, False))
     return books
 
 
@@ -735,7 +797,131 @@ def page_html(title: str, body: str) -> str:
     )
 
 
-def render_indexes(root: Path, books: list[Book]) -> dict[Path, str]:
+def read_handouts(root: Path) -> list[Handout] | None:
+    """Split the prop sheet and append the papers from pockets.
+
+    :param root: campaign directory
+    :return: handouts in order, or None when the sheet is missing or incomplete
+    """
+    path = root / "gracze" / "rekwizyty.md"
+    if not path.is_file():
+        print(f"buduj.py failed: missing {path}", file=sys.stderr)
+        return None
+    try:
+        text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+    except (OSError, UnicodeError) as error:
+        print(f"buduj.py failed: {error}", file=sys.stderr)
+        return None
+    matches = list(re.finditer(r"^## (R\d+) — (.+)$", text, flags=re.M))
+    if len(matches) != 9:
+        print("buduj.py failed: expected nine handouts", file=sys.stderr)
+        return None
+    handouts: list[Handout] = []
+    for index, match in enumerate(matches):
+        start = match.end()
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+        kept = [line for line in text[start:end].splitlines() if line.strip() != "---"]
+        body = "\n".join(kept).strip()
+        title = f"{match.group(1)} — {match.group(2)}"
+        handouts.append(Handout(match.group(1).lower(), title, f"# {title}\n\n{body}\n"))
+    carried = carried_papers(root)
+    if carried is None:
+        return None
+    handouts.extend(carried)
+    return handouts
+
+
+def carried_papers(root: Path) -> list[Handout] | None:
+    """Read the letters and the barrier copy the characters already carry.
+
+    :param root: campaign directory
+    :return: papers in print order, or None when a file is missing
+    """
+    relative_paths = (
+        "gracze/postacie/orrin-quill/schemat-bariery.md",
+        "gracze/postacie/nixa-embercoil/list-od-kuzyna.md",
+        "gracze/postacie/zizzle-stormpocket/list-legalny-gnom.md",
+    )
+    papers: list[Handout] = []
+    for relative in relative_paths:
+        path = root / relative
+        if not path.is_file():
+            print(f"buduj.py failed: missing {path}", file=sys.stderr)
+            return None
+        try:
+            text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+        except (OSError, UnicodeError) as error:
+            print(f"buduj.py failed: {error}", file=sys.stderr)
+            return None
+        title = path.stem
+        for line in text.splitlines():
+            if line.startswith("# "):
+                title = line[2:].strip()
+                break
+        if not text.endswith("\n"):
+            text += "\n"
+        papers.append(Handout(path.stem, title, text))
+    return papers
+
+
+def render_handouts(root: Path, handouts: list[Handout]) -> dict[Path, str]:
+    """Write each handout, one cut sheet, and their index.
+
+    :param root: campaign directory
+    :param handouts: props in handout order
+    :return: pages by output path
+    """
+    folder = root / "druk" / "mg" / "rekwizyty"
+    pages: dict[Path, str] = {}
+    for handout in handouts:
+        body = (
+            '<p class="powrot"><a href="index.html">Wszystkie rekwizyty</a></p>'
+            '<article class="kartka">'
+            + markdown.markdown(handout.markdown, extensions=MARKDOWN_EXTENSIONS)
+            + "</article>"
+        )
+        pages[folder / f"{handout.slug}.html"] = page_html(handout.title, body)
+    stacked: list[str] = []
+    for index, handout in enumerate(handouts):
+        if index:
+            stacked.append('<p class="ciecie"><span>tnij</span></p>')
+        stacked.append(
+            '<article class="kartka">'
+            + markdown.markdown(handout.markdown, extensions=MARKDOWN_EXTENSIONS)
+            + "</article>"
+        )
+    stacked_body = (
+        '<p class="powrot"><a href="index.html">Wszystkie rekwizyty</a></p>'
+        '<div class="arkusz">'
+        + "".join(stacked)
+        + "</div>"
+    )
+    pages[folder / "wszystkie.html"] = page_html("Wszystkie rekwizyty", stacked_body)
+    items = "\n".join(
+        [
+            link_item(
+                "wszystkie.html",
+                "Wszystkie na jednej kartce",
+                "Rekwizyty, listy i schemat, z linią „tnij”.",
+            )
+        ]
+        + [
+            link_item(f"{handout.slug}.html", handout.title, "Osobna kartka do wycięcia.")
+            for handout in handouts
+        ]
+    )
+    index_body = (
+        '<p class="pieczatka">Tylko dla Mistrza Gry</p>'
+        '<p class="powrot"><a href="../index.html">Spis materiałów MG</a></p>'
+        '<h1 id="spis">Rekwizyty</h1>'
+        "<p>Możesz wydrukować każdą kartkę osobno albo wszystkie naraz i pociąć wzdłuż linii.</p>"
+        f"<ul>{items}</ul>"
+    )
+    pages[folder / "index.html"] = page_html("Rekwizyty", index_body)
+    return pages
+
+
+def render_indexes(root: Path, books: list[Book], handouts: list[Handout]) -> dict[Path, str]:
     """Build the three opening pages.
 
     :param root: campaign directory
@@ -756,33 +942,71 @@ def render_indexes(root: Path, books: list[Book]) -> dict[Path, str]:
         "swiat.html": "Bohaterowie niezależni, lokacje, historia posągu, smok i jego ekipa.",
         "prompty.html": "Polecenia do grafik i do tekstowego przedstawienia drużyny.",
     }
+    master_blurbs["mapa.html"] = "Mapa z oznaczeniami napraw, zegara i atrium."
+    master_blurbs["sesja.html"] = "Plan sesji, zegar powodzi i kiedy wręczać rekwizyty."
     player_items = "\n".join(
-        link_item(book.output.name, book.title, player_detail) for book in player_books
+        link_item(book.output.name, book.title, book_detail(book, player_detail))
+        for book in player_books
     )
     master_items = "\n".join(
         link_item(book.output.name, book.title, master_blurbs[book.output.name]) for book in master
     )
     every_player = "\n".join(
-        link_item(f"postacie/{book.output.name}", book.title, player_detail)
+        link_item(
+            f"postacie/{book.output.name}",
+            book.title,
+            book_detail(book, player_detail),
+        )
         for book in player_books
     )
     every_master = "\n".join(
         link_item(f"mg/{book.output.name}", book.title, master_blurbs[book.output.name])
         for book in master
     )
+    slips_here = "\n".join(
+        [
+            link_item(
+                "rekwizyty/wszystkie.html",
+                "Wszystkie na jednej kartce",
+                "Rekwizyty, listy i schemat, z linią „tnij”.",
+            )
+        ]
+        + [
+            link_item(f"rekwizyty/{handout.slug}.html", handout.title, "Osobna kartka.")
+            for handout in handouts
+        ]
+    )
+    slips_root = "\n".join(
+        [
+            link_item(
+                "mg/rekwizyty/wszystkie.html",
+                "Wszystkie na jednej kartce",
+                "Rekwizyty, listy i schemat, z linią „tnij”.",
+            )
+        ]
+        + [
+            link_item(f"mg/rekwizyty/{handout.slug}.html", handout.title, "Osobna kartka.")
+            for handout in handouts
+        ]
+    )
     player_body = (
         "<h1>Karty postaci</h1>"
-        "<p>Każdy plik to jedna postać do wydruku. Tekst karty jest po polsku, "
-        "taki sam jak w materiałach graczy. Drukuj na A4, w skali 100%, "
-        "bez nagłówków i stopek przeglądarki. Pola ☐ odhaczaj ołówkiem.</p>"
+        "<p>Każda postać jest w jednym pliku, a mapa skrzydła osobno. "
+        "Drukuj na A4, w skali 100%, bez nagłówków i stopek przeglądarki. "
+        "Pola ☐ odhaczaj ołówkiem.</p>"
         f"<ul>{player_items}</ul>"
     )
     master_body = (
         '<p class="pieczatka">Tylko dla Mistrza Gry</p>'
         "<h1>Materiały Mistrza Gry</h1>"
-        "<p>Pięć plików. W każdym na początku jest spis, a kolejne części "
-        "zaczynają się od nowej strony. Drukuj na A4, w skali 100%.</p>"
+        "<p>Plan, osobna mapa i pozostałe materiały. Drukuj na A4, w skali 100%.</p>"
         f"<ul>{master_items}</ul>"
+        "<h2>Rekwizyty</h2>"
+        "<ul>"
+        + link_item("rekwizyty/index.html", "Spis rekwizytów", "Rekwizyty, listy i schemat.")
+        + "\n"
+        + slips_here
+        + "</ul>"
     )
     root_body = (
         "<h1>Wydruki</h1>"
@@ -804,12 +1028,30 @@ def render_indexes(root: Path, books: list[Book]) -> dict[Path, str]:
         + "\n"
         + every_master
         + "</ul>"
+        "<h2>Rekwizyty</h2>"
+        "<ul>"
+        + link_item("mg/rekwizyty/index.html", "Spis rekwizytów", "Rekwizyty, listy i schemat.")
+        + "\n"
+        + slips_root
+        + "</ul>"
     )
     return {
         druk / "postacie" / "index.html": page_html("Karty postaci", player_body),
         druk / "mg" / "index.html": page_html("Materiały Mistrza Gry", master_body),
         druk / "index.html": page_html("Wydruki", root_body),
     }
+
+
+def book_detail(book: Book, character_detail: str) -> str:
+    """Describe one player file on the index.
+
+    :param book: player book
+    :param character_detail: text used for a character packet
+    :return: short description
+    """
+    if book.output.name == "mapa.html":
+        return "Mapa skrzydła bez tajemnic."
+    return character_detail
 
 
 def link_item(href: str, title: str, detail: str) -> str:

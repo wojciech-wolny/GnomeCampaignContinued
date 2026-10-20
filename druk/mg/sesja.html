@@ -110,9 +110,34 @@ code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
 .karta p { margin: 0.08em 0; }
 .karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
 .karta th, .karta td { padding: 0 3px; }
+.mapa pre, .mapa pre code {
+  white-space: pre;
+  font-size: 7.5pt;
+  line-height: 1.15;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 .kartka {
   border: 0.8pt solid #c4a574;
   padding: 8mm 9mm;
+}
+.arkusz .kartka { break-before: auto; break-inside: avoid; }
+.ciecie {
+  margin: 5mm 0 6mm;
+  border-top: 0.8pt dashed #444;
+  text-align: center;
+  color: #555;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ciecie span {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  padding: 0 0.6em;
+  background: #fffdf8;
 }
 th, .pieczatka, blockquote, pre, .meta {
   -webkit-print-color-adjust: exact;
@@ -127,14 +152,14 @@ th, .pieczatka, blockquote, pre, .meta {
   a { color: inherit; text-decoration: none; }
   .powrot, .spis-ekran { display: none !important; }
   .kartka { border-color: #bbb; }
+  .ciecie span { background: white; }
 }
 </style>
 </head>
 <body>
 <p class="powrot"><a href="index.html">Spis materiałów MG</a></p><p class="pieczatka">Tylko dla Mistrza Gry</p><nav class="spis"><p>Spis</p><ol><li><a href="#wstep">Materiały Mistrza Gry</a></li>
 <li><a href="#plan-sesji">Plan sesji — Złoty posąg, fałszywe brody i przeciek</a></li>
-<li><a href="#rekwizyty-kiedy">Kiedy wręczyć rekwizyt</a></li>
-<li><a href="#mapa">Mapa MG — podwodna akademia (skrzydło atrium)</a></li></ol></nav><article class="sekcja"><h1 id="wstep">Materiały Mistrza Gry</h1>
+<li><a href="#rekwizyty-kiedy">Kiedy wręczyć rekwizyt</a></li></ol></nav><article class="sekcja"><h1 id="wstep">Materiały Mistrza Gry</h1>
 <p>Tutaj są wszystkie tajemnice: rozwiązania zagadek, statystyki przeciwników, prawdziwa historia posągu i taktyka spotkań.</p>
 <p>Materiały dla graczy leżą w <code>../gracze/</code>.</p>
 <p>Wydruk: <code>../druk/mg/index.html</code> (przy stole, spotkania, zagadki, świat, prompty).</p>
@@ -153,7 +178,7 @@ th, .pieczatka, blockquote, pre, .meta {
 <td>Założenia, zegar powodzi, cele, przebieg, stopnie trudności</td>
 </tr>
 <tr>
-<td><a href="#mapa">mapa.md</a></td>
+<td><a href="mapa.html#mapa">mapa.md</a></td>
 <td>Mapa z oznaczeniami MG i opisem lokacji</td>
 </tr>
 <tr>
@@ -203,7 +228,7 @@ th, .pieczatka, blockquote, pre, .meta {
 <li>Spotkania z folderu <code>spotkania/</code> uruchamiasz zależnie od tego, dokąd pójdą gracze.</li>
 <li>Finał: Kapitan Klik, tekturowa atrapa dla smoka albo raport dla rektora.</li>
 </ol>
-<p>Mapa <strong>bez tajemnic</strong> dla graczy: <code>../gracze/mapa.md</code>.</p></article><article class="sekcja nowa"><h1 id="plan-sesji">Plan sesji — Złoty posąg, fałszywe brody i przeciek</h1>
+<p>Mapa <strong>bez tajemnic</strong> dla graczy: <a href="../postacie/mapa.html#mapa"><code>../gracze/mapa.md</code></a>.</p></article><article class="sekcja nowa"><h1 id="plan-sesji">Plan sesji — Złoty posąg, fałszywe brody i przeciek</h1>
 <blockquote>
 <p><strong>Tylko dla MG.</strong> Materiały graczy: <code>../gracze/</code>.</p>
 </blockquote>
@@ -382,7 +407,7 @@ Po trzech bariera wraca do normy, a alarm mówi głosem zadowolonego tostera.</p
 <li>List od rektora: „Przetrwaliście poniedziałek”.</li>
 <li>Opcjonalnie: smoczy kupon „−10% na bycie zjedzonym”.</li>
 </ul></article><article class="sekcja nowa"><h1 id="rekwizyty-kiedy">Kiedy wręczyć rekwizyt</h1>
-<p>Treść rekwizytów znajduje się w <code>../gracze/rekwizyty.md</code>. Gracze mogą je czytać dopiero wtedy, gdy je otrzymają.</p>
+<p>Treść rekwizytów znajduje się w <a href="rekwizyty/index.html#spis"><code>../gracze/rekwizyty.md</code></a>. Gracze mogą je czytać dopiero wtedy, gdy je otrzymają.</p>
 <table>
 <thead>
 <tr>
@@ -429,160 +454,6 @@ Po trzech bariera wraca do normy, a alarm mówi głosem zadowolonego tostera.</p
 </tr>
 </tbody>
 </table>
-<p>Pełna treść listu Skarrzatha do koboldów jest w <a href="swiat.html#smok-i-koboldy">opisy/smok-i-koboldy.md</a>. Nie dawaj go na starcie, dopiero w S11.</p></article><article class="sekcja nowa"><h1 id="mapa">Mapa MG — podwodna akademia (skrzydło atrium)</h1>
-<blockquote>
-<p><strong>Tylko dla MG</strong> (oznaczenia napraw i zegara). Wersja dla graczy: <code>../gracze/mapa.md</code>.</p>
-</blockquote>
-<p>To mapa połączeń między lokacjami, a nie taktyczna siatka. Gracze przemieszczają się między miejscami, a woda i koboldy dyktują tempo.</p>
-<hr />
-<h2 id="mapa-widok-z-góry">Widok z góry</h2>
-<pre><code>                         [SZYB TRANSPORTOWY]
-                                  |
-                    +-------------+-------------+
-                    |                           |
-             [POKÓJ GOŚCINNY]            [WIEŻA PIECZĘCI]
-              kryjówka koboldów           tablica ciśnienia
-                    |                           |
-                    +-------------+-------------+
-                                  |
-                              [ATRIUM]
-                            złoty posąg
-                           wózek / start
-                                  |
-              +-------------------+-------------------+
-              |                   |                   |
-         [DYŻURKA]          [BIBLIOTEKA]         [KORYTARZ B]
-       klucz imbusowy         schematy            „studenci”
-              |                   |                   |
-              |              [MAGAZYN                 |
-              |             KRYSZTAŁÓW]               |
-              |                   |                   |
-              +-------------------+-------------------+
-                                  |
-                        [KANAŁY I KOTŁOWNIA]
-                       przewody i chochliki
-                                  |
-                           [POD ATRIUM]
-                       przeciek i żywiołak
-</code></pre>
-<hr />
-<h2 id="mapa-opis-lokacji">Opis lokacji</h2>
-<table>
-<thead>
-<tr>
-<th>Kod</th>
-<th>Lokacja</th>
-<th>Połączenia</th>
-<th>Co tu jest</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>Atrium</td>
-<td>Dyżurka, Biblioteka, Korytarz B, Wieża Pieczęci, Pokój gościnny</td>
-<td>posąg, start przygody, świadek</td>
-</tr>
-<tr>
-<td>D</td>
-<td>Dyżurka</td>
-<td>Atrium, Magazyn (na klucz)</td>
-<td>klucz imbusowy, plan instalacji, panel alarmowy</td>
-</tr>
-<tr>
-<td>B</td>
-<td>Biblioteka z działem zastrzeżonym</td>
-<td>Atrium, Magazyn</td>
-<td>schemat bariery, bibliotekarka Vellum</td>
-</tr>
-<tr>
-<td>M</td>
-<td>Magazyn kryształów</td>
-<td>Biblioteka, Dyżurka</td>
-<td>zapasy awaryjne, pułapka z farbą</td>
-</tr>
-<tr>
-<td>K</td>
-<td>Korytarz B</td>
-<td>Atrium, Pokój gościnny</td>
-<td>spotkania z przebranymi koboldami</td>
-</tr>
-<tr>
-<td>P</td>
-<td>Pokój gościnny „wymiany studenckiej”</td>
-<td>Atrium, Korytarz B, Szyb</td>
-<td>kryjówka, brody, torby</td>
-</tr>
-<tr>
-<td>W</td>
-<td>Wieża Pieczęci</td>
-<td>Atrium</td>
-<td>tablica Triady, miedziane pręty, Wielki Czerwony Przycisk</td>
-</tr>
-<tr>
-<td>C</td>
-<td>Kanały i kotłownia</td>
-<td>Atrium (właz za szafą na miotły), Pod atrium</td>
-<td>przewody do naprawy</td>
-</tr>
-<tr>
-<td>U</td>
-<td>Pod atrium</td>
-<td>Kanały</td>
-<td>żywiołak-stażysta, przeciek</td>
-</tr>
-<tr>
-<td>T</td>
-<td>Szyb transportowy</td>
-<td>Pokój gościnny</td>
-<td>finałowy pościg za wózkiem</td>
-</tr>
-</tbody>
-</table>
-<p>Opisy do odczytania na głos: <a href="swiat.html#lokacje">opisy/lokacje.md</a>.</p>
-<hr />
-<h2 id="mapa-odległości-orientacyjnie">Odległości (orientacyjnie)</h2>
-<ul>
-<li>Z atrium do dyżurki: jedna scena, czyli minuta biegu.</li>
-<li>Z atrium do kanałów (przez właz za szafą na miotły): jedna scena.</li>
-<li>Do magazynu wejdziesz z kluczem z dyżurki <strong>albo</strong> po teście Unieszkodliwiania mechanizmów ST 13 (lub rozwiązaniu zagadki z suwakami).</li>
-<li>Szyb to „prawie wyjście”. Kapitan Klik chce tu dowieźć posąg.</li>
-</ul>
-<hr />
-<h2 id="mapa-oznaczenia-dla-mg">Oznaczenia dla MG</h2>
-<p>Zaznaczaj ołówkiem:</p>
-<ul>
-<li>[ ] Przewody naprawione</li>
-<li>[ ] Kryształ osadzony</li>
-<li>[ ] Tablica w Wieży Pieczęci ustawiona</li>
-<li>[ ] Zegar powodzi: <code>○ ○ ○ ○ ○ ○</code></li>
-<li>[ ] Posąg: atrium / wózek / szyb / utracony</li>
-<li>[ ] Kobold-świadek: wolny / związany / uciekł</li>
-<li>[ ] Kapitan Klik: aktywny / schwytany / zbiegł</li>
-</ul>
-<hr />
-<h2 id="mapa-wariant-mokry">Wariant „mokry”</h2>
-<p>Od trzeciego pola zegara:
-- Kanały: trudny teren (płytka woda).
-- Biblioteka: +2 do ST testów Percepcji (szum wody i panika bibliotekarki).
-- Atrium: od piątego pola posąg i wózek unoszą się na wodzie; walczy się na nich jak na tratwie.</p>
-<hr />
-<h2 id="mapa-atrium-w-czasie-walki">Atrium w czasie walki</h2>
-<pre><code>        Pn
-    Zach + Wsch
-        Pd
-
-##############   sufit, z którego kapie bariera
-#  fontanna  #
-#            #
-#   [POSĄG]  #   &lt;-- lekko przechylony na wózku
-#            #
-#  ławki     #   kolumny dają częściową osłonę
-#            #
-####  DRZWI  ####  --&gt; Korytarz B
-       |
-    Dyżurka
-</code></pre>
-<p>Atrium ma około 40 × 40 stóp. Kolumny dają częściową osłonę. Od drugiego pola zegara płytki są mokre: bieg lub szarża wymaga testu Akrobatyki ST 10. Porażka oznacza komiczny upadek (bohater jest powalony, ale nie traci punktów wytrzymałości).</p></article>
+<p>Pełna treść listu Skarrzatha do koboldów jest w <a href="swiat.html#smok-i-koboldy">opisy/smok-i-koboldy.md</a>. Nie dawaj go na starcie, dopiero w S11.</p></article>
 </body>
 </html>

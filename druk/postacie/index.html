@@ -110,9 +110,34 @@ code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
 .karta p { margin: 0.08em 0; }
 .karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
 .karta th, .karta td { padding: 0 3px; }
+.mapa pre, .mapa pre code {
+  white-space: pre;
+  font-size: 7.5pt;
+  line-height: 1.15;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 .kartka {
   border: 0.8pt solid #c4a574;
   padding: 8mm 9mm;
+}
+.arkusz .kartka { break-before: auto; break-inside: avoid; }
+.ciecie {
+  margin: 5mm 0 6mm;
+  border-top: 0.8pt dashed #444;
+  text-align: center;
+  color: #555;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ciecie span {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  padding: 0 0.6em;
+  background: #fffdf8;
 }
 th, .pieczatka, blockquote, pre, .meta {
   -webkit-print-color-adjust: exact;
@@ -127,14 +152,16 @@ th, .pieczatka, blockquote, pre, .meta {
   a { color: inherit; text-decoration: none; }
   .powrot, .spis-ekran { display: none !important; }
   .kartka { border-color: #bbb; }
+  .ciecie span { background: white; }
 }
 </style>
 </head>
 <body>
-<h1>Karty postaci</h1><p>Każdy plik to jedna postać do wydruku. Tekst karty jest po polsku, taki sam jak w materiałach graczy. Drukuj na A4, w skali 100%, bez nagłówków i stopek przeglądarki. Pola ☐ odhaczaj ołówkiem.</p><ul><li><a href="pip-iskra-torren.html">Pip „Iskra” Torren</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
+<h1>Karty postaci</h1><p>Każda postać jest w jednym pliku, a mapa skrzydła osobno. Drukuj na A4, w skali 100%, bez nagłówków i stopek przeglądarki. Pola ☐ odhaczaj ołówkiem.</p><ul><li><a href="pip-iskra-torren.html">Pip „Iskra” Torren</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
 <li><a href="luma-bramblewick.html">Luma Bramblewick</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
 <li><a href="zizzle-stormpocket.html">Zizzle Stormpocket</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
 <li><a href="orrin-quill.html">Orrin Quill</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
-<li><a href="nixa-embercoil.html">Nixa Embercoil</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li></ul>
+<li><a href="nixa-embercoil.html">Nixa Embercoil</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
+<li><a href="mapa.html">Mapa dla graczy</a><br>Mapa skrzydła bez tajemnic.</li></ul>
 </body>
 </html>

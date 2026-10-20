@@ -110,9 +110,34 @@ code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.92em; }
 .karta p { margin: 0.08em 0; }
 .karta table { font-size: 7.7pt; margin: 0.1em 0 0.16em; }
 .karta th, .karta td { padding: 0 3px; }
+.mapa pre, .mapa pre code {
+  white-space: pre;
+  font-size: 7.5pt;
+  line-height: 1.15;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 .kartka {
   border: 0.8pt solid #c4a574;
   padding: 8mm 9mm;
+}
+.arkusz .kartka { break-before: auto; break-inside: avoid; }
+.ciecie {
+  margin: 5mm 0 6mm;
+  border-top: 0.8pt dashed #444;
+  text-align: center;
+  color: #555;
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ciecie span {
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  padding: 0 0.6em;
+  background: #fffdf8;
 }
 th, .pieczatka, blockquote, pre, .meta {
   -webkit-print-color-adjust: exact;
@@ -127,6 +152,7 @@ th, .pieczatka, blockquote, pre, .meta {
   a { color: inherit; text-decoration: none; }
   .powrot, .spis-ekran { display: none !important; }
   .kartka { border-color: #bbb; }
+  .ciecie span { background: white; }
 }
 </style>
 </head>
@@ -136,11 +162,26 @@ th, .pieczatka, blockquote, pre, .meta {
 <li><a href="postacie/luma-bramblewick.html">Luma Bramblewick</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
 <li><a href="postacie/zizzle-stormpocket.html">Zizzle Stormpocket</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
 <li><a href="postacie/orrin-quill.html">Orrin Quill</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
-<li><a href="postacie/nixa-embercoil.html">Nixa Embercoil</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li></ul><h2>Mistrz Gry</h2><ul><li><a href="mg/index.html">Spis materiałów MG</a><br>Sam spis, bez treści sesji.</li>
-<li><a href="mg/sesja.html">Przy stole</a><br>Plan sesji, zegar powodzi, kiedy wręczać rekwizyty i mapa.</li>
+<li><a href="postacie/nixa-embercoil.html">Nixa Embercoil</a><br>Karta na pierwszą stronę, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.</li>
+<li><a href="postacie/mapa.html">Mapa dla graczy</a><br>Mapa skrzydła bez tajemnic.</li></ul><h2>Mistrz Gry</h2><ul><li><a href="mg/index.html">Spis materiałów MG</a><br>Sam spis, bez treści sesji.</li>
+<li><a href="mg/sesja.html">Przy stole</a><br>Plan sesji, zegar powodzi i kiedy wręczać rekwizyty.</li>
+<li><a href="mg/mapa.html">Mapa MG</a><br>Mapa z oznaczeniami napraw, zegara i atrium.</li>
 <li><a href="mg/spotkania.html">Spotkania</a><br>Spis i spotkania od S01 do S12.</li>
 <li><a href="mg/zagadki.html">Zagadki i kartki</a><br>Rozwiązania napraw i klucz do kartek, które postacie noszą od startu.</li>
 <li><a href="mg/swiat.html">Bohaterowie i akademia</a><br>Bohaterowie niezależni, lokacje, historia posągu, smok i jego ekipa.</li>
-<li><a href="mg/prompty.html">Prompty</a><br>Polecenia do grafik i do tekstowego przedstawienia drużyny.</li></ul>
+<li><a href="mg/prompty.html">Prompty</a><br>Polecenia do grafik i do tekstowego przedstawienia drużyny.</li></ul><h2>Rekwizyty</h2><ul><li><a href="mg/rekwizyty/index.html">Spis rekwizytów</a><br>Rekwizyty, listy i schemat.</li>
+<li><a href="mg/rekwizyty/wszystkie.html">Wszystkie na jednej kartce</a><br>Rekwizyty, listy i schemat, z linią „tnij”.</li>
+<li><a href="mg/rekwizyty/r1.html">R1 — Alarm (początek sesji)</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r2.html">R2 — Instrukcja znaleziona przy wózku</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r3.html">R3 — Etykieta na kablu (kotłownia)</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r4.html">R4 — Pudełko z kryształem</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r5.html">R5 — Tabliczka przy tablicy Triady</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r6.html">R6 — Wielki Czerwony Przycisk</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r7.html">R7 — Kartka od magazyniera (kolory)</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r8.html">R8 — Brudnopis listu do smoka (wzór na epilog)</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/r9.html">R9 — Raport rektora (nagroda)</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/schemat-bariery.html">Kopia schematu bariery</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/list-od-kuzyna.html">List od kuzyna</a><br>Osobna kartka.</li>
+<li><a href="mg/rekwizyty/list-legalny-gnom.html">List „legalny gnom”</a><br>Osobna kartka.</li></ul>
 </body>
 </html>
