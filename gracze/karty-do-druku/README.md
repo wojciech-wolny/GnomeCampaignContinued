@@ -12,6 +12,8 @@ Każda karta mieści się na jednej kartce A4 i zawiera wszystko, czego gracz po
 
 Pełne opisy czarów, atutów i zdolności zostają w folderze [../postacie/](../postacie/README.md).
 
+Arkusz w układzie karty Pathfindera (dwie strony: atrybuty, obrona, ataki, umiejętności, ekwipunek i czary) jest w [`../../druk/postacie/index.html`](../../druk/postacie/index.html), w sekcji „Arkusze do stołu”. Tekst poniżej to skrót, który trafia na pierwszą stronę paczki z opisami.
+
 ## Jak wydrukować
 
 1. Otwórz [`../../druk/postacie/index.html`](../../druk/postacie/index.html). Każda postać jest w jednym pliku: karta po polsku na pierwszej stronie, potem historia, pełna karta, czary, atuty, zdolności, stan i kartki z kieszeni.

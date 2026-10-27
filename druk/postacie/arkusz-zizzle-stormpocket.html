@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zizzle Stormpocket — karta postaci</title>
+<style>
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Liberation Sans", "DejaVu Sans", "Nimbus Sans", Arial, sans-serif; color: #141414; }
+.sheet {
+  width: 210mm;
+  height: 296.6mm;
+  padding: 4.5mm 5mm 4mm;
+  display: flex;
+  background: #fff;
+  break-after: page;
+  overflow: hidden;
+}
+.sheet:last-child { break-after: auto; }
+.frame {
+  flex: 1;
+  min-height: 0;
+  border: 1.15pt solid #141414;
+  padding: 1.6mm 1.8mm 1.1mm;
+  display: flex;
+  flex-direction: column;
+}
+.banner, .aname, .tag, .touch, .flat, .save b, .vitals .label, .mini span, .flbl, .skills th, .legend, footer, .coin span, .load span, .eq small, .cell small, .spline .lv {
+  font-family: "Liberation Sans", "DejaVu Sans", Arial, sans-serif;
+}
+.banner {
+  background: #141414;
+  color: #fff;
+  font-size: 7.2pt;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  padding: 0.45mm 1.4mm;
+}
+.head { display: flex; gap: 2mm; align-items: stretch; }
+.emblem {
+  width: 32mm;
+  border: 1.3pt solid #141414;
+  padding: 0.8mm 1.2mm 1mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.emblem .g { font-weight: 800; font-size: 10.5pt; letter-spacing: 0.01em; line-height: 1; }
+.emblem .e { font-size: 6.4pt; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 0.3mm; }
+.emblem .k { margin-top: 0.9mm; padding-top: 0.6mm; border-top: 0.8pt solid #141414; font-size: 7.4pt; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.identity { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.45mm; }
+.id1, .id2, .id3 { display: grid; gap: 0.35mm 1.4mm; }
+.id1 { grid-template-columns: 1.55fr 1.05fr 0.85fr; }
+.id2 { grid-template-columns: 1.45fr 0.85fr 1.15fr; }
+.id3 { grid-template-columns: 0.9fr 0.7fr 0.95fr 0.55fr 0.7fr 0.7fr 0.85fr 0.7fr; }
+.fval { border-bottom: 0.75pt solid #141414; min-height: 3.8mm; font-size: 8pt; font-weight: 700; line-height: 1.15; padding: 0 0.4mm; white-space: nowrap; overflow: hidden; }
+.flbl { font-size: 5pt; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.15; }
+.quote { margin: 0.55mm 0 0.7mm; font-size: 7.4pt; font-style: italic; line-height: 1.2; }
+.cols { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.18fr 0.92fr; gap: 1.6mm; }
+.left, .right { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.top { display: grid; grid-template-columns: 46mm 1fr; gap: 1.1mm; }
+.abilities { width: 100%; border-collapse: collapse; }
+.abilities th, .abilities td { border: 0.7pt solid #141414; text-align: center; }
+.aname { background: #141414; color: #fff; text-align: left; padding: 0 0.7mm; width: 15mm; }
+.aname b { display: block; font-size: 7.4pt; letter-spacing: 0.04em; line-height: 1; }
+.aname span { display: block; font-size: 4.7pt; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; opacity: 0.9; }
+.abilities thead th { font-size: 4.6pt; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; padding: 0; border-color: transparent; }
+.abilities tbody td { font-size: 8pt; font-weight: 700; height: 5.15mm; width: 7.2mm; }
+.vitals { display: grid; grid-template-columns: 1.05fr 0.95fr; grid-template-rows: 1fr auto; gap: 0.8mm; }
+.panel { border: 0.75pt solid #141414; min-width: 0; }
+.panel .label { background: #141414; color: #fff; font-size: 6.4pt; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.2mm 0.8mm; }
+.hp { grid-row: 1 / span 2; padding-bottom: 0.6mm; }
+.hp-row, .init-row, .speed-grid { display: flex; align-items: stretch; }
+.hp-total, .statbox { border-left: 0.7pt solid #141414; text-align: center; }
+.hp-total { margin-left: auto; min-width: 12mm; }
+.hp-total b, .statbox b, .mini b { display: block; font-size: 11pt; line-height: 1; }
+.hp-total span, .statbox span, .mini span, .cell small, .eq small { display: block; font-size: 4.6pt; letter-spacing: 0.03em; text-transform: uppercase; font-weight: 700; }
+.wounds { margin: 0.6mm; border: 0.7pt solid #141414; min-height: 16mm; padding: 0.4mm 0.6mm; }
+.wounds .cap { font-size: 4.7pt; letter-spacing: 0.04em; text-transform: uppercase; }
+.ticks { line-height: 0; margin-top: 0.5mm; }
+.sq { display: inline-block; width: 2.35mm; height: 2.35mm; border: 0.65pt solid #141414; margin: 0 0.22mm 0.35mm 0; vertical-align: middle; }
+.gap { display: inline-block; width: 0.9mm; }
+.subline { display: flex; justify-content: space-between; gap: 1mm; margin: 0.5mm 0.7mm 0; font-size: 6pt; }
+.subline b { font-size: 8pt; }
+.speed-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.speed-grid div { border-top: 0.6pt solid #141414; border-right: 0.6pt solid #141414; padding: 0.25mm 0.5mm 0.4mm; min-height: 5.4mm; }
+.speed-grid div:nth-child(2n) { border-right: none; }
+.speed-grid span { display: block; font-size: 4.5pt; text-transform: uppercase; letter-spacing: 0.03em; }
+.speed-grid b { font-size: 7pt; }
+.init-row { align-items: stretch; }
+.init-row .statbox { flex: 1; border-left: none; border-top: 0.6pt solid #141414; padding: 0.3mm; }
+.init-row .statbox + .statbox { border-left: 0.6pt solid #141414; }
+.block { margin-top: 0.8mm; border: 0.75pt solid #141414; }
+.equation { display: flex; align-items: stretch; }
+.big { min-width: 9mm; text-align: center; font-size: 12pt; font-weight: 800; display: flex; align-items: center; justify-content: center; border-right: 0.7pt solid #141414; }
+.eq { display: flex; align-items: center; padding: 0 0.5mm; font-size: 7pt; font-weight: 700; }
+.cell { flex: 1; text-align: center; border-left: 0.6pt solid #141414; padding: 0.15mm 0.2mm 0.3mm; }
+.cell b { font-size: 8pt; }
+.ac-foot, .save, .maneuver { display: flex; align-items: stretch; border-top: 0.7pt solid #141414; }
+.touch, .flat, .save b.name, .maneuver .name { background: #141414; color: #fff; font-size: 6.2pt; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; display: flex; align-items: center; padding: 0 1mm; }
+.ac-foot .num, .save .num, .maneuver .num { min-width: 8mm; text-align: center; font-weight: 800; font-size: 10pt; display: flex; align-items: center; justify-content: center; border-left: 0.7pt solid #141414; }
+.ac-foot .pair { display: flex; }
+.formula { display: flex; flex: 1; }
+.formula .cell { display: flex; flex-direction: column; justify-content: center; }
+.save .name { width: 24mm; }
+.save .tiny { font-size: 4.6pt; font-weight: 500; letter-spacing: 0; text-transform: none; display: block; }
+.bab-row { display: flex; border-top: none; }
+.bab-row .banner { flex: 1; }
+.bab-row .num { min-width: 12mm; }
+.sr { width: 28mm; border-left: 0.7pt solid #141414; text-align: center; }
+.sr span { display: block; font-size: 4.6pt; text-transform: uppercase; letter-spacing: 0.03em; }
+.sr b { font-size: 9pt; }
+.maneuver .name { width: 16mm; justify-content: center; }
+.maneuver .rest { margin-left: auto; display: flex; align-items: center; padding: 0 0.8mm; font-size: 8pt; font-weight: 700; }
+.weapons { margin-top: 0.7mm; display: flex; flex-direction: column; gap: 0.55mm; }
+.weapon { border: 0.75pt solid #141414; }
+.weapon-top { display: grid; grid-template-columns: 1fr 24mm 27mm; }
+.weapon-top .banner { display: flex; align-items: center; gap: 1.2mm; min-height: 5.2mm; }
+.weapon-top .tag { font-weight: 600; opacity: 0.8; }
+.mini { border-left: 0.7pt solid #141414; text-align: center; padding: 0.15mm 0.4mm; }
+.mini b { font-size: 8pt; }
+.weapon-bot { display: grid; grid-template-columns: 1.05fr 0.85fr 0.8fr 1.15fr; border-top: 0.65pt solid #141414; }
+.weapon-bot div { padding: 0.15mm 0.6mm 0.35mm; min-height: 5.6mm; }
+.weapon-bot div + div { border-left: 0.6pt solid #141414; }
+.weapon-bot span { display: block; font-size: 4.5pt; text-transform: uppercase; letter-spacing: 0.03em; }
+.weapon-bot b { font-size: 7pt; font-weight: 700; }
+.skills { width: 100%; border-collapse: collapse; }
+.skills th { font-size: 4.7pt; text-transform: uppercase; letter-spacing: 0.02em; font-weight: 700; text-align: center; padding: 0; }
+.skills th.name { text-align: left; }
+.skills td { height: 4.22mm; font-size: 6.15pt; border-bottom: 0.35pt solid #c8c8c8; padding: 0 0.35mm; vertical-align: middle; white-space: nowrap; }
+.skills td.num { text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; width: 7.5mm; }
+.skills td.ab { text-align: center; width: 11mm; font-weight: 600; }
+.skills td.name { font-weight: 650; }
+.mark { display: inline-block; width: 2.05mm; height: 2.05mm; border: 0.6pt solid #141414; margin-right: 0.55mm; vertical-align: -0.3mm; }
+.mark.on { background: #141414; }
+.star { font-weight: 700; }
+.legend { font-size: 5.4pt; margin: 0.4mm 0 0.6mm; }
+.note { border: 0.75pt solid #141414; display: flex; flex-direction: column; min-height: 0; }
+.note + .note { margin-top: 0.7mm; }
+.note p { margin: 0.6mm 0.8mm; font-size: 6.5pt; line-height: 1.25; }
+.note.grow { flex: 1; }
+footer { display: flex; justify-content: space-between; font-size: 6pt; margin-top: 0.7mm; }
+.page2 { flex: 1; min-height: 0; display: grid; grid-template-columns: 36% 31% 33%; gap: 1.5mm; }
+.col { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 1.1mm; }
+.box { border: 0.75pt solid #141414; min-height: 0; display: flex; flex-direction: column; }
+.grow { flex: 1; }
+.p2head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1mm; }
+.p2head .who { font-size: 11pt; font-weight: 800; }
+.p2head .what { font-size: 7pt; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+table.grid { width: 100%; border-collapse: collapse; font-size: 6.2pt; }
+table.grid th, table.grid td { border: 0.55pt solid #141414; padding: 0.2mm 0.45mm; text-align: center; font-weight: 650; }
+table.grid th { font-size: 4.6pt; text-transform: uppercase; letter-spacing: 0.02em; background: #f3f3f3; }
+table.grid td.item { text-align: left; font-weight: 600; }
+.lined { position: relative; flex: 1; min-height: 0; }
+.lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(4.7mm - 0.45pt), #222 calc(4.7mm - 0.45pt), #222 4.7mm); }
+.items { position: relative; }
+.line { height: 4.7mm; font-size: 7pt; line-height: 4.7mm; padding: 0 0.8mm; white-space: nowrap; overflow: hidden; }
+.plain { margin: 0.5mm 0.8mm 0.8mm; padding: 0; list-style: none; font-size: 6.7pt; line-height: 1.28; }
+.plain li { margin: 0 0 0.35mm; }
+.plain b { font-weight: 750; }
+.load { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4mm 1.4mm; padding: 0.7mm 0.8mm 0.8mm; font-size: 6.4pt; }
+.load div { display: flex; justify-content: space-between; border-bottom: 0.6pt solid #141414; }
+.load b { font-size: 8pt; }
+.cap { font-size: 5pt; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.4mm 0.8mm 0; }
+.coins { display: grid; grid-template-columns: repeat(4, 1fr); }
+.coin { text-align: center; padding: 0.4mm 0 0.6mm; }
+.coin + .coin { border-left: 0.6pt solid #141414; }
+.coin b { display: block; font-size: 11pt; line-height: 1.05; }
+.coin span { font-size: 5pt; text-transform: uppercase; letter-spacing: 0.04em; }
+.xp { display: grid; grid-template-columns: 1.2fr 0.8fr; }
+.xp div { padding: 0.4mm 0.8mm 0.6mm; }
+.xp div + div { border-left: 0.7pt solid #141414; }
+.xp span { display: block; font-size: 5pt; text-transform: uppercase; letter-spacing: 0.04em; }
+.xp b { font-size: 11pt; }
+.school { padding: 0.6mm 0.8mm; font-size: 6.5pt; line-height: 1.25; }
+.spellhead td, .spellhead th { height: 3.7mm; }
+.spells { padding: 0.4mm 0.6mm 0.6mm; overflow: hidden; }
+.splevel { display: grid; grid-template-columns: 7.5mm 1fr; gap: 0.4mm; margin-bottom: 0.45mm; }
+.splevel .lv { font-size: 8pt; font-weight: 800; }
+.splevel .slots { line-height: 0; margin-top: 0.3mm; }
+.spline { font-size: 6.35pt; line-height: 1.22; border-bottom: 0.4pt solid #bbb; min-height: 3.5mm; }
+.spline.blank { min-height: 3.6mm; }
+.higher { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.6mm; margin-top: 0.4mm; }
+.higher div { border-bottom: 0.6pt solid #141414; font-size: 6.5pt; font-weight: 800; color: #444; }
+.powrot { font-family: "Liberation Sans", "DejaVu Sans", Arial, sans-serif; font-size: 10pt; margin: 0; padding: 4mm 6mm 0; }
+.powrot a { color: #6b3a1f; }
+@media screen {
+  html { background: #d9d3c8; }
+  body { padding-bottom: 8mm; }
+  .sheet { margin: 6mm auto; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18); }
+}
+@media print {
+  .powrot { display: none !important; }
+  .sheet { margin: 0; box-shadow: none; }
+  .banner, .aname, .touch, .flat, .save b.name, .maneuver .name, .mark.on, .panel .label, table.grid th {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+</style>
+</head>
+<body>
+<p class="powrot"><a href="index.html">Spis postaci</a> · <a href="zizzle-stormpocket.html">Opis, czary i historia</a> · <a href="arkusze.html">Wszystkie arkusze</a></p>
+<article class="sheet"><div class="frame"><header class="head"><div class="emblem"><div class="g">Pathfinder</div><div class="e">1. edycja</div><div class="k">Karta postaci</div></div><div class="identity"><div class="id1"><div class="field"><div class="fval">Zizzle Stormpocket</div><div class="flbl">Imię postaci</div></div><div class="field"><div class="fval">chaotyczny neutralny</div><div class="flbl">Charakter</div></div><div class="field"><div class="fval"></div><div class="flbl">Gracz</div></div></div><div class="id2"><div class="field"><div class="fval">zaklinacz 3 (baśniowa linia krwi)</div><div class="flbl">Klasa i poziom</div></div><div class="field"><div class="fval">Calistria</div><div class="flbl">Bóstwo</div></div><div class="field"><div class="fval">las, wymiana</div><div class="flbl">Ojczyzna</div></div></div><div class="id3"><div class="field"><div class="fval">gnom</div><div class="flbl">Rasa</div></div><div class="field"><div class="fval">mały</div><div class="flbl">Rozmiar</div></div><div class="field"><div class="fval">mężczyzna</div><div class="flbl">Płeć</div></div><div class="field"><div class="fval"></div><div class="flbl">Wiek</div></div><div class="field"><div class="fval"></div><div class="flbl">Wzrost</div></div><div class="field"><div class="fval"></div><div class="flbl">Waga</div></div><div class="field"><div class="fval"></div><div class="flbl">Włosy</div></div><div class="field"><div class="fval"></div><div class="flbl">Oczy</div></div></div></div></header><p class="quote">„Mam plan. Mam też kanapkę. Kanapka jest lepiej przemyślana.”</p><div class="cols"><div class="left"><div class="top"><table class="abilities"><thead><tr><th></th><th>Wynik</th><th>Mod.</th><th>Tymcz.</th><th>Tymcz. mod.</th></tr></thead><tbody><tr><th class="aname"><b>SIŁ</b><span>siła</span></th><td>8</td><td>−1</td><td></td><td></td></tr><tr><th class="aname"><b>ZRĘ</b><span>zręczność</span></th><td>14</td><td>+2</td><td></td><td></td></tr><tr><th class="aname"><b>BUD</b><span>budowa</span></th><td>14</td><td>+2</td><td></td><td></td></tr><tr><th class="aname"><b>INT</b><span>inteligencja</span></th><td>10</td><td>+0</td><td></td><td></td></tr><tr><th class="aname"><b>MDR</b><span>mądrość</span></th><td>10</td><td>+0</td><td></td><td></td></tr><tr><th class="aname"><b>CHA</b><span>charyzma</span></th><td>19</td><td>+4</td><td></td><td></td></tr></tbody></table><div class="vitals"><section class="panel hp"><div class="hp-row"><div class="label">Punkty wytrzymałości</div><div class="hp-total"><b>20</b><span>suma</span></div></div><div class="wounds"><div class="cap">Bieżące — odhaczaj rany</div><div class="ticks"><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><span class="gap"></span><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><span class="gap"></span><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><span class="gap"></span><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i></div></div><div class="subline"><span>Niegroźne <b>—</b></span><span>Redukcja <b>—</b></span></div></section><section class="panel"><div class="label">Prędkość</div><div class="speed-grid"><div><span>Ląd</span><b>20 stóp</b></div><div><span>Bazowa</span><b>20 stóp</b></div><div><span>W pancerzu</span><b>20 stóp</b></div><div><span>Lot</span><b>—</b></div><div><span>Pływanie</span><b>—</b></div><div><span>Wspinaczka</span><b>—</b></div><div><span>Kopanie</span><b>—</b></div><div><span>Zwrotność</span><b>—</b></div></div></section><section class="panel"><div class="label">Inicjatywa</div><div class="init-row"><div class="statbox"><b>+6</b><span>suma</span></div><div class="statbox"><b>+2</b><span>zręczność</span></div><div class="statbox"><b>+4</b><span>inne</span></div></div></section></div></div><section class="block"><div class="equation"><div class="big">13</div><div class="eq">= 10 +</div><div class="cell"><b>0</b><small>pancerz</small></div><div class="cell"><b>0</b><small>tarcza</small></div><div class="cell"><b>+2</b><small>zręczność</small></div><div class="cell"><b>+1</b><small>rozmiar</small></div><div class="cell"><b>0</b><small>naturalny</small></div><div class="cell"><b>0</b><small>odbicie</small></div><div class="cell"><b>0</b><small>inne</small></div></div><div class="ac-foot"><div class="pair"><div class="touch">Dotyk</div><div class="num">13</div></div><div class="pair"><div class="flat">Nieprzygotowany</div><div class="num">11</div></div></div></section><section class="block"><div class="banner">Rzuty obronne</div><div class="save"><b class="name">Wytrwałość<span class="tiny">budowa</span></b><div class="num">+3</div><div class="formula"><div class="cell"><b>+1</b><small>bazowy</small></div><div class="cell"><b>+2</b><small>atrybut</small></div><div class="cell"><b>0</b><small>magia</small></div><div class="cell"><b>0</b><small>inne</small></div><div class="cell"><b></b><small>tymczasowy</small></div></div></div><div class="save"><b class="name">Refleks<span class="tiny">zręczność</span></b><div class="num">+3</div><div class="formula"><div class="cell"><b>+1</b><small>bazowy</small></div><div class="cell"><b>+2</b><small>atrybut</small></div><div class="cell"><b>0</b><small>magia</small></div><div class="cell"><b>0</b><small>inne</small></div><div class="cell"><b></b><small>tymczasowy</small></div></div></div><div class="save"><b class="name">Wola<span class="tiny">mądrość</span></b><div class="num">+3</div><div class="formula"><div class="cell"><b>+3</b><small>bazowy</small></div><div class="cell"><b>+0</b><small>atrybut</small></div><div class="cell"><b>0</b><small>magia</small></div><div class="cell"><b>0</b><small>inne</small></div><div class="cell"><b></b><small>tymczasowy</small></div></div></div></section><section class="block"><div class="bab-row"><div class="banner">Bazowa premia do ataku</div><div class="num">+1</div><div class="sr"><span>Odporność na czary</span><b>—</b></div></div><div class="maneuver"><div class="name">PMB</div><div class="num">−1</div><div class="formula"><div class="cell"><b>+1</b><small>premia bazowa</small></div><div class="cell"><b>−1</b><small>siła</small></div><div class="cell"><b>−1</b><small>rozmiar</small></div></div></div><div class="maneuver"><div class="name">OMB</div><div class="num">11</div><div class="formula"><div class="cell"><b>+1</b><small>premia bazowa</small></div><div class="cell"><b>−1</b><small>siła</small></div><div class="cell"><b>+2</b><small>zręczność</small></div><div class="cell"><b>−1</b><small>rozmiar</small></div><div class="rest">= 10</div></div></div></section><div class="weapons"><article class="weapon"><div class="weapon-top"><div class="banner"><span class="tag">Broń</span> Sztylet</div><div class="mini"><span>Premia</span><b>+1</b></div><div class="mini"><span>Krytyk</span><b>19–20/×2</b></div></div><div class="weapon-bot"><div><span>Typ</span><b>kłuto-cięta</b></div><div><span>Zasięg</span><b>—</b></div><div><span>Amunicja</span><b>—</b></div><div><span>Obrażenia</span><b>1k3−1</b></div></div></article><article class="weapon"><div class="weapon-top"><div class="banner"><span class="tag">Broń</span> Promień mrozu</div><div class="mini"><span>Premia</span><b>+4 dotyk</b></div><div class="mini"><span>Krytyk</span><b>—</b></div></div><div class="weapon-bot"><div><span>Typ</span><b>zimno</b></div><div><span>Zasięg</span><b>bliski</b></div><div><span>Amunicja</span><b>bez limitu</b></div><div><span>Obrażenia</span><b>1k3</b></div></div></article><article class="weapon"><div class="weapon-top"><div class="banner"><span class="tag">Broń</span> Śmiejący dotyk</div><div class="mini"><span>Premia</span><b>+1 dotyk</b></div><div class="mini"><span>Krytyk</span><b>—</b></div></div><div class="weapon-bot"><div><span>Typ</span><b>wręcz</b></div><div><span>Zasięg</span><b>—</b></div><div><span>Amunicja</span><b>7/dzień</b></div><div><span>Obrażenia</span><b>tylko ruch, 1 runda</b></div></div></article><article class="weapon"><div class="weapon-top"><div class="banner">Broń</div><div class="mini"><span>Premia</span><b></b></div><div class="mini"><span>Krytyk</span><b></b></div></div><div class="weapon-bot"><div><span>Typ</span><b></b></div><div><span>Zasięg</span><b></b></div><div><span>Amunicja</span><b></b></div><div><span>Obrażenia</span><b></b></div></div></article><article class="weapon"><div class="weapon-top"><div class="banner">Broń</div><div class="mini"><span>Premia</span><b></b></div><div class="mini"><span>Krytyk</span><b></b></div></div><div class="weapon-bot"><div><span>Typ</span><b></b></div><div><span>Zasięg</span><b></b></div><div><span>Amunicja</span><b></b></div><div><span>Obrażenia</span><b></b></div></div></article></div></div><div class="right"><div class="banner">Umiejętności</div><table class="skills"><thead><tr><th class="name">Umiejętność</th><th>Suma</th><th>Atrybut</th><th>Rangi</th><th>Inne</th></tr></thead><tbody><tr><td class="name"><i class="mark"></i>Akrobatyka</td><td class="num">+2</td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Szacowanie</td><td class="num">+0</td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Blefowanie</td><td class="num">+10</td><td class="ab">+4 CHA</td><td class="num">3</td><td class="num">+3</td></tr><tr><td class="name"><i class="mark"></i>Wspinaczka</td><td class="num">−1</td><td class="ab">−1 SIŁ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Rzemiosło</td><td class="num">+0</td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Rzemiosło</td><td class="num">+0</td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Rzemiosło</td><td class="num">+0</td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Dyplomacja</td><td class="num">+11</td><td class="ab">+4 CHA</td><td class="num">3</td><td class="num">+4</td></tr><tr><td class="name"><i class="mark"></i>Unieszkodliwianie mechanizmów<span class="star">*</span></td><td class="num"></td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Przebieranie się</td><td class="num">+6</td><td class="ab">+4 CHA</td><td class="num"></td><td class="num">+2</td></tr><tr><td class="name"><i class="mark"></i>Wyzwalanie się</td><td class="num">+2</td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Latanie</td><td class="num">+2</td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Opieka nad zwierzętami<span class="star">*</span></td><td class="num"></td><td class="ab">+4 CHA</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Leczenie</td><td class="num">+0</td><td class="ab">+0 MDR</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Zastraszanie</td><td class="num">+5</td><td class="ab">+4 CHA</td><td class="num"></td><td class="num">+1</td></tr><tr><td class="name"><i class="mark on"></i>Wiedza (magia)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (lochów)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (inżynieria)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (geografia)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (historia)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (lokalna)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (natura)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (szlachectwo)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (plany)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wiedza (religia)<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Lingwistyka<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Percepcja</td><td class="num">+2</td><td class="ab">+0 MDR</td><td class="num"></td><td class="num">+2</td></tr><tr><td class="name"><i class="mark"></i>Występy</td><td class="num">+4</td><td class="ab">+4 CHA</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Występy</td><td class="num">+4</td><td class="ab">+4 CHA</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Profesja<span class="star">*</span></td><td class="num"></td><td class="ab">+0 MDR</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Profesja<span class="star">*</span></td><td class="num"></td><td class="ab">+0 MDR</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Jeździectwo</td><td class="num">+2</td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Wyczucie pobudek</td><td class="num">+0</td><td class="ab">+0 MDR</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Zręczna dłoń<span class="star">*</span></td><td class="num"></td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Czaroznawstwo<span class="star">*</span></td><td class="num"></td><td class="ab">+0 INT</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Skradanie się</td><td class="num">+6</td><td class="ab">+2 ZRĘ</td><td class="num"></td><td class="num">+4</td></tr><tr><td class="name"><i class="mark"></i>Sztuka przetrwania</td><td class="num">+0</td><td class="ab">+0 MDR</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark"></i>Pływanie</td><td class="num">−1</td><td class="ab">−1 SIŁ</td><td class="num"></td><td class="num"></td></tr><tr><td class="name"><i class="mark on"></i>Używanie magicznych przedmiotów<span class="star">*</span></td><td class="num">+10</td><td class="ab">+4 CHA</td><td class="num">3</td><td class="num">+3</td></tr></tbody></table><p class="legend"><i class="mark on"></i> umiejętność klasowa &nbsp; * tylko po wyszkoleniu. Premia +3 za klasę jest w kolumnie „inne”, gdy wydano rangę.</p><section class="note"><div class="banner">Modyfikatory warunkowe</div><p>+2 do rzutów przeciw iluzjom. +4 z uniku do KP przeciw olbrzymom. +1 do ataków przeciw gadzim humanoidom i goblinoidom. Koncentracja +7. Czarujący: +1 do Blefowania i Dyplomacji wobec istot, które mogłyby uznać go za atrakcyjnego.</p></section><section class="note grow"><div class="banner">Języki</div><p>wspólny, gnomi, sylwański</p></section></div></div><footer><span>Zizzle Stormpocket</span><span>strona 1 z 2</span></footer></div></article><article class="sheet"><div class="frame"><div class="p2head"><div class="what">Karta postaci · Pathfinder 1e</div><div class="who">Zizzle Stormpocket</div></div><div class="page2"><div class="col"><section class="box"><div class="banner">Pancerz i tarcza</div><table class="grid"><thead><tr><th>Przedmiot</th><th>Premia</th><th>Typ</th><th>Kara</th><th>Niepow.</th><th>Ciężar</th></tr></thead><tbody><tr><td class="item">brak noszonego pancerza</td><td>0</td><td>—</td><td>0</td><td>0%</td><td>—</td></tr><tr><td class="item">suma</td><td>0</td><td></td><td>0</td><td>0%</td><td>—</td></tr></tbody></table></section><section class="box grow"><div class="banner">Ekwipunek</div><div class="lined"><div class="lines"></div><div class="items"><div class="line">sztylet</div><div class="line">zestaw do malowania piegów, kreda do brody</div><div class="line">list „legalny gnom” (własny tekst, pieczątka, bez poprawek)</div><div class="line">różdżka Leczenia lekkich ran, 5 ładunków</div><div class="line">zestaw do przebieranek, cukierki</div></div></div></section><section class="box"><div class="banner">Udźwig</div><div class="cap">Funty, rozmiar mały</div><div class="load"><div><span>Lekki</span><b>19</b></div><div><span>Nad głowę</span><b>60</b></div><div><span>Średni</span><b>39</b></div><div><span>Z ziemi</span><b>120</b></div><div><span>Ciężki</span><b>60</b></div><div><span>Pchanie</span><b>300</b></div></div></section><section class="box"><div class="banner">Pieniądze</div><div class="coins"><div class="coin"><b>0</b><span>miedź</span></div><div class="coin"><b>0</b><span>srebro</span></div><div class="coin"><b>40</b><span>złoto</span></div><div class="coin"><b>0</b><span>platyna</span></div></div></section></div><div class="col"><section class="box"><div class="banner">Atuty</div><ul class="plain"><li><b>Pominięcie komponentów.</b> bez tanich komponentów materiałowych</li><li><b>Skupienie na czarach (zauroczanie).</b> +1 do ST czarów zauroczania</li><li><b>Ulepszona inicjatywa.</b> +4 do inicjatywy</li></ul></section><section class="box grow"><div class="banner">Zdolności specjalne</div><ul class="plain"><li>Śmiejący dotyk ☐☐☐☐☐☐☐ — dotyk wręcz; przez rundę cel wykonuje tylko akcje ruchu.</li><li>Leśny krok — niemagiczne zarośla nie spowalniają ruchu.</li><li>Różdżka Leczenia lekkich ran ☐☐☐☐☐ — 1k8+1. Czar nie jest zaklinaczowi znany: Używanie magicznych przedmiotów ST 20.</li><li>Gnomia magia, po jednym: ☐ tańczące światła ☐ upiorny dźwięk ☐ prestidigitatorstwo ☐ rozmowa ze zwierzętami.</li><li>Widzenie w słabym świetle. Broń z „gnomią” w nazwie jest dla niego żołnierska.</li><li>Cechy wliczone w testy: Przekonujący. Czarujący działa tylko wobec osób, które mogłyby uznać go za atrakcyjnego.</li></ul></section><section class="box"><div class="xp"><div><span>Punkty doświadczenia</span><b>5 000</b></div><div><span>Następny poziom</span><b>9 000</b></div></div></section></div><div class="col"><section class="box"><div class="banner">Czary</div><table class="grid spellhead"><thead><tr><th>Znane</th><th>ST</th><th>Krąg</th><th>Dziennie</th><th>Premia</th></tr></thead><tbody><tr><td>5</td><td>14</td><td>0</td><td>∞</td><td>—</td></tr><tr><td>4</td><td>15</td><td>1</td><td>6</td><td>+1</td></tr><tr><td></td><td></td><td>2</td><td></td><td></td></tr><tr><td></td><td></td><td>3</td><td></td><td></td></tr><tr><td></td><td></td><td>4</td><td></td><td></td></tr><tr><td></td><td></td><td>5</td><td></td><td></td></tr><tr><td></td><td></td><td>6</td><td></td><td></td></tr><tr><td></td><td></td><td>7</td><td></td><td></td></tr><tr><td></td><td></td><td>8</td><td></td><td></td></tr><tr><td></td><td></td><td>9</td><td></td><td></td></tr></tbody></table></section><section class="box"><div class="banner">Szkoła albo linia krwi</div><div class="school">Baśniowa linia krwi. Arkanum: +2 do ST czarów z podszkoły przymusu. Śmiejący dotyk 7 razy dziennie. Leśny krok: niemagiczne zarośla nie spowalniają ruchu. Splątanie jest czarem linii krwi.</div></section><section class="box"><div class="school">ST 14 + krąg. Zauroczanie +1. Iluzje +1. Przymus +2. Pominięcie komponentów: tanie komponenty materiałowe są niepotrzebne. Miejsca 1. kręgu wydajesz z puli, nie z konkretnego czaru.</div></section><section class="box grow"><div class="banner">Przygotowane i znane</div><div class="spells"><div class="splevel"><div><div class="lv">0</div><div class="slots"></div></div><div><div class="spline">Wykrycie magii — aury w stożku 60 stóp, koncentracja</div><div class="spline">Upiorny dźwięk — iluzoryczne dźwięki, Wola (nie uwierzyć), 3 rundy</div><div class="spline">Wiadomość — szeptana rozmowa, 30 min</div><div class="spline">Prestidigitatorstwo — drobne sztuczki, 1 godz.</div><div class="spline">Promień mrozu — 1k3 od zimna, dotyk +4, zasięg bliski</div></div></div><div class="splevel"><div><div class="lv">1</div><div class="slots"><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><i class="sq"></i><span class="gap"></span><i class="sq"></i></div></div><div><div class="spline">Zauroczenie osoby — humanoid uznaje go za przyjaciela, Wola ST 16, 3 godz.</div><div class="spline">Barwny strumień — stożek 15 stóp, Wola ST 16</div><div class="spline">Zniknięcie — niewidzialność, kończy się po ataku, do 3 rund</div><div class="spline">Splątanie (linia krwi) — rośliny na promieniu 40 stóp, Refleks ST 15, 3 min</div></div></div><div class="splevel"><div><div class="lv">2</div><div class="slots"></div></div><div><div class="spline blank"></div></div></div><div class="higher"><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div></div></section></div></div><footer><span>Zizzle Stormpocket</span><span>strona 2 z 2</span></footer></div></article>
+</body>
+</html>
