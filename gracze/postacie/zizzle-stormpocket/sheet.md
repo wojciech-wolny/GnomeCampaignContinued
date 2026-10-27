@@ -66,7 +66,7 @@ Zaklinacz: 2 + INT = 2 rangi na poziom × 3 = 6, plus 3 rangi z klasy preferowan
 | Percepcja | **+2** | 0 | +0 | — | +2 rasowa |
 
 \* Umiejętność klasowa dzięki cesze Przekonujący.  
-Czarujący daje dodatkowo +1 do Blefowania i Dyplomacji wobec istot, które mogłyby uznać Zizzle'a za atrakcyjnego.
+Czarujący daje dodatkowo +1 do Blefowania i Dyplomacji wobec istot, które mogłyby uznać Zizzle'a za atrakcyjnego. Wobec nich czary zależne od języka mają też +1 do ST.
 
 **Języki:** wspólny, gnomi, sylwański
 
@@ -83,7 +83,7 @@ Czarujący daje dodatkowo +1 do Blefowania i Dyplomacji wobec istot, które mog�
 | Cecha | Działanie |
 |-------|-----------|
 | [Przekonujący](features.md#przekonujący) | +1 do Dyplomacji i Zastraszania; Dyplomacja jest klasowa |
-| [Czarujący](features.md#czarujący) | +1 do Blefowania i Dyplomacji wobec zauroczonych tobą; +1 do ST czarów zależnych od języka wobec nich |
+| [Czarujący](features.md#czarujący) | +1 do Blefowania i Dyplomacji wobec istot, które mogłyby uznać go za atrakcyjnego; wobec nich +1 do ST czarów zależnych od języka |
 
 ## Zdolności — skrót
 

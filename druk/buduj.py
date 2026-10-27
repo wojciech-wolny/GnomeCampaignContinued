@@ -11,6 +11,8 @@ from typing import Literal
 
 import markdown
 
+from arkusz import index_entries, render_sheet_pages
+
 type Kind = Literal["karta", "sekcja", "kartka", "mapa"]
 
 MARKDOWN_EXTENSIONS = ["tables", "fenced_code", "sane_lists"]
@@ -266,6 +268,8 @@ def build_pages(argv: list[str] | None) -> int:
         return 1
     pages.update(render_handouts(root, handouts))
     pages.update(render_indexes(root, books, handouts))
+    for name, page in render_sheet_pages().items():
+        pages[root / "druk" / "postacie" / name] = page
     problems = missing_targets(pages)
     if problems:
         print("buduj.py failed: broken links", file=sys.stderr)
@@ -989,11 +993,22 @@ def render_indexes(root: Path, books: list[Book], handouts: list[Handout]) -> di
             for handout in handouts
         ]
     )
+    sheet_here = "\n".join(
+        link_item(filename, title, detail) for filename, title, detail in index_entries()
+    )
+    sheet_root = "\n".join(
+        link_item(f"postacie/{filename}", title, detail) for filename, title, detail in index_entries()
+    )
     player_body = (
         "<h1>Karty postaci</h1>"
-        "<p>Każda postać jest w jednym pliku, a mapa skrzydła osobno. "
+        "<p>Arkusze do stołu mają układ karty Pathfindera: dwie strony na postać. "
+        "Paczki poniżej dokładają historię, opisy czarów i kartki z kieszeni. "
         "Drukuj na A4, w skali 100%, bez nagłówków i stopek przeglądarki. "
-        "Pola ☐ odhaczaj ołówkiem.</p>"
+        "Włącz grafiki tła, żeby czarne belki zostały na papierze. "
+        "Puste kratki odhaczaj ołówkiem.</p>"
+        "<h2>Arkusze do stołu</h2>"
+        f"<ul>{sheet_here}</ul>"
+        "<h2>Paczki z opisami</h2>"
         f"<ul>{player_items}</ul>"
     )
     master_body = (
@@ -1019,6 +1034,8 @@ def render_indexes(root: Path, books: list[Book], handouts: list[Handout]) -> di
         "<h2>Postacie</h2>"
         "<ul>"
         + link_item("postacie/index.html", "Spis postaci", "Sam spis, bez treści kart.")
+        + "\n"
+        + sheet_root
         + "\n"
         + every_player
         + "</ul>"

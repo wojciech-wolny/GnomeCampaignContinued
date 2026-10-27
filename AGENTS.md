@@ -27,7 +27,7 @@ GnomeCampaign/
 │   │                         # oraz kartki z ekwipunku (list, schemat), jeśli postać je nosi
 │   └── karty-do-druku/       # jednostronicowe karty A4 (skrót sheet.md)
 └── druk/                     # HTML do druku, generowany przez buduj.py
-    ├── postacie/             # paczka gracza: karta, historia, pełna karta, czary, atuty, stan, kartki
+    ├── postacie/             # paczka gracza oraz arkusz-*.html (układ karty Pathfindera)
     └── mg/                   # MG pogrupowane: sesja, spotkania, zagadki, świat, prompty
 ```
 
