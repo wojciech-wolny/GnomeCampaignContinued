@@ -59,7 +59,7 @@ Dyplomacja **+11** · Blefowanie **+10** · Używanie magicznych przedmiotów **
 ## Atuty, cechy i zdolności
 
 **Atuty:** Pominięcie komponentów · Skupienie na czarach (zauroczanie) · Ulepszona inicjatywa  
-**Cechy:** Przekonujący (+1 do Dyplomacji i Zastraszania, Dyplomacja klasowa) · Czarujący (+1 do Blefowania i Dyplomacji wobec oczarowanych tobą)  
+**Cechy:** Przekonujący (+1 do Dyplomacji i Zastraszania, Dyplomacja klasowa) · Czarujący (+1 do Blefowania, Dyplomacji i ST czarów zależnych od języka wobec istot, które mogłyby uznać go za atrakcyjnego)  
 **Linia krwi:** arkanum (+2 do ST czarów przymusu) · Leśny krok (zarośla nie spowalniają)  
 **Rasowe:** widzenie w słabym świetle · broń „gnomia” jak żołnierska  
 **Języki:** wspólny, gnomi, sylwański

@@ -490,7 +490,7 @@ LUMA = Character(
         "skradanie": 5,
     },
     weapons=(
-        Weapon("Klucz francuski", "+3", "×2", "obuchowe", "—", "—", "1k4"),
+        Weapon("Mistrzowski klucz francuski, jak pałka", "+3", "×2", "obuchowe", "—", "—", "1k4"),
         Weapon("Telekinetyczna pięść", "+3 dotyk", "—", "obuchowe", "30 stóp", "7/dzień", "1k4+1"),
     ),
     languages="wspólny, gnomi, sylwański, smoczy, krasnoludzki, goblinski, elfi",
@@ -613,12 +613,13 @@ ZIZZLE = Character(
     combat_notes=(
         "+2 do rzutów przeciw iluzjom. +4 z uniku do KP przeciw olbrzymom. "
         "+1 do ataków przeciw gadzim humanoidom i goblinoidom. Koncentracja +7. "
-        "Czarujący: +1 do Blefowania i Dyplomacji wobec istot, które mogłyby uznać go za atrakcyjnego."
+        "Czarujący: +1 do Blefowania i Dyplomacji oraz +1 do ST czarów zależnych od języka wobec istot, które mogłyby uznać go za atrakcyjnego."
     ),
     spell_notes=(
         "ST 14 + krąg. Zauroczanie +1. Iluzje +1. Przymus +2. "
         "Pominięcie komponentów: tanie komponenty materiałowe są niepotrzebne. "
-        "Miejsca 1. kręgu wydajesz z puli, nie z konkretnego czaru."
+        "Miejsca 1. kręgu wydajesz z puli, nie z konkretnego czaru. "
+        "Na 4. poziomie naturalny czar 2. kręgu to Okropny śmiech (ST 19 dzięki arkanum i skupieniu na czarach)."
     ),
     school=(
         "Baśniowa linia krwi. Arkanum: +2 do ST czarów z podszkoły przymusu. "
@@ -628,8 +629,8 @@ ZIZZLE = Character(
     gear=(
         "sztylet",
         "zestaw do malowania piegów, kreda do brody",
-        "list „legalny gnom” (własny tekst, pieczątka, bez poprawek)",
-        "różdżka Leczenia lekkich ran, 5 ładunków",
+        "list „legalny gnom”: pieczątka „NIE MOJA WINA”, na kartce nie ma poprawek. Odpis Orrina ma czternaście poprawek i dopisek „Formalnie bez zarzutu. Broda do weryfikacji”",
+        "różdżka Leczenia lekkich ran, 5 ładunków, pęknięta",
         "zestaw do przebieranek, cukierki",
     ),
     feats=(
@@ -640,10 +641,10 @@ ZIZZLE = Character(
     specials=(
         "Śmiejący dotyk ☐☐☐☐☐☐☐ — dotyk wręcz; przez rundę cel wykonuje tylko akcje ruchu.",
         "Leśny krok — niemagiczne zarośla nie spowalniają ruchu.",
-        "Różdżka Leczenia lekkich ran ☐☐☐☐☐ — 1k8+1. Czar nie jest zaklinaczowi znany: Używanie magicznych przedmiotów ST 20.",
+        "Różdżka Leczenia lekkich ran ☐☐☐☐☐ — 1k8+1, różdżka pęknięta. Czar nie jest zaklinaczowi znany: Używanie magicznych przedmiotów ST 20.",
         "Gnomia magia, po jednym: ☐ tańczące światła ☐ upiorny dźwięk ☐ prestidigitatorstwo ☐ rozmowa ze zwierzętami.",
         "Widzenie w słabym świetle. Broń z „gnomią” w nazwie jest dla niego żołnierska.",
-        "Cechy wliczone w testy: Przekonujący. Czarujący działa tylko wobec osób, które mogłyby uznać go za atrakcyjnego.",
+        "Cechy wliczone w testy: Przekonujący. Czarujący: +1 do Blefowania, Dyplomacji i ST czarów zależnych od języka wobec istot, które mogłyby uznać go za atrakcyjnego.",
     ),
     gp=40,
     load=(19, 39, 60, 60, 120, 300),
@@ -850,7 +851,8 @@ NIXA = Character(
     spell_notes=(
         "ST 14 + krąg. Wywoływanie +1. Ogień: +1 obrażeń na każdą kość (wliczone przy Płonących dłoniach). "
         "Pominięcie komponentów. Miejsca 1. kręgu wydajesz z puli. "
-        "Płonące dłonie: Refleks ST 16 połowę."
+        "Płonące dłonie: Refleks ST 16 połowę. "
+        "Na 4. poziomie naturalny czar 2. kręgu to Palący promień (4k6+4 od ognia dzięki arkanum)."
     ),
     school=(
         "Smocza linia krwi, mosiężny smok, ogień. Pazury, odporność na ogień 5, "
@@ -859,7 +861,7 @@ NIXA = Character(
     gear=(
         "sztylet",
         "peleryna „niepalna w 60%” (pamiątka, bez magii; reszta to taśma)",
-        "amulet z zębem",
+        "amulet z zębem (nazywa go „na pewno smoczym”; Percepcja ST 15: to ząb psa)",
         "nieotwarty list od kuzyna",
         "sakiewka na komponenty",
     ),
