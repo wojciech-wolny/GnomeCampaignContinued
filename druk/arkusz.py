@@ -966,7 +966,7 @@ body { font-family: "Liberation Sans", "DejaVu Sans", "Nimbus Sans", Arial, sans
 .id1 { grid-template-columns: 1.55fr 1.05fr 0.85fr; }
 .id2 { grid-template-columns: 1.45fr 0.85fr 1.15fr; }
 .id3 { grid-template-columns: 0.9fr 0.7fr 0.95fr 0.55fr 0.7fr 0.7fr 0.85fr 0.7fr; }
-.fval { border-bottom: 0.75pt solid #141414; min-height: 3.8mm; font-size: 8pt; font-weight: 700; line-height: 1.15; padding: 0 0.4mm; white-space: nowrap; overflow: hidden; }
+.fval { border-bottom: 0.75pt solid #141414; min-height: 3.8mm; font-size: 7.6pt; font-weight: 700; line-height: 1.15; padding: 0 0.4mm; }
 .flbl { font-size: 5pt; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.15; }
 .quote { margin: 0.55mm 0 0.7mm; font-size: 7.4pt; font-style: italic; line-height: 1.2; }
 .cols { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.18fr 0.92fr; gap: 1.6mm; }
@@ -1067,7 +1067,7 @@ table.grid td.item { text-align: left; font-weight: 600; }
 .lined { position: relative; flex: 1; min-height: 0; }
 .lines { position: absolute; inset: 0; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(4.7mm - 0.45pt), #222 calc(4.7mm - 0.45pt), #222 4.7mm); }
 .items { position: relative; }
-.line { height: 4.7mm; font-size: 7pt; line-height: 4.7mm; padding: 0 0.8mm; white-space: nowrap; overflow: hidden; }
+.line { min-height: 4.7mm; font-size: 6.7pt; line-height: 1.25; padding: 0.5mm 0.8mm; }
 .plain { margin: 0.5mm 0.8mm 0.8mm; padding: 0; list-style: none; font-size: 6.7pt; line-height: 1.28; }
 .plain li { margin: 0 0 0.35mm; }
 .plain b { font-weight: 750; }
