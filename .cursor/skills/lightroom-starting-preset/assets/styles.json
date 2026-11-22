@@ -1,0 +1,174 @@
+{
+  "match": {
+    "label": "Catalog match",
+    "summary": "A softened reading of this catalog. Scene colors are not treated as a grade.",
+    "sliders": {},
+    "curve": null,
+    "grayscale": false
+  },
+  "filmic": {
+    "label": "Filmic",
+    "summary": "A little more contrast, rolled highlights, open shadows, slight vibrance, light grain.",
+    "sliders": {
+      "Contrast2012": 12,
+      "Highlights2012": -18,
+      "Shadows2012": 12,
+      "Blacks2012": -6,
+      "Vibrance": 6,
+      "Saturation": -4,
+      "Clarity2012": 4,
+      "GrainAmount": 10,
+      "GrainSize": 28,
+      "GrainFrequency": 50
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "matte-fade": {
+    "label": "Matte fade",
+    "summary": "Lower contrast, lifted blacks, a soft highlight roll-off, slightly muted color.",
+    "sliders": {
+      "Contrast2012": -16,
+      "Highlights2012": -12,
+      "Shadows2012": 14,
+      "Blacks2012": 16,
+      "Whites2012": -8,
+      "Dehaze": -6,
+      "Vibrance": -4,
+      "Saturation": -6
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "airy-bright": {
+    "label": "Airy bright",
+    "summary": "A small exposure lift, open shadows, held highlights, a bit more vibrance.",
+    "sliders": {
+      "Exposure2012": 0.2,
+      "Contrast2012": -6,
+      "Highlights2012": -16,
+      "Shadows2012": 22,
+      "Whites2012": 8,
+      "Blacks2012": 6,
+      "Vibrance": 10,
+      "Clarity2012": -6,
+      "Texture": -4
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "moody": {
+    "label": "Moody",
+    "summary": "Slightly darker, deeper blacks, rolled highlights, a little clarity and a light vignette.",
+    "sliders": {
+      "Exposure2012": -0.15,
+      "Contrast2012": 14,
+      "Highlights2012": -22,
+      "Shadows2012": -8,
+      "Blacks2012": -12,
+      "Vibrance": -4,
+      "Clarity2012": 8,
+      "Dehaze": 6,
+      "PostCropVignetteAmount": -12,
+      "PostCropVignetteMidpoint": 46,
+      "PostCropVignetteFeather": 72,
+      "PostCropVignetteRoundness": 0,
+      "PostCropVignetteStyle": 1
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "teal-orange": {
+    "label": "Teal and orange",
+    "summary": "Mild teal in the shadows and orange in the highlights. Color grading only, not a full grade.",
+    "sliders": {
+      "Contrast2012": 8,
+      "Highlights2012": -12,
+      "Shadows2012": 8,
+      "Vibrance": 6,
+      "Saturation": -4,
+      "IncrementalTemperature": 4,
+      "ColorGradeShadowHue": 190,
+      "ColorGradeShadowSat": 16,
+      "ColorGradeHighlightHue": 38,
+      "ColorGradeHighlightSat": 14,
+      "ColorGradeBlending": 60
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "warm-portrait": {
+    "label": "Warm portrait",
+    "summary": "A warm white-balance nudge, open shadows, softer texture, a little vibrance.",
+    "sliders": {
+      "IncrementalTemperature": 10,
+      "IncrementalTint": 3,
+      "Highlights2012": -12,
+      "Shadows2012": 16,
+      "Whites2012": 4,
+      "Vibrance": 8,
+      "Saturation": -3,
+      "Clarity2012": -8,
+      "Texture": -6
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "cool-editorial": {
+    "label": "Cool editorial",
+    "summary": "A cool white-balance nudge, held highlights, a bit of contrast and clarity.",
+    "sliders": {
+      "IncrementalTemperature": -10,
+      "Contrast2012": 10,
+      "Highlights2012": -16,
+      "Shadows2012": 6,
+      "Whites2012": -4,
+      "Vibrance": -2,
+      "Clarity2012": 8,
+      "Dehaze": 4
+    },
+    "curve": null,
+    "grayscale": false
+  },
+  "black-and-white": {
+    "label": "Black and white",
+    "summary": "Black and white treatment with a gentle tonal shape. The color mixer is left alone.",
+    "sliders": {
+      "Contrast2012": 12,
+      "Highlights2012": -12,
+      "Shadows2012": 10,
+      "Blacks2012": -4,
+      "Clarity2012": 6
+    },
+    "curve": null,
+    "grayscale": true
+  },
+  "vintage": {
+    "label": "Vintage",
+    "summary": "Faded blacks, warm shadows, muted color, light grain and a faint vignette.",
+    "sliders": {
+      "Contrast2012": -8,
+      "Highlights2012": -14,
+      "Shadows2012": 10,
+      "Blacks2012": 10,
+      "Vibrance": -6,
+      "Saturation": -8,
+      "IncrementalTemperature": 8,
+      "ColorGradeShadowHue": 40,
+      "ColorGradeShadowSat": 10,
+      "ColorGradeHighlightHue": 45,
+      "ColorGradeHighlightSat": 6,
+      "ColorGradeBlending": 50,
+      "GrainAmount": 12,
+      "GrainSize": 30,
+      "GrainFrequency": 50,
+      "PostCropVignetteAmount": -10,
+      "PostCropVignetteMidpoint": 50,
+      "PostCropVignetteFeather": 80,
+      "PostCropVignetteRoundness": 0,
+      "PostCropVignetteStyle": 1
+    },
+    "curve": [[0, 10], [64, 70], [192, 190], [255, 246]],
+    "grayscale": false
+  }
+}
